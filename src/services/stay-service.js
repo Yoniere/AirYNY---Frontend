@@ -1607,7 +1607,7 @@ function _createStay() {
     //         stays.push(stay);
     //     });
     utilService.saveToStorage(STAYS_KEY, stays);
-    // }
+    // } 
     return stays;
 }
 

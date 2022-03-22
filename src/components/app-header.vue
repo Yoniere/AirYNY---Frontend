@@ -1,5 +1,5 @@
 <template>
-  <h1>welcome</h1>
+  <h1>welcome-to airyny</h1>
   <hr />
 </template>
 
