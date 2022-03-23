@@ -74,15 +74,17 @@
         </button>
       </div>
     </div>
+    <section class="gallery">
     <img
       :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[0]}`"
     />
+    </section>
     <div>
-<div>
+<div class="initial-info">
     <h1>
       Entire rental unit hosted by <span>{{ stay.host.fullname }}</span>
     </h1>
-    <div>
+    <div >
       <span>{{stay.capacity}} guests</span> · 
       <span>{{stay.bedrooms}} bedroom</span> ·
       <span>{{stay.beds}} bed</span> ·

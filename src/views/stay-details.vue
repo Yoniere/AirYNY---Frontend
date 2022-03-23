@@ -1,14 +1,18 @@
 <template >
   <section v-if="stay">
     <imgs-comp :stay="stay"></imgs-comp>
-    <stay-info :stay="stay"></stay-info>
+    <main-amenities :stay="stay"></main-amenities>
+    <stay-description :stay="stay"></stay-description>
+    <amenities></amenities>
   </section>
 </template>
 
 <script>
 import { stayService } from "../services/stay-service.js";
 import ImgsComp from "../components/stay-details.cmp/imgs-comp.vue";
-import stayInfo from "../components/stay-details.cmp/stay-info.vue";
+import mainAmenities from "../components/stay-details.cmp/main-amenities.vue"
+import stayDescription from "../components/stay-details.cmp/stay-description.vue";
+import amenities from "../components/stay-details.cmp/amenities.vue";
 
 export default {
   data() {
@@ -24,10 +28,14 @@ export default {
   },
   components: {
     ImgsComp,
-    stayInfo,
-  },
+    stayDescription,
+    mainAmenities,
+    amenities
+},
   computed: {},
 };
 </script>
 
-<style></style>
+<style>
+
+</style>

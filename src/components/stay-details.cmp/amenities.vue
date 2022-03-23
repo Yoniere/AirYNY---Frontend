@@ -1,9 +1,10 @@
 <template  >
 <section class="main-layout">
-  TO BE UPDATED!!
-</section>
-<section class="main-layout">
-  {{stay.summary}}
+<p>Courtyard view</p>
+<p>Garden view</p>
+<p>Kitchen</p>
+<p>Wifi – 32 Mbps</p>
+<p>Free parking on premises</p>
 </section>
 </template>
 
