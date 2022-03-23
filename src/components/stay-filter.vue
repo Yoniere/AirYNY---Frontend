@@ -19,12 +19,15 @@
       >
       </el-date-picker
       >|
+
       <button>Search</button>
     </div>
   </section>
 </template>
 
 <script>
+import { utilService } from "../services/util-service.js";
+
 export default {
   name: "stay-filter",
   data() {
@@ -50,7 +53,12 @@ export default {
       stayTime: "",
     };
   },
-
+  created() {
+    this.setFilter = utilService.debounce(
+      this.setFilter,
+      500
+    );
+  },
   methods: {
     setFilter() {
       console.log(
@@ -67,3 +75,5 @@ export default {
 </script>
 
 <style></style>
+
+// stay.reviewScores.rating
