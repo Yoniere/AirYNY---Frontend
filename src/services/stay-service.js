@@ -1574,8 +1574,8 @@ function query(filterBy) {
     return storageService.query(STAYS_KEY)
 }
 
-function getById(entityType, entityId) {
-    return query(entityType).then((entities) =>
+function getById(entityId) {
+    return query().then((entities) =>
         entities.find((entity) => entity.id === entityId)
     )
 }

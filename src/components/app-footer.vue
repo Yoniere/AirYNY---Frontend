@@ -1,6 +1,6 @@
 <template>
   <hr />
-  <footer class="main-footer">
+  <footer class="main-footer main-layout">
     <div>
       <span>©2022 Airyny</span>
     </div>
