@@ -6,7 +6,6 @@
         type="text"
         placeholder="Location"
         v-model="filterBy.country"
-        @input="setFilter"
       />|
 
       <span class="demonstration">stay time</span>
@@ -20,7 +19,7 @@
       </el-date-picker
       >|
 
-      <button>Search</button>
+      <button @click="setFilter">Search</button>
     </div>
   </section>
 </template>
@@ -61,14 +60,10 @@ export default {
   },
   methods: {
     setFilter() {
-      console.log(
-        "filterBy.address.country",
-        this.filterBy.country
-      );
-      this.$emit(
-        "setFilter",
-        JSON.parse(JSON.stringify(this.filterBy))
-      );
+      this.$store.dispatch({
+        type: "setFilter",
+        filterBy: this.filterBy,
+      });
     },
   },
 };
