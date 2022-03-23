@@ -1,4 +1,37 @@
 <template>
-  <h1>This is an explore page</h1>
+        <h1>Explore Page</h1>
+    <section >
+        <stay-list :stays="stays" > </stay-list>
+    </section>
 </template>
-<script></script>
+
+<script>
+
+import stayList from '../components/stay-list.vue'
+
+
+export default {
+    created(){
+    },
+    data() {
+        return {
+        }
+    },
+    computed: {
+        stays() {
+            return this.$store.getters.stays
+        },
+
+    },
+    methods: {
+
+    },
+      components: {
+    stayList,
+  },
+}
+</script>
+
+<style>
+
+</style>

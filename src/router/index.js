@@ -15,11 +15,11 @@ const router = createRouter({
     },
     {
       path: '/stay',
-      name: 'stay',
+      name: 'explore-page',
       component: explorePage
     },
     {
-      path: '/stay/:id?',
+      path: '/stay/:id',
       name: 'stay-details',
       component: stayDetails
     },

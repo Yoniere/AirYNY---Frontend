@@ -1566,7 +1566,7 @@ const stays = [{
 
 
 const STAYS_KEY = 'staysDB'
-_createStay()
+// _createStay()
 
 
 export const stayService = {
@@ -1577,7 +1577,7 @@ export const stayService = {
 
 
 function query(filterBy) {
-    return storageService.query('stay')
+    return storageService.query(STAYS_KEY )
 }
 
 

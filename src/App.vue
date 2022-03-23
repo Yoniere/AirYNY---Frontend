@@ -1,6 +1,6 @@
 <template>
   <app-header />
-  <router-view />
+  <router-view /> 
   <app-footer />
 </template>
 
@@ -13,6 +13,8 @@ export default {
     appHeader,
     appFooter,
   },
-  created() {},
+  created() {
+        this.$store.dispatch({ type: 'loadStays' })
+  },
 };
 </script>

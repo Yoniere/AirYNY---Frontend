@@ -6,8 +6,9 @@ export default {
 
     },
     getters: {
-        stays({ stays }) {
-            return stays
+        stays( state ) {
+            console.log( state.stays);
+            return state.stays
         },
         stayToShow({ stay, filterBy }) {
             const copyStay = JSON.parse(JSON.stringify(stay))
@@ -16,18 +17,23 @@ export default {
 
     },
     mutations: {
-        setStay(state, { stay }) {
-            state.stay = stay
+        setStay(state, { stays }) {
+            state.stays = stays
         },
 
 
 
     },
     actions: {
-        loadStays({ commit, state }) {
-            stayService.query(state.filterBy).then((stay) => {
-                commit({ type: 'setStay', stay })
-            })
+        async loadStays({ commit, state }) {
+          const stays = await  stayService.query(state.filterBy)
+          try{
+            commit({ type: 'setStay', stays })
+        } catch(err){
+            console.error('Cannot Load stays', err)
+            throw err
+           
+            }
         },
 
     },
