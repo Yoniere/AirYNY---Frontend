@@ -8,6 +8,7 @@ export default {
     getters: {
         stays(state) {
             var filterdStays = state.stays;
+            console.log(state)
             if (state.filterBy.country.length)
                 return filterdStays.filter((stay) =>
                     new RegExp(state.filterBy.country, 'i').test(stay.address.country)
@@ -16,9 +17,6 @@ export default {
         },
 
 
-        ratedStays(state, { filterBy }) {
-            state.filterBy = filterBy
-        }
 
     },
     mutations: {
@@ -30,6 +28,11 @@ export default {
             state.filterBy = filterBy
             console.log('state.filterBy', state.filterBy);
         },
+        ratedStays(state, { filterBy }) {
+
+            state.filterBy.country = filterBy
+        }
+
 
     },
     actions: {
@@ -48,6 +51,7 @@ export default {
             dispatch({ type: 'loadStays' })
             console.log('state.filterBy', filterBy);
         },
+
 
     },
 }

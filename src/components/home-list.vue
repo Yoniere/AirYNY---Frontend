@@ -65,9 +65,11 @@ export default {
   },
   methods: {
     goToStay(stay) {
+      const filterBy = { country: stay };
+
       this.$store.dispatch({
         type: "setFilter",
-        filterBy: JSON.parse(JSON.stringify(stay)),
+        filterBy: JSON.parse(JSON.stringify(filterBy)),
       });
       this.$router.push(`/stay`);
       //   this.$router.push(`/stay/${this.stay.id}`)
