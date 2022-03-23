@@ -2,6 +2,10 @@
   <header class="main-header main-layout">
     <h1 class="logo">Airyny</h1>
     <stay-filter :stay="stay" />
+
+    <!-- <v-calendar locale="en" /> -->
+
+    <v-date-picker v-model="date" />
   </header>
   <hr />
 </template>
@@ -12,21 +16,6 @@ import stayFilter from "./stay-filter.vue";
 export default {
   name: "stay-header",
 
-  // created() {
-  //   this.$store.dispatch({ type: "loadStays" });
-  // },
-
-  // methods: {
-  //   setFilter(filterBy) {
-  //     const copyfilter = JSON.parse(
-  //       JSON.stringify(filterBy)
-  //     );
-  //     this.$store.dispatch({
-  //       type: "setFilter",
-  //       filterBy: copyfilter,
-  //     });
-  //   },
-  // },
   components: {
     stayFilter,
   },
