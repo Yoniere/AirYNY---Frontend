@@ -1,24 +1,27 @@
 <template>
   <ul>
-    <li>
+    <li v-for="stay in ratedStays" :key="stay._id">
       <div>
         <img src="" alt="imgStay" />
       </div>
       <div>
-        <span> ({{ stay.country }}) </span>
+        <span> {{ stay }}</span>
       </div>
       <div>
-        <span>{{ stay.name }} </span>
-      </div>
-      <div>
-        <span>{{ stay.price }}$ / night </span>
+        <!-- <span>{{ stay.name }} </span> -->
       </div>
     </li>
   </ul>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      ratedStays: ["United States", "Spain", "Portugal"],
+    };
+  },
+};
 </script>
 
 <style></style>
