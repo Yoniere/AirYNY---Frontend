@@ -1,7 +1,7 @@
 <template>
      <li>
        <router-link :to="`/stay/${stay.id}`">
-       <section class="flex-col">
+       <section class="flex-col stay-card">
        <div>
        <img-carousel :imgs="stay.imgUrls"/>
        </div>
