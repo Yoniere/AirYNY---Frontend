@@ -1,5 +1,5 @@
 <template>
-  <h1>rated stays:</h1>
+  <h1>Popular Destinations:</h1>
   <ul class="stay-list flex-row">
     <li
       class="stay-card"
@@ -9,7 +9,7 @@
       <div>
         <img
           :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/${stay}1`"
-          alt="imgStay"
+          alt="img rated stay"
         />
       </div>
       <div>
@@ -18,15 +18,20 @@
     </li>
   </ul>
 
+  <h2>Unique Stays:</h2>
   <ul class="stay-list flex-row">
     <li
       class="stay-card"
-      v-for="stay in ratedStays"
+      v-for="stay in uniqStays"
       :key="stay._id"
     >
       <div>
-        <img src="" alt="imgStay" />
+        <img
+          :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/${stay}`"
+          alt="img unique stay"
+        />
       </div>
+
       <div>
         <span> {{ stay }}</span>
       </div>
@@ -38,8 +43,14 @@
 export default {
   data() {
     return {
-      ratedStays: ["United States", "Spain", "Portugal"],
-      uniqStays: ["United States", "Spain", "Portugal"],
+      ratedStays: ["Usa", "Spain", "Portugal"],
+      uniqStays: [
+        "Italy",
+        "Japan",
+        "Norway",
+        "Philippines",
+        "Canada",
+      ],
     };
   },
 };
