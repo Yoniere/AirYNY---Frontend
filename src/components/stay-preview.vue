@@ -1,11 +1,8 @@
 <template>
-     <li>
-       <router-link :to="`/stay/${stay.id}`">
-       <section class="flex-col stay-card">
-       <div>
+     <li class="stay-card" @click="goToDeatails">
+        <section class="flex-col"> 
        <img-carousel :imgs="stay.imgUrls"/>
-       </div>
-       <div class="flex-row">
+        <div class="flex-row">
          <svg
         viewBox="0 0 32 32"
         xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +30,6 @@
              <span>{{stay.price }}$ / night </span>
        </div>
      </section>
-</router-link>
   </li>
   
 </template>
@@ -49,6 +45,11 @@ props:{
     }
 },
   methods: {
+    goToDeatails(){
+      this.$router.push(`/stay/${this.stay.id}`)
+
+    }
+      
   },
   computed:{
     getRating(){
