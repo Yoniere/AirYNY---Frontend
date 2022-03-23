@@ -12,6 +12,9 @@ import { ref } from "vue";
 export default {
   name: "stay-header",
 
+  created() {
+    this.$store.dispatch({ type: "loadStays" });
+  },
   components: {
     stayFilter,
   },

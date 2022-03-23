@@ -6,7 +6,9 @@
         type="text"
         placeholder="Location"
         v-model="filterBy.country"
+        @input="setFilter"
       />|
+
       <span class="demonstration">stay time</span>
       <el-date-picker
         v-model="stayTime"
@@ -48,8 +50,13 @@ export default {
       stayTime: "",
     };
   },
+
   methods: {
     setFilter() {
+      console.log(
+        "filterBy.address.country",
+        this.filterBy.country
+      );
       this.$emit(
         "setFilter",
         JSON.parse(JSON.stringify(this.filterBy))
