@@ -1,5 +1,5 @@
 <template>
-  <header class="main-header">
+  <header class="main-header main-layout">
     <h1 class="logo">Airyny</h1>
 
     <div class="search-stay-place">
