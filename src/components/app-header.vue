@@ -1,5 +1,9 @@
 <template>
-  <h1>welcome to airyny</h1>
+  <header class="main-header">
+    <h1>Airyny</h1>
+
+    <div aria-labeledby=""></div>
+  </header>
   <hr />
 </template>
 
