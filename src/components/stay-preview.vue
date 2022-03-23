@@ -1,15 +1,21 @@
 <template>
      <li>
+       <section class="flex-col">
        <div>
-       <span>name: {{ stay.name }}  </span>
-       <span>  price: {{stay.price }} </span>
+           <img src="" alt="imgStay"/>
        </div>
-       <!-- <img :src="toy.img" alt="toy" />
-        <div class="btn-action flex">
-          <button @click="goToEdit" class="btn btn-primary">edit</button>
-          <button @click="goToDetail" class="btn btn-info">details</button>
-          <button @click="removeToy(toy._id)" class="btn btn-danger">delete</button>
-        </div> -->
+       <div>
+            <span> ⭐ {{getRating}} </span>
+            <span>  ({{stay.numOfReviews}}) </span>
+       </div>
+       <div>
+             <span>{{ stay.name }}  </span>
+       </div>
+       <div>
+             <span>{{stay.price }}$ / night </span>
+       </div>
+     </section>
+
   </li>
   
 </template>
@@ -25,6 +31,11 @@ props:{
 },
   methods: {
   },
+  computed:{
+    getRating(){
+      return (this.stay.reviewScores.rating / 10 )
+    }
+  }
 }
 </script>
 

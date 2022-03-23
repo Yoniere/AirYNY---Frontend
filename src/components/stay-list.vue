@@ -1,5 +1,5 @@
 <template>
-      <ul>
+      <ul class="stay-list flex-row">
         <stay-preview v-for="stay in stays" :stay="stay" :key="stay._id" />
       </ul>
 </template>

@@ -7,7 +7,6 @@ export default {
     },
     getters: {
         stays( state ) {
-            console.log( state.stays);
             return state.stays
         },
         stayToShow({ stay, filterBy }) {
