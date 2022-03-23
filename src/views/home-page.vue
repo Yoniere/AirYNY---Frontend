@@ -1,11 +1,7 @@
 <template class="main-layout">
   <main>
     <h1>AirYnY</h1>
-    <home-list
-      v-for="stay in ratedStays"
-      :stay="stay"
-      :key="stay._id"
-    />
+    <home-list :stay="ratedStays" />
   </main>
 </template>
 
@@ -15,7 +11,7 @@ export default {
   name: "home-page",
   data() {
     return {
-      ratedStays: [],
+      // ratedStays: ["United States", "Spain", "Portugal"],
     };
   },
   computed: {
