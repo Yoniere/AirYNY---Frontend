@@ -4,7 +4,7 @@
     <div class="search-stay-place">
       <input type="text" placeholder="Location" v-model="filterBy.country" />|
 
-      <span class="demonstration">stay time</span>
+      <span class="demonstration"></span>
       <el-date-picker
         v-model="stayTime"
         type="daterange"

@@ -1,6 +1,32 @@
 .stay-card{
     margin: 4px;
     flex: 0 1 calc(20% - 8px);
+    line-height: 14px;
+    max-width: 365px;
+    height: 385px;
+    border-radius: 12px;
 }
 
-  
+.icon-heart {
+    margin-bottom: -1.5rem;
+    z-index: 10;
+}
+.card-rate{
+gap: rem(8px);
+font-size: rem(14px);
+align-items: baseline;
+margin-top: rem(17px);
+}
+.card-img{
+    width: 290px;
+    height:240px;
+
+}
+
+.card-detail{
+    font-size: rem(17px);
+    margin-top: rem(17px);
+    span{
+        margin-top: rem(17px);
+    }
+}
