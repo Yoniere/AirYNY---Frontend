@@ -14,6 +14,17 @@
       >
       </el-date-picker
       >|
+      <div
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
+        data-testid="structured-search-input-field-guests-button"
+      >
+        <div class="_1qqq7vb">
+          <div class="_snpd7k">Guests</div>
+          <div class="_suql0c">Add guests</div>
+        </div>
+      </div>
     </div>
   </header>
   <hr />
