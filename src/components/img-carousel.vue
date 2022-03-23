@@ -25,7 +25,6 @@ export default {
 <style>
 .el-carousel {
   font-size: 18px;
-  opacity: 0.75;
   margin: 0;
   text-align: center;
 }

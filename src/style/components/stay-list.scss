@@ -1,4 +1,6 @@
 .stay-list {
     gap: 1rem;
     padding-inline-start: 0px;
+    flex-flow: row wrap;
+    position: relative;
 }
