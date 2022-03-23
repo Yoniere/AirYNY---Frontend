@@ -7,26 +7,28 @@
         alt="img rated stay"
       />
     </div>
-    <h1>Popular Destinations:</h1>
-    <ul class="stay-list flex-row">
-      <li
-        class="stay-card"
-        v-for="stay in ratedStays"
-        :key="stay._id"
-        @click="goToStay(stay)"
-      >
-        <div>
-          <img
-            :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/${stay}1`"
-            alt="img rated stay"
-          />
-        </div>
-        <div>
-          <span> {{ stay }}</span>
-        </div>
-      </li>
-    </ul>
-
+    <div>
+      <h1 class="popular-header">Popular Destinations:</h1>
+      <ul class="stay-list flex-row">
+        <li
+          class="stay-card"
+          v-for="stay in ratedStays"
+          :key="stay._id"
+          @click="goToStay(stay)"
+        >
+          <div>
+            <img
+              class="home-card-img"
+              :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/${stay}1`"
+              alt="img rated stay"
+            />
+          </div>
+          <div>
+            <h3 class="stay-name">{{ stay }}</h3>
+          </div>
+        </li>
+      </ul>
+    </div>
     <h2>Unique Stays:</h2>
     <ul class="stay-list flex-row">
       <li
@@ -36,13 +38,14 @@
       >
         <div>
           <img
+            class="home-card-img"
             :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/${stay}`"
             alt="img unique stay"
           />
         </div>
 
         <div>
-          <span> {{ stay }}</span>
+          <h3 class="stay-name">{{ stay }}</h3>
         </div>
       </li>
     </ul>
