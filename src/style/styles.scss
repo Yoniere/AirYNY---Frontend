@@ -5,7 +5,8 @@
 @import "basics/_helpers";
 @import "basics/_base.scss";
 @import "basics/_layout.scss";
-// components 
+// components
+@import "components/home-list.scss";
 @import "components/stay-list.scss";
 @import "components/stay-card.scss";
 @import "components/app-header.scss";
