@@ -1,15 +1,21 @@
-// * {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-//   font-family: "Roboto-Regular", sans-serif;
-// }
- 
-ul{
-  list-style: none;
+* {
+    box-sizing: border-box;
 }
 
-img{
-  height: 100%;
-  width: 100%;
+body {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    line-height: 1.43;
+    color: #484848;
+    background-color: #fff;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    height: 100%;
+    width: 100%;
 }

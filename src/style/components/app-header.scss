@@ -1,0 +1,21 @@
+.main-header {
+    background-color: $clr1;
+    height: rem(80px);
+    .header-features {
+        color: $clr2;
+        align-items: center;
+    }
+    .logo {
+        text-decoration: none;
+    }
+    span {
+        font-weight: 400;
+    }
+    .filter-header {
+        height: rem(80px);
+        background-color: $clr1;
+    }
+    .main-filter-header {
+        background-color: $clr1;
+    }
+}

@@ -1,5 +1,6 @@
 <template>
-  <section class="filer-header">
+<main class="main-filter-header main-layout">
+  <section class="filter-header">
     <div class="search-stay-place">
       <input type="text" placeholder="Location" v-model="filterBy.country" />|
 
@@ -17,6 +18,7 @@
       <button @click="setFilter">Search</button>
     </div>
   </section>
+  </main>
 </template>
 
 <script>
