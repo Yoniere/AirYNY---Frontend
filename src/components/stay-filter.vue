@@ -52,7 +52,7 @@ export default {
     setFilter() {
       this.$store.dispatch({
         type: "setFilter",
-        filterBy: this.filterBy,
+        filterBy: JSON.parse(JSON.stringify(this.filterBy)) ,
       });
        this.$router.push(`/stay`)
     },

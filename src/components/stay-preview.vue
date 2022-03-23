@@ -1,5 +1,5 @@
 <template>
-     <li v-if="stay">
+     <li>
        <router-link :to="`/stay/${stay.id}`">
        <section class="flex-col stay-card">
        <div>
