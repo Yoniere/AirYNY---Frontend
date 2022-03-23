@@ -1,5 +1,5 @@
-<template class="main-layout">
-  <main>
+<template>
+  <main class="main-layout">
     <home-list :stay="ratedStays" />
   </main>
 </template>
