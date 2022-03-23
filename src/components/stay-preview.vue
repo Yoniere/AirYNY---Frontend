@@ -1,5 +1,6 @@
 <template>
      <li>
+       <router-link :to="`/stay/${stay.id}`">
        <section class="flex-col">
        <div>
            <img src="" alt="imgStay"/>
@@ -15,7 +16,7 @@
              <span>{{stay.price }}$ / night </span>
        </div>
      </section>
-
+</router-link>
   </li>
   
 </template>

@@ -1565,7 +1565,8 @@ const STAYS_KEY = 'staysDB'
 export const stayService = {
     add,
     query,
-    remove
+    remove,
+    getById
 }
 
 
@@ -1573,6 +1574,11 @@ function query(filterBy) {
     return storageService.query(STAYS_KEY)
 }
 
+function getById(entityType, entityId) {
+    return query(entityType).then((entities) =>
+        entities.find((entity) => entity.id === entityId)
+    )
+}
 
 function remove(stayId) {
 
