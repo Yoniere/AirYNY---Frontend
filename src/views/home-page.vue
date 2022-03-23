@@ -1,6 +1,5 @@
 <template class="main-layout">
   <main>
-    <h1>AirYnY</h1>
     <home-list :stay="ratedStays" />
   </main>
 </template>
