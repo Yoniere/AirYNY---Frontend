@@ -13,6 +13,7 @@
         class="stay-card"
         v-for="stay in ratedStays"
         :key="stay._id"
+        @click="goToStay(stay)"
       >
         <div>
           <img
@@ -52,12 +53,7 @@
 export default {
   data() {
     return {
-      ratedStays: [
-        "Usa",
-        "Spain",
-        "Portugal",
-        " Australia",
-      ],
+      ratedStays: ["Usa", "Spain", "Portugal", "Australia"],
       uniqStays: [
         "Italy",
         "Japan",
@@ -66,6 +62,16 @@ export default {
         "Canada",
       ],
     };
+  },
+  methods: {
+    goToStay(stay) {
+      this.$store.dispatch({
+        type: "setFilter",
+        filterBy: JSON.parse(JSON.stringify(stay)),
+      });
+      this.$router.push(`/stay`);
+      //   this.$router.push(`/stay/${this.stay.id}`)
+    },
   },
 };
 </script>
