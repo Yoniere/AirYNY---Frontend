@@ -1,32 +1,30 @@
 <template>
-  <div class="search-stay-place">
-    <input type="text" placeholder="Location" />|
-    <span class="demonstration">stay time</span>
-    <el-date-picker
-      v-model="value1"
-      type="daterange"
-      range-separator="To"
-      start-placeholder="Check in"
-      end-placeholder="Check out"
-    >
-    </el-date-picker
-    >|
-    <div
-      role="button"
-      tabindex="0"
-      aria-expanded="false"
-      data-testid="structured-search-input-field-guests-button"
-    >
-      <div>
-        <div class="_snpd7k">Guests</div>
-        <div class="_suql0c">Add guests</div>
-      </div>
+  <!-- filter to the header- -->
+  <section class="filer-header">
+    <div class="search-stay-place">
+      <input
+        type="text"
+        placeholder="Location"
+        v-model="filterBy.country"
+      />|
+      <span class="demonstration">stay time</span>
+      <el-date-picker
+        v-model="stayTime"
+        type="daterange"
+        range-separator="To"
+        start-placeholder="Check in"
+        end-placeholder="Check out"
+      >
+      </el-date-picker
+      >|
+      <button>Search</button>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
 export default {
+  name: "stay-filter",
   data() {
     return {
       pickerOptions: {
@@ -44,8 +42,19 @@ export default {
           },
         ],
       },
-      value1: "",
+      filterBy: {
+        country: "",
+      },
+      stayTime: "",
     };
+  },
+  methods: {
+    setFilter() {
+      this.$emit(
+        "setFilter",
+        JSON.parse(JSON.stringify(this.filterBy))
+      );
+    },
   },
 };
 </script>
