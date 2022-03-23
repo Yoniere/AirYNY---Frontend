@@ -1,12 +1,7 @@
 <template>
-  <!-- filter to the header- -->
   <section class="filer-header">
     <div class="search-stay-place">
-      <input
-        type="text"
-        placeholder="Location"
-        v-model="filterBy.country"
-      />|
+      <input type="text" placeholder="Location" v-model="filterBy.country" />|
 
       <span class="demonstration">stay time</span>
       <el-date-picker
@@ -38,9 +33,7 @@ export default {
             onClick(picker) {
               const end = new Date();
               const start = new Date();
-              start.setTime(
-                start.getTime() - 3600 * 1000 * 24 * 7
-              );
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
               picker.$emit("pick", [start, end]);
             },
           },
@@ -53,10 +46,7 @@ export default {
     };
   },
   created() {
-    this.setFilter = utilService.debounce(
-      this.setFilter,
-      500
-    );
+    this.setFilter = utilService.debounce(this.setFilter, 500);
   },
   methods: {
     setFilter() {
@@ -64,11 +54,10 @@ export default {
         type: "setFilter",
         filterBy: this.filterBy,
       });
+       this.$router.push(`/stay`)
     },
   },
 };
 </script>
 
 <style></style>
-
-// stay.reviewScores.rating

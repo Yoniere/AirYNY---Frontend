@@ -1,11 +1,11 @@
 <template>
   <header class="main-header main-layout">
     <h1 class="logo">Airyny</h1>
-    <stay-filter :stay="stay" />
+     <stay-filter />
 
-    <!-- <v-calendar locale="en" /> -->
+    <!-- <v-calendar locale="en" />  -->
 
-    <v-date-picker v-model="date" />
+    <!-- <v-date-picker v-model="date" /> -->
   </header>
   <hr />
 </template>

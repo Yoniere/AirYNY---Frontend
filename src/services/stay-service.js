@@ -1570,7 +1570,7 @@ export const stayService = {
 }
 
 
-function query(filterBy) {
+function query() {
     return storageService.query(STAYS_KEY)
 }
 

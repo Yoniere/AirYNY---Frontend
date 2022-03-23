@@ -7,12 +7,14 @@ export default {
     },
     getters: {
         stays(state) {
-            return state.stays
+            var filterdStays = state.stays;
+             if (state.filterBy.country.length)
+                 return filterdStays.filter((stay) =>
+                     new RegExp(state.filterBy.country, 'i').test(stay.address.country)
+                 );
+             return filterdStays;
         },
-        stayToShow({ stay, filterBy }) {
-            const copyStay = JSON.parse(JSON.stringify(stay))
-            return copyStay
-        },
+    
 
         ratedStays(state) {
             return state.filterBy
@@ -31,8 +33,7 @@ export default {
     },
     actions: {
         async loadStays({ commit, state }) {
-            const stays = await stayService.query(state.filterBy)
-
+            const stays = await stayService.query()
             try {
                 commit({ type: 'setStay', stays })
             } catch (err) {
@@ -43,7 +44,7 @@ export default {
         },
         setFilter({ commit, dispatch }, { filterBy }) {
             commit({ type: 'setFilter', filterBy })
-            dispatch({ type: 'loadStays' })
+             dispatch({ type: 'loadStays' })
         },
 
     },
