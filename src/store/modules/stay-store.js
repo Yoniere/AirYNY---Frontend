@@ -8,17 +8,15 @@ export default {
     getters: {
         stays(state) {
             var filterdStays = state.stays;
-             if (state.filterBy.country.length)
-                 return filterdStays.filter((stay) =>
-                     new RegExp(state.filterBy.country, 'i').test(stay.address.country)
-                 );
-             return filterdStays;
+            console.log(state)
+            if (state.filterBy.country.length)
+                return filterdStays.filter((stay) =>
+                    new RegExp(state.filterBy.country, 'i').test(stay.address.country)
+                );
+            return filterdStays;
         },
-    
 
-        ratedStays(state) {
-            return state.filterBy
-        }
+
 
     },
     mutations: {
@@ -28,7 +26,13 @@ export default {
 
         setFilter(state, { filterBy }) {
             state.filterBy = filterBy
+            console.log('state.filterBy', state.filterBy);
         },
+        ratedStays(state, { filterBy }) {
+
+            state.filterBy.country = filterBy
+        }
+
 
     },
     actions: {
@@ -44,8 +48,10 @@ export default {
         },
         setFilter({ commit, dispatch }, { filterBy }) {
             commit({ type: 'setFilter', filterBy })
-             dispatch({ type: 'loadStays' })
+            dispatch({ type: 'loadStays' })
+            console.log('state.filterBy', filterBy);
         },
+
 
     },
 }

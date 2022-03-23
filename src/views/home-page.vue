@@ -9,13 +9,13 @@ import homeList from "../components/home-list.vue";
 export default {
   name: "home-page",
   data() {
-    return {
-      // ratedStays: ["United States", "Spain", "Portugal"],
-    };
+    return {};
   },
   computed: {
     stays() {
-      return this.$store.getters.ratedStays;
+      this.$store.commit({ type: "setStay", stay });
+
+      // this.$store.getters.ratedStays;
     },
   },
   components: {
