@@ -1,9 +1,9 @@
+//SETUP
+@import "setup/_variables.scss";
+@import "setup/_functions.scss";
 // BASICS
-
-  @import "basics/_helpers";
-  @import "basics/base.scss";
-  
-
-
+@import "basics/_helpers";
+@import "basics/_base.scss";
+@import "basics/_layout.scss";
 // components 
 @import "components/stay-list.scss"
