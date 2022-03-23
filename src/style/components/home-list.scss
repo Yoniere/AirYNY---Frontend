@@ -1,13 +1,33 @@
 .home-page-pic {
-  width: 1361px;
-  height: 682px;
-  top: 699px;
-  bottom: 1381px;
-  left: 79px;
-  right: 1440px;
+  margin-top: 220px;
+  max-width: 1361px;
+  max-height: 682px;
+  // top: 699px;
+  // bottom: 1381px;
+  // left: 79px;
+  // right: 1440px;
   border-radius: 12px !important;
+  margin-bottom: 71px;
+}
+.home-list {
+  gap: rem(17px);
+  padding-inline-start: 0px;
+  flex-flow: row wrap;
+  position: relative;
+}
+.home-card-img {
+  width: 300px;
+  height: 220px;
+  border-radius: 13px;
 }
 
+.popular-header {
+  font-size: 33px;
+
+  margin-bottom: 48px;
+}
+.stay-name {
+}
 // height: 518px;
 // width: 1033px;
 // top: 637px;
