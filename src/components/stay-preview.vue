@@ -15,7 +15,6 @@
              <span>{{stay.price }}$ / night </span>
        </div>
      </section>
-
   </li>
   
 </template>
@@ -43,3 +42,4 @@ props:{
 
 
 </style>
+
