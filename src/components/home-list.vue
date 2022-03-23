@@ -1,4 +1,10 @@
 <template>
+  <div class="home-page-pic">
+    <img
+      :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/HomePage`"
+      alt="img rated stay"
+    />
+  </div>
   <h1>Popular Destinations:</h1>
   <ul class="stay-list flex-row">
     <li
@@ -43,7 +49,12 @@
 export default {
   data() {
     return {
-      ratedStays: ["Usa", "Spain", "Portugal"],
+      ratedStays: [
+        "Usa",
+        "Spain",
+        "Portugal",
+        " Australia",
+      ],
       uniqStays: [
         "Italy",
         "Japan",
