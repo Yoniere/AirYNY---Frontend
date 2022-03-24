@@ -2,9 +2,9 @@
   <section>
     <div class="popular-dest-list">
       <h1 class="popular-header">Popular Destinations:</h1>
-      <ul class="stay-list flex-row">
+      <ul class="home-list">
         <li
-          class="stay-card"
+          class="home-card"
           v-for="stay in ratedStays"
           :key="stay._id"
           @click="goToStay(stay)"
@@ -20,10 +20,10 @@
     </div>
 
     <div class="unique-dest-list">
-      <h2>Unique Destinations:</h2>
-      <ul class="stay-list flex-row">
+      <h2 class="popular-header">Unique Destinations:</h2>
+      <ul class="home-list">
         <li
-          class="stay-card"
+          class="home-card"
           v-for="stay in uniqueStays"
           :key="stay._id"
         >

@@ -1,20 +1,18 @@
 <template>
   <main class="main-layout">
-    <div class="home-img-container">
-      <img
-        class="home-page-pic"
-        :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/HomePage`"
-        alt="img rated stay"
-      />
-    </div>
+    <img
+      class="home-page-pic"
+      :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/HomePage`"
+      alt="img rated stay"
+    />
+
     <home-list :stay="ratedStays" />
-    <div class="home-img-container">
-      <img
-        class="home-page-pic"
-        :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648115029/airyny/airbnb-hoste.jpg`"
-        alt="img host"
-      />
-    </div>
+
+    <img
+      class="home-page-pic"
+      :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648115029/airyny/airbnb-hoste.jpg`"
+      alt="img host"
+    />
   </main>
 </template>
 
