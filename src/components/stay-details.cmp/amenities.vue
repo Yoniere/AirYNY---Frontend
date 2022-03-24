@@ -1,29 +1,71 @@
 <template  >
-<section class="main-layout">
-<p>Courtyard view</p>
-<p>Garden view</p>
-<p>Kitchen</p>
-<p>Wifi – 32 Mbps</p>
-<p>Free parking on premises</p>
-</section>
+  <section class="main-layout additional-amenities">
+    <h1 class="title">What this place offers</h1>
+    <div class="amenities flex">
+    <div class="amenity flex">
+      <img
+        class="amenity-img"
+        src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/tv24-icon.png"
+      />
+      <p class="amenity-title">TV</p>
+    </div>
+
+    <div class="amenity flex">
+      <img
+        class="amenity-img"
+        src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/kitchen-icon.png"
+      />
+      <p class="amenity-title">Kitchen</p>
+    </div>
+
+    <div class="amenity flex">
+      <img
+        class="amenity-img"
+        src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/smoke-icon.png"
+      />
+      <p class="amenity-title">Smoking Allowed</p>
+    </div>
+
+    <div class="amenity flex">
+      <img
+        class="amenity-img"
+        src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/wifi32-icon.png"
+      />
+      <p class="amenity-title">Wifi</p>
+    </div>
+
+    <div class="amenity flex">
+      <img
+        class="amenity-img"
+        src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/ac30-icon.png"
+      />
+      <p class="amenity-title">Air conditioning</p>
+    </div>
+
+    <div class="amenity flex">
+      <img
+        class="amenity-img"
+        src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/tv24-icon.png"
+      />
+      <p class="amenity-title">Pets Allowed</p>
+    </div>
+    </div>
+  </section>
 </template>
 
 <script>
-
-
 export default {
-    name: "stayAdditinalInfo",
-      props: {
+  name: "stayAdditinalInfo",
+  props: {
     stay: {
       type: Object,
     },
   },
   data() {
-    return {
-     };
+    return {};
   },
   computed: {},
-}
+};
 </script>
 
 <style></style>

@@ -1,5 +1,5 @@
 <template>
-  <main class="main-layout">
+  <main class="home-page main-layout">
     <img
       class="home-page-pic"
       :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/HomePage`"
