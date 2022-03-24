@@ -13,8 +13,6 @@
     top: 12px;
     right: 12px;
     z-index: 10;
-    
-   
    
 }
 
@@ -26,16 +24,27 @@ gap: rem(4px);
 font-size: rem(14px);
 align-items: baseline;
 padding-top: 10px;
-color: #222;
+color: var(--clr5);
   span{
       color:#717171
   }
 }
 
 .stay-type{
-   
     padding-top: 6px;
 }
+.el-carousel__arrow:hover{
+    // color: var(--clr4)  !important ;
+    background-color: white  !important ;
+    color: var(--clr5)   !important ;    
+    opacity: 0.9;
+  }
+.el-carousel__arrow{
+    background-color: white  !important ;
+    color: var(--clr5)   !important ;    
+    opacity: 0.7;
+  }
+
 
 
 .card-detail{
