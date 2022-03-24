@@ -2369,7 +2369,7 @@ const stays = [{
         "countryCode": "JAP",
         "city": "Hiroshima"
     },
-    "id": "1155885",
+    "id": "1155002",
     "bathrooms": 1,
     "price": 1,
     "securityDeposit": 250,
@@ -2471,7 +2471,7 @@ const stays = [{
         "countryCode": "NOR",
         "city": "Sarpsborg"
     },
-    "id": "11115528",
+    "id": "11115033",
     "bathrooms": 1,
     "price": 200,
     "securityDeposit": null,
@@ -2677,7 +2677,7 @@ const stays = [{
         "countryCode": "NOR",
         "city": "Sarpsborg"
     },
-    "id": "11115528",
+    "id": "11115999",
     "bathrooms": 1,
     "price": 200,
     "securityDeposit": null,
