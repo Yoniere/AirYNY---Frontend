@@ -43,13 +43,11 @@ export default {
             } catch (err) {
                 console.error('Cannot Load stays', err)
                 throw err
-
             }
         },
         setFilter({ commit, dispatch }, { filterBy }) {
             commit({ type: 'setFilter', filterBy })
             dispatch({ type: 'loadStays' })
-            console.log('state.filterBy', filterBy);
         },
 
 
