@@ -1,12 +1,14 @@
 //SETUP
 @import "setup/variables.scss";
 @import "setup/functions.scss";
+@import "setup/typography";
 // BASICS
 @import "basics/helpers";
 @import "basics/base";
 @import "basics/layout";
 // components
 @import "components/home-list";
+@import "components/stay-filter";
 @import "components/stay-list";
 @import "components/stay-card";
 @import "components/app-header";

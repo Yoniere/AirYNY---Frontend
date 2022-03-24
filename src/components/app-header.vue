@@ -1,13 +1,21 @@
 <template>
-  <header class="main-header">
-    <div class="flex space-between header-features main-layout">
+  <section class="main-header">
+      <div class="flex space-between header-features main-layout">
       <div>
-        <router-link to="/" ><img class="logo" src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648055648/airyny/logo1.png"></router-link>
+        <router-link to="/" ><img class="logo flex align-center" src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648055648/airyny/logo1.png"></router-link>
       </div>
-      <div class="flex menu-btns">
-        <span class="places">Places to stay</span>
+        <button class="mini-filter flex space-between align-center clickable hide">
+          "Start to search"
+           <span>   </span>
+           </button>
+
+
+
+      <div class="flex align-center menu-btns">
+        <router-link to="/stay">Explore </router-link>
+        <router-link to="/">Become a Host </router-link>
         <button class="world-btn">
-          <img
+           <img
             class="world-img"
             src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648059841/airyny/world-icon.svg"
           />
@@ -63,14 +71,11 @@
           </svg>
         </button> -->
       </div>
-    </div>
-
+      </div>
     <stay-filter />
 
-    <!-- <v-calendar locale="en" />  -->
-
-    <!-- <v-date-picker v-model="date" /> -->
-  </header>
+  
+  </section>
 </template>
 
 <script>

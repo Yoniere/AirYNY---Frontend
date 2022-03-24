@@ -1,9 +1,12 @@
 <template>
-<main class="main-filter-header main-layout">
-  <section class="filter-header">
-    <div class="search-stay-place">
-      <input type="text" placeholder="Location" v-model="filterBy.country" />|
-
+  <!-- justify-center -->
+  <section class="filter flex align-center main-layot">
+    <div class="main-filter flex space-between align-center">
+      <div class="input-container  flex-col">
+      <el-input type="text" placeholder="Location" v-model="filterBy.country" />
+      </div>
+     
+     <div class="input-container flex-col">
       <span class="demonstration"></span>
       <el-date-picker
         v-model="stayTime"
@@ -12,13 +15,15 @@
         start-placeholder="Check in"
         end-placeholder="Check out"
       >
-      </el-date-picker
-      >|
+      </el-date-picker >
+     </div>
+      <div class="input-container flex-col">
+      <el-input type="text" placeholder="gustes" v-model="filterBy.gusets" />
+      <el-button @click="setFilter">Search</el-button>
+      </div>
 
-      <button @click="setFilter">Search</button>
     </div>
   </section>
-  </main>
 </template>
 
 <script>
@@ -43,6 +48,7 @@ export default {
       },
       filterBy: {
         country: "",
+        gusets:[],
       },
       stayTime: "",
     };

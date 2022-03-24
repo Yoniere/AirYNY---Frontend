@@ -23,9 +23,10 @@
 font-size: rem(14px);
 align-items: baseline;
 padding-top:  rem(10px);
-color: var(--clr5);
+color: $clr5;
   span:nth-child(2) {
-      color:var(--clr5);
+      color:$clr5;
+      margin-right: rem(4px);
     }
   span:nth-child(3) {
         color:#717171;
@@ -42,12 +43,12 @@ color: var(--clr5);
 }
 .el-carousel__arrow:hover{
     background-color: white  !important ;
-    color: var(--clr5)   !important ;    
+    color: $clr5   !important ;    
     opacity: 0.9;
   }
 .el-carousel__arrow{
     background-color: white  !important ;
-    color: var(--clr5)   !important ;    
+    color:$clr5   !important ;    
     opacity: 0.6;
   }
 
