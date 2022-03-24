@@ -1,5 +1,4 @@
 <template>
-  <h1>Explore Page</h1>
   <section class="main-layout">
     <stay-list :stays="stays"> </stay-list>
   </section>
