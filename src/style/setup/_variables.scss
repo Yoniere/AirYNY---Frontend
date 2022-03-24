@@ -1,15 +1,23 @@
 // COLOR PALETTE
 $clr1: #000000;
-$clr2:#FFFFFF;
-$clr3:#DDDDDD;
-$clr4:#FFF7F7;
+$clr2: #ffffff;
+$clr3: #dddddd;
+$clr4: #fff7f7;
 $clr5: #222;
+
+//base
+$tl-font-size: 32px;
+$tl-font-weight: 600;
+$tl-letter-spacing: -0.02em;
+$tl-line-height: 36px;
+
 // LAYOUT
 $layoutPadding: 20px;
+
 // LAYOUT BREAKPOINTS
 $break-narrow: 1200px;
 $break-normal: 1360px;
 $break-wide: 1920px;
-$padded-break-narrow: $break-narrow+$layoutPadding * 2;
-$padded-break-normal: $break-normal+$layoutPadding * 2;
-$padded-break-wide: $break-wide+$layoutPadding * 2;
+$padded-break-narrow: $break-narrow + $layoutPadding * 2;
+$padded-break-normal: $break-normal + $layoutPadding * 2;
+$padded-break-wide: $break-wide + $layoutPadding * 2;
