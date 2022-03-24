@@ -1,6 +1,10 @@
 <template  >
 <section class="main-layout">
-  <h2>Entire home</h2>
+  <div>
+  <h2>
+    <img src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/home24-icon.svg">
+    Entire home</h2>
+    </div>
   <p>You’ll have the apartment to yourself.</p>
   <h2>Great location</h2>
   <p>Recent guests gave the location a 5-star rating.</p>
