@@ -35,6 +35,9 @@
   padding: 0;
   margin: 0;
 }
+.align-center{
+  align-items: center;
+}
 
 // Text
 .vertical-text {
@@ -51,4 +54,7 @@
 
 .clickable{
   cursor: pointer;
+}
+.hide {
+  visibility: hidden;
 }

@@ -1,8 +1,8 @@
 <template>
   <main class="home-page">
-    <section class="main-hero full main-layout2">
-      <h1>Not sure where to go? Perfect.</h1>
-      <button class="gray-box-shadow clickable">
+    <section class="main-hero main-layout2">
+      <h1>Let your curiosity do the booking</h1>
+      <button class="flexible">
         <h3>I'm flexible</h3>
       </button>
     </section>
