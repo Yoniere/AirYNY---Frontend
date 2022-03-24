@@ -15,6 +15,9 @@ export default {
                 );
             return filterdStays;
         },
+        filterBy(state){
+            return state.filterBy
+        }
 
 
 

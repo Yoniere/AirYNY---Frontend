@@ -33,6 +33,7 @@ export default {
 
 }
 
+
  .el-carousel__item{
     overflow: hidden;
     top: 0;
@@ -44,7 +45,9 @@ export default {
  .el-carousel__button{
   z-index: 10;
    border-radius: 30%;
-    width: 0.7em  !important;
+    width: 0.4em  !important;
+    height: 0.4rem !important;
+    border-radius: 40%;
 
 }   
 

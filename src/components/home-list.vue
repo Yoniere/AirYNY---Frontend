@@ -22,19 +22,15 @@
     <div class="unique-dest-list">
       <h2 class="popular-header">Unique Destinations:</h2>
       <ul class="home-list">
-        <li
-          class="home-card"
-          v-for="stay in uniqueStays"
-          :key="stay._id"
-        >
-          <!-- @click="goToUnique(stay)" -->
+        <li class="home-card" v-for="stay in uniqueStays" :key="stay._id" @click="goToUnique(stay)">
+        
           <img
             class="home-card-img"
-            :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/${stay}`"
+            :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/${stay.country}`"
             alt="img unique stay"
           />
 
-          <h3 class="country-name">{{ stay }}</h3>
+          <h3 class="stay-name">{{ stay.country }}</h3>
         </li>
       </ul>
     </div>
@@ -45,21 +41,16 @@
 export default {
   data() {
     return {
-      ratedStays: [
-        "United-States",
-        "Spain",
-        "Portugal",
-        "Australia",
-      ],
+      ratedStays: ["United-States", "Spain", "Portugal", "Australia"],
       uniqueStays: [
-        "Canada",
-        "Japan",
-        "Norway",
-        "Philippines",
-        // { country: "Canada", id: 1155001 },
-        // { country: "Japan", id: 1155002 },
-        // { country: "Norway", id: 11115033 },
-        // { country: "Philippines", id: 11115999 },
+        // "Canada",
+        // "Japan",
+        // "Norway",
+        // "Philippines",
+        { country: "Canada", id: 1155001 },
+        { country: "Japan", id: 1155002 },
+        { country: "Norway", id: 11115033 },
+        { country: "Philippines", id: 11115999 },
       ],
     };
   },
@@ -75,17 +66,10 @@ export default {
       this.$router.push(`/stay`);
     },
 
-    // goToUnique(stay) {
-    //   console.log("stay", stay);
-    //   // const filterBy = { country: stay };
-    //   // console.log("filterBy", filterBy);
-
-    //   // this.$store.dispatch({
-    //   //   type: "setFilter",
-    //   //   filterBy: JSON.parse(JSON.stringify(filterBy)),
-
-    //   this.$router.push(`/stay/${this.stay.id}`);
-    // },
+    goToUnique(stay) {
+      console.log("stay", stay);
+       this.$router.push(`/stay/${stay.id}`);
+    },
   },
 };
 </script>
