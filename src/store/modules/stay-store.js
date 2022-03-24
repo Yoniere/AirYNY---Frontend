@@ -8,7 +8,7 @@ export default {
     getters: {
         stays(state) {
             var filterdStays = state.stays;
-            console.log(state)
+
             if (state.filterBy.country.length)
                 return filterdStays.filter((stay) =>
                     new RegExp(state.filterBy.country, 'i').test(stay.address.country)
@@ -31,9 +31,12 @@ export default {
         ratedStays(state, { filterBy }) {
 
             state.filterBy.country = filterBy
+        },
+
+        uniqueStays(state, { filterBy }) {
+
+            state.filterBy.country = filterBy
         }
-
-
     },
     actions: {
         async loadStays({ commit, state }) {
