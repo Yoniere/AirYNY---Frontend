@@ -6,6 +6,7 @@
 //     height: 385px;
 // }
 .stay-preview-gallery{
+    position: relative;
   img{
          border-radius: 12px;
          width: 100%;
@@ -14,14 +15,31 @@
   }
 }
 .icon-heart {
-    margin-bottom: -1.5rem;
+    position: absolute;
+    top: 12px;
+    right: 12px;
     z-index: 10;
+    
+   
+   
 }
+.isLiked{
+    fill: #ff385c !important ;
+} 
 .card-rate{
-gap: rem(8px);
+gap: rem(4px);
 font-size: rem(14px);
-align-items: baseline;
-margin-top: rem(17px);
+align-items: center;
+padding-top: 10px;
+color: #222;
+  span{
+      color:#717171
+  }
+}
+
+.stay-type{
+   
+    padding-top: 6px;
 }
 
 
@@ -31,4 +49,17 @@ margin-top: rem(17px);
     span{
         margin-top: rem(17px);
     }
+}
+
+.stay-preview-info{
+    line-height: 17px;
+
+}
+
+.stay-name{
+    padding-top: 2px;
+}
+
+.stay-price{
+    padding-top: 4px;
 }
