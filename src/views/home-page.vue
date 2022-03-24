@@ -1,18 +1,16 @@
 <template>
-  <main class="home-page main-layout">
-    <img
-      class="home-page-pic"
-      :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/HomePage`"
-      alt="img rated stay"
-    />
+  <main class="home-page">
+    <section class="main-hero full main-layout2">
+      <h1>Not sure where to go? Perfect.</h1>
+      <button class="gray-box-shadow clickable">
+        <h3>I'm flexible</h3>
+      </button>
+    </section>
 
     <home-list :stay="ratedStays" />
-
-    <img
-      class="home-page-pic"
-      :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648115029/airyny/airbnb-hoste.jpg`"
-      alt="img host"
-    />
+    <section class="host-container">
+      <h1>Become a host</h1>
+    </section>
   </main>
 </template>
 
