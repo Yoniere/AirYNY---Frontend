@@ -1,5 +1,6 @@
 <template  >
-<section class="main-layout">
+<section class="main-layout stay-description">
+  <h1>{{stay.name}} - description</h1>
   {{stay.summary}}
 </section>
 </template>
