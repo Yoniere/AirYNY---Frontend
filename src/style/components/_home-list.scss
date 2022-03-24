@@ -1,30 +1,55 @@
 .home-page-pic {
-  border-radius: 12px !important;
+  border-radius: 13px;
+  object-fit: cover;
+  margin-top: 220px;
+  max-width: 1362px;
+  max-height: 680px;
+  margin-bottom: 90px;
 }
 .home-list {
-  gap: rem(17px);
-  padding-inline-start: 0px;
-  flex-flow: row wrap;
-  position: relative;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(320px, 1fr)
+  );
+  // column-gap: 24px;
+  row-gap: 20px;
+  padding: 0px;
+  // padding-top: 16px;
+  // padding-bottom: 250px;
 }
 
-.home-img-container {
-  margin-top: 220px;
-  max-width: 1361px;
-  max-height: 682px;
-  margin-bottom: 103px;
-  padding-left: 0px;
+.popular-dest-list {
+  padding: 0px;
+  margin-bottom: 68px;
+}
+// .home-img-container {
+//   margin-top: 220px;
+//   max-width: 1361px;
+//   max-height: 682px;
+
+//   // margin-bottom: 103px;
+//   // padding-left: 0px;
+// }
+
+.home-card {
 }
 .home-card-img {
-  width: 300px;
+  width: 319px;
   height: 220px;
   border-radius: 13px;
 }
 
 .popular-header {
-  font-size: 33px;
-  margin-bottom: 48px;
+  font-size: 42px;
+  line-height: 47px;
+  margin-top: 0px;
+  margin-bottom: 51px;
 }
 
 .stay-name {
+  margin-top: 18px;
+  line-height: 39px;
+  padding: 0px;
+  font-size: 35px;
 }
