@@ -49,6 +49,14 @@
         </div>
       </li>
     </ul>
+
+    <div class="home-img-container">
+      <img
+        class="home-page-pic"
+        :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648115029/airyny/airbnb-hoste.jpg`"
+        alt="img host"
+      />
+    </div>
   </section>
 </template>
 
@@ -56,7 +64,12 @@
 export default {
   data() {
     return {
-      ratedStays: ["Usa", "Spain", "Portugal", "Australia"],
+      ratedStays: [
+        "United-States",
+        "Spain",
+        "Portugal",
+        "Australia",
+      ],
       uniqStays: [
         "Canada",
         "Japan",

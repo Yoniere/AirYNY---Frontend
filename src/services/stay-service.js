@@ -77,7 +77,7 @@ const stays = [{
     "host": {
         "_id": "622f3403e36c59e6164faf93",
         "fullname": "Patty And Beckett",
-        "location": "Eureka, California, United States",
+        "location": "Eureka, California, United-States",
         "about": "Adventurous couple loves to travel :)",
         "responseTime": "within an hour",
         "thumbnailUrl": "https://a0.muscache.com/im/pictures/542dba0c-eb1b-4ab3-85f3-94d3cc8f87a4.jpg?aki_policy=profile_small",
@@ -86,8 +86,8 @@ const stays = [{
         "id": "36133410"
     },
     "address": {
-        "street": "Lahaina, HI, United States",
-        "country": "United States",
+        "street": "Lahaina, HI, United-States",
+        "country": "United-States",
         "location": {
             "lat": -156.6917,
             "lan": 20.93792
@@ -656,7 +656,7 @@ const stays = [{
     "host": {
         "_id": "622f3402e36c59e6164fac46",
         "fullname": "Shaila & Alex",
-        "location": "New York, New York, United States",
+        "location": "New York, New York, United-States",
         "about": "I'm a journalist from Texas and my husband is an artist from the Ukraine by way of Kansas City. We recently welcomed our son into the world. (Don't worry, he sleeps all night.)  We love exploring New York, especially Brooklyn, from the Brooklyn Flea to tiny taco joints to the Botanic Gardens to performance art in Bushwick storefronts (really). We've both spent a lot of time in the South, so hospitality is second nature to us. ",
         "responseTime": "within an hour",
         "thumbnailUrl": "https://a0.muscache.com/im/users/6334250/profile_pic/1368287493/original.jpg?aki_policy=profile_small",
@@ -665,8 +665,8 @@ const stays = [{
         "id": "6334250"
     },
     "address": {
-        "street": "Brooklyn, NY, United States",
-        "country": "United States",
+        "street": "Brooklyn, NY, United-States",
+        "country": "United-States",
         "location": {
             "lat": -73.92922,
             "lan": 40.68683
@@ -1312,7 +1312,7 @@ const stays = [{
     "host": {
         "_id": "622f3405e36c59e6164fb914",
         "fullname": "Kevin",
-        "location": "New York, New York, United States",
+        "location": "New York, New York, United-States",
         "about": "Welcome Everyone! Thank you for stopping by. \r\n\r\nI was born and raised in Manhattan and I am here to help  share the New York City Experience with others through Airbnb!  I am easy to connect with and very reachable and always willing to interact with people. \r\n\r\nI am big on cleanliness and hospitality. I strive on making Guests feel as comfortable as possible. \r\n\r\nI hope you would like to get a chance to visit my location and enjoy the hosting I provide. If you have any questions/ comments, feel free to contact me. \r\n",
         "responseTime": "within a few hours",
         "thumbnailUrl": "https://a0.muscache.com/im/pictures/61b62b90-e38b-4609-a3c4-ff5ff06b5c08.jpg?aki_policy=profile_small",
@@ -1321,8 +1321,8 @@ const stays = [{
         "id": "24800102"
     },
     "address": {
-        "street": "New York, NY, United States",
-        "country": "United States",
+        "street": "New York, NY, United-States",
+        "country": "United-States",
         "location": {
             "lat": -73.93955,
             "lan": 40.79733
@@ -2128,6 +2128,706 @@ const stays = [{
     ]
 },
 
+
+{
+    "name": "Canadian Rockies at moriane Lake",
+    "summary": "Whilst the world is on standstill, and any dreams we have of visiting some of the most glorious parts of this planet remain just that, now is a great time to really invest in some holiday planning. The future may not be exactly as it was, but the dense forests, snowy mountains, and other beautiful places in Canada aren’t going anywhere in a hurry.",
+    "interaction": ".  Guests stay in a separate,  private apartment and we make every effort to not disturb you unless absolutely necessary. We live above the apartment and will be happy to accommodate any reasonable requests",
+    "houseRules": "A/C may be used only when you are at home.  Please respect our delicate old pipes (no grease down the drain, etc.).  No smoking on premises. Guests are expected to wash take out their trash and recycling as needed. Guests are expected to wash and put away dishes prior to check-out (apartment has a dishwasher, soap packets are under the sink) Longer term guests may wish to launder the sheets and towels during their stay. This service is not provided. (There are two sets of bed linens provided and two sets of towels for each adult guest.) Owners may occasionally need to go through the apartment to access the basement. We shall endeavor to give advance notice of this and find a mutually convenient time.  $50 fee if keys are lost or not returned.",
+    "propertyType": "Apartment",
+    "roomType": "Entire home/apt",
+    "bedType": "Real Bed",
+    "cancellationPolicy": "strict_14_with_grace_period",
+    "capacity": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "numOfReviews": 180,
+    "amenities": [
+        "Air conditioning",
+        "Kitchen",
+        "Heating",
+        "Family/kid friendly",
+        "Fire extinguisher",
+        "Essentials",
+        "Shampoo",
+        "24-hour check-in",
+        "Hangers",
+        "Hair dryer",
+        "Iron",
+        "translation missing: en.hosting_amenity_49",
+        "Self check-in",
+        "Lockbox"
+    ],
+    "host": {
+        "_id": "622f3402e36c59e6164fac46",
+        "fullname": "Shaila & Alex",
+        "location": "New York, New York, United-States",
+        "about": "I'm a journalist from Texas and my husband is an artist from the Ukraine by way of Kansas City. We recently welcomed our son into the world. (Don't worry, he sleeps all night.)  We love exploring New York, especially Brooklyn, from the Brooklyn Flea to tiny taco joints to the Botanic Gardens to performance art in Bushwick storefronts (really). We've both spent a lot of time in the South, so hospitality is second nature to us. ",
+        "responseTime": "within an hour",
+        "thumbnailUrl": "https://a0.muscache.com/im/users/6334250/profile_pic/1368287493/original.jpg?aki_policy=profile_small",
+        "pictureUrl": "https://a0.muscache.com/im/users/6334250/profile_pic/1368287493/original.jpg?aki_policy=profile_x_medium",
+        "isSuperhost": true,
+        "id": "6334250"
+    },
+    "address": {
+        "street": " Alberta,Canada",
+        "country": " Canada",
+        "location": {
+            "lat": -73.92922,
+            "lan": 40.68683
+        },
+        "countryCode": "CA",
+        "city": "Alberta"
+    },
+    "id": "1155001",
+    "bathrooms": 1,
+    "price": 79,
+    "securityDeposit": 250,
+    "cleaningFee": 80,
+    "extraPeople": 0,
+    "reviewScores": {
+        "accuracy": 10,
+        "cleanliness": 10,
+        "checkin": 10,
+        "communication": 10,
+        "location": 9,
+        "value": 10,
+        "rating": 93
+    },
+    "reviews": [
+        {
+            "at": "2013-06-04T04:00:00.000Z",
+            "by": {
+                "_id": "622f3403e36c59e6164fb048",
+                "fullname": "Jeff",
+                "imgUrl": "https://robohash.org/6443424?set=set1",
+                "id": "6443424"
+            },
+            "txt": "Great, quiet place to stay. It is great having Shaila just upstairs to answer any questions, and especially to give great tips on places to go. "
+        },
+        {
+            "at": "2013-06-13T04:00:00.000Z",
+            "by": {
+                "_id": "622f3406e36c59e6164fba55",
+                "fullname": "Carla",
+                "imgUrl": "https://robohash.org/6121036?set=set1",
+                "id": "6121036"
+            },
+            "txt": "Shaila and Alex are wonderful hosts really, they helped us every time we needed with directions, the internet, the supermarket, the post office !!! (thank you guys !!!).The place and the neighbord are great, 8 blocks far from the apartment you have the subway and 30 min. later you are in the island, we moved early in the morning, late at night (sometimes we came back at 2am) and everything turned out great.Definetly I would come back to their apartment, It's bigger than ours in Argentina !!! I look forward to stay there again and, next time, go out with you guys and have a beer or anything.\r\nBye !!! - Guido and Carla - "
+        },
+        {
+            "at": "2013-06-20T04:00:00.000Z",
+            "by": {
+                "_id": "622f3407e36c59e6164fbf76",
+                "fullname": "Dan",
+                "imgUrl": "https://robohash.org/6460525?set=set1",
+                "id": "6460525"
+            },
+            "txt": "Shaila and Alex were incredibly accommodating and me and my girlfriend enjoyed our stay thoroughly. Highly recommended. The place was very private and homely. I didn't really know anything about New York and was nervous about staying in bed stuy but it was safe and friendly everywhere I went. Very easy to get to the airport and manhattan by train."
+        },
+
+        {
+            "at": "2013-11-10T05:00:00.000Z",
+            "by": {
+                "_id": "622f3406e36c59e6164fb9f9",
+                "fullname": "Pamela",
+                "imgUrl": "https://robohash.org/8145538?set=set1",
+                "id": "8145538"
+            },
+            "txt": "Was an amazing stay, we charm your apartment and were very friendly. Thank you for all your attentions."
+        },
+        {
+            "at": "2013-11-14T05:00:00.000Z",
+            "by": {
+                "_id": "622f3402e36c59e6164fae8c",
+                "fullname": "Lindsay",
+                "imgUrl": "https://robohash.org/979464?set=set1",
+                "id": "979464"
+            },
+            "txt": "Shaila and Alex are wonderful hosts - very accommodating, friendly, and easy to communicate with. We found it fairly easy to get around the city from Bed-Stuy, even with the weekend subway schedule. The apartment is lovely, bright, and very clean, and overall it was a pleasure to stay for a few nights. It's been recently renovated and thoughtfully decorated - we felt quite comfortable during our stay and appreciated the art and other nice touches throughout. I'd highly recommend staying with Shaila and Alex."
+        },
+        {
+            "at": "2013-12-01T05:00:00.000Z",
+            "by": {
+                "_id": "622f3407e36c59e6164fbf31",
+                "fullname": "Nadia",
+                "imgUrl": "https://robohash.org/1133198?set=set1",
+                "id": "1133198"
+            },
+            "txt": "Great apartment, really spacious & has a lovely homely feel to it. Alex & Shaila were very helpful & welcoming, bed was really comfortable, good transport links, only a 20 min subway ride into manhattan, the area is really nice & quiet, unlike manhattan.\r\n\r\nThanks Alex & Shaila for having us ! Enjoy the Gin !! "
+        },
+        {
+            "at": "2014-01-04T05:00:00.000Z",
+            "by": {
+                "_id": "622f3407e36c59e6164fbdab",
+                "fullname": "Barbara",
+                "imgUrl": "https://robohash.org/8310069?set=set1",
+                "id": "8310069"
+            },
+            "txt": "The apartment is spacious and well furnished, the kitchen very well equipped and the bed very confortable. Sheila and alex were friendly and the comunication with them was easy.the neighborhood is very nice with typical town house, and very quite. Also the people Who lives there was very kind and helped us on many occasion. \nDefinitely raccommend you to spend your holidays in NY in the lovely apartment of sheila&alex! "
+        },
+        {
+            "at": "2014-03-11T04:00:00.000Z",
+            "by": {
+                "_id": "622f3404e36c59e6164fb2c1",
+                "fullname": "Chris",
+                "imgUrl": "https://robohash.org/9935301?set=set1",
+                "id": "9935301"
+            },
+            "txt": "We had a great time staying with Alex & Shaila. The apartment is just as depicted in the photos. Lots of space and very comfortable.  The house is located really close to buses and subway which was very convenient. The neighbourhood is fine with a couple of nice places to eat nearby.\r\n\r\nShaila and alex were really friendly and easy to communicate with if needed.  \r\n\r\nWe stayed for 2 months and would recommend it to others who are looking for a place in Brooklyn."
+        },
+        {
+            "at": "2014-03-26T04:00:00.000Z",
+            "by": {
+                "_id": "622f3405e36c59e6164fb8fc",
+                "fullname": "Melody",
+                "imgUrl": "https://robohash.org/11278447?set=set1",
+                "id": "11278447"
+            },
+            "txt": "Upon arriving, Alex was very helpful giving directions to the location. , he gave us a brief overview of everything, and let us settle in. It was a very cozy place to come back to after long days out exploring New York. The subways are very close. We preferred heading up to broadway to catch our trains (Depending where we were going) only because it was much more pleasant on sunny days to be above grounds if we could. It was great to have all amenities available, and at such a reasonable price.The only thing I will mention is that if you do plan on sleeping in- it might not happen as they do have a newborn who you can sometimes hear in the morning if you are a light sleeper.\r\nOverall,  I would recommend you stay at Alex & Shailas airbnb! It was a great and pleasant environment."
+        },
+        {
+            "at": "2014-04-10T04:00:00.000Z",
+            "by": {
+                "_id": "622f3404e36c59e6164fb41e",
+                "fullname": "Carlos",
+                "imgUrl": "https://robohash.org/13281573?set=set1",
+                "id": "13281573"
+            },
+            "txt": "We felt very happy those days at the home of Alex and Shaila. It is a very warm and comfortable place, it was like being at home."
+        },
+        {
+            "at": "2014-04-21T04:00:00.000Z",
+            "by": {
+                "_id": "622f3403e36c59e6164fb087",
+                "fullname": "Sergei",
+                "imgUrl": "https://robohash.org/13487808?set=set1",
+                "id": "13487808"
+            },
+            "txt": "Great host. Very clean, nice place and friendly people. Thanks again!"
+        }
+    ],
+    "_id": "622f337a75c7d36e498aaafb",
+    "imgUrls": [
+        "canada1.jpeg",
+        "canada2.jpeg",
+        "canada3.jpeg",
+        "canada4.jpeg",
+        "canada5.jpeg"
+    ]
+},
+
+
+{
+    "name": " Studio apartment in central Sarpsborg",
+    "summary": "Entire rental unit hosted by Trine-Lise",
+    "interaction": "Private studio apartment located in the central residential area of Sarpsborg. Only 300 meters from the town centre. Bus and train station in walking distance. Close to Kulåsparken (public park), Tunevannet (lake), Glomma (river), shopping malls, etc. The coast is a 10 minute drive away.",
+    "houseRules": "A/C may be used only when you are at home.  Please respect our delicate old pipes (no grease down the drain, etc.).  No smoking on premises. Guests are expected to wash take out their trash and recycling as needed. Guests are expected to wash and put away dishes prior to check-out (apartment has a dishwasher, soap packets are under the sink) Longer term guests may wish to launder the sheets and towels during their stay. This service is not provided. (There are two sets of bed linens provided and two sets of towels for each adult guest.) Owners may occasionally need to go through the apartment to access the basement. We shall endeavor to give advance notice of this and find a mutually convenient time.  $50 fee if keys are lost or not returned.",
+    "propertyType": "Apartment",
+    "roomType": "Entire home/apt",
+    "bedType": "Real Bed",
+    "cancellationPolicy": "strict_14_with_grace_period",
+    "capacity": 2,
+    "bedrooms": 4,
+    "beds": 3,
+    "numOfReviews": 100,
+    "amenities": [
+        "wifi",
+        "Air conditioning",
+        "Kitchen",
+        "Heating",
+        "Family/kid friendly",
+        "Fire extinguisher",
+        "Essentials",
+        "Shampoo",
+        "24-hour check-in",
+        "Hangers",
+        "Hair dryer",
+        "Iron",
+        "translation missing: en.hosting_amenity_49",
+        "Self check-in",
+        "Lockbox"
+    ],
+    "host": {
+        "_id": "622f3402e36c59e6164fac46",
+        "fullname": "Shaila & Alex",
+        "location": "New York, New York, United-States",
+        "about": "I'm a journalist from Texas and my husband is an artist from the Ukraine by way of Kansas City. We recently welcomed our son into the world. (Don't worry, he sleeps all night.)  We love exploring New York, especially Brooklyn, from the Brooklyn Flea to tiny taco joints to the Botanic Gardens to performance art in Bushwick storefronts (really). We've both spent a lot of time in the South, so hospitality is second nature to us. ",
+        "responseTime": "within an hour",
+        "thumbnailUrl": "https://a0.muscache.com/im/users/6334250/profile_pic/1368287493/original.jpg?aki_policy=profile_small",
+        "pictureUrl": "https://a0.muscache.com/im/users/6334250/profile_pic/1368287493/original.jpg?aki_policy=profile_x_medium",
+        "isSuperhost": true,
+        "id": "6334250"
+    },
+    "address": {
+        "street": "  730-0022 Hiroshima, Hiroshima, Naka-ku Kanayamacho 2-16,japan",
+        "country": " Japan",
+        "location": {
+            "lat": 35.652832,
+            "lan": 139.839478
+        },
+        "countryCode": "JAP",
+        "city": "Hiroshima"
+    },
+    "id": "1155885",
+    "bathrooms": 1,
+    "price": 1,
+    "securityDeposit": 250,
+    "cleaningFee": 80,
+    "extraPeople": 0,
+    "reviewScores": {
+        "accuracy": 10,
+        "cleanliness": 10,
+        "checkin": 10,
+        "communication": 10,
+        "location": 9,
+        "value": 10,
+        "rating": 93
+    },
+    "reviews": [
+        {
+            "at": "2013-06-04T04:00:00.000Z",
+            "by": {
+                "_id": "622f3403e36c59e6164fb048",
+                "fullname": "Jeff",
+                "imgUrl": "https://robohash.org/6443424?set=set1",
+                "id": "6443424"
+            },
+            "txt": "Great, quiet place to stay. It is great having Shaila just upstairs to answer any questions, and especially to give great tips on places to go. "
+        },
+
+        {
+            "at": "2014-04-10T04:00:00.000Z",
+            "by": {
+                "_id": "622f3404e36c59e6164fb41e",
+                "fullname": "Carlos",
+                "imgUrl": "https://robohash.org/13281573?set=set1",
+                "id": "13281573"
+            },
+            "txt": "We felt very happy those days at the home of Alex and Shaila. It is a very warm and comfortable place, it was like being at home."
+        },
+
+    ],
+    "_id": "622f337a75c7d36e498aaafb",
+    "imgUrls": [
+        "japan2.jpeg",
+        "japan3.jpeg",
+        "japan4.jpeg",
+
+    ]
+},
+
+{
+    "name": "DOUBLE ROOM IN THE HEART OF BCN",
+    "summary": "Lit room with balcony. The apartment is in the center, just meters from the Palau de la Musica Catalana. Well connected, a few minutes from Las Ramblas and the Born. Very close to the beach and Ciutadella Park",
+    "interaction": "Te proporcionaré sábanas y toallas, para que no te preocupes de traerlas tú.",
+    "houseRules": "-Mantener el espacio limpio y recogido. -No está permitido invitar a gente al apartamento. -Respetar el descanso de los vecinos. -No hacer ruido en la escalera. Apelo al sentido común de los inquilinos para una convivencia relajada y fluída. No hay normas en la casa más allá de las que dicte el sentido común.",
+    "propertyType": "Apartment",
+    "roomType": "Private room",
+    "bedType": "Real Bed",
+    "cancellationPolicy": "strict_14_with_grace_period",
+    "capacity": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "numOfReviews": 108,
+    "amenities": [
+        "Wifi",
+        "Kitchen",
+        "Paid parking off premises",
+        "Smoking allowed",
+        "Heating",
+        "Washer",
+        "Essentials",
+        "Shampoo",
+        "Lock on bedroom door",
+        "Hangers",
+        "Hair dryer",
+        "Iron",
+        "translation missing: en.hosting_amenity_49",
+        "translation missing: en.hosting_amenity_50",
+        "Hot water",
+        "Bed linens",
+        "Host greets you"
+    ],
+    "host": {
+        "_id": "622f3404e36c59e6164fb63a",
+        "fullname": "Isabel",
+        "location": "Barcelona, Catalonia, Spain",
+        "about": "Mi nombre es Isabel, pero me llamo Isa. Nací en Vigo (Galicia). Con 20 años me fuí a vivir a Madrid con intención de ser actriz; ahora resido en Barcelona desde los 28. Soy una joven de 43 años, cantante de Jazz. Me gusta salir, pero también quedarme en casa a leer o ver alguna buena película.\r\nHe compartido piso muchos años, pero estas serán mis primeras experiencias como anfitriona.\r\n\r\n¡Sed bienvenidos!\r\n",
+        "responseTime": "within an hour",
+        "thumbnailUrl": "https://a0.muscache.com/im/pictures/72a579ce-37d7-466e-9c25-9876ee8de037.jpg?aki_policy=profile_small",
+        "pictureUrl": "https://a0.muscache.com/im/pictures/72a579ce-37d7-466e-9c25-9876ee8de037.jpg?aki_policy=profile_x_medium",
+        "isSuperhost": false,
+        "id": "35858044"
+    },
+    "address": {
+        "street": "Sarpsborg, Østfold, Norway ",
+        "country": "Norway",
+        "location": {
+            "lat": 59.284073,
+            "lan": 11.109403
+
+        },
+        "countryCode": "NOR",
+        "city": "Sarpsborg"
+    },
+    "id": "11115528",
+    "bathrooms": 1,
+    "price": 200,
+    "securityDeposit": null,
+    "cleaningFee": 25,
+    "extraPeople": 20,
+    "reviewScores": {
+        "accuracy": 9,
+        "cleanliness": 9,
+        "checkin": 9,
+        "communication": 10,
+        "location": 10,
+        "value": 9,
+        "rating": 90
+    },
+    "reviews": [{
+        "at": "2016-02-24T05:00:00.000Z",
+        "by": {
+            "_id": "622f3405e36c59e6164fb95e",
+            "fullname": "Pierre",
+            "imgUrl": "https://robohash.org/58999873?set=set1",
+            "id": "58999873"
+        },
+        "txt": "Una instancia muy céntrica en uno de estos edificios antiguos del Barri Gotic. No es poco haber conseguido estar en el centro de Barcelona en la misma semana del Mobile World Congress. Isabel es un encanto de anfitrión."
+    },
+    {
+        "at": "2016-03-24T04:00:00.000Z",
+        "by": {
+            "_id": "622f3403e36c59e6164fafa6",
+            "fullname": "Isabelle",
+            "imgUrl": "https://robohash.org/26247027?set=set1",
+            "id": "26247027"
+        },
+        "txt": "The host canceled this reservation 2 days before arrival. This is an automated posting."
+    },
+
+    {
+        "at": "2016-04-25T04:00:00.000Z",
+        "by": {
+            "_id": "622f3401e36c59e6164fabad",
+            "fullname": "Maria Isabel",
+            "imgUrl": "https://robohash.org/60712702?set=set1",
+            "id": "60712702"
+        },
+        "txt": "Isabel est accueillante. L'appartement est charmant, correspond aux images. Très bien situé, à côté de Palau de la musica, dans un vieil immeuble plein de charme un peu désuet. Amateurs de confort et décor \"tendance\" s'abstenir. Chez Isabel on se trouve dans une authentique ambiance d'artiste. Merci beaucoup, je garderai le souvenir de cet accueil lié aux souvenirs de Barcelone."
+    },
+
+    {
+        "at": "2016-05-16T04:00:00.000Z",
+        "by": {
+            "_id": "622f3405e36c59e6164fb715",
+            "fullname": "Jeremy",
+            "imgUrl": "https://robohash.org/53581405?set=set1",
+            "id": "53581405"
+        },
+        "txt": "Isabel's place was perfect. It was cozy, clean and quiet. She was a very gracious host and was always there to answer my questions about getting around Barcelona. "
+    },
+    {
+        "at": "2016-05-25T04:00:00.000Z",
+        "by": {
+            "_id": "622f3403e36c59e6164fb0b2",
+            "fullname": "Mei-Lin",
+            "imgUrl": "https://robohash.org/40994614?set=set1",
+            "id": "40994614"
+        },
+        "txt": "Great room with lots of sunlight in a charming apartment. Fantastic location."
+    },
+
+    {
+        "at": "2016-06-16T04:00:00.000Z",
+        "by": {
+            "_id": "622f3404e36c59e6164fb623",
+            "fullname": "Natasha",
+            "imgUrl": "https://robohash.org/25592253?set=set1",
+            "id": "25592253"
+        },
+        "txt": "SUPER cute place with lots of charm!! Perfect for my first trip to Barcelona:) Amazing location! Gracias Isabel for helping me find last minute accommodations! \r\n"
+    },
+
+    {
+        "at": "2016-06-28T04:00:00.000Z",
+        "by": {
+            "_id": "622f3403e36c59e6164fb0af",
+            "fullname": "Monika",
+            "imgUrl": "https://robohash.org/11966400?set=set1",
+            "id": "11966400"
+        },
+        "txt": "Isabel was good host. Location is perfect."
+    },
+    {
+        "at": "2016-07-03T04:00:00.000Z",
+        "by": {
+            "_id": "622f3403e36c59e6164fb23a",
+            "fullname": "Margaux",
+            "imgUrl": "https://robohash.org/78589438?set=set1",
+            "id": "78589438"
+        },
+        "txt": "Super piso, super barrio! \r\nThe guest welcomed us well."
+    },
+    {
+        "at": "2016-07-11T04:00:00.000Z",
+        "by": {
+            "_id": "622f3403e36c59e6164fb21c",
+            "fullname": "Elisabeth",
+            "imgUrl": "https://robohash.org/4965921?set=set1",
+            "id": "4965921"
+        },
+        "txt": "It was really nice to stay at Isabels place. She is very uncomplicated and nice and the flat is super located for exploring bcn. For me it was perfect!:)"
+    },
+
+    {
+        "at": "2016-07-30T04:00:00.000Z",
+        "by": {
+            "_id": "622f3403e36c59e6164fb1ac",
+            "fullname": "Liliane",
+            "imgUrl": "https://robohash.org/27060110?set=set1",
+            "id": "27060110"
+        },
+        "txt": "Isa is a very lovely, sensitive, artistic and gorgeous person. She is respectful of one's privacy but always ready to give support when asked upon. Be it in spoken or written form I always got my answers from her within no times. She also proofed to be very flexible in terms of arrival and departure times which I appreciated a great deal. If you are a fan of jazz music (like I am), make sure to double check ahead of time about her current concert dates so as not to miss your hostess on stage like I did (grumble ;-)).\n\nThe room I occupied was the smaller one of two that Isabel rents out. So if her flat is fully rented out there can be a maximum of 4 guests plus your hostess in the flat, which can cause some bathroom jam, especially during the hot and humid summer times, when the need for a cool shower is inherent to everyone's desire. \nMy room was as depicted. If you plan on using it for double occupancy, I recommend taking Isa's larger room (unless the two of you are very much in love and want to cuddle up close ;-)). Also, if you need a table for writing, ask for the larger room as well, which comes along with one.\nThe flat itself is absolutely enchanting and furnished with love and an artistic eye to details. It's location is a dream for touristic explorations with anything within walking distance. \nTherefore, I can easily recommend both Isabel and her flat to anyone wishing to immerge himself into the local customs and get a good doze of what it is like \"to live like a true Barcelonian\".  \n\nQuerida Isa, muchas gracias por tu hospedalid génial! Volveré a ciencia cierta!\nSaludos y besos\nLiliana"
+    },
+
+    {
+        "at": "2016-08-26T04:00:00.000Z",
+        "by": {
+            "_id": "622f3406e36c59e6164fbcb4",
+            "fullname": "Mina",
+            "imgUrl": "https://robohash.org/121053?set=set1",
+            "id": "121053"
+        },
+        "txt": "I was happy to experience Isabels home as described here. It was spacious, bright and original, with lovely colours and beautiful artwork surrounding me in every room. Isabel is a creative, sensitive and respectful person, with an open mind- yet she has the necessary boundaries that are required to organize an environment where so many different people are going to stay and hopefully enjoy. \nThe street itself is very lively, but the noises didn't bother me at all as i could easily block them out with earplugs. The location could not have been more sentral, still it's on \"the right side\" of the Rambla, where you can find more independent shops, restaurants, cafes and bars compared to the same leveled streets towards Raval. It is an old and very charming building, so if you want an minimalistic experience with cold, stainless steel and elevators this is not the place for you! And perhaps you are not the right person for this place either ;) I had to leave earlier due to illness, and was so sorry i couldn't stay throughout the whole month as planned. Hope to be seeing Isabel and her welcoming surroundings again one day "
+    },
+    {
+        "at": "2016-09-07T04:00:00.000Z",
+        "by": {
+            "_id": "622f3405e36c59e6164fb85f",
+            "fullname": "Jessy",
+            "imgUrl": "https://robohash.org/2935800?set=set1",
+            "id": "2935800"
+        },
+        "txt": "Isabel was an amazing host. She is incredible and super considerate. The apartment was by no means the best location in Barcelona, I walked everywhere and never needed a map or a taxi. Arriving late at night was always fine and there was never any disturbing street noise. The block is super cute with awesome little shops that are open during the day. Best neighborhood to be in and incredible city ! Muchísima gracias Isabel, estas invitada a visitar Los Ángeles, todo fue increíble !❤️"
+    }
+    ],
+    "_id": "622f337a75c7d36e498aaafd",
+    "imgUrls": [
+        "norway1.jpeg",
+        "norway2.jpeg",
+        "norway3.jpeg",
+        "norway4.jpeg",
+
+    ]
+},
+
+{
+    "name": "A Traveler's Pad in Romantic McKinley Hill Taguig",
+    "summary": "Entire condominium (condo) hosted by Clarisse",
+    "interaction": "Dive into the studio's premium mattress and hotel-grade sheets and get absorbed by its comfort. Stay lazy at bed all day, read a book, be inspired to travel, watch Netflix and just chill and relax.",
+    "houseRules": "-Mantener el espacio limpio y recogido. -No está permitido invitar a gente al apartamento. -Respetar el descanso de los vecinos. -No hacer ruido en la escalera. Apelo al sentido común de los inquilinos para una convivencia relajada y fluída. No hay normas en la casa más allá de las que dicte el sentido común.",
+    "propertyType": "Apartment",
+    "roomType": "Private room",
+    "bedType": "Real Bed",
+    "cancellationPolicy": "strict_14_with_grace_period",
+    "capacity": 2,
+    "bedrooms": 1,
+    "beds": 1,
+    "numOfReviews": 108,
+    "amenities": [
+        "Wifi",
+        "Kitchen",
+        "Paid parking off premises",
+        "Smoking allowed",
+        "Heating",
+        "Washer",
+        "Essentials",
+        "Shampoo",
+        "Lock on bedroom door",
+        "Hangers",
+        "Hair dryer",
+        "Iron",
+        "translation missing: en.hosting_amenity_49",
+        "translation missing: en.hosting_amenity_50",
+        "Hot water",
+        "Bed linens",
+        "Host greets you"
+    ],
+    "host": {
+        "_id": "622f3404e36c59e6164fb63a",
+        "fullname": "Isabel",
+        "location": "Barcelona, Catalonia, Spain",
+        "about": "Mi nombre es Isabel, pero me llamo Isa. Nací en Vigo (Galicia). Con 20 años me fuí a vivir a Madrid con intención de ser actriz; ahora resido en Barcelona desde los 28. Soy una joven de 43 años, cantante de Jazz. Me gusta salir, pero también quedarme en casa a leer o ver alguna buena película.\r\nHe compartido piso muchos años, pero estas serán mis primeras experiencias como anfitriona.\r\n\r\n¡Sed bienvenidos!\r\n",
+        "responseTime": "within an hour",
+        "thumbnailUrl": "https://a0.muscache.com/im/pictures/72a579ce-37d7-466e-9c25-9876ee8de037.jpg?aki_policy=profile_small",
+        "pictureUrl": "https://a0.muscache.com/im/pictures/72a579ce-37d7-466e-9c25-9876ee8de037.jpg?aki_policy=profile_x_medium",
+        "isSuperhost": false,
+        "id": "35858044"
+    },
+    "address": {
+        "street": "Taguig, Kalakhang Maynila, Philippines",
+        "country": "Philippines",
+        "location": {
+            "lat": 6.83756,
+            "lan": 125.41301
+
+        },
+        "countryCode": "NOR",
+        "city": "Sarpsborg"
+    },
+    "id": "11115528",
+    "bathrooms": 1,
+    "price": 200,
+    "securityDeposit": null,
+    "cleaningFee": 25,
+    "extraPeople": 20,
+    "reviewScores": {
+        "accuracy": 9,
+        "cleanliness": 9,
+        "checkin": 9,
+        "communication": 10,
+        "location": 10,
+        "value": 9,
+        "rating": 90
+    },
+    "reviews": [{
+        "at": "2016-02-24T05:00:00.000Z",
+        "by": {
+            "_id": "622f3405e36c59e6164fb95e",
+            "fullname": "Pierre",
+            "imgUrl": "https://robohash.org/58999873?set=set1",
+            "id": "58999873"
+        },
+        "txt": "Una instancia muy céntrica en uno de estos edificios antiguos del Barri Gotic. No es poco haber conseguido estar en el centro de Barcelona en la misma semana del Mobile World Congress. Isabel es un encanto de anfitrión."
+    },
+    {
+        "at": "2016-03-24T04:00:00.000Z",
+        "by": {
+            "_id": "622f3403e36c59e6164fafa6",
+            "fullname": "Isabelle",
+            "imgUrl": "https://robohash.org/26247027?set=set1",
+            "id": "26247027"
+        },
+        "txt": "The host canceled this reservation 2 days before arrival. This is an automated posting."
+    },
+
+    {
+        "at": "2016-04-25T04:00:00.000Z",
+        "by": {
+            "_id": "622f3401e36c59e6164fabad",
+            "fullname": "Maria Isabel",
+            "imgUrl": "https://robohash.org/60712702?set=set1",
+            "id": "60712702"
+        },
+        "txt": "Isabel est accueillante. L'appartement est charmant, correspond aux images. Très bien situé, à côté de Palau de la musica, dans un vieil immeuble plein de charme un peu désuet. Amateurs de confort et décor \"tendance\" s'abstenir. Chez Isabel on se trouve dans une authentique ambiance d'artiste. Merci beaucoup, je garderai le souvenir de cet accueil lié aux souvenirs de Barcelone."
+    },
+
+    {
+        "at": "2016-05-16T04:00:00.000Z",
+        "by": {
+            "_id": "622f3405e36c59e6164fb715",
+            "fullname": "Jeremy",
+            "imgUrl": "https://robohash.org/53581405?set=set1",
+            "id": "53581405"
+        },
+        "txt": "Isabel's place was perfect. It was cozy, clean and quiet. She was a very gracious host and was always there to answer my questions about getting around Barcelona. "
+    },
+    {
+        "at": "2016-05-25T04:00:00.000Z",
+        "by": {
+            "_id": "622f3403e36c59e6164fb0b2",
+            "fullname": "Mei-Lin",
+            "imgUrl": "https://robohash.org/40994614?set=set1",
+            "id": "40994614"
+        },
+        "txt": "Great room with lots of sunlight in a charming apartment. Fantastic location."
+    },
+
+    {
+        "at": "2016-06-16T04:00:00.000Z",
+        "by": {
+            "_id": "622f3404e36c59e6164fb623",
+            "fullname": "Natasha",
+            "imgUrl": "https://robohash.org/25592253?set=set1",
+            "id": "25592253"
+        },
+        "txt": "SUPER cute place with lots of charm!! Perfect for my first trip to Barcelona:) Amazing location! Gracias Isabel for helping me find last minute accommodations! \r\n"
+    },
+
+    {
+        "at": "2016-06-28T04:00:00.000Z",
+        "by": {
+            "_id": "622f3403e36c59e6164fb0af",
+            "fullname": "Monika",
+            "imgUrl": "https://robohash.org/11966400?set=set1",
+            "id": "11966400"
+        },
+        "txt": "Isabel was good host. Location is perfect."
+    },
+    {
+        "at": "2016-07-03T04:00:00.000Z",
+        "by": {
+            "_id": "622f3403e36c59e6164fb23a",
+            "fullname": "Margaux",
+            "imgUrl": "https://robohash.org/78589438?set=set1",
+            "id": "78589438"
+        },
+        "txt": "Super piso, super barrio! \r\nThe guest welcomed us well."
+    },
+    {
+        "at": "2016-07-11T04:00:00.000Z",
+        "by": {
+            "_id": "622f3403e36c59e6164fb21c",
+            "fullname": "Elisabeth",
+            "imgUrl": "https://robohash.org/4965921?set=set1",
+            "id": "4965921"
+        },
+        "txt": "It was really nice to stay at Isabels place. She is very uncomplicated and nice and the flat is super located for exploring bcn. For me it was perfect!:)"
+    },
+
+    {
+        "at": "2016-07-30T04:00:00.000Z",
+        "by": {
+            "_id": "622f3403e36c59e6164fb1ac",
+            "fullname": "Liliane",
+            "imgUrl": "https://robohash.org/27060110?set=set1",
+            "id": "27060110"
+        },
+        "txt": "Isa is a very lovely, sensitive, artistic and gorgeous person. She is respectful of one's privacy but always ready to give support when asked upon. Be it in spoken or written form I always got my answers from her within no times. She also proofed to be very flexible in terms of arrival and departure times which I appreciated a great deal. If you are a fan of jazz music (like I am), make sure to double check ahead of time about her current concert dates so as not to miss your hostess on stage like I did (grumble ;-)).\n\nThe room I occupied was the smaller one of two that Isabel rents out. So if her flat is fully rented out there can be a maximum of 4 guests plus your hostess in the flat, which can cause some bathroom jam, especially during the hot and humid summer times, when the need for a cool shower is inherent to everyone's desire. \nMy room was as depicted. If you plan on using it for double occupancy, I recommend taking Isa's larger room (unless the two of you are very much in love and want to cuddle up close ;-)). Also, if you need a table for writing, ask for the larger room as well, which comes along with one.\nThe flat itself is absolutely enchanting and furnished with love and an artistic eye to details. It's location is a dream for touristic explorations with anything within walking distance. \nTherefore, I can easily recommend both Isabel and her flat to anyone wishing to immerge himself into the local customs and get a good doze of what it is like \"to live like a true Barcelonian\".  \n\nQuerida Isa, muchas gracias por tu hospedalid génial! Volveré a ciencia cierta!\nSaludos y besos\nLiliana"
+    },
+
+    {
+        "at": "2016-08-26T04:00:00.000Z",
+        "by": {
+            "_id": "622f3406e36c59e6164fbcb4",
+            "fullname": "Mina",
+            "imgUrl": "https://robohash.org/121053?set=set1",
+            "id": "121053"
+        },
+        "txt": "I was happy to experience Isabels home as described here. It was spacious, bright and original, with lovely colours and beautiful artwork surrounding me in every room. Isabel is a creative, sensitive and respectful person, with an open mind- yet she has the necessary boundaries that are required to organize an environment where so many different people are going to stay and hopefully enjoy. \nThe street itself is very lively, but the noises didn't bother me at all as i could easily block them out with earplugs. The location could not have been more sentral, still it's on \"the right side\" of the Rambla, where you can find more independent shops, restaurants, cafes and bars compared to the same leveled streets towards Raval. It is an old and very charming building, so if you want an minimalistic experience with cold, stainless steel and elevators this is not the place for you! And perhaps you are not the right person for this place either ;) I had to leave earlier due to illness, and was so sorry i couldn't stay throughout the whole month as planned. Hope to be seeing Isabel and her welcoming surroundings again one day "
+    },
+    {
+        "at": "2016-09-07T04:00:00.000Z",
+        "by": {
+            "_id": "622f3405e36c59e6164fb85f",
+            "fullname": "Jessy",
+            "imgUrl": "https://robohash.org/2935800?set=set1",
+            "id": "2935800"
+        },
+        "txt": "Isabel was an amazing host. She is incredible and super considerate. The apartment was by no means the best location in Barcelona, I walked everywhere and never needed a map or a taxi. Arriving late at night was always fine and there was never any disturbing street noise. The block is super cute with awesome little shops that are open during the day. Best neighborhood to be in and incredible city ! Muchísima gracias Isabel, estas invitada a visitar Los Ángeles, todo fue increíble !❤️"
+    }
+    ],
+    "_id": "622f337a75c7d36e498aaafd",
+    "imgUrls": [
+
+        "philippines2.jpeg",
+        "philippines3.jpeg",
+        "philippines4.jpeg",
+
+    ]
+},
 ]
 
 
