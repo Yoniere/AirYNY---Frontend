@@ -1,13 +1,13 @@
 //SETUP
-@import "setup/_variables.scss";
-@import "setup/_functions.scss";
+@import "setup/variables.scss";
+@import "setup/functions.scss";
 // BASICS
-@import "basics/_helpers";
-@import "basics/_base.scss";
-@import "basics/_layout.scss";
+@import "basics/helpers";
+@import "basics/base";
+@import "basics/layout";
 // components
-@import "components/home-list.scss";
-@import "components/stay-list.scss";
-@import "components/stay-card.scss";
-@import "components/app-header.scss";
-@import "components/stay-details.scss";
+@import "components/home-list";
+@import "components/stay-list";
+@import "components/stay-card";
+@import "components/app-header";
+@import "components/stay-details";
