@@ -7,7 +7,7 @@
   background-image: url(https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648137206/airyny/mainPic.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 750px;
+  height: 560px;
   text-align: center;
   background-position: 50%;
   margin-bottom: 96px;
@@ -23,4 +23,44 @@
   background-size: cover;
   height: 90vh;
   width: 100%;
+}
+.flexible {
+  margin-bottom: 73px;
+
+  width: 162px;
+  height: 58px;
+  background: #fff;
+  border-radius: 1000px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12) !important;
+  border: none;
+  //   justify-content: center;
+}
+.main-hero .flexible h3 {
+  margin: 0;
+  text-align: center;
+  //   padding: 16px 32px;
+  padding: 0px 2px;
+
+  font-size: 18px;
+  //   font-family: inherit;
+  background: -webkit-linear-gradient(
+    90deg,
+    #6f019c,
+    #c6017e 135.12%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-hero h1 {
+  //   color: #fff;
+  //   font: 48px;
+  white-space: pre-line;
+  max-width: 100%;
+  font-size: var(--tl-font-size, 32px);
+  font-weight: var(--tl-font-weight, 800);
+  letter-spacing: var(--tl-letter-spacing, 0em);
+  line-height: var(--tl-line-height, 36px);
+  color: #fff;
+  -webkit-line-clamp: var(--tl-line-clamp);
 }

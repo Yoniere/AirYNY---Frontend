@@ -6,21 +6,13 @@
   );
   // column-gap: 24px;
   // row-gap: 20px;
-  gap: 25px;
+  gap: 23px;
 }
 
 .popular-dest-list {
   padding: 0px;
   margin-bottom: 68px;
 }
-// .home-img-container {
-//   margin-top: 220px;
-//   max-width: 1361px;
-//   max-height: 682px;
-
-//   // margin-bottom: 103px;
-//   // padding-left: 0px;
-// }
 
 .home-card {
 }
@@ -30,15 +22,20 @@
 }
 
 .popular-header {
-  font-size: 42px;
+  font-size: 33px;
   line-height: 47px;
   margin-top: 0px;
-  margin-bottom: 50px;
+  margin-bottom: 18px;
 }
 
 .country-name {
-  margin-top: 18px;
-  line-height: 39px;
+  margin-top: 15px;
+  line-height: 26px;
   padding: 0px;
-  font-size: 35px;
+  font-size: 23px;
+}
+
+.unique-dest-list {
+  margin-top: 140px;
+  margin-bottom: 157px;
 }

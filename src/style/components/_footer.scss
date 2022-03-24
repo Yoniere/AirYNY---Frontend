@@ -1,0 +1,22 @@
+.main-footer {
+  height: 67px;
+  width: 100%;
+  background-color: #f7f7f7;
+  margin-top: 50px;
+  //   border-top: 0.5px solid;
+}
+
+.footer-container {
+  justify-content: center;
+  flex-direction: row;
+}
+
+.footer-ul {
+  display: flex;
+  width: 102px;
+  height: 18px;
+}
+
+.footer-container span {
+  flex: auto;
+}
