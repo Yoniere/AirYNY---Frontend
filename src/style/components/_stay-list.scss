@@ -1,6 +1,14 @@
+// .stay-list {
+//     gap: rem(17px);
+//     padding-inline-start: 0px;
+//     flex-flow: row wrap;
+//     position: relative;
+// }
 .stay-list {
-    gap: rem(17px);
-    padding-inline-start: 0px;
-    flex-flow: row wrap;
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(325px,1fr));
+    column-gap: 24px;
+    row-gap: 40px;
+    padding-top: 16px;
+    padding-bottom: 250px;
 }

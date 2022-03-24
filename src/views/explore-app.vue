@@ -1,6 +1,6 @@
 <template>
-  <section class="main-layout">
-    <stay-list :stays="stays"> </stay-list>
+  <section class="main-layout2">
+    <stay-list :stays="stays"   > </stay-list>
   </section>
 </template>
 
