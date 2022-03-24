@@ -3,11 +3,13 @@
     :trigger="click"
     indicator-position="inside"
     :autoplay="false"
+  
   >
     <el-carousel-item v-for="img in imgs" :key="img">
       <img
         :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${img}`"
         alt="imgStay"
+          height="100%"
       />
     </el-carousel-item>
   </el-carousel>
