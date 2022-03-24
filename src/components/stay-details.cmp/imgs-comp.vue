@@ -74,10 +74,28 @@
         </button>
       </div>
     </div>
-    <section class="gallery">
+    <section class="gallery flex">
+      <div class="main-img flex">
     <img
       :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[0]}`"
     />
+    </div>
+    <div class="middle-column flex">
+    <img class="upper-img"
+      :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[1]}`"
+    />
+    <img
+      :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[2]}`"
+    />
+    </div>
+    <div class="right-column flex">
+    <img class="upper-img"
+      :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[3]}`"
+    />
+    <img
+      :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[4]}`"
+    />
+    </div>
     </section>
     <div>
 <div class="initial-info">

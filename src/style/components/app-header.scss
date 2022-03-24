@@ -1,67 +1,103 @@
-.main-header {
-    background-color: $clr1;
-    height: rem(80px);
-    .header-features {
-        color: $clr2;
-        align-items: center;
-    }
-    .logo {
-        text-decoration: none;
-        color: $clr2;
-        width: rem(118px);
-        height: rem(64px);
-        cursor: pointer
-    }
-    .places {
-        font-weight: 400;
-        color: $clr2;
-        background-color: $clr1;
-        cursor: pointer
-    }
-    .filter-header {
-        height: rem(80px);
-        background-color: $clr1;
-    }
-    .main-filter-header {
-        background-color: $clr1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        // padding-bottom: rem(76px);
-    }
-    .world-btn {
-        height: rem(41.9px);
-        width: rem(45px);
-        border: 0px;
-        // background-color: $clr1;
-        .world-img {
-            width: rem(15.99px);
-            height: rem(15.99px);
-        }
-    }
-    .menu-btns {
-        align-items: center;
-    }
-    .profile-btn {
-        width: rem(77px);
-        height: rem(42px);
-        appearance: none;
-        background: transparent;
-        background-color: $clr2;
-        border: 1px solid $clr3;
-        border-radius: 21px;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        .menu-img {
-            width: rem(16px);
-            height: rem(16px);
-            stroke-width: 3;
-        }
-        .profile-img {
-            width: rem(30px);
-            height: rem(30px);
-            margin-left: rem(12px);
-        }
-    }
-}
+  .main-header {
+      background-color: $clr1;
+      height: rem(80px);
+      //   transform: scaleY(2);
+      //   transition: -ms-transform 250ms ease 0s, -webkit-transform 250ms ease 0s, transform 250ms ease 0s, opacity 250ms ease 0s;
+      .header-features {
+          color: $clr2;
+          align-items: center;
+      }
+      .logo {
+          text-decoration: none;
+          color: $clr2;
+          width: rem(118px);
+          height: rem(64px);
+          cursor: pointer
+      }
+      .places {
+          font-weight: 400;
+          color: $clr2;
+          background-color: $clr1;
+          cursor: pointer
+      }
+      .filter-header {
+          height: rem(80px);
+          background-color: $clr1;
+      }
+      .main-filter-header {
+          background-color: $clr1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          // padding-bottom: rem(76px);
+      }
+      .world-btn {
+          height: rem(41.9px);
+          width: rem(45px);
+          border: 0px;
+          // background-color: $clr1;
+          .world-img {
+              width: rem(15.99px);
+              height: rem(15.99px);
+          }
+      }
+      .menu-btns {
+          align-items: center;
+      }
+      .profile-btn {
+          width: rem(77px);
+          height: rem(42px);
+          appearance: none;
+          background: transparent;
+          background-color: $clr2;
+          border: 1px solid $clr3;
+          border-radius: 21px;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          .menu-img {
+              width: rem(16px);
+              height: rem(16px);
+              stroke-width: 3;
+          }
+          .profile-img {
+              width: rem(30px);
+              height: rem(30px);
+              margin-left: rem(12px);
+          }
+      }
+  }
+  
+  .gallery {
+      max-width: rem(1120px);
+      max-height: rem(536.59px);
+      box-sizing: border-box;
+      padding-top: rem(24px);
+      height: 100%;
+      width: 100%;
+      .main-img {
+          height: 100%;
+          width: 100%;
+          padding-right: rem(8px);
+          object-fit: cover;
+      }
+      .middle-column {
+          flex-direction: column;
+          height: 100%;
+          width: 100%;
+          padding-right: rem(8px);
+          object-fit: cover;
+          .upper-img {
+              padding-bottom: rem(8px);
+          }
+      }
+      .right-column {
+          flex-direction: column;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          .upper-img {
+              padding-bottom: rem(8px);
+          }
+      }
+  }

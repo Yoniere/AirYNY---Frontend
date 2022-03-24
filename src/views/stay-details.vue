@@ -3,7 +3,9 @@
     <imgs-comp :stay="stay"></imgs-comp>
     <main-amenities :stay="stay"></main-amenities>
     <stay-description :stay="stay"></stay-description>
-    <amenities></amenities>
+    <amenities :stay="stay"></amenities>
+
+
   </section>
 </template>
 
