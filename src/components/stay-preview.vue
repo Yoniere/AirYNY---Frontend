@@ -17,10 +17,10 @@
                 display: block;
                 height: 24px;
                 width: 24px;
-                fill: transparent ; 
+                fill: rgba(0, 0, 0, 0.5); 
                 stroke-width: 2;
                 overflow: visible;
-                stroke: black;
+                stroke: white;
               "
             >
               <path
