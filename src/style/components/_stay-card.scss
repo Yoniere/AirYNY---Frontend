@@ -13,8 +13,6 @@
     top: 12px;
     right: 12px;
     z-index: 10;
-    
-   
    
 }
 
@@ -22,20 +20,37 @@
     fill: #ff385c !important ;
 } 
 .card-rate{
-gap: rem(4px);
 font-size: rem(14px);
 align-items: baseline;
-padding-top: 10px;
-color: #222;
-  span{
-      color:#717171
+padding-top:  rem(10px);
+color: var(--clr5);
+  span:nth-child(2) {
+      color:var(--clr5);
+    }
+  span:nth-child(3) {
+        color:#717171;
+    }
+   
+  .star-preview{
+    margin-right: rem(4px);
   }
 }
 
 .stay-type{
-   
-    padding-top: 6px;
+    padding-top: rem(7px);
+    font-size: rem(16px);
 }
+.el-carousel__arrow:hover{
+    background-color: white  !important ;
+    color: var(--clr5)   !important ;    
+    opacity: 0.9;
+  }
+.el-carousel__arrow{
+    background-color: white  !important ;
+    color: var(--clr5)   !important ;    
+    opacity: 0.6;
+  }
+
 
 
 .card-detail{
@@ -52,9 +67,11 @@ color: #222;
 }
 
 .stay-name{
-    padding-top: 2px;
+    font-size: rem(16px);
+    padding-top: rem(5px);
 }
 
 .stay-price{
-    padding-top: 4px;
+    padding-top: rem(8px);
+    font-size: rem(16px);
 }

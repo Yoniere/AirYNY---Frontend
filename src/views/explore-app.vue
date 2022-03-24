@@ -1,5 +1,6 @@
 <template>
   <section class="main-layout2">
+    <h1> {{title}}</h1>
     <stay-list :stays="stays"   > </stay-list>
   </section>
 </template>
@@ -16,6 +17,11 @@ export default {
     stays() {
       return this.$store.getters.stays;
     },
+    title(){
+     const filter=  this.$store.getters.filterBy 
+     const count = this.$store.getters.stays;
+      return filter.country  ? `${count.length} stays in ${filter.country}` : 'explore stays'
+    }
   },
   methods: {},
   components: {

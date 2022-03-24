@@ -1,10 +1,6 @@
 <template>
   <ul class="stay-list">
-    <stay-preview
-      v-for="stay in stays"
-      :stay="stay"
-      :key="stay._id"
-    />
+    <stay-preview v-for="stay in stays" :stay="stay" :key="stay._id"> </stay-preview>
   </ul>
 </template>
 

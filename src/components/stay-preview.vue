@@ -34,6 +34,7 @@
       </div>
       <div class="stay-preview-info">
         <div class="flex card-rate">
+          <div class="star-preview">
           <svg
             viewBox="0 0 32 32"
             xmlns="http://www.w3.org/2000/svg"
@@ -48,8 +49,10 @@
             7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z"
               fill-rule="evenodd"
             ></path></svg
-          >{{ getRating }}
-          <span> ({{ stay.numOfReviews }}) </span>
+          >
+         </div>
+          <span>   {{ getRating }} </span>
+          <span>  ({{ stay.numOfReviews }} reviews )  </span>
         </div>
 
         <div class="stay-type">
@@ -57,7 +60,7 @@
         </div>
         <div class="stay-name">{{ stay.name }}</div>
         <div class="stay-price">
-          <span class="bold">${{ stay.price }}</span> /night
+          <span class="bold">${{ stay.price }}</span> / night
         </div>
       </div>
     </section>
