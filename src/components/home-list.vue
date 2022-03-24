@@ -14,7 +14,7 @@
             :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/${stay}1`"
             alt="img rated stay"
           />
-          <h3 class="stay-name">{{ stay }}</h3>
+          <h3 class="country-name">{{ stay }}</h3>
         </li>
       </ul>
     </div>
@@ -34,7 +34,7 @@
             alt="img unique stay"
           />
 
-          <h3 class="stay-name">{{ stay }}</h3>
+          <h3 class="country-name">{{ stay }}</h3>
         </li>
       </ul>
     </div>
