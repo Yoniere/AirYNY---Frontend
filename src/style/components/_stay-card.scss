@@ -1,10 +1,4 @@
-// .stay-card{
-//     margin: 4px;
-//     flex: 0 1 calc(20% - 8px);
-//     line-height: 14px;
-//     max-width: 365px;
-//     height: 385px;
-// }
+
 .stay-preview-gallery{
     position: relative;
   img{
@@ -23,13 +17,14 @@
    
    
 }
+
 .isLiked{
     fill: #ff385c !important ;
 } 
 .card-rate{
 gap: rem(4px);
 font-size: rem(14px);
-align-items: center;
+align-items: baseline;
 padding-top: 10px;
 color: #222;
   span{
