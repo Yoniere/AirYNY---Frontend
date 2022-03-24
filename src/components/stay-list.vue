@@ -1,5 +1,5 @@
 <template>
-  <ul class="stay-list flex-row">
+  <ul class="stay-list">
     <stay-preview
       v-for="stay in stays"
       :stay="stay"

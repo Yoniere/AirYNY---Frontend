@@ -2,7 +2,6 @@
   <el-carousel
     :trigger="click"
     indicator-position="inside"
-    height=100%
     :autoplay="false"
   >
     <el-carousel-item v-for="img in imgs" :key="img">
@@ -25,15 +24,34 @@ export default {
 </script>
 
 <style>
-.el-carousel {
-  font-size: 18px;
-  margin: 0;
-  text-align: center;
+.el-carousel__container {
+    position: relative;
+    height: 260px;
 }
-.el-carousel__button{
+
+/* .el-carousel__item{
+    max-width: 365px;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    position: absolute;
+
+} 
+ .el-carousel__button{
   z-index: 10;
    border-radius: 30%;
     width: 0.7em  !important;
 
-}
+}    */
+
+
+/* 
+ .el-carousel {
+ font-size: 18px;
+  margin: 0;
+  text-align: center; 
+} */
+
+ 
+
 </style>
