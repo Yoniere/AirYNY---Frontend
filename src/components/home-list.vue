@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div>
+    <div class="home-img-container">
       <img
         class="home-page-pic"
         :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/HomePage`"
@@ -29,7 +29,7 @@
         </li>
       </ul>
     </div>
-    <h2>Unique Stays:</h2>
+    <h2>Unique Destinations:</h2>
     <ul class="stay-list flex-row">
       <li
         class="stay-card"
@@ -58,11 +58,10 @@ export default {
     return {
       ratedStays: ["Usa", "Spain", "Portugal", "Australia"],
       uniqStays: [
-        "Italy",
+        "Canada",
         "Japan",
         "Norway",
         "Philippines",
-        "Canada",
       ],
     };
   },
@@ -75,7 +74,6 @@ export default {
         filterBy: JSON.parse(JSON.stringify(filterBy)),
       });
       this.$router.push(`/stay`);
-      //   this.$router.push(`/stay/${this.stay.id}`)
     },
   },
 };
