@@ -1,22 +1,12 @@
-.home-page-pic {
-  border-radius: 13px;
-  object-fit: cover;
-  margin-top: 220px;
-  max-width: 1362px;
-  max-height: 680px;
-  margin-bottom: 90px;
-}
 .home-list {
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
-    minmax(320px, 1fr)
+    minmax(310px, 1fr)
   );
   // column-gap: 24px;
-  row-gap: 20px;
-  padding: 0px;
-  // padding-top: 16px;
-  // padding-bottom: 250px;
+  // row-gap: 20px;
+  gap: 25px;
 }
 
 .popular-dest-list {
@@ -35,16 +25,15 @@
 .home-card {
 }
 .home-card-img {
-  width: 319px;
-  height: 220px;
-  border-radius: 13px;
+  grid-template-columns: repeat(4, 1fr);
+  border-radius: 12px;
 }
 
 .popular-header {
   font-size: 42px;
   line-height: 47px;
   margin-top: 0px;
-  margin-bottom: 51px;
+  margin-bottom: 50px;
 }
 
 .country-name {
