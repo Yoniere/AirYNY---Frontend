@@ -1,6 +1,6 @@
 <template>
   <section class="main-layout">
-    <div class="popular-dest-list">
+    <div class="popular-dest-list main-layout">
       <h1 class="popular-header">Popular Destinations:</h1>
       <ul class="home-list">
         <li

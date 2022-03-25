@@ -101,12 +101,18 @@
     }
 }
 
-.initial-info {
+.lower-img-section {
     padding-top: rem(48px);
     padding-bottom: rem(24px);
     max-width: rem(653.33px);
     font-size: 16px;
-    line-height: 20px
+    line-height: 20px;
+    .host-img {
+        width: rem(56px);
+        height: rem(56px);
+        object-fit: cover;
+        border-radius: 50%;
+    }
 }
 
 // .parent {
@@ -281,25 +287,120 @@
 }
 
 .stay-details-reviews {
+    max-width: rem(1120px);
     padding-top: rem(48px);
     padding-bottom: rem(48px);
     border-top: rgb(221, 221, 221) solid 1px;
+    align-items: center;
     .star {
         width: rem(16px);
         height: rem(16px);
+        margin-right: 6px;
     }
     .rating {
         color: #222222;
         font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif !important;
-        font-weight: 400;
+        font-weight: 600;
         font-size: rem(16px);
         line-height: rem(20px);
+        margin-right: 6px;
     }
     .review-btn {
         color: #222222;
         font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif !important;
-        font-weight: 400;
+        font-weight: 600;
         font-size: rem(16px);
         line-height: rem(20px);
+        background-color: transparent;
+        border: 0px;
+    }
+    .reviews-categories {
+        flex-wrap: wrap;
+        .categories {
+            flex-basis: 35%;
+            color: #222222;
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+            font-weight: 400;
+            font-size: rem(16px);
+            line-height: rem(20px);
+            margin-right: rem(117.750px);
+            height: rem(36px);
+            align-items: center;
+            &::first-letter {
+                text-transform: capitalize;
+            }
+            .main-div {
+                width: 100%;
+                .visual {
+                    width: 100%;
+                    align-items: center;
+                    margin-left: rem(12px);
+                    .grey-line {
+                        background: rgb(221, 221, 221);
+                        width: 100%;
+                        height: rem(4px);
+                        border-radius: rem(2px);
+                        position: relative;
+                        .black-line {
+                            background: #222222;
+                            // width: 100%;
+                            height: rem(4px);
+                            border-radius: rem(2px);
+                            position: absolute;
+                        }
+                    }
+                    .rate {
+                        margin-left: rem(6px);
+                        color: rgb(34, 34, 34);
+                        font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+                        font-weight: 600;
+                        font-size: rem(12px);
+                        line-height: rem(16px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.reviews {
+    flex-wrap: wrap;
+}
+
+.review {
+    // flex-direction: column;
+    flex-basis: 35%;
+    margin-bottom: rem(40px);
+    margin-right: rem(102.656px);
+    .upper-review {
+        margin-bottom: rem(16px);
+        .review-img {
+            width: rem(56px);
+            height: rem(56px);
+            .img {
+                object-fit: cover;
+                border-radius: 50%;
+            }
+        }
+        .review-titles {
+            margin-left: rem(12px);
+            .name {
+                margin: 0px;
+                font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+                font-weight: 600;
+                line-height: 24px;
+            }
+            .date {
+                line-height: 18px;
+                color: #717171;
+                font-family: 'Circular', -apple-system, 'BlinkMacSystemFont', 'Roboto', 'Helvetica Neue', sans-serif;
+                font-size: rem(14px);
+                font-weight: 400;
+                margin: 0px;
+            }
+        }
+    }
+    .paragraph-review {
+        margin: 0px;
     }
 }

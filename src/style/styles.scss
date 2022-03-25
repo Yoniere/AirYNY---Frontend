@@ -2,10 +2,12 @@
 @import "setup/variables.scss";
 @import "setup/functions.scss";
 @import "setup/typography";
+@import "setup/mixins";
 // BASICS
 @import "basics/helpers";
 @import "basics/base";
 @import "basics/layout";
+
 // components
 @import "components/home-list";
 @import "components/stay-filter";

@@ -1,24 +1,32 @@
 .home-list {
+  // display: grid;
+  // grid-template-columns: repeat(
+  //   auto-fit,
+  //   minmax(310px, 1fr)
+  // );
+
+  // gap: 23px;
   display: grid;
   grid-template-columns: repeat(
-    auto-fit,
-    minmax(310px, 1fr)
+    auto-fill,
+    minmax(320px, 1fr)
   );
-  // column-gap: 24px;
-  // row-gap: 20px;
+  column-gap: 24px;
   gap: 23px;
+  // padding-top: 16px;
+  // padding-bottom: 250px;
 }
 
 .popular-dest-list {
   padding: 0px;
-  margin-bottom: 68px;
+  margin-bottom: rem(68px);
 }
 
-.home-card {
-}
 .home-card-img {
   grid-template-columns: repeat(4, 1fr);
   border-radius: 12px;
+  height: 280px;
+  object-fit: cover;
 }
 
 .popular-header {
@@ -29,13 +37,13 @@
 }
 
 .country-name {
-  margin-top: 15px;
-  line-height: 26px;
+  margin-top: rem(15px);
+  line-height: rem(26px);
   padding: 0px;
-  font-size: 23px;
+  font-size: rem(23px);
 }
 
 .unique-dest-list {
-  margin-top: 140px;
-  margin-bottom: 157px;
+  margin-top: rem(140px);
+  margin-bottom: rem(157px);
 }
