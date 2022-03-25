@@ -4,11 +4,12 @@
   grid-template-rows: 1fr 1fr;
   height: 80px;
   position: fixed;
-  top: 0;
+  top: 20px;
   display: grid;
   grid-template-columns: 80px 1fr 80px;
   width: 100%;
   z-index: 20;
+  // background-color: $clr2;
 
   .header-features {
     color: $clr2;
@@ -16,9 +17,11 @@
   }
   .logo {
     text-decoration: none;
-    width: rem(150px);
-    height: rem(80px);
+    width: rem(110px);
+    height: rem(45px);
     cursor: pointer;
+    object-fit: cover;
+    top: rem(15px);
   }
   .places {
     font-weight: 400;
@@ -41,7 +44,7 @@
   .menu-btns {
     justify-content: center;
     a{
-    font-family: airbnb-1;
+    font-family: roboto-2;
     color: $clr2;
     text-shadow: 1px 1px 2px #000;
     padding: 0 15px;
@@ -77,4 +80,20 @@
 
 .main-header>* {
   grid-column: 2;
+}
+
+.main-header.header-fix{
+background-color: $clr2;
+top: 0;
+padding: rem(15px);
+
+}
+
+.menu-btns.header-fix{
+  a{
+
+    color:$clr5 !important;
+    text-shadow: none;
+    font-weight: bold;
+  }
 }
