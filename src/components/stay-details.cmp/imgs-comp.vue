@@ -72,7 +72,7 @@
     />
   </section>
   <section class="main-layout">
-    <div>
+    <div class="lower-img-section flex space-between">
       <div class="initial-info">
         <h1>
           Entire rental unit hosted by <span>{{ stay.host.fullname }}</span>
@@ -85,7 +85,7 @@
         </div>
       </div>
       <div>
-        <!-- <img :src="getHostImage"> -->
+        <img class="host-img" :src="getHostImage">
       </div>
     </div>
   </section>

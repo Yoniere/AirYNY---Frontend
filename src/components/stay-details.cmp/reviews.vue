@@ -1,6 +1,5 @@
 <template>
-
-  <section class="stay-details-reviews main-layout">
+  <section v-if="stay" class="stay-details-reviews main-layout">
       <div class="flex">
             <svg class="star"
             viewBox="0 0 32 32"
@@ -22,16 +21,41 @@
           <span> {{ stay.numOfReviews }}</span>
           reviews
         </button>
+
+<!-- <div v-for="(item, index) in items">
+    <div v-if="index !== items.length - 1">yes</div>
+    {{ item }}, {{ index }}
+  </div> -->
+
+
+<!-- <span v-for="(val,key,index) of person">
+  key: {{key}}, val: {{val}}, index: {{index}}
+  <span v-if="index != Object.keys(person).length - 1">, </span>
+</span> -->
+
+
+
+
+
+
         </div>
         <div class="reviews-categories flex" >
-        <div class="categories" v-for="(value,key) in stay.reviewScores" :key="value">
-             {{key}} {{value/2}}
+        <div class="categories flex space-between" v-for="(value,name,index) in stay.reviewScores" :key="value"  >
+          <div class="main-div flex"  v-if="index != Object.keys(stay.reviewScores).length-1">
+          <div >{{name}}</div>
+          <!-- {{Object.keys(stay.reviewScores).length}} -->
+          <!-- v-if="index !== (Object.keys(stay.reviewScores).length-1)" -->
+          <div class="visual flex">
+          <div class="grey-line"><span class="black-line" :style="{width:(value *10)+'%'}"></span></div>
+           <span v-if="value !== stay.reviewScores.length - 1" class="rate">{{value/2}} </span>
+        </div>
+       </div>
         </div>
         </div>
         <review-list :stay="stay"></review-list>
         </section>
 </template>
-
+// :width="`${value}/2/5`"
 <script>
 import reviewList from "../stay-details.cmp/review-list.vue"
 export default {
@@ -54,6 +78,9 @@ export default {
     getRating() {
       return this.stay.reviewScores.rating / 10;
     },
+    // getRating() {
+    //   return review.
+    // }
   },
 };
 </script>

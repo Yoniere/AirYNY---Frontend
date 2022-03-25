@@ -1,7 +1,9 @@
 <template>
-        <div v-for="review in stay.reviews" :key="review" >
-                <review-preview :review="review"></review-preview>
-        </div>
+  <section class="reviews flex">
+    <div class="review" v-for="review in stay.reviews" :key="review">
+      <review-preview :review="review"></review-preview>
+    </div>
+  </section>
 </template>
  
 <script>
@@ -17,11 +19,10 @@ export default {
   data() {
     return {};
   },
-  components:{
-      reviewPreview
+  components: {
+    reviewPreview,
   },
-  computed: {
-  },
+  computed: {},
 };
 </script>
 

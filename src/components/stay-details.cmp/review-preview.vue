@@ -1,8 +1,17 @@
 <template>
-<img :src="`${review.by.imgUrl}`">
-<h1>{{review.by.fullname}}</h1>
-<h2>{{review.at}}</h2>
-<p>{{review.txt}}</p>
+  <section class="flex-col">
+    <div class="upper-review flex">
+        <div class="review-img">
+      <img class="img" :src="`${review.by.imgUrl}`" />
+      </div>
+      <div class="review-titles">
+      <h1 class="name">{{ review.by.fullname }}</h1>
+      <h2 class="date">{{ review.at }}</h2>
+      </div>
+    </div>
+    <p class="paragraph-review">{{ review.txt }}</p>
+    
+  </section>
 </template>
 
 <script>
@@ -18,9 +27,9 @@ export default {
     return {};
   },
   computed: {
-      getImage(){
-          return review.imgUrl
-      }
+    getImage() {
+      return review.imgUrl;
+    },
   },
 };
 </script>
