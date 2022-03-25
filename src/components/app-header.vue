@@ -1,6 +1,6 @@
 <template>
   <section class="main-header" :class="this.stickyNav ? 'fix' : 'fullHeader' ">
-      <div class="flex space-between header-features">
+      <div class="flex space-between header-features main-layout">
       <div class="logo-container">
         <router-link to="/" ><img class="logo flex align-center" :src="getLogo"></router-link>
       </div>
