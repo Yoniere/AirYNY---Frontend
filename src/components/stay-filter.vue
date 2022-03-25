@@ -26,8 +26,33 @@
       </el-date-picker >
      </div>
       <div class="input-container flex-col">
-    <label > Guests <input  placeholder="Add guests" disabled="disabled" class="guests">
-    </label>
+    <label @click="openModal" class="guests-label" > Guests 
+      <input  placeholder="Add guests" disabled="disabled" class="guests" >
+      </label>
+      </div>
+      <div v-if="gusetModal" class="guests-Modal">
+      <ul>
+        <li class="flex space-between align-center"> 
+          <span class="flex-col">Adults
+          <span class="guide-age">Ages 13 or above </span>
+          </span>
+          <span> <button @click="incAdults(1)"> + </button> {{filterBy.gusets.adults}}   <button @click="incAdults(-1)"> - </button></span>
+        </li>
+        <li class="flex space-between align-center"> 
+          <span class="flex-col"> Children
+          <span class="guide-age"> Ages 2-12 </span>
+          </span>
+           <span> <button @click="incKids(1)"> + </button> {{filterBy.gusets.kids}}   <button @click="incKids(-1)"> - </button></span>
+        </li>
+        <li class="flex space-between align-center"> 
+          <span class="flex-col"> Infants
+          <span class="guide-age">Under 2 </span>
+          </span>
+          <span> <button @click="incInfants(1)"> + </button> {{filterBy.gusets.Infants}}   <button @click="incInfants(-1)"> - </button></span>
+        </li>
+      </ul>
+      </div>
+   
     
       <div class="search-btn">
       <button @click="setFilter">
@@ -37,7 +62,6 @@
           <path d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 
           0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"></path></g></svg>
       </button>
-      </div>
       </div>
 
     </div>
@@ -51,6 +75,7 @@ export default {
   name: "stay-filter",
   data() {
     return {
+      gusetModal:false,
       pickerOptions: {
         shortcuts: [
           {
@@ -66,7 +91,12 @@ export default {
       },
       filterBy: {
         country: "",
-        gusets:[],
+        gusets:{
+          adults:0,
+          kids:0,
+          Infants:0
+
+        },
       },
       stayTime: "",
     };
@@ -82,7 +112,19 @@ export default {
       });
        this.$router.push(`/stay`)
     },
- 
+    openModal(){
+      this.gusetModal = !this.gusetModal
+
+    },
+    incAdults(val){
+     this.filterBy.gusets.adults=  this.filterBy.gusets.adults + val
+    },
+    incKids(val){
+     this.filterBy.gusets.kids=  this.filterBy.gusets.kids + val
+    },
+    incInfants(val){
+     this.filterBy.gusets.Infants=  this.filterBy.gusets.Infants + val
+    }
   },
 };
 </script>
