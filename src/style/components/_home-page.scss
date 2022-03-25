@@ -56,7 +56,7 @@
   background-image: url(https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648198618/airyny/hostPicMain.jpg);
   background-position: 50%;
   background-size: cover;
-  height: 90vh;
+  height: 630px;
   width: 100%;
   flex-wrap: wrap;
   flex-direction: column;
@@ -65,29 +65,48 @@
 
   padding: 80px;
 }
-
-.host-container h1 {
-  color: #fff;
-  font-size: 48px;
-  margin: 0;
-  margin-top: 142px;
-  // font-family: "Franklin Gothic Medium", "Arial Narrow",
-  //   Arial, sans-serif;
+.container-title {
+  flex-direction: column;
+  line-break: strict;
+  width: 448px;
+  height: 294px;
+  margin: 0px;
+}
+.host-container .host-title {
+  // display: flex;
+  flex-direction: column;
+  font-family: Cereal-Regular;
+  color: $clr2;
+  font-size: 74px;
+  font-weight: 600;
+  line-height: 77px;
+  letter-spacing: -1.48px;
+  max-width: 100%;
+  min-width: 0px;
+  // overflow-wrap: anywhere;
+  margin: 0px;
 }
 
 .host-container button {
   flex-direction: row;
-  // margin-top: 10px;
-  // margin-bottom: -75px;
+  font-family: Cereal-Medium;
   margin-bottom: 0px;
   justify-self: flex-end;
-  font-family: inherit;
+
   border: none;
   color: #222;
   background-color: #fff;
   padding: 14px 24px;
   border-radius: 8px;
   max-width: 170px;
+  margin-bottom: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.host-title span {
+  height: 231px;
+  width: 341px;
 }
 
 .host-container button .host-btn-txt {

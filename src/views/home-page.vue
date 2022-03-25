@@ -6,24 +6,15 @@
         <h3>I'm flexible</h3>
       </button>
     </section>
-    <!-- <div>
-      <p class="ac">roboto-black</p>
-      <p class="b">roboto-BlackItalic</p>
-      <p class="c">roboto-bold</p>
-      <p class="d">roboto-BoldItalic</p>
-      <p class="e">roboto-italic</p>
-      <p class="f">roboto-light</p>
-      <p class="g">roboto-light-italic</p>
-      <p class="h">roboto-Medium</p>
-      <p class="i">roboto-Medium-italic</p>
-      <p class="j">roboto-regular</p>
-      <p class="q">roboto-thin</p>
-      <p class="l">roboto-thin-italic</p>
-      <p class="m">brown-regular</p>
-    </div> -->
+
     <home-list :stay="ratedStays" />
-    <section class="host-container flex main-layout">
-      <h1>Become a host</h1>
+    <section class="host-container flex">
+      <div class="container-title flex">
+        <h2 class="host-title">
+          <span>Questions about hosting?</span>
+        </h2>
+      </div>
+
       <button>
         <span class="host-btn-txt">Lets try</span>
       </button>

@@ -1,7 +1,9 @@
 <template>
   <section class="main-layout">
     <div class="popular-dest-list main-layout">
-      <h1 class="popular-header">Popular Destinations:</h1>
+      <h2 class="popular-header">
+        <span>Popular Destinations</span>
+      </h2>
       <ul class="home-list">
         <li
           class="home-card"
@@ -20,7 +22,9 @@
     </div>
 
     <div class="unique-dest-list popular-dest-list">
-      <h2 class="popular-header">Unique Destinations:</h2>
+      <h2 class="popular-header">
+        <span>Unique Destinations</span>
+      </h2>
       <ul class="home-list">
         <li
           class="home-card"
