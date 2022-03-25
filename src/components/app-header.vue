@@ -1,21 +1,22 @@
 <template>
-  <section class="main-header" :class="this.stickyNav ? 'header-fix' : '' ">
+  <section class="main-header" :class="this.stickyNav ? 'fix' : 'fullHeader' ">
       <div class="flex space-between header-features main-layout">
-      <div>
+      <div class="logo-container">
         <router-link to="/" ><img class="logo flex align-center" :src="getLogo"></router-link>
       </div>
-        <button class="mini-filter flex space-between align-center clickable " :class="(stickyNav) ? 'fixed' : 'hide'"
+        <button class="mini-filter flex space-between align-center clickable " :class="(this.openfilter) ? 'hide' : 'fixed'"
         @click="toggle">
-          "Start to search"
-           <span class="search-btn"> 
-             <!-- <button @click="setFilter">
+          Start to search
+           
+<div class="search-btn">
+      <button @click="setFilter">
         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
-        style="display:block;fill:none;height:12px;width:12px;stroke:white;stroke-width:5.333333333333333;overflow:visible" 
+        style="display:block;fill:none;height:12px;width:12px;stroke:white;stroke-width:5;overflow:visible" 
         aria-hidden="true" role="presentation" focusable="false"><g fill="none">
           <path d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 
           0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"></path></g></svg>
-      </button>  -->
-      </span>
+      </button>
+      </div>
            </button>
 
 
@@ -42,7 +43,7 @@
       </div>
       </div>
   
-    <stay-filter :class="(stickyNav) ? 'hide' : ''" />
+    <stay-filter :class="(openfilter) ? '' : 'hide'" />
 
   
   </section>
@@ -63,20 +64,24 @@ export default {
   data(){
     return{
    stickyNav: false,
+   openfilter: true,
     }
   },
 
  
   methods:{
  handleScroll (event) {   
-  if (window.top.scrollY > 50 ) {
+  if (window.top.scrollY > 20 ) {
     this.stickyNav = true
+    this.openfilter = false
+    
   } else {
     this.stickyNav = false
+     this.openfilter = true
   }
 },
 toggle(){
-    this.stickyNav = !this.stickyNav
+    this.openfilter = !this.openfilter
 }
 
   },

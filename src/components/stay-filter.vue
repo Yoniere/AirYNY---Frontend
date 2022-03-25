@@ -1,5 +1,4 @@
 <template>
-  <!-- justify-center -->
   <section class="filter flex align-center main-layot">
     <div class="main-filter flex space-between align-center">
    <div  class="input-container">
@@ -27,14 +26,9 @@
       </el-date-picker >
      </div>
       <div class="input-container flex-col">
-      <!-- <el-input type="text" placeholder="gustes" v-model="filterBy.gusets" /> -->
     <label > Guests <input  placeholder="Add guests" disabled="disabled" class="guests">
     </label>
     
-
-
-
-
       <div class="search-btn">
       <button @click="setFilter">
         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 

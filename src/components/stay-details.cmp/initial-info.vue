@@ -1,0 +1,38 @@
+<template>
+  <section class="main-layout">
+    <div class="lower-img-section flex space-between">
+      <div class="initial-info">
+        <h1>
+          Entire rental unit hosted by <span>{{ stay.host.fullname }}</span>
+        </h1>
+        <div>
+          <span>{{ stay.capacity }} guests</span> ·
+          <span>{{ stay.bedrooms }} bedroom</span> ·
+          <span>{{ stay.beds }} bed</span> ·
+          <span>{{ stay.bathrooms }} baths</span>
+        </div>
+      </div>
+      <div>
+        <img class="host-img" :src="getHostImage" />
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+    name: "initial-info",
+  props: {
+    stay: {
+      type: Object,
+    },
+  },
+  computed: {
+    getHostImage() {
+      return this.stay.host.thumbnailUrl;
+    },
+  },
+};
+</script>
+
+<style></style>
