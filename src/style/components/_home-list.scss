@@ -31,6 +31,7 @@
 }
 
 .popular-header {
+  font-family: Roboto-Light;
   font-size: 33px;
   line-height: 47px;
   margin-top: 0px;
@@ -38,13 +39,106 @@
 }
 
 .country-name {
-  margin-top: rem(15px);
-  line-height: rem(26px);
-  padding: 0px;
-  font-size: rem(23px);
+  font-family: Cereal-Bold;
+  // margin-top: rem(15px);
+  // line-height: rem(26px);
+  // padding: 0px;
+  // font-size: rem(23px);
+  white-space: pre-line;
+  max-width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 23px;
+  color: #222222;
+  cursor: pointer;
+  // -webkit-line-clamp: var(--tl-line-clamp);
 }
 
 .unique-dest-list {
   margin-top: rem(140px);
   margin-bottom: rem(157px);
+}
+
+.ac {
+  font-family: roboto-black;
+  background-color: antiquewhite;
+  font-size: xx-large;
+  font: bold;
+}
+
+p.b {
+  background-color: rgb(235, 204, 164);
+  font-size: xx-large;
+  font-family: roboto-BlackItalic;
+  font: bold;
+}
+p.c {
+  background-color: rgb(187, 173, 154);
+  font-size: xx-large;
+  font-family: roboto-bold;
+  font: bold;
+}
+p.d {
+  background-color: rgb(236, 182, 112);
+  font-size: xx-large;
+  font-family: roboto-BoldItalic;
+  font: bold;
+}
+p.e {
+  background-color: rgb(225, 226, 144);
+  font-size: xx-large;
+  font-family: roboto-italic;
+  font: bold;
+}
+p.f {
+  background-color: rgb(167, 170, 125);
+  font-size: xx-large;
+  font-family: roboto-light;
+  font: bold;
+}
+p.g {
+  background-color: rgb(194, 201, 187);
+  font-size: xx-large;
+  font-family: roboto-light-italic;
+  font: bold;
+}
+
+p.h {
+  background-color: rgb(173, 196, 191);
+  font-size: xx-large;
+  font-family: roboto-Medium;
+  font: bold;
+}
+p.i {
+  background-color: rgb(185, 147, 130);
+  font-size: xx-large;
+  font-family: roboto-Medium-italic;
+  font: bold;
+}
+
+p.j {
+  background-color: rgb(226, 141, 102);
+  font-size: xx-large;
+  font-family: roboto-regular;
+  font: bold;
+}
+p.q {
+  background-color: rgb(163, 197, 39);
+  font-size: xx-large;
+  font-family: roboto-thin;
+  font: bold;
+}
+p.l {
+  background-color: rgb(44, 190, 110);
+  font-size: xx-large;
+  font-family: roboto-thin-italic;
+  font: bold;
+}
+
+p.m {
+  background-color: rgb(224, 228, 10);
+  font-size: xx-large;
+  font-family: brown-regular;
+  font: bold;
 }

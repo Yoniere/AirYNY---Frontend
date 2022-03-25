@@ -1,4 +1,5 @@
 <template >
+<app-header  class="header-details"/>
   <section v-if="stay">
     <imgs-comp :stay="stay"></imgs-comp>
     <main class="flex">
@@ -18,6 +19,7 @@
 </template>
 
 <script>
+import appHeader from "../components/app-header.vue";
 import { stayService } from "../services/stay-service.js";
 import ImgsComp from "../components/stay-details.cmp/imgs-comp.vue";
 import initialInfo from "../components/stay-details.cmp/initial-info.vue";
@@ -41,6 +43,7 @@ export default {
     this.stay = stay;
   },
   components: {
+    appHeader,
     ImgsComp,
     initialInfo,
     stayDescription,

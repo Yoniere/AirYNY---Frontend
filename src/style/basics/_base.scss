@@ -3,13 +3,15 @@
 }
 
 body {
-  font-family: Circular, -apple-system, BlinkMacSystemFont,
-    Roboto, Helvetica Neue, sans-serif;
+  font-family: Airbnb-Cereal-Bold;
+  // font-family: Circular, -apple-system, BlinkMacSystemFont,
+  //   Roboto, Helvetica Neue, sans-serif;
   font-size: 14px;
   line-height: 1.43;
   color: #484848;
   background-color: #fff;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 ul {
@@ -32,6 +34,6 @@ h6 {
   color: #222222;
   line-height: 1;
 }
- a{
-   text-decoration: none;
- }
+a {
+  text-decoration: none;
+}
