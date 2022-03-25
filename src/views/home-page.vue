@@ -6,7 +6,7 @@
         <h3>I'm flexible</h3>
       </button>
     </section>
-    <div>
+    <!-- <div>
       <p class="ac">roboto-black</p>
       <p class="b">roboto-BlackItalic</p>
       <p class="c">roboto-bold</p>
@@ -20,7 +20,7 @@
       <p class="q">roboto-thin</p>
       <p class="l">roboto-thin-italic</p>
       <p class="m">brown-regular</p>
-    </div>
+    </div> -->
     <home-list :stay="ratedStays" />
     <section class="host-container flex main-layout">
       <h1>Become a host</h1>
