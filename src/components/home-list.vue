@@ -4,7 +4,7 @@
       <h1 class="popular-header">Popular Destinations:</h1>
       <ul class="home-list">
         <li
-          class="home-card"
+          class="home-card clickable"
           v-for="stay in ratedStays"
           :key="stay._id"
           @click="goToStay(stay)"
@@ -23,10 +23,11 @@
       <h2 class="popular-header">Unique Destinations:</h2>
       <ul class="home-list">
         <li
-          class="home-card"
+          class="home-card clickable"
           v-for="stay in uniqueStays"
           :key="stay._id"
           @click="goToUnique(stay)"
+          
         >
           <img
             class="home-card-img"
