@@ -1,14 +1,15 @@
 <template>
-  <footer class="main-footer">
-    <div class="footer-container main-layout flex">
+  <footer class="main-footer main-layout">
+    <div class="footer-container flex">
       <span>©2022 Airyny</span>
+
       <ul class="footer-ul">
         <li class="footer-li">
           <a
             rel="noopener noreferrer"
             target="_blank"
             href="https://www.facebook.com/airbnb"
-            class="_1vwyakty"
+            class="svg-footer"
             ><svg
               viewBox="0 0 32 32"
               role="img"
@@ -19,7 +20,6 @@
                 height: 18px;
                 width: 18px;
                 display: block;
-                fill: currentcolor;
               "
             >
               <path
@@ -28,12 +28,12 @@
               ></path></svg
           ></a>
         </li>
-        <li class="_kdkpwk">
+        <li class="footer-li">
           <a
             rel="noopener noreferrer"
             target="_blank"
             href="https://twitter.com/airbnb"
-            class="_1vwyakty"
+            class="svg-footer"
             ><svg
               viewBox="0 0 32 32"
               role="img"
@@ -44,7 +44,6 @@
                 height: 18px;
                 width: 18px;
                 display: block;
-                fill: currentcolor;
               "
             >
               <path
@@ -53,12 +52,12 @@
               ></path></svg
           ></a>
         </li>
-        <li class="_kdkpwk">
+        <li class="footer-li">
           <a
             rel="noopener noreferrer"
             target="_blank"
             href="https://instagram.com/airbnb"
-            class="_1vwyakty"
+            class="svg-footer"
             ><svg
               viewBox="0 0 24 24"
               role="img"
@@ -69,7 +68,6 @@
                 height: 18px;
                 width: 18px;
                 display: block;
-                fill: currentcolor;
               "
             >
               <path

@@ -8,8 +8,11 @@
     </section>
 
     <home-list :stay="ratedStays" />
-    <section class="host-container">
+    <section class="host-container flex main-layout">
       <h1>Become a host</h1>
+      <button>
+        <span class="host-btn-txt">Lets try</span>
+      </button>
     </section>
   </main>
 </template>
