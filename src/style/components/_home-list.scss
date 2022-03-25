@@ -8,10 +8,10 @@
   // gap: 23px;
   display: grid;
   grid-template-columns: repeat(
-    auto-fill,
-    minmax(320px, 1fr)
+    auto-fit,
+    minmax(250px, 1fr)
   );
-  column-gap: 24px;
+  // column-gap: 24px;
   gap: 23px;
   // padding-top: 16px;
   // padding-bottom: 250px;
@@ -21,9 +21,10 @@
   padding: 0px;
   margin-bottom: rem(68px);
 }
-
-.home-card-img {
+.home-card {
   grid-template-columns: repeat(4, 1fr);
+}
+.home-card-img {
   border-radius: 12px;
   height: 280px;
   object-fit: cover;
