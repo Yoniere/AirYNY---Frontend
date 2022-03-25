@@ -49,7 +49,8 @@
       </div>
     </div>
   </section>
-  <section class="gallery main-layout">
+  <section class="main-gallery-section main-layout">
+  <section class="gallery ">
     <img
       class="main-img"
       :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[0]}`"
@@ -71,7 +72,8 @@
       :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[4]}`"
     />
   </section>
-  <section class="main-layout">
+  </section>
+  <!-- <section class="main-layout">
     <div class="lower-img-section flex space-between">
       <div class="initial-info">
         <h1>
@@ -88,7 +90,7 @@
         <img class="host-img" :src="getHostImage">
       </div>
     </div>
-  </section>
+  </section> -->
 </template>
 
 <script>
@@ -110,12 +112,6 @@ export default {
     getHostImage() {
       return this.stay.host.thumbnailUrl;
     },
-
-    // reviewCounter() {
-    //   this.stay.reviews.reduce((acc) => {
-    //     return acc++;
-    //   }, 0);
-    // },
   },
 };
 </script>

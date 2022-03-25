@@ -4,20 +4,20 @@ $clr2: #fff;
 $clr3: #ddd;
 $clr4: #fff7f7;
 $clr5: #222222;
-
+$clr6: radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100%);
 //base
 $tl-font-size: 32px;
 $tl-font-weight: 600;
 $tl-letter-spacing: -0.02em;
 $tl-line-height: 36px;
-
 // LAYOUT
 $layoutPadding: 20px;
-
 // LAYOUT BREAKPOINTS
 $break-narrow: 1200px;
 $break-normal: 1360px;
 $break-wide: 1920px;
-$padded-break-narrow: $break-narrow + $layoutPadding * 2;
-$padded-break-normal: $break-normal + $layoutPadding * 2;
-$padded-break-wide: $break-wide + $layoutPadding * 2;
+$padded-break-narrow: $break-narrow+$layoutPadding * 2;
+$padded-break-normal: $break-normal+$layoutPadding * 2;
+$padded-break-wide: $break-wide+$layoutPadding * 2;
+$--mouse-x: 95.041;
+$--mouse-y: 28.3529;
