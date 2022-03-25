@@ -1,4 +1,5 @@
 <template >
+<app-header  class="header-details"/>
   <section v-if="stay">
     <imgs-comp :stay="stay"></imgs-comp>
     <main-amenities :stay="stay"></main-amenities>
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import appHeader from "../components/app-header.vue";
 import { stayService } from "../services/stay-service.js";
 import ImgsComp from "../components/stay-details.cmp/imgs-comp.vue";
 import mainAmenities from "../components/stay-details.cmp/main-amenities.vue"
@@ -32,6 +34,7 @@ export default {
     this.stay = stay;
   },
   components: {
+    appHeader,
     ImgsComp,
     stayDescription,
     mainAmenities,

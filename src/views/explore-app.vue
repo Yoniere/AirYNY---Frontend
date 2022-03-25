@@ -1,4 +1,5 @@
 <template>
+<app-header class="header-explore" />
   <section class="main-layout2">
     <h1> {{title}}</h1>
     <stay-list :stays="stays"   > </stay-list>
@@ -6,6 +7,7 @@
 </template>
 
 <script>
+import appHeader from "../components/app-header.vue";
 import stayList from "../components/stay-list.vue";
 
 export default {
@@ -26,6 +28,7 @@ export default {
   methods: {},
   components: {
     stayList,
+    appHeader
   },
 };
 </script>

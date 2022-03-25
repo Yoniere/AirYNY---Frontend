@@ -20,6 +20,27 @@
     border-radius: 50%;
     height: 30px;
     padding: 10px;
+    
+  }
+  .search-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $clr2;
+    border-radius: 50%;
+    border: none;
+    background-color: #ff385c;
+    height: 32px;
+    padding: 10px;
+    margin-inline-end: 4px;
+   
+   
+    button {
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+  }
   }
 }
 
