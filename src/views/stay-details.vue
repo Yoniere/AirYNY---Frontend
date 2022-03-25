@@ -2,12 +2,19 @@
 <app-header  class="header-details"/>
   <section v-if="stay">
     <imgs-comp :stay="stay"></imgs-comp>
-    <main-amenities :stay="stay"></main-amenities>
-    <stay-description :stay="stay"></stay-description>
-    <amenities :stay="stay"></amenities>
+    <main class="flex">
+      <section class="flex-col">
+        <initial-info :stay="stay"></initial-info>
+        <main-amenities :stay="stay"></main-amenities>
+        <stay-description :stay="stay"></stay-description>
+        <amenities :stay="stay"></amenities>
+      </section>
+      <section>
+        <checkout :stay="stay"></checkout>
+      </section>
+    </main>
     <reviews :stay="stay"></reviews>
     <host :stay="stay"></host>
-    
   </section>
 </template>
 
@@ -15,9 +22,11 @@
 import appHeader from "../components/app-header.vue";
 import { stayService } from "../services/stay-service.js";
 import ImgsComp from "../components/stay-details.cmp/imgs-comp.vue";
-import mainAmenities from "../components/stay-details.cmp/main-amenities.vue"
+import initialInfo from "../components/stay-details.cmp/initial-info.vue";
+import mainAmenities from "../components/stay-details.cmp/main-amenities.vue";
 import stayDescription from "../components/stay-details.cmp/stay-description.vue";
 import amenities from "../components/stay-details.cmp/amenities.vue";
+import checkout from "../components/stay-details.cmp/checkout.vue"
 import reviews from "../components/stay-details.cmp/reviews.vue";
 import host from "../components/stay-details.cmp/host.vue";
 
@@ -36,17 +45,17 @@ export default {
   components: {
     appHeader,
     ImgsComp,
+    initialInfo,
     stayDescription,
     mainAmenities,
     amenities,
     reviews,
-    host
-
-},
+    host,
+    checkout
+  },
   computed: {},
 };
 </script>
 
 <style>
-
 </style>
