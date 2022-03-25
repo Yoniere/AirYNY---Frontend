@@ -1,11 +1,11 @@
 <template>
-  <section class="main-layout">
+  <section >
     <div class="lower-img-section flex space-between">
       <div class="initial-info">
-        <h1>
+        <h1 class="main-title">
           Entire rental unit hosted by <span>{{ stay.host.fullname }}</span>
         </h1>
-        <div>
+        <div class="paragraph">
           <span>{{ stay.capacity }} guests</span> ·
           <span>{{ stay.bedrooms }} bedroom</span> ·
           <span>{{ stay.beds }} bed</span> ·

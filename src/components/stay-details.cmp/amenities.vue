@@ -1,5 +1,5 @@
 <template  >
-  <section class="main-layout additional-amenities">
+  <section class=" additional-amenities">
     <h1 class="title">What this place offers</h1>
     <div class="amenities flex">
     <div class="amenity flex">
