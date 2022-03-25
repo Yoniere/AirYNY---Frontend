@@ -16,19 +16,68 @@
 // }
 // @font-face {
 //     font-family: airbnb-4;
-//     src: url(../../assets/fonts/KFOlCnqEu92Fr1MmEU9fBBc4.woff2);
+//     src:  url(../../assets/fonts/KFOlCnqEu92Fr1MmEU9fBBc4.woff2);
 // }
 @font-face {
-    font-family: roboto-bold;
-    src: url(../../assets/fonts/Roboto-BlackItalic.ttf);
+  font-family: roboto-black;
+  src: url(../../assets/fonts/Roboto-Black.ttf);
+}
+
+@font-face {
+  font-family: roboto-BlackItalic;
+  src: url(../../assets/fonts/Roboto-BlackItalic.ttf);
+}
+
+@font-face {
+  font-family: roboto-BoldItalic;
+  src: url(../../assets/fonts/Roboto-BoldItalic.ttf);
 }
 @font-face {
-    font-family: roboto-bolder;
-    src: url(../../assets/fonts/Roboto-Black.ttf) ;
+  font-family: roboto-bold;
+  src: url(../../assets/fonts/Roboto-Bold.ttf);
 }
 @font-face {
-    font-family: roboto-2;
-    src: url(../../assets/fonts/Roboto-MediumItalic.ttf) ;
+  font-family: roboto-italic;
+  src: url(../../assets/fonts/Roboto-Italic.ttf);
+}
+@font-face {
+  font-family: roboto-light;
+  src: url(../../assets/fonts/Roboto-Light.ttf);
+}
+@font-face {
+  font-family: roboto-light-italic;
+  src: url(../../assets/fonts/Roboto-LightItalic.ttf);
+}
+
+@font-face {
+  font-family: roboto-Medium;
+  src: url(../../assets/fonts/Roboto-Medium.ttf);
+}
+@font-face {
+  font-family: roboto-Medium-italic;
+  src: url(../../assets/fonts/Roboto-MediumItalic.ttf);
+}
+@font-face {
+  font-family: roboto-regular;
+  src: url(../../assets/fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: roboto-thin;
+  src: url(../../assets/fonts/Roboto-Thin.ttf);
+}
+@font-face {
+  font-family: roboto-thin-italic;
+  src: url(../../assets/fonts/Roboto-ThinItalic.ttf);
+}
+
+@font-face {
+  font-family: brown-regular;
+  src: url(../../assets/fonts/brown-regular.ttf);
+}
+
+@font-face {
+  font-family: roboto-2;
+  src: url(../../assets/fonts/Roboto-MediumItalic.ttf);
   font-family: airbnb1;
   // src: url(../../assets/fonts/Airbnb_Cereal-Book.e849748a.woff2);
   font-weight: normal;
@@ -39,14 +88,17 @@
       format("woff");
   font-display: swap;
 }
+
 @font-face {
   font-family: airbnb-2;
   src: url(../../assets/fonts/Airbnb_Cereal-Book-9a1c9cca9bb3d65fefa2aa487617805e.woff2);
 }
+
 @font-face {
   font-family: airbnb-bold;
   src: url(../../assets/fonts/Airbnb_Cereal-Bold-bdfb98485e7836ba31b456f65cded088.woff2);
 }
+
 @font-face {
   font-family: airbnb-3;
   src: url(../../assets/fonts/KFOmCnqEu92Fr1Mu4mxK.woff2);
