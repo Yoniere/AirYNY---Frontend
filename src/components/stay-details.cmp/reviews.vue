@@ -17,19 +17,23 @@
               fill-rule="evenodd"
             ></path>
           </svg>
-        <span class="rating">{{ getRating }}</span> ·
+        <div class="rating">{{ getRating }}</div> ·
         <button class="review-btn">
           <span> {{ stay.numOfReviews }}</span>
           reviews
         </button>
         </div>
-        <div v-for="(value,key) in stay.reviewScores" :key="value">
-            <div>{{key}} {{value/2}}</div>
+        <div class="reviews-categories flex" >
+        <div class="categories" v-for="(value,key) in stay.reviewScores" :key="value">
+             {{key}} {{value/2}}
         </div>
+        </div>
+        <review-list :stay="stay"></review-list>
         </section>
 </template>
 
 <script>
+import reviewList from "../stay-details.cmp/review-list.vue"
 export default {
   name: "reviews",
   props: {
@@ -42,6 +46,10 @@ export default {
   data() {
     return {};
   },
+  components:{
+      reviewList
+  },
+
   computed: {
     getRating() {
       return this.stay.reviewScores.rating / 10;
