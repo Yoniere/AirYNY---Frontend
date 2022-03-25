@@ -1,5 +1,5 @@
 <template  >
-<section class="main-layout stay-description">
+<section class=" stay-description">
   <h1>{{stay.name}} - description</h1>
   {{stay.summary}}
 </section>

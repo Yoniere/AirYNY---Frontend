@@ -1,5 +1,5 @@
 <template  >
-  <section class="amentiy-section main-layout">
+  <section class="amentiy-section ">
     <div class="amenity flex">
       <img
         class="amentiy-icon"

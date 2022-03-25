@@ -1,8 +1,8 @@
 <template >
 <app-header  class="header-details"/>
-  <section v-if="stay">
+  <section v-if="stay" class="main-layout">
     <imgs-comp :stay="stay"></imgs-comp>
-    <main class="flex">
+    <main class="flex ">
       <section class="flex-col">
         <initial-info :stay="stay"></initial-info>
         <main-amenities :stay="stay"></main-amenities>

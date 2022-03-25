@@ -1,7 +1,7 @@
 <template >
-  <section class="main-layout upper-img-section">
+  <section class=" upper-img-section">
     <h1 class="stay-name">{{ stay.name }}</h1>
-    <div class="flex space-between">
+    <div class="flex space-between ">
       <div class="left-side-btns flex">
         <div class="flex card-rate">
           <svg
@@ -49,7 +49,7 @@
       </div>
     </div>
   </section>
-  <section class="main-gallery-section main-layout">
+  <section class="main-gallery-section">
   <section class="gallery ">
     <img
       class="main-img"
