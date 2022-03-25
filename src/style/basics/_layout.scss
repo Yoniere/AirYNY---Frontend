@@ -10,3 +10,23 @@
   padding-left: rem(80px);
   padding-right: rem(80px);
 }
+
+.main-layout3 {
+  display: grid;
+  padding-left: rem(80px);
+  padding-right: rem(80px);
+
+  > * {
+    grid-column: 2;
+  }
+
+  > *.full {
+    grid-column: 1 / -1;
+  }
+
+  > *:not(.full) {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

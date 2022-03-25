@@ -1,20 +1,27 @@
 @font-face {
-    font-family: airbnb-1;
-    src: url(../../assets/fonts/Airbnb_Cereal-Book.e849748a.woff2);
+  font-family: airbnb1;
+  // src: url(../../assets/fonts/Airbnb_Cereal-Book.e849748a.woff2);
+  font-weight: normal;
+  font-style: normal;
+  src: url("/airbnb/static/airbnb-dls-web/build/fonts/Airbnb_Cereal-Book-9a1c9cca9bb3d65fefa2aa487617805e.woff2")
+      format("woff2"),
+    url("/airbnb/static/airbnb-dls-web/build/fonts/Airbnb_Cereal-Book-aa38e86e3f98554f9f7053d7b713b4db.woff")
+      format("woff");
+  font-display: swap;
 }
 @font-face {
-    font-family: airbnb-2;
-    src: url(../../assets/fonts/Airbnb_Cereal-Book-9a1c9cca9bb3d65fefa2aa487617805e.woff2);
+  font-family: airbnb-2;
+  src: url(../../assets/fonts/Airbnb_Cereal-Book-9a1c9cca9bb3d65fefa2aa487617805e.woff2);
 }
 @font-face {
-    font-family: airbnb-bold;
-    src: url(../../assets/fonts/Airbnb_Cereal-Bold-bdfb98485e7836ba31b456f65cded088.woff2);
+  font-family: airbnb-bold;
+  src: url(../../assets/fonts/Airbnb_Cereal-Bold-bdfb98485e7836ba31b456f65cded088.woff2);
 }
 @font-face {
-    font-family: airbnb-3;
-    src: url(../../assets/fonts/KFOmCnqEu92Fr1Mu4mxK.woff2);
+  font-family: airbnb-3;
+  src: url(../../assets/fonts/KFOmCnqEu92Fr1Mu4mxK.woff2);
 }
 @font-face {
-    font-family: airbnb-4;
-    src: url(../../assets/fonts/KFOlCnqEu92Fr1MmEU9fBBc4.woff2);
+  font-family: airbnb-4;
+  src: url(../../assets/fonts/KFOlCnqEu92Fr1MmEU9fBBc4.woff2);
 }
