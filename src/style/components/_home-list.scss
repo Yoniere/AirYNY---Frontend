@@ -11,7 +11,7 @@
     auto-fill,
     minmax(320px, 1fr)
   );
-  // column-gap: 24px;
+  column-gap: 24px;
   gap: 23px;
   // padding-top: 16px;
   // padding-bottom: 250px;
@@ -25,6 +25,8 @@
 .home-card-img {
   grid-template-columns: repeat(4, 1fr);
   border-radius: 12px;
+  height: 280px;
+  object-fit: cover;
 }
 
 .popular-header {
