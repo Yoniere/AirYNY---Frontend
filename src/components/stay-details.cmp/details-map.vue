@@ -1,7 +1,18 @@
-<template></template>
+<template>
+
+</template>
 
 <script>
-export default {};
+export default {
+      name: "mapDetails",
+  props: {
+    stay: {
+      type: Object,
+    },
+  },
+};
 </script>
 
-<style></style>
+<style>
+
+</style>

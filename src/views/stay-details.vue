@@ -14,6 +14,7 @@
       </section>
     </main>
     <reviews :stay="stay"></reviews>
+    <details-map :stay="stay" ></details-map>
     <host :stay="stay"></host>
   </section>
 </template>
@@ -28,6 +29,7 @@ import stayDescription from "../components/stay-details.cmp/stay-description.vue
 import amenities from "../components/stay-details.cmp/amenities.vue";
 import checkout from "../components/stay-details.cmp/checkout.vue"
 import reviews from "../components/stay-details.cmp/reviews.vue";
+import detailsMap from "../components/stay-details.cmp/details-map.vue"
 import host from "../components/stay-details.cmp/host.vue";
 
 export default {
@@ -51,7 +53,8 @@ export default {
     amenities,
     reviews,
     host,
-    checkout
+    checkout,
+    detailsMap
   },
   computed: {},
 };
