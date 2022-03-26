@@ -1,5 +1,8 @@
 .hr-border {
   margin-bottom: 141px;
+  border: -0.9px solid $clr5;
+  background-color: $clr5;
+  opacity: 0.3;
 }
 
 .vue-map-container {
@@ -7,10 +10,6 @@
   padding: 0px;
   height: rem(480px);
   max-width: rem(1120px);
-  // justify-content: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
 }
 
 .map-container {
