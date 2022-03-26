@@ -34,11 +34,14 @@
       </div>
     </div>
 
-    <button @mousemove="onMouseMove(this.$event)" class="reserve-btn">Reserve</button>
+    <button @mouseover="onMouseOver(this.event)" class="reserve-btn" :style="getCalc">
+      Reserve
+    </button>
   </section>
 </template>
 
 <script>
+
 export default {
   name: "checkout",
   props: {
@@ -47,28 +50,44 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      data: {
+          offsetX: '',
+          offsetY: '',
+      },
+    };
   },
-  created () {
-    window.addEventListener('mousemove', this.onMouseMove);
+  created() {
+    // window.addEventListener('mouseover', this.onMouseOver);
   },
-mounted (){
-     window.addEventListener('onMouseMove', this.onMouseMove)
-},
-unmounted() {
- window.removeEventListener('onMouseMove', this.onMouseMove)
-},
+  mounted() {
+    window.addEventListener("mouseover", this.onMouseOver);
+  },
+  unmounted() {
+    window.removeEventListener("mouseover", this.onMouseOver);
+  },
   computed: {
     getRating() {
       return this.stay.reviewScores.rating / 10;
     },
-  },
-    methods:{
-      onMouseMove($event){
-        console.log($event)
-      }
+    getCalc(){
+      return 
     }
-  }
+  },
+  methods: {
+    onMouseOver(event) {
+      console.log(event);
+      // this.offsetX = event.offsetX;
+      // console.log(this.offsetX);
+    },
+  },
+};
 </script>
 
-<style></style>
+<style>
+ .reserve-btn {
+
+    background-position: calc((100 - var(--mouse-x, 0))*1%) calc((100 - var(--mouse-y, 0))*1%);
+ }
+</style>
+
