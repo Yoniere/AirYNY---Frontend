@@ -7,6 +7,12 @@ export default {
         price: {
         
         },
+        guests:{
+            adults:0,
+            kids:0,
+            Infants:0,
+        },
+        stayTime:'',
         type:[]
      },
 
