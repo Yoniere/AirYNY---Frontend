@@ -1,6 +1,11 @@
 <template>
 <app-header class="header-explore" />
   <section class="main-layout2">
+    <button @click="openModal" class="sort-btn"> price </button>
+    <div class="price-modal"> 
+     30 <input type="range" min="30" max="10000"> 10000
+    </div>
+
     <h1> {{title}}</h1>
     <stay-list :stays="stays"   > </stay-list>
   </section>
