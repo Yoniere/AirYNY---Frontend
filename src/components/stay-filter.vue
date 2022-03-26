@@ -17,7 +17,7 @@
      <div class="input-container flex-col date-list">
       <span class="demonstration"></span>
       <el-date-picker
-        v-model="stayTime"
+        v-model="filterBy.stayTime"
         type="daterange"
         range-separator=""
         start-placeholder="Check in"
@@ -98,8 +98,8 @@ export default {
           Infants:0
 
         },
-      },
       stayTime: "",
+      },
     };
   },
   created() {
@@ -107,6 +107,7 @@ export default {
   },
   methods: {
     setFilter() {
+      console.log(this.filterBy);
       this.$store.dispatch({
         type: "setFilter",
         filterBy: JSON.parse(JSON.stringify(this.filterBy)) ,
