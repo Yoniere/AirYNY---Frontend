@@ -116,15 +116,7 @@ export default {
       this.gusetModal = !this.gusetModal
 
     },
-    incAdults(val){
-     this.filterBy.gusets.adults=  this.filterBy.gusets.adults + val
-    },
-    incKids(val){
-     this.filterBy.gusets.kids=  this.filterBy.gusets.kids + val
-    },
-    incInfants(val){
-     this.filterBy.gusets.Infants=  this.filterBy.gusets.Infants + val
-    }
+
   },
 };
 </script>
