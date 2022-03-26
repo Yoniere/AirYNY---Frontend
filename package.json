@@ -16,6 +16,7 @@
     "v-calendar": "^3.0.0-alpha.8",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12",
+    "vue3-gmap-custom-marker": "^0.0.2",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
