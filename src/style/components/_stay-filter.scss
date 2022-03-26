@@ -55,9 +55,11 @@
     height: 40px;
     border: none;
     background-color: transparent;
+    outline: none;
   }
 }
 .main-filter {
+  gap: 5px;
   transform-origin: top;
   position: absolute;
   transition: all 0.2s;
@@ -79,6 +81,8 @@
   .input-container {
     border-radius: 40px;
     padding: 12.5px 12.5px 12.5px 25px;
+    height: 100%;
+    cursor: pointer;
   }
   .input-container:hover {
     background-color: #ebebeb;
@@ -124,6 +128,9 @@
 
 .guests-label {
   position: relative;
+  span{
+    font-size:rem(14px)
+  }
 }
 .guests-Modal {
   z-index: 100;
@@ -144,4 +151,15 @@
     font-size: 14px;
     font-weight: 400;
   }
+}
+
+.input-container:nth-child(odd){
+  width: 25%;
+}
+.input-container:nth-child(even){
+  width: 50%;
+}
+.demonstration{
+  width: 100%;
+
 }

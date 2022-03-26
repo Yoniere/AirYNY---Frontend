@@ -109,8 +109,9 @@
   color: $clr3;
   height: 80px !important;
   transition: 0s;
-  .filter {
-    opacity: 0;
+  .main-filter {
+    color: $clr5;
+
   }
   .filter.hide {
     visibility: visible !important;

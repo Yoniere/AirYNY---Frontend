@@ -1,17 +1,17 @@
 <template>
   <section class="filter flex align-center main-layot">
     <div class="main-filter flex space-between align-center">
-   <div  class="input-container">
+   <div  class="input-container flex-col">
       <label>
         Location
-      <input type="search" list="destination" placeholder="Where are you going?" class="dropdown" v-model="filterBy.country" />
+      <input type="search" list="destination" placeholder="Where are you going?" class="dropdown clickable" v-model="filterBy.country" />
          <datalist id="destination" class="e-caret-hide">
            <option  value="Tel Aviv"> </option>
            <option value="Barcelona"></option>
           <option value="Paris"></option>
             <option  value="New York"></option>
             </datalist>
-          </label>
+        </label>
      </div> 
      
      <div class="input-container flex-col date-list">
@@ -25,10 +25,11 @@
       >
       </el-date-picker >
      </div>
-      <div class="input-container flex-col">
-    <label @click="openModal" class="guests-label" > Guests 
-      <input  placeholder="Add guests" disabled="disabled" class="guests" >
+      <div class="input-container flex-col" @click="openModal">
+    <label  class="guests-label" >
+       Guests 
       </label>
+      <span class="guests"> {{getGusets}}</span>
       </div>
       <div v-if="gusetModal" class="guests-Modal">
       <ul>
@@ -111,6 +112,8 @@ export default {
         filterBy: JSON.parse(JSON.stringify(this.filterBy)) ,
       });
        this.$router.push(`/stay`)
+       this.gusetModal = false
+       this.$emit('filterd' , this.filterBy.country)
     },
     openModal(){
       this.gusetModal = !this.gusetModal
@@ -118,14 +121,33 @@ export default {
     },
     incAdults(val){
      this.filterBy.gusets.adults=  this.filterBy.gusets.adults + val
+     if(this.filterBy.gusets.adults ===-1) this.filterBy.gusets.adults = 0
     },
     incKids(val){
      this.filterBy.gusets.kids=  this.filterBy.gusets.kids + val
+       if(this.filterBy.gusets.kids === -1) this.filterBy.gusets.kids = 0
     },
     incInfants(val){
      this.filterBy.gusets.Infants=  this.filterBy.gusets.Infants + val
+        if(this.filterBy.gusets.Infants === -1) this.filterBy.gusets.Infants = 0
     }
   },
+  computed:{
+    getGusets(){
+      if(this.filterBy.gusets.adults===0 &&
+      this.filterBy.gusets.kids===0 &&
+      this.filterBy.gusets.Infants===0 
+      ) {
+        return `Add Gusets`
+      }
+      else{
+        const count= (this.filterBy.gusets.adults +
+         this.filterBy.gusets.kids + this.filterBy.gusets.Infants)
+        return `${count} gusets`
+      }
+
+    },
+  }
 };
 </script>
 
