@@ -59,8 +59,13 @@ export default {
   computed: {},
   methods:{
     async setOrder(filterBy) {
-      console.log(filterBy)
+      // console.log(filterBy)
+      try{
      const newOrder= await this.$store.dispatch({type:'addNewOrder',filterBy})
+      }
+      catch{
+        console.error
+      }
     }
   }
 };
