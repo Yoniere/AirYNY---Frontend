@@ -24,5 +24,109 @@
     margin-right: 8px;
     margin-top: 4px;
     margin-bottom: 4px;
-    width: 100px;
+}
+.sort-btn:hover{
+    border-color: $clr5 ;
+
+}
+
+.price-modal{
+    position: absolute;
+    margin-top: rem(50px);
+    z-index: 20;
+    background:$clr2;
+    border: 0.5px solid $clr5 ;
+    border-radius: 12px ;
+    box-shadow: $clr5 0px 10px 37px ;
+    overflow: hidden ;
+    justify-content: flex-start;
+    width: rem(300px);
+    height: rem(220px);
+    padding: rem(20px);
+}
+.range{
+    margin-top: rem(28px);
+    width: 80%;
+  
+}
+.prices{
+    margin-top: rem(28px);
+    width: 80%;
+    span{
+        position: absolute;
+        margin-top: rem(-20px);
+    }
+
+}
+
+.input-price{
+    height: rem(40px);
+    width: rem(80px);
+}
+
+.modal-container {
+    position: absolute;
+    margin-top: rem(50px);
+    left: rem(172px);
+    width: rem(340px);
+    z-index: 20;
+    justify-content: flex-start;
+    background: $clr2;
+    border: 0.5px solid hsla(0,0%,46.3%,.28);
+    border-radius: 12px;
+    box-shadow: 0 10px 37px $clr5;
+    padding: rem(20px);
+}
+
+.checkmark{
+ position: absolute;
+top: 12px;
+left: 0;
+height: 24px;
+width: 24px;
+background-color: #fff;
+border-width: 1px;
+border-style: solid;
+border-color: #b0b0b0;
+border-radius: 4px;
+accent-color: $clr5;
+    
+}
+.save-btn{
+    font-size: 14px;
+    background-color: $clr5;
+    color:$clr2;
+    cursor: pointer;
+    padding: rem(8px) rem(16px);
+    margin-top: rem(14px);
+}
+
+
+
+
+
+
+.type-title {
+    font-size: 14px;
+    line-height: 20px;
+    color: $clr7;
+}
+.type-header {
+    font-size: 16px;
+    line-height: 20px;
+    color: $clr5;
+}
+
+.type-filter-container{
+    padding-left: 19px;
+}
+
+.type-filter {
+    padding-top: 12px;
+    display: block;
+    position: relative;
+    padding-left: 19px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    text-align: start;
 }
