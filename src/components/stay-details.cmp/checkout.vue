@@ -43,42 +43,7 @@
     >
     </el-date-picker>
 
-    <div v-if="guestModal" class="guests-Modal">
-      <ul>
-        <li class="flex space-between align-center">
-          <span class="flex-col"
-            >Adults
-            <span class="guide-age">Ages 13 or above </span>
-          </span>
-          <span>
-            <button @click="incAdults(1)">+</button>
-            {{ filterBy.gusets.adults }}
-            <button @click="incAdults(-1)">-</button></span
-          >
-        </li>
-        <li class="flex space-between align-center">
-          <span class="flex-col">
-            Children
-            <span class="guide-age"> Ages 2-12 </span>
-          </span>
-          <span>
-            <button @click="incKids(1)">+</button> {{ filterBy.gusets.kids }}
-            <button @click="incKids(-1)">-</button></span
-          >
-        </li>
-        <li class="flex space-between align-center">
-          <span class="flex-col">
-            Infants
-            <span class="guide-age">Under 2 </span>
-          </span>
-          <span>
-            <button @click="incInfants(1)">+</button>
-            {{ filterBy.gusets.Infants }}
-            <button @click="incInfants(-1)">-</button></span
-          >
-        </li>
-      </ul>
-    </div>
+
 
     <button class="reserve-btn">Reserve</button>
   </section>
