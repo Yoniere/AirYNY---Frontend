@@ -29,27 +29,27 @@
     <label  class="guests-label" >
        Guests 
       </label>
-      <span class="guests"> {{getGusets}}</span>
+      <span class="guests"> {{getGuests}}</span>
       </div>
-      <div v-if="gusetModal" class="guests-Modal">
+      <div v-if="guestModal" class="guests-Modal">
       <ul>
         <li class="flex space-between align-center"> 
           <span class="flex-col">Adults
           <span class="guide-age">Ages 13 or above </span>
           </span>
-          <span> <button @click="incAdults(1)"> + </button> {{filterBy.gusets.adults}}   <button @click="incAdults(-1)"> - </button></span>
+          <span> <button @click="incAdults(1)"> + </button> {{filterBy.guests.adults}}   <button @click="incAdults(-1)"> - </button></span>
         </li>
         <li class="flex space-between align-center"> 
           <span class="flex-col"> Children
           <span class="guide-age"> Ages 2-12 </span>
           </span>
-           <span> <button @click="incKids(1)"> + </button> {{filterBy.gusets.kids}}   <button @click="incKids(-1)"> - </button></span>
+           <span> <button @click="incKids(1)"> + </button> {{filterBy.guests.kids}}   <button @click="incKids(-1)"> - </button></span>
         </li>
         <li class="flex space-between align-center"> 
           <span class="flex-col"> Infants
           <span class="guide-age">Under 2 </span>
           </span>
-          <span> <button @click="incInfants(1)"> + </button> {{filterBy.gusets.Infants}}   <button @click="incInfants(-1)"> - </button></span>
+          <span> <button @click="incInfants(1)"> + </button> {{filterBy.guests.Infants}}   <button @click="incInfants(-1)"> - </button></span>
         </li>
       </ul>
       </div>
@@ -76,7 +76,7 @@ export default {
   name: "stay-filter",
   data() {
     return {
-      gusetModal:false,
+      guestModal:false,
       pickerOptions: {
         shortcuts: [
           {
@@ -92,7 +92,7 @@ export default {
       },
       filterBy: {
         country: "",
-        gusets:{
+        guests:{
           adults:0,
           kids:0,
           Infants:0
@@ -107,44 +107,43 @@ export default {
   },
   methods: {
     setFilter() {
-      console.log(this.filterBy);
       this.$store.dispatch({
         type: "setFilter",
         filterBy: JSON.parse(JSON.stringify(this.filterBy)) ,
       });
        this.$router.push(`/stay`)
-       this.gusetModal = false
-       this.$emit('filterd' , this.filterBy.country)
+       this.guestModal = false
+       this.$emit('filterd' , JSON.parse(JSON.stringify(this.filterBy.country)) )
     },
     openModal(){
-      this.gusetModal = !this.gusetModal
+      this.guestModal = !this.guestModal
 
     },
     incAdults(val){
-     this.filterBy.gusets.adults=  this.filterBy.gusets.adults + val
-     if(this.filterBy.gusets.adults ===-1) this.filterBy.gusets.adults = 0
+     this.filterBy.guests.adults=  this.filterBy.guests.adults + val
+     if(this.filterBy.guests.adults ===-1) this.filterBy.guests.adults = 0
     },
     incKids(val){
-     this.filterBy.gusets.kids=  this.filterBy.gusets.kids + val
-       if(this.filterBy.gusets.kids === -1) this.filterBy.gusets.kids = 0
+     this.filterBy.guests.kids=  this.filterBy.guests.kids + val
+       if(this.filterBy.guests.kids === -1) this.filterBy.guests.kids = 0
     },
     incInfants(val){
-     this.filterBy.gusets.Infants=  this.filterBy.gusets.Infants + val
-        if(this.filterBy.gusets.Infants === -1) this.filterBy.gusets.Infants = 0
+     this.filterBy.guests.Infants=  this.filterBy.guests.Infants + val
+        if(this.filterBy.guests.Infants === -1) this.filterBy.guests.Infants = 0
     }
   },
   computed:{
-    getGusets(){
-      if(this.filterBy.gusets.adults===0 &&
-      this.filterBy.gusets.kids===0 &&
-      this.filterBy.gusets.Infants===0 
+    getGuests(){
+      if(this.filterBy.guests.adults===0 &&
+      this.filterBy.guests.kids===0 &&
+      this.filterBy.guests.Infants===0 
       ) {
-        return `Add Gusets`
+        return `Add guests`
       }
       else{
-        const count= (this.filterBy.gusets.adults +
-         this.filterBy.gusets.kids + this.filterBy.gusets.Infants)
-        return `${count} gusets`
+        const count= (this.filterBy.guests.adults +
+         this.filterBy.guests.kids + this.filterBy.guests.Infants)
+        return `${count} guests`
       }
 
     },
