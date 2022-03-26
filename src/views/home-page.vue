@@ -1,5 +1,5 @@
 <template>
- <app-header />
+  <app-header />
   <main class="home-page">
     <section class="main-hero main-layout2">
       <h1>Let your curiosity do the booking</h1>
@@ -26,6 +26,7 @@
 <script>
 import appHeader from "../components/app-header.vue";
 import homeList from "../components/home-list.vue";
+
 export default {
   name: "home-page",
   data() {
@@ -34,12 +35,11 @@ export default {
   computed: {
     stays() {
       this.$store.commit({ type: "setStay", stay });
-
     },
   },
   components: {
     homeList,
-    appHeader
+    appHeader,
   },
 };
 </script>
