@@ -2,14 +2,14 @@
 <app-header  class="header-details"/>
   <section v-if="stay" class="main-layout">
     <imgs-comp :stay="stay"></imgs-comp>
-    <main class="flex ">
+    <main class="flex main-details-comp space-between">
       <section class="flex-col">
         <initial-info :stay="stay"></initial-info>
         <main-amenities :stay="stay"></main-amenities>
         <stay-description :stay="stay"></stay-description>
         <amenities :stay="stay"></amenities>
       </section>
-      <section>
+      <section class="checkout-area">
         <checkout :stay="stay"></checkout>
       </section>
     </main>

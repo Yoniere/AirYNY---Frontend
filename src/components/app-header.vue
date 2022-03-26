@@ -6,8 +6,8 @@
       </div>
         <button class="mini-filter flex space-between align-center clickable " :class="(this.openfilter) ? 'hide' : 'fixed'"
         @click="toggle">
-          Start to search
-           
+         <span> {{getFilter}}</span> 
+
 <div class="search-btn">
       <button @click="setFilter">
         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
@@ -43,7 +43,7 @@
       </div>
       </div>
   
-    <stay-filter :class="(openfilter) ? '' : 'hide'" />
+    <stay-filter :class="(openfilter) ? '' : 'hide'" @filterd="setMiniFilter"/>
 
   
   </section>
@@ -65,6 +65,7 @@ export default {
     return{
    stickyNav: false,
    openfilter: true,
+   filter:null,
     }
   },
 
@@ -82,12 +83,19 @@ export default {
 },
 toggle(){
     this.openfilter = !this.openfilter
+},
+setMiniFilter(filterBy){
+  this.filter = filterBy
+
 }
 
   },
   computed:{
     getLogo(){
       return this.stickyNav ? 'https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648055648/airyny/logo2.png' : 'https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648055648/airyny/logo1.png'
+    },
+    getFilter(){
+     return  this.filter ? `${this.filter}` :  'Start to search'
     }
 
   },
