@@ -7,7 +7,6 @@
           <span class="night"> / night</span>
         </h1>
       </div>
-
       <div class="checkout-title-right flex">
         <div class="flex card-rate">
           <svg
@@ -16,7 +15,7 @@
             aria-hidden="true"
             role="presentation"
             focusable="false"
-            style="display: block; height: 14px; width: 14px; fill: #ff385c"
+            style="display: block; height: 14px; width: 14px; fill: #FF385C"
           >
             <path
               d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965
@@ -84,7 +83,6 @@
     <button class="reserve-btn">Reserve</button>
   </section>
 </template>
-
 <script>
 export default {
   name: "checkout",
@@ -99,6 +97,8 @@ export default {
       stayTime: "",
       // stickyNav: false,
       pos: "",
+      x:0,
+      y:0,
     };
   },
   created() {
@@ -146,12 +146,20 @@ export default {
 
         openModal(){
       this.guestModal = !this.guestModal
-
+        },
+     getPos(){
+      //  calc((100 - var(--mouse-x, 0))*1%) calc((100 - var(--mouse-y, 0))*1%);
+      // return `top: ${this.top}px; right: ${this.right}px; bottom: ${this.bottom}px; left: ${this.left}px;`
+      return  `background-Position : calc(100 - (${this.x}, 0))+ %) , calc((100 - (${this.y} , 0)*1%) `
+     },
+    onMouseOver(e) {
+       const div =this.$refs.myRef;
+      const mouseY = e.pageY - div.offsetTop;
+      this.x= e.clientX - div.offsetLeft
+      this.y= e.pageY - div.offsetTop
     },
-  },
-};
+}
+}
 </script>
-
 <style>
 </style>
-
