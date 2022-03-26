@@ -33,8 +33,17 @@
         </button>
       </div>
     </div>
+          <el-date-picker
+        v-model="stayTime"
+        type="daterange"
+        range-separator=""
+        start-placeholder="Check in"
+        end-placeholder="Check out"
+      >
+      </el-date-picker >
 
-    <button @mouseover="onMouseOver(this.event)" class="reserve-btn" :style="getCalc">
+
+    <button @mouseover="onMouseOver(this.event)" class="reserve-btn">
       Reserve
     </button>
   </section>
