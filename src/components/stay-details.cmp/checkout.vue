@@ -85,7 +85,15 @@
       </ul>
     </div>
 
-    <button class="reserve-btn">Reserve</button>
+    <button class="reserve-btn" @click="setOrder">Reserve</button>
+    <nav class="checkout-nav">
+      <ul class="nav-list">
+        <a class="link" href="`stay/${stay.id}/#gallery`">Photos</a>
+        <a class="link" href="\">Amenities</a>
+        <a class="link" href="\">Reviews</a>
+        <a class="link" href="\">Location</a>
+      </ul>
+    </nav>
   </section>
 </template>
 <script>
@@ -99,20 +107,30 @@ export default {
   data() {
     return {
       guestModal: false,
-      stayTime: "",
+      // stayTime: "",
       // stickyNav: false,
       pos: "",
       x: 0,
       y: 0,
-      filterBy: "",
+      filterBy: {
+        country: "",
+        guests:{
+          adults:0,
+          kids:0,
+          Infants:0
+        },
+      stayTime: "",
+      },
     };
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
-    this.filterBy=this.$store.getters.filterBy
+    this.filterBy = this.$store.getters.filterBy;
+    console.log(this.filterBy);
   },
   unmounted() {
     window.removeEventListener("scroll", this.handleScroll);
+    this.filterBy=''
   },
 
   computed: {
@@ -131,24 +149,26 @@ export default {
         return "fixed-top";
       }
     },
-    //     getGuests(){
-    //   if(this.filterBy.guests.adults===0 &&
-    //   this.filterBy.guests.kids===0 &&
-    //   this.filterBy.guests.Infants===0 
-    //   ) {
-    //     return `Add guests`
-    //   }
-    //   else{
-    //     const count= (this.filterBy.guests.adults +
-    //      this.filterBy.guests.kids + this.filterBy.guests.Infants)
-    //     return `${count} guests`
-    //   }
-
-    // },
+    getGuests() {
+      console.log(this.filterBy)
+      if (
+        (this.filterBy.guests.adults === 0 || !this.filterBy.guests.adults)  &&
+        this.filterBy.guests.kids === 0 &&
+        this.filterBy.guests.Infants === 0
+      ) {
+        return `Add guests`;
+      } else {
+        const count =
+          this.filterBy.guests.adults +
+          this.filterBy.guests.kids +
+          this.filterBy.guests.Infants;
+        return `${count} guests`;
+      }
+    },
   },
   methods: {
     handleScroll(event) {
-      console.log(window.top.scrollY)
+      // console.log(window.top.scrollY)
       if (window.top.scrollY < 744) {
         this.pos = "a";
         // this.stickyNav = true;
@@ -179,6 +199,21 @@ export default {
       this.x = e.clientX - div.offsetLeft;
       this.y = e.pageY - div.offsetTop;
     },
+    incAdults(val) {
+      this.filterBy.guests.adults = this.filterBy.guests.adults + val;
+      if (this.filterBy.guests.adults === -1) this.filterBy.guests.adults = 0;
+    },
+    incKids(val) {
+      this.filterBy.guests.kids = this.filterBy.guests.kids + val;
+      if (this.filterBy.guests.kids === -1) this.filterBy.guests.kids = 0;
+    },
+    incInfants(val) {
+      this.filterBy.guests.Infants = this.filterBy.guests.Infants + val;
+      if (this.filterBy.guests.Infants === -1) this.filterBy.guests.Infants = 0;
+    },
+    setOrder() {
+     this.$emit('setOrder',JSON.parse(JSON.stringify(this.filterBy)))
+    }
   },
 };
 </script>

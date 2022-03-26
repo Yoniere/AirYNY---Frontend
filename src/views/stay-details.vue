@@ -10,7 +10,7 @@
         <amenities :stay="stay"></amenities>
       </section>
       <section class="checkout-area">
-        <checkout :stay="stay"></checkout>
+        <checkout :stay="stay" @setOrder="setOrder"></checkout>
       </section>
     </main>
     <reviews :stay="stay"></reviews>
@@ -57,6 +57,12 @@ export default {
     detailsMap
   },
   computed: {},
+  methods:{
+    async setOrder(filterBy) {
+      console.log(filterBy)
+     const newOrder= await this.$store.dispatch({type:'addNewOrder',filterBy})
+    }
+  }
 };
 </script>
 
