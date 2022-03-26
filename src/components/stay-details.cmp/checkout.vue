@@ -73,7 +73,9 @@ export default {
       return this.stay.reviewScores.rating / 10;
     },
      getPos(){
-      return { 'background-Position' :  (( (100 - (this.x, 0))+'%') , ((100 - (this.y , 0))+'%')) }
+      //  calc((100 - var(--mouse-x, 0))*1%) calc((100 - var(--mouse-y, 0))*1%);
+      // return `top: ${this.top}px; right: ${this.right}px; bottom: ${this.bottom}px; left: ${this.left}px;`
+      return  `background-Position : calc(100 - (${this.x}, 0))+ %) , calc((100 - (${this.y} , 0)*1%) `
      }
   },
   methods: {
