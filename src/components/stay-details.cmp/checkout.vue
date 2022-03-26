@@ -7,7 +7,6 @@
           <span class="night"> / night</span>
         </h1>
       </div>
-
       <div class="checkout-title-right flex">
         <div class="flex card-rate">
           <svg
@@ -16,7 +15,7 @@
             aria-hidden="true"
             role="presentation"
             focusable="false"
-            style="display: block; height: 14px; width: 14px; fill: #ff385c"
+            style="display: block; height: 14px; width: 14px; fill: #FF385C"
           >
             <path
               d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965
@@ -33,11 +32,18 @@
         </button>
       </div>
     </div>
-
-    <button @mousemove="onMouseMove(this.$event)" class="reserve-btn">Reserve</button>
+          <el-date-picker
+        v-model="stayTime"
+        type="daterange"
+        range-separator=""
+        start-placeholder="Check in"
+        end-placeholder="Check out">
+      </el-date-picker >
+    <button @mouseover="onMouseOver($event)"  ref="myRef" class="reserve-btn" :style="{getPos}">
+      Reserve
+    </button>
   </section>
 </template>
-
 <script>
 export default {
   name: "checkout",
@@ -47,28 +53,38 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      x:0,
+      y:0,
+      data: {
+          stayTime:'',
+      },
+    };
   },
-  created () {
-    window.addEventListener('mousemove', this.onMouseMove);
+  created() {
   },
-mounted (){
-     window.addEventListener('onMouseMove', this.onMouseMove)
-},
-unmounted() {
- window.removeEventListener('onMouseMove', this.onMouseMove)
-},
+  mounted() {
+  },
+  unmounted() {
+  },
   computed: {
     getRating() {
       return this.stay.reviewScores.rating / 10;
     },
+     getPos(){
+      return { 'background-Position' :  (( (100 - (this.x, 0))+'%') , ((100 - (this.y , 0))+'%')) }
+     }
   },
-    methods:{
-      onMouseMove($event){
-        console.log($event)
-      }
-    }
-  }
+  methods: {
+    onMouseOver(e) {
+       const div =this.$refs.myRef;
+      const mouseY = e.pageY - div.offsetTop;
+      this.x= e.clientX - div.offsetLeft
+      this.y= e.pageY - div.offsetTop
+    },
+  },
+};
 </script>
+<style>
 
-<style></style>
+</style>

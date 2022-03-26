@@ -104,14 +104,16 @@
 .header-details {
   grid-template-rows: 1fr;
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08) !important;
-  position: static;
   top: 0;
   position: static !important;
   color: $clr3;
   height: 80px !important;
   transition: 0s;
   .filter {
-    visibility: hidden;
+    opacity: 0;
+  }
+  .filter.hide {
+    visibility: visible !important;
   }
   .mini-filter {
     margin-top: rem(10px);
