@@ -1,17 +1,9 @@
 .home-list {
-  // display: grid;
-  // grid-template-columns: repeat(
-  //   auto-fit,
-  //   minmax(310px, 1fr)
-  // );
-
-  // gap: 23px;
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
     minmax(250px, 1fr)
   );
-
   gap: 23px;
 }
 
@@ -38,18 +30,17 @@
   margin-bottom: 43px;
 }
 .country-name {
-  font-family: Cereal-Bold;
+  font-family: Cereal-Regular;
   text-align: start;
   white-space: pre-line;
-  max-width: 100%;
+  // max-width: 100%;
   font-size: 27px;
-  font-weight: 600;
+  // font-weight: 600;
   letter-spacing: -0.27px;
   line-height: 30px;
-  color: #222222;
+  color: #484848;
   cursor: pointer;
   margin-top: 17px;
-  // -webkit-line-clamp: var(--tl-line-clamp);
 }
 
 .unique-dest-list {
