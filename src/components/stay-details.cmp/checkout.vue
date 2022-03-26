@@ -1,8 +1,8 @@
 <template>
-  <section class="checkout" :class="checkoutPos">
+  <section v-if="filterBy" class="checkout" :class="checkoutPos">
     <div class="checkout-title flex space-between">
       <div class="checkout-title-left">
-        <h1>
+        <h1 class="title">
           <span class="price">${{ stay.price }}</span>
           <span class="night"> / night</span>
         </h1>
@@ -15,7 +15,7 @@
             aria-hidden="true"
             role="presentation"
             focusable="false"
-            style="display: block; height: 14px; width: 14px; fill: #FF385C"
+            style="display: block; height: 14px; width: 14px; fill: #ff385c"
           >
             <path
               d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965
@@ -35,7 +35,7 @@
 
     <el-date-picker
       class="date-input"
-      v-model="this.stayTime"
+      v-model="this.filterBy.stayTime"
       type="daterange"
       range-separator=""
       start-placeholder="Check in"
@@ -43,7 +43,47 @@
     >
     </el-date-picker>
 
+    <div class="guests-input flex-col" @click="openModal">
+      <label class="guests-label"> Guests </label>
+      <span class="guests"> {{ getGuests }}</span>
+    </div>
 
+    <div v-if="guestModal" class="guests-Modal">
+      <ul>
+        <li class="flex space-between align-center">
+          <span class="flex-col"
+            >Adults
+            <span class="guide-age">Ages 13 or above </span>
+          </span>
+          <span>
+            <button @click="incAdults(1)">+</button>
+            {{ filterBy.guests.adults }}
+            <button @click="incAdults(-1)">-</button></span
+          >
+        </li>
+        <li class="flex space-between align-center">
+          <span class="flex-col">
+            Children
+            <span class="guide-age"> Ages 2-12 </span>
+          </span>
+          <span>
+            <button @click="incKids(1)">+</button> {{ filterBy.guests.kids }}
+            <button @click="incKids(-1)">-</button></span
+          >
+        </li>
+        <li class="flex space-between align-center">
+          <span class="flex-col">
+            Infants
+            <span class="guide-age">Under 2 </span>
+          </span>
+          <span>
+            <button @click="incInfants(1)">+</button>
+            {{ filterBy.guests.Infants }}
+            <button @click="incInfants(-1)">-</button></span
+          >
+        </li>
+      </ul>
+    </div>
 
     <button class="reserve-btn">Reserve</button>
   </section>
@@ -62,12 +102,14 @@ export default {
       stayTime: "",
       // stickyNav: false,
       pos: "",
-      x:0,
-      y:0,
+      x: 0,
+      y: 0,
+      filterBy: "",
     };
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
+    this.filterBy=this.$store.getters.filterBy
   },
   unmounted() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -89,15 +131,29 @@ export default {
         return "fixed-top";
       }
     },
+    //     getGuests(){
+    //   if(this.filterBy.guests.adults===0 &&
+    //   this.filterBy.guests.kids===0 &&
+    //   this.filterBy.guests.Infants===0 
+    //   ) {
+    //     return `Add guests`
+    //   }
+    //   else{
+    //     const count= (this.filterBy.guests.adults +
+    //      this.filterBy.guests.kids + this.filterBy.guests.Infants)
+    //     return `${count} guests`
+    //   }
+
+    // },
   },
   methods: {
     handleScroll(event) {
-      // console.log(window.top.scrollY)
+      console.log(window.top.scrollY)
       if (window.top.scrollY < 744) {
         this.pos = "a";
         // this.stickyNav = true;
         // this.openfilter = false;
-      } else if (window.top.scrollY < 1480) {
+      } else if (window.top.scrollY < 1410) {
         this.pos = "b";
         // this.stickyNav = false;
         // this.openfilter = true;
@@ -109,22 +165,22 @@ export default {
       // console.log(this.pos)
     },
 
-        openModal(){
-      this.guestModal = !this.guestModal
-        },
-     getPos(){
+    openModal() {
+      this.guestModal = !this.guestModal;
+    },
+    getPos() {
       //  calc((100 - var(--mouse-x, 0))*1%) calc((100 - var(--mouse-y, 0))*1%);
       // return `top: ${this.top}px; right: ${this.right}px; bottom: ${this.bottom}px; left: ${this.left}px;`
-      return  `background-Position : calc(100 - (${this.x}, 0))+ %) , calc((100 - (${this.y} , 0)*1%) `
-     },
-    onMouseOver(e) {
-       const div =this.$refs.myRef;
-      const mouseY = e.pageY - div.offsetTop;
-      this.x= e.clientX - div.offsetLeft
-      this.y= e.pageY - div.offsetTop
+      return `background-Position : calc(100 - (${this.x}, 0))+ %) , calc((100 - (${this.y} , 0)*1%) `;
     },
-}
-}
+    onMouseOver(e) {
+      const div = this.$refs.myRef;
+      const mouseY = e.pageY - div.offsetTop;
+      this.x = e.clientX - div.offsetLeft;
+      this.y = e.pageY - div.offsetTop;
+    },
+  },
+};
 </script>
 <style>
 </style>
