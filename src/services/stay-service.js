@@ -1,3 +1,4 @@
+import { filter } from 'cheerio/lib/api/traversing'
 import { storageService } from './async-storage-service.js'
 import { utilService } from './util-service.js'
 
@@ -2839,8 +2840,27 @@ export const stayService = {
 }
 
 
-function query() {
-    return storageService.query(STAYS_KEY)
+async function query(filterBy) {
+   const stays = await storageService.query(STAYS_KEY)
+   if (filterBy.country) {
+    const filteredStays =  _filterStays(stays,JSON.parse(JSON.stringify(filterBy)) )
+    return Promise.resolve(filteredStays)
+   }
+    return Promise.resolve(stays)
+}
+
+function _filterStays(stays , filterBy) {
+    let filteredStays= []
+    const regex = new RegExp(filterBy.country, 'i')
+    filteredStays =  stays.filter(stay => regex.test(stay.address.country ||stay.address.city )
+    )
+    if (filterBy.type.length) {
+        filteredStays = filteredStays.filter((stay) => {
+          return stay.propertyType.some((label) => filterBy.type.includes(label))
+        })
+      }
+    
+return filteredStays
 }
 
 function getById(entityId) {

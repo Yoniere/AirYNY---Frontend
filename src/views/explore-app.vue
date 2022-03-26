@@ -2,73 +2,23 @@
 <app-header class="header-explore" />
   <section class="main-layout2">
     <div class="explore-buttons flex">
-    <button @click="ChangeModalPrice" class="sort-btn relative"> price </button>
-       <div  v-if="modalPrice" class="price-modal"> 
-           <div class="flex-col">
-            <span class="type-header"> The average nightly price is 100$ </span>
-            <div class="flex-row range space-between">
-            <span> 30  </span>
-            <input type="range" min="30" max="10000" /> 
-            <span>10000 </span>
-            </div>
-            <div class="flex-row prices space-between">
-              <label>
-              <span> min-price </span>
-            <input class="input-price relative" type="number" value="30" /> 
-            </label> -
-              <label>
-            <span> max-price </span>
-            <input class="input-price relative" type="number" value="10000" /> 
-            </label>
-            </div>
-            </div>
-            <button class="save-btn">save </button>
-    </div>
+    <button @click="ChangeModalPrice" class="sort-btn relative flex align-center"> price
+      <span> <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;"><g fill="none"><path d="m28 12-11.2928932 11.2928932c-.3905243.3905243-1.0236893.3905243-1.4142136 0l-11.2928932-11.2928932"></path></g></svg>
+     </span>
+       </button>
+     <priceModal v-if="modalPrice"  @sortByPrice="setSortByPrice"/>
 
-    <button  @click="ChangeModalType" class="sort-btn"> Type of place </button>
-  <div v-if="modalType" class="modal-container flex-col">
-       <div class="type-filter">
-         <label class=" type-filter-container flex">
-           <div class="flex-col">
-            <span class="type-header">Entire place</span>
-            <span class="type-title">Have a place to yourself</span>
-            </div>
-            <input type="checkbox" id="entire place" value="Entire place"  class="checkmark" />
-         </label>
-        </div>
-      <div class="type-filter">
-       <label class="type-filter-container flex">
-         <div class="flex-col">
-           <span class="type-header">Private room</span>
-           <span class="type-title"> Have your own room and share some common spaces </span>
-           </div>
-           <input type="checkbox" id="private room" value="Private room" class="checkmark" />
-         </label>
-         </div>
-
-        <div class="type-filter">
-         <label class="type-filter-container flex">
-           <div class="flex-col">
-           <span class="type-header">Hotel room</span>
-            <span class="type-title"> Have a private or shared room in a boutique hotel, hostel, and more </span>
-            </div>
-           <input type="checkbox" id="hotel room" value="Hotel room"  class="checkmark" />
-          </label>
-          </div>
-          
-          <div class="type-filter">
-          <label class="type-filter-container flex">
-            <div class="flex-col">
-           <span class="type-header">Shared room</span>
-           <span class="type-title"> Stay in a shared space, like a common room </span>
-           </div>
-           <input type="checkbox" id="shared room" value="Shared room"  class="checkmark" />
-          </label>
-           </div>
-          <div class="type-save flex space-between">
-            <button class="save-btn">Clear</button><button class="save-btn">Save</button>
-        </div>
-     </div>
+    <button  @click="ChangeModalType" class="sort-btn flex align-center"> Type of place
+     <span> <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;"><g fill="none"><path d="m28 12-11.2928932 11.2928932c-.3905243.3905243-1.0236893.3905243-1.4142136 0l-11.2928932-11.2928932"></path></g></svg>
+     </span>
+       </button>
+     <typePlaceModal  v-if="modalType" @sort="setSort" />
+      <button  class="sort-btn"> Wifi </button>
+      <button  class="sort-btn"> TV </button>
+      <button  class="sort-btn"> Kitchen </button>
+      <button  class="sort-btn"> AC </button>
+      <button  class="sort-btn"> Smoking Allowed </button>
+      <button  class="sort-btn"> Pet Allowed </button>
 </div>
   
    
@@ -81,11 +31,21 @@
 <script>
 import appHeader from "../components/app-header.vue";
 import stayList from "../components/stay-list.vue";
+import typePlaceModal from '../components/type-place-modal.vue'
+import priceModal from '../components/price-modal.vue'
 
 export default {
   created() {},
   data() {
     return {
+      filterBy:{
+        price:{
+          minPrice: 30 ,
+          maxPrice: 2000,
+        },
+        type:[]
+
+      },
       modalPrice:false,
       modalType:false,
     };
@@ -106,11 +66,30 @@ export default {
     },
     ChangeModalType(){
       this.modalType = !this.modalType
+    },
+    setSort(sortBy){
+      this.filterBy.type = sortBy
+       this.$store.dispatch({
+        type: "setFilter",
+        filterBy: JSON.parse(JSON.stringify(this.filterBy)) ,
+      });
+      this.modalType = false
+    },
+    setSortByPrice(sortBy){
+          this.filterBy.price.minPrice= sortBy.minPrice 
+          this.filterBy.price.maxPrice= sortBy.maxPrice 
+            this.$store.dispatch({
+        type: "setFilter",
+        filterBy: JSON.parse(JSON.stringify(this.filterBy)) ,
+      });
+      this.modalPrice = false
     }
   },
   components: {
     stayList,
-    appHeader
+    appHeader,
+    typePlaceModal,
+    priceModal,
   },
 };
 </script>
