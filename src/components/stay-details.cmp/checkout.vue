@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <button @mousemove="getMouseCord()" class="reserve-btn">Reserve</button>
+    <button @mousemove="onMouseMove(this.$event)" class="reserve-btn">Reserve</button>
   </section>
 </template>
 
@@ -50,25 +50,25 @@ export default {
     return {};
   },
   created () {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('mousemove', this.onMouseMove);
   },
 mounted (){
-     window.addEventListener('mousemove', this.onMouseMove)
+     window.addEventListener('onMouseMove', this.onMouseMove)
 },
 unmounted() {
- document.removeEventListener('mousemove', this.onMouseMove)
+ window.removeEventListener('onMouseMove', this.onMouseMove)
 },
   computed: {
     getRating() {
       return this.stay.reviewScores.rating / 10;
     },
+  },
     methods:{
-      getMouseCord(){
-        console.log('hel')
+      onMouseMove($event){
+        console.log($event)
       }
     }
-  },
-};
+  }
 </script>
 
 <style></style>
