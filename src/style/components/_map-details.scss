@@ -1,12 +1,28 @@
-.map-details {
+.hr-border {
+  margin-bottom: 141px;
+  border: -0.9px solid $clr5;
+  background-color: $clr5;
+  opacity: 0.3;
 }
 
 .vue-map-container {
-  height: 700px;
-  width: 70vw;
+  // margin: 39px;
+  padding: 0px;
+  height: rem(480px);
+  max-width: rem(1120px);
 }
 
-// .vue-map-container img {
-//   height: 100px !important;
-//   width: 100px !important;
-// }
+.map-container {
+  padding: 0px 0px 24px;
+  color: $clr5;
+  font-family: Cereal-Regular;
+  h2 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+  p {
+    line-height: 22px;
+    // font-size: 16px;
+    margin-bottom: rem(24px);
+  }
+}
