@@ -1,8 +1,13 @@
 <template>
   <section class="flex-col">
     <div class="upper-review flex">
-      <div class="review-img">
+      <!-- <div class="review-img">
         <img class="img" :src="`${review.by.imgUrl}`" />
+      </div> -->
+      <div class="review-img q-pa-md q-gutter-sm">
+        <q-avatar>
+          <img class="img" src="path/to/some_image.png" />
+        </q-avatar>
       </div>
       <div class="review-titles">
         <h1 class="name">{{ review.by.fullname }}</h1>
