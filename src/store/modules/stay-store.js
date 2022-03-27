@@ -40,6 +40,7 @@ export default {
 
         setFilter(state, { filterBy }) {
             state.filterBy = filterBy
+            console.log(filterBy);
                 // if (filterBy.country) state.filterBy.country = filterBy.country
                 // if (filterBy.price) state.filterBy.price = filterBy.price
                 // if (filterBy.type) state.filterBy.type = filterBy.type

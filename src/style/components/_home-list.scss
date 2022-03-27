@@ -39,8 +39,11 @@
   position: relative;
 
   .home-img {
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    // border-top-left-radius: 12px;
+    // border-top-right-radius: 12px;
+    // border-bottom-left-radius: 12px;
+    // border-bottom-right-radius: 12px;
+    border-radius: 12px;
     height: 50vh;
     object-fit: cover;
     border-bottom: 0px;
@@ -67,8 +70,7 @@
   border-radius: 12px !important;
   font-family: Cereal-Regular;
   padding-bottom: 5px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-radius: 12px !important;
 
   .dist-country {
     font-family: Cereal-Regular;

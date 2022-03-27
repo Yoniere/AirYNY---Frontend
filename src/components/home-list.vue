@@ -75,16 +75,31 @@ export default {
           km: "8,979km",
         },
       ],
+              filterBy: {
+            country: '',
+            guests: {
+                adults: 0,
+                kids: 0,
+                Infants: 0,
+            },
+            stayTime: '',
+            type: [],
+            price: {
+                minPrice: 30,
+                maxPrice: 2000
+
+            },
+
+        },
     };
   },
 
   methods: {
     goToStay(stay) {
-      const filterBy = { country: stay };
-
+      this.filterBy.country= stay ;
       this.$store.dispatch({
         type: "setFilter",
-        filterBy: JSON.parse(JSON.stringify(filterBy)),
+        filterBy: JSON.parse(JSON.stringify(this.filterBy)),
       });
       this.$router.push(`/stay`);
     },
