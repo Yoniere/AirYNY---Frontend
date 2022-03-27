@@ -44,6 +44,7 @@
 
 .filter {
     justify-content: center;
+    width: 80vw;
     label {
         font-size: rem(17px);
         font-weight: 800;
@@ -182,7 +183,7 @@
     border-radius: rem(40px);
     font-size: rem(14px);
     height: 66px;
-    max-width: 850px;
+    max-width: 95%;
     align-self: center;
     //neomi edit
     max-width: rem(850px);

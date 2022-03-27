@@ -1,5 +1,5 @@
 <template>
-  <section class="filter flex align-center main-layot">
+  <section class="filter flex align-center">
     <div
       class="main-filter flex space-between align-center"
     >

@@ -25,7 +25,6 @@
   grid-template-rows: 1fr;
   grid-template-columns: 80px 1fr 80px;
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08) !important;
-  padding: rem(15px);
   align-items: center;
 }
 
@@ -40,6 +39,7 @@
   cursor: pointer;
   object-fit: cover;
   top: rem(15px);
+  margin-left: rem(-7px)
 }
 .places {
   font-weight: 400;
