@@ -12,11 +12,13 @@
           @click="goToStay(stay)"
         >
           <img
-            class="home-card-img"
+            class="home-img"
             :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/${stay}1`"
             alt="img rated stay"
           />
-          <h3 class="country-name">{{ stay }}</h3>
+          <div class="txt-container">
+            <h3 class="country-name">{{ stay }}</h3>
+          </div>
         </li>
       </ul>
     </div>
@@ -33,13 +35,16 @@
           @click="goToUnique(stay)"
         >
           <img
-            class="home-card-img"
+            class="home-img"
             :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/${stay.country}`"
             alt="img unique stay"
           />
-
-          <h3 class="country-name">{{ stay.country }}</h3>
-          <span>{{ stay.km }}</span>
+          <div class="txt-container">
+            <h3 class="country-name">
+              {{ stay.country }}
+            </h3>
+            <span class="dist-country">{{ stay.km }}</span>
+          </div>
         </li>
       </ul>
     </div>
@@ -89,23 +94,6 @@ export default {
       delete stay.km;
       console.log("stay", stay);
       this.$router.push(`/stay/${stay.id}`);
-    },
-    getDistance() {
-      // var from = new google.maps.LatLng(
-      //   32.079807,
-      //   34.780293
-      // );
-      // console.log("form", form);
-      // var to = new google.maps.LatLng(
-      //   this.stay.address.location.lan,
-      //   this.stay.address.location.lat
-      // );
-      // var dist =
-      //   google.maps.geometry.spherical.computeDistanceBetween(
-      //     from,
-      //     to
-      //   );
-      // console.log("dist", dist);
     },
   },
 };
