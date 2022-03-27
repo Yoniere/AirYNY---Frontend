@@ -1,7 +1,11 @@
                     .upper-img-section {
                         background-color: #fff;
-                        margin-top: 100px;
+                        padding-top: rem(24px);
                         max-width: rem(1120px);
+                        .second-header {
+                            max-height: 28px;
+                            margin-top: 4px;
+                        }
                         .right-side-btns {
                             align-items: end;
                             .share-btn {
@@ -14,7 +18,7 @@
                                 line-height: 18px;
                                 font-weight: 500;
                                 color: rgb(34, 34, 34);
-                                padding: rem(8px);
+                                // padding: rem(8px);
                                 transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
                                 .share-img {
                                     margin-right: rem(8px);
@@ -38,8 +42,7 @@
                                 line-height: 18px;
                                 font-weight: 500;
                                 color: rgb(34, 34, 34);
-                                padding: rem(8px);
-                
+                                padding: 0px;
                                 transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
                                 .save-img {
                                     margin-right: rem(8px);
@@ -313,15 +316,17 @@
                                         width: 100%;
                                         align-items: center;
                                         margin-left: rem(12px);
+                                        justify-content: flex-end;
                                         .grey-line {
                                             background: rgb(221, 221, 221);
                                             width: 100%;
+                                            max-width: 143.16px;
                                             height: rem(4px);
                                             border-radius: rem(2px);
                                             position: relative;
                                             .black-line {
                                                 background: #222222;
-                                                // width: 100%;
+                                                max-width: 143.16px;
                                                 height: rem(4px);
                                                 border-radius: rem(2px);
                                                 position: absolute;
@@ -343,6 +348,10 @@
                     
                     .reviews {
                         flex-wrap: wrap;
+                    }
+                    
+                    .review:nth-child(even) {
+                        margin-inline-start: 16px;
                     }
                     
                     .review {
@@ -471,15 +480,43 @@
                         &:hover {
                             opacity: 1;
                         }
-                        .date-input {
+                        .date-input-checkout {
                             height: rem(56px);
                             max-width: rem(322.33px);
-                            border-radius: rem(8px) rem(8px) 0 0;
+                            // border-radius: rem(8px) rem(8px) 0 0;
                             font-size: 10px;
                             line-height: 12px;
                             color: rgb(34, 34, 34);
                             text-transform: uppercase;
                             font-weight: 800;
+                            // border-left: 1px solid black;
+                            // border-top: 1px solid black;
+                            padding: 0px;
+                            .el-range-editor {
+                                // padding: 0px;
+                                .el-icon:first {
+                                    border-left: 1px black solid;
+                                    &.el-range-input:first {
+                                        border-left: 1px black solid;
+                                    }
+                                }
+                            }
+                            .el-icon {
+                                display: none;
+                            }
+                            .el-range-separator {
+                                display: none;
+                            }
+                            .el-range-input {
+                                width: 50%;
+                                border-right: 1px solid black;
+                                border-top: 1px solid black;
+                                // border-left: 1px solid black;
+                                // padding: 0px;
+                            }
+                            .el-range-input :first {
+                                border-left: 1px solid black;
+                            }
                         }
                         .guests-input {
                             height: rem(52px);
@@ -490,6 +527,12 @@
                             color: rgb(34, 34, 34);
                             font-weight: 800;
                             margin-bottom: rem(15px);
+                            border: 1px solid;
+                            color: black;
+                            border-top-left-radius: 0px;
+                            border-top-right-radius: 0px;
+                            border-bottom-left-radius: rem(8px);
+                            border-bottom-right-radius: rem(8px);
                         }
                         .nav-bar-section {
                             order: -1
@@ -501,7 +544,7 @@
                     }
                     
                     .fixed {
-                        position: fixed;
+                        position: sticky;
                         top: rem(50px);
                         right: rem(220px);
                     }

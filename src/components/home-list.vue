@@ -100,6 +100,7 @@ export default {
         filterBy: JSON.parse(JSON.stringify(this.filterBy)),
       });
       this.$router.push(`/stay`);
+        window.scrollTo(0, 0);
     },
 
     goToUnique(stay) {
@@ -107,6 +108,7 @@ export default {
       delete stay.km;
       console.log("stay", stay);
       this.$router.push(`/stay/${stay.id}`);
+        window.scrollTo(0, 0);
     },
   },
 };

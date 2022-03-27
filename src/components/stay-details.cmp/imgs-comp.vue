@@ -1,7 +1,7 @@
 <template >
   <section class=" upper-img-section">
     <h1 class="stay-name">{{ stay.name }}</h1>
-    <div class="flex space-between ">
+    <div class=" second-header flex space-between ">
       <div class="left-side-btns flex">
         <div class="flex card-rate">
           <svg
