@@ -2844,7 +2844,8 @@ export const stayService = {
 
 async function query(filterBy) {
     const stays = await storageService.query(STAYS_KEY)
-    const filteredStays = _filterStays(stays, JSON.parse(JSON.stringify(filterBy)))
+    if(!filterBy) return stays
+    const filteredStays =  _filterStays(stays, JSON.parse(JSON.stringify(filterBy)))
     return Promise.resolve(filteredStays)
 }
 
