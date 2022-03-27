@@ -2865,7 +2865,6 @@ function _filterStays(stays, filterBy) {
             })
         })
     }
-    console.log(filteredStays);
     if (filterBy.price) {
         filteredStays = filteredStays.filter((stay) => { 
            return  stay.price > filterBy.price.minPrice && stay.price < filterBy.price.maxPrice
