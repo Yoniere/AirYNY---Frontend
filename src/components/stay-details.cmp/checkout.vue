@@ -116,15 +116,7 @@ export default {
       pos: "",
       x: 0,
       y: 0,
-      filterBy: {
-        country: "",
-        guests: {
-          adults: 0,
-          kids: 0,
-          Infants: 0,
-        },
-        stayTime: "",
-      },
+      filterBy: null
     };
   },
   created() {
@@ -173,7 +165,6 @@ export default {
       }
     },
     getGuests() {
-      // console.log(this.filterBy);
       if (
         (this.filterBy.guests.adults === 0 || !this.filterBy.guests.adults) &&
         this.filterBy.guests.kids === 0 &&

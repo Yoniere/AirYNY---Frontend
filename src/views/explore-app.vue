@@ -6,7 +6,7 @@
       <span> <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;"><g fill="none"><path d="m28 12-11.2928932 11.2928932c-.3905243.3905243-1.0236893.3905243-1.4142136 0l-11.2928932-11.2928932"></path></g></svg>
      </span>
        </button>
-     <priceModal v-if="modalPrice"  @sortByPrice="setSortByPrice"/>
+     <priceModal v-if="modalPrice"  @filterByPrice="setFilterByPrice"/>
 
     <button  @click="ChangeModalType" class="sort-btn flex align-center"> Type of place
      <span> <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;"><g fill="none"><path d="m28 12-11.2928932 11.2928932c-.3905243.3905243-1.0236893.3905243-1.4142136 0l-11.2928932-11.2928932"></path></g></svg>
@@ -73,9 +73,9 @@ export default {
       });
       this.modalType = false
     },
-    setSortByPrice(sortBy){
-          this.filterBy.price.minPrice= sortBy.minPrice 
-          this.filterBy.price.maxPrice= sortBy.maxPrice 
+    setFilterByPrice(filterByPrice){
+          this.filterBy.price.minPrice= filterByPrice.minPrice 
+          this.filterBy.price.maxPrice= filterByPrice.maxPrice 
             this.$store.dispatch({
         type: "setFilter",
         filterBy: JSON.parse(JSON.stringify(this.filterBy)) ,
