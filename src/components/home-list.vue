@@ -39,7 +39,7 @@
           />
 
           <h3 class="country-name">{{ stay.country }}</h3>
-          <!-- <span>{{ stay.country }}</span> -->
+          <span>{{ stay.km }}</span>
         </li>
       </ul>
     </div>
@@ -57,14 +57,18 @@ export default {
         "Australia",
       ],
       uniqueStays: [
-        // "Canada",
-        // "Japan",
-        // "Norway",
-        // "Philippines",
-        { country: "Canada", id: 1155001 },
-        { country: "Japan", id: 1155002 },
-        { country: "Norway", id: 11115033 },
-        { country: "Philippines", id: 11115999 },
+        { country: "Canada", id: 1155001, km: "9,644km" },
+        { country: "Japan", id: 1155002, km: "9,079 km" },
+        {
+          country: "Norway",
+          id: 11115033,
+          km: "5,315.6km",
+        },
+        {
+          country: "Philippines",
+          id: 11115999,
+          km: "8,979km",
+        },
       ],
     };
   },
@@ -82,7 +86,26 @@ export default {
 
     goToUnique(stay) {
       console.log("stay", stay);
+      delete stay.km;
+      console.log("stay", stay);
       this.$router.push(`/stay/${stay.id}`);
+    },
+    getDistance() {
+      // var from = new google.maps.LatLng(
+      //   32.079807,
+      //   34.780293
+      // );
+      // console.log("form", form);
+      // var to = new google.maps.LatLng(
+      //   this.stay.address.location.lan,
+      //   this.stay.address.location.lat
+      // );
+      // var dist =
+      //   google.maps.geometry.spherical.computeDistanceBetween(
+      //     from,
+      //     to
+      //   );
+      // console.log("dist", dist);
     },
   },
 };

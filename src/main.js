@@ -22,6 +22,7 @@ const app = createApp(App)
 app.use(VueGoogleMaps, {
     load: {
         key: 'AIzaSyBAZNoPniCUAnGdMTF7BMOGgMeW_bcjBK8',
+
     }
 })
 
