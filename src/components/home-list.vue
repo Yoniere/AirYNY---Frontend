@@ -17,7 +17,7 @@
             alt="img rated stay"
           />
           <div class="txt-container">
-            <h3 class="country-name">{{ stay }}</h3>
+            <h3 class="country-name popular">{{ stay }}</h3>
           </div>
         </li>
       </ul>
@@ -75,28 +75,26 @@ export default {
           km: "8,979km",
         },
       ],
-              filterBy: {
-            country: '',
-            guests: {
-                adults: 0,
-                kids: 0,
-                Infants: 0,
-            },
-            stayTime: '',
-            type: [],
-            price: {
-                minPrice: 30,
-                maxPrice: 2000
-
-            },
-
+      filterBy: {
+        country: "",
+        guests: {
+          adults: 0,
+          kids: 0,
+          Infants: 0,
         },
+        stayTime: "",
+        type: [],
+        price: {
+          minPrice: 30,
+          maxPrice: 2000,
+        },
+      },
     };
   },
 
   methods: {
     goToStay(stay) {
-      this.filterBy.country= stay ;
+      this.filterBy.country = stay;
       this.$store.dispatch({
         type: "setFilter",
         filterBy: JSON.parse(JSON.stringify(this.filterBy)),
