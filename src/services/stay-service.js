@@ -1,3 +1,4 @@
+import { filter } from 'cheerio/lib/api/traversing'
 import { storageService } from './async-storage-service.js'
 import { utilService } from './util-service.js'
 
@@ -2368,7 +2369,7 @@ const stays = [{
     },
     "id": "1155002",
     "bathrooms": 1,
-    "price": 1,
+    "price": 31,
     "securityDeposit": 250,
     "cleaningFee": 80,
     "extraPeople": 0,
@@ -2841,8 +2842,35 @@ export const stayService = {
 }
 
 
-function query() {
-    return storageService.query(STAYS_KEY)
+async function query(filterBy) {
+   const stays = await storageService.query(STAYS_KEY)
+    const filteredStays =  _filterStays(stays,JSON.parse(JSON.stringify(filterBy)) )
+    return Promise.resolve(filteredStays)
+
+}
+
+function _filterStays(stays , filterBy) {
+    let filteredStays= stays
+    if(filterBy.country){
+        const regex = new RegExp(filterBy.country, 'i')
+        filteredStays =  filteredStays.filter(stay => regex.test(stay.address.country ||stay.address.city )
+        )
+    }
+  
+    if (filterBy.type.length) {
+        filteredStays = filteredStays.filter((stay) => {
+            return  filterBy.type.some((label) =>{
+              return label === stay.roomType
+            })
+        })
+      }
+        filteredStays = filteredStays.filter((stay) => {
+            console.log(filterBy);
+            return (stay.price > filterBy.price.minPrice && stay.price < filterBy.price.maxPrice  )
+        })
+      
+    
+return filteredStays
 }
 
 function getById(entityId) {
