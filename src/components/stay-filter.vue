@@ -149,6 +149,10 @@ export default {
           Infants: 0,
         },
         stayTime: "",
+        price:{
+           maxPrice:2000,
+            minPrice:30,
+        }
       },
     };
   },
@@ -168,7 +172,7 @@ export default {
       this.guestModal = false;
       this.$emit(
         "filterd",
-        JSON.parse(JSON.stringify(this.filterBy.country))
+        JSON.parse(JSON.stringify(this.filterBy))
       );
     },
     openModal() {
