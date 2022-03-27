@@ -3,18 +3,19 @@ import { stayService } from '../../services/stay-service.js'
 export default {
     state: {
         stays: [],
-        filterBy: { country: '' ,
-        price: {
-        
+        filterBy: {
+            country: '',
+            price: {
+
+            },
+            guests: {
+                adults: 0,
+                kids: 0,
+                Infants: 0,
+            },
+            stayTime: '',
+            type: []
         },
-        guests:{
-            adults:0,
-            kids:0,
-            Infants:0,
-        },
-        stayTime:'',
-        type:[]
-     },
 
     },
     getters: {
@@ -22,7 +23,7 @@ export default {
             return state.stays;
 
         },
-        filterBy(state){
+        filterBy(state) {
             return state.filterBy
         }
 
@@ -32,12 +33,13 @@ export default {
     mutations: {
         setStay(state, { stays }) {
             state.stays = stays
+            console.log(state.stays)
         },
 
         setFilter(state, { filterBy }) {
-            if(filterBy.country) state.filterBy.country = filterBy.country
-            if(filterBy.price) state.filterBy.price = filterBy.price
-            if(filterBy.type) state.filterBy.type = filterBy.type 
+            if (filterBy.country) state.filterBy.country = filterBy.country
+            if (filterBy.price) state.filterBy.price = filterBy.price
+            if (filterBy.type) state.filterBy.type = filterBy.type
         },
         ratedStays(state, { filterBy }) {
             state.filterBy.country = filterBy
@@ -57,12 +59,16 @@ export default {
                 throw err
             }
         },
-        setFilter({ commit, dispatch }, { filterBy }) {
-            console.log(filterBy);
-            commit({ type: 'setFilter', filterBy })
-            dispatch({ type: 'loadStays' })
-        },
- 
+        async setFilter({ commit, dispatch }, { filterBy }) {
+            try {
+                commit({ type: 'setFilter', filterBy })
+                dispatch({ type: 'loadStays' })
+            } catch {
+                console.error(err)
+            }
+
+        }
+
 
 
     },

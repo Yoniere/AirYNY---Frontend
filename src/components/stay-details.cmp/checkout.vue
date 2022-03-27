@@ -1,99 +1,103 @@
 <template>
   <section v-if="filterBy" class="checkout" :class="checkoutPos">
-    <div class="checkout-title flex space-between">
-      <div class="checkout-title-left">
-        <h1 class="title">
-          <span class="price">${{ stay.price }}</span>
-          <span class="night"> / night</span>
-        </h1>
-      </div>
-      <div class="checkout-title-right flex">
-        <div class="flex card-rate">
-          <svg
-            viewBox="0 0 32 32"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            role="presentation"
-            focusable="false"
-            style="display: block; height: 14px; width: 14px; fill: #ff385c"
-          >
-            <path
-              d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965
+    <section :style="getFlexRow">
+      <div class="checkout-title flex space-between" :style="getFlexColumn">
+        <div class="checkout-title-left">
+          <h1 class="title">
+            <span class="price">${{ stay.price }}</span>
+            <span class="night"> / night</span>
+          </h1>
+        </div>
+        <div class="checkout-title-right flex">
+          <div class="flex card-rate" :style="getZeroMargin">
+            <svg
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              role="presentation"
+              focusable="false"
+              style="display: block; height: 14px; width: 14px; fill: #ff385c"
+            >
+              <path
+                d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965
            9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853
             7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z"
-              fill-rule="evenodd"
-            ></path>
-          </svg>
+                fill-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <span class="rating">{{ getRating }}</span> ·
+          <button class="review-btn">
+            <span> {{ stay.numOfReviews }}</span>
+            reviews
+          </button>
         </div>
-        <span class="rating">{{ getRating }}</span> ·
-        <button class="review-btn">
-          <span> {{ stay.numOfReviews }}</span>
-          reviews
-        </button>
       </div>
+
+      <el-date-picker
+        class="date-input"
+        v-model="this.filterBy.stayTime"
+        type="daterange"
+        range-separator=""
+        start-placeholder="Check in"
+        end-placeholder="Check out"
+      >
+      </el-date-picker>
+
+      <div class="guests-input flex-col" @click="openModal">
+        <label class="guests-label"> Guests </label>
+        <span class="guests"> {{ getGuests }}</span>
+      </div>
+
+      <div v-if="guestModal" class="guests-Modal">
+        <ul>
+          <li class="flex space-between align-center">
+            <span class="flex-col"
+              >Adults
+              <span class="guide-age">Ages 13 or above </span>
+            </span>
+            <span>
+              <button @click="incAdults(1)">+</button>
+              {{ filterBy.guests.adults }}
+              <button @click="incAdults(-1)">-</button></span
+            >
+          </li>
+          <li class="flex space-between align-center">
+            <span class="flex-col">
+              Children
+              <span class="guide-age"> Ages 2-12 </span>
+            </span>
+            <span>
+              <button @click="incKids(1)">+</button> {{ filterBy.guests.kids }}
+              <button @click="incKids(-1)">-</button></span
+            >
+          </li>
+          <li class="flex space-between align-center">
+            <span class="flex-col">
+              Infants
+              <span class="guide-age">Under 2 </span>
+            </span>
+            <span>
+              <button @click="incInfants(1)">+</button>
+              {{ filterBy.guests.Infants }}
+              <button @click="incInfants(-1)">-</button></span
+            >
+          </li>
+        </ul>
+      </div>
+
+      <button class="reserve-btn" @click="setOrder">Reserve</button>
+    </section>
+    <div class="nav-bar-section">
+      <nav class="checkout-nav">
+        <ul class="nav-list">
+          <a class="link" href="`stay/${stay.id}/#gallery`">Photos</a>
+          <a class="link" href="\">Amenities</a>
+          <a class="link" href="\">Reviews</a>
+          <a class="link" href="\">Location</a>
+        </ul>
+      </nav>
     </div>
-
-    <el-date-picker
-      class="date-input"
-      v-model="this.filterBy.stayTime"
-      type="daterange"
-      range-separator=""
-      start-placeholder="Check in"
-      end-placeholder="Check out"
-    >
-    </el-date-picker>
-
-    <div class="guests-input flex-col" @click="openModal">
-      <label class="guests-label"> Guests </label>
-      <span class="guests"> {{ getGuests }}</span>
-    </div>
-
-    <div v-if="guestModal" class="guests-Modal">
-      <ul>
-        <li class="flex space-between align-center">
-          <span class="flex-col"
-            >Adults
-            <span class="guide-age">Ages 13 or above </span>
-          </span>
-          <span>
-            <button @click="incAdults(1)">+</button>
-            {{ filterBy.guests.adults }}
-            <button @click="incAdults(-1)">-</button></span
-          >
-        </li>
-        <li class="flex space-between align-center">
-          <span class="flex-col">
-            Children
-            <span class="guide-age"> Ages 2-12 </span>
-          </span>
-          <span>
-            <button @click="incKids(1)">+</button> {{ filterBy.guests.kids }}
-            <button @click="incKids(-1)">-</button></span
-          >
-        </li>
-        <li class="flex space-between align-center">
-          <span class="flex-col">
-            Infants
-            <span class="guide-age">Under 2 </span>
-          </span>
-          <span>
-            <button @click="incInfants(1)">+</button>
-            {{ filterBy.guests.Infants }}
-            <button @click="incInfants(-1)">-</button></span
-          >
-        </li>
-      </ul>
-    </div>
-
-    <button class="reserve-btn" @click="setOrder">Reserve</button>
-    <nav class="checkout-nav">
-      <ul class="nav-list">
-        <a class="link" href="`stay/${stay.id}/#gallery`">Photos</a>
-        <a class="link" href="\">Amenities</a>
-        <a class="link" href="\">Reviews</a>
-        <a class="link" href="\">Location</a>
-      </ul>
-    </nav>
   </section>
 </template>
 <script>
@@ -114,12 +118,12 @@ export default {
       y: 0,
       filterBy: {
         country: "",
-        guests:{
-          adults:0,
-          kids:0,
-          Infants:0
+        guests: {
+          adults: 0,
+          kids: 0,
+          Infants: 0,
         },
-      stayTime: "",
+        stayTime: "",
       },
     };
   },
@@ -130,7 +134,7 @@ export default {
   },
   unmounted() {
     window.removeEventListener("scroll", this.handleScroll);
-    this.filterBy=''
+    this.filterBy = "";
   },
 
   computed: {
@@ -149,10 +153,26 @@ export default {
         return "fixed-top";
       }
     },
+
+    getFlexRow() {
+      if (this.pos === "d") {
+        return "display:flex;align-items: center;";
+      }
+    },
+    getFlexColumn() {
+      if (this.pos === "d") {
+        return "flex-direction: column;margin-right: 16px;";
+      }
+    },
+    getZeroMargin() {
+      if (this.pos === "d") {
+        return "margin-left: 0rem;";
+      }
+    },
     getGuests() {
-      console.log(this.filterBy)
+      console.log(this.filterBy);
       if (
-        (this.filterBy.guests.adults === 0 || !this.filterBy.guests.adults)  &&
+        (this.filterBy.guests.adults === 0 || !this.filterBy.guests.adults) &&
         this.filterBy.guests.kids === 0 &&
         this.filterBy.guests.Infants === 0
       ) {
@@ -212,8 +232,8 @@ export default {
       if (this.filterBy.guests.Infants === -1) this.filterBy.guests.Infants = 0;
     },
     setOrder() {
-     this.$emit('setOrder',JSON.parse(JSON.stringify(this.filterBy)))
-    }
+      this.$emit("setOrder", JSON.parse(JSON.stringify(this.filterBy)));
+    },
   },
 };
 </script>

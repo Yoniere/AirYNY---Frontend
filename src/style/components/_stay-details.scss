@@ -490,6 +490,9 @@
                             font-weight: 800;
                             margin-bottom: rem(15px);
                         }
+                        .nav-bar-section {
+                            order: -1
+                        }
                     }
                     
                     .checkout-area {
@@ -522,6 +525,7 @@
                         position: fixed;
                         height: rem(80px);
                         display: flex;
+                        flex-direction: row;
                         width: -webkit-fill-available;
                         max-width: none;
                         border-radius: 0px;
