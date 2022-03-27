@@ -11,20 +11,22 @@ export default {
         // },
     },
     mutations: {
-        // setStay(state, { stays }) {
-        //     state.stays = stays
-        //     console.log(state.stays)
-        // },
+        setOrder(state, { newOrder }) {
+            state.orders.push(newOrder)
+            console.log(state.orders)
+        },
 
     },
 
     actions: {
 
-        async addNewOrder({ commit, dispatch }, { orderDetails }) {
+        async addNewOrder({ commit }, { orderDetails }) {
             try {
                 console.log(orderDetails)
                 const newOrder = await orderService.add(orderDetails)
                 console.log('orderadded')
+                commit({ type: 'setOrder', newOrder })
+                return newOrder
             } catch {
                 console.log(error)
             }

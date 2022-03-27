@@ -171,9 +171,7 @@ export default {
       this.$router.push(`/stay`);
       this.guestModal = false;
       this.$emit(
-        "filterd",
-        JSON.parse(JSON.stringify(this.filterBy))
-      );
+        "filterd",JSON.parse(JSON.stringify(this.filterBy)) );
     },
     openModal() {
       this.guestModal = !this.guestModal;

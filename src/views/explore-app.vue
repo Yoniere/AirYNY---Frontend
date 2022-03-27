@@ -21,10 +21,8 @@
       <button  class="sort-btn"> Pet Allowed </button>
 </div>
   
-   
-
     <h1> {{title}}</h1>
-    <stay-list :stays="stays"   > </stay-list>
+    <stay-list :stays="stays" v-if="stays"  > </stay-list>
   </section>
 </template>
 
