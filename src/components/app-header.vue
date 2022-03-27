@@ -92,6 +92,8 @@ export default {
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
+      this.filter =  this.$store.getters.filterBy;
+    
   },
   data() {
     return {
@@ -125,8 +127,9 @@ export default {
         : "https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648055648/airyny/logo1.png";
     },
     getFilter() {
+      console.log(this.filter);
       return this.filter
-        ? `${this.filter}`
+        ? `${this.filter.country}`
         : "Start to search";
     },
   },

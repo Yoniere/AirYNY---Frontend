@@ -8,7 +8,7 @@
       </button>
     </section>
 
-    <home-list :stay="ratedStays" />
+    <home-list  />
     <section class="host-container flex">
       <div class="container-title flex">
         <h2 class="host-title">
