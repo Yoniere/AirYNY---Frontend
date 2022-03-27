@@ -86,7 +86,7 @@
         </ul>
       </div>
 
-      <button class="reserve-btn" @click="setOrder" :style="getPos">Reserve</button>
+      <button  ref="myRef" class="reserve-btn" @click="setOrder" @mousemove="calcMouse" :style="mousePos">Reserve</button>
     </section>
     <div class="nav-bar-section">
       <nav class="checkout-nav">
@@ -141,6 +141,9 @@ export default {
     getRating() {
       return this.stay.reviewScores.rating / 10;
     },
+    mousePos() {
+      return {"background-position" : `calc((100 - (${this.x}))*1%) calc((100 - (${this.y}))*1%)`}
+    },
 
     checkoutPos() {
       if (this.pos === 'a') {
@@ -188,7 +191,6 @@ export default {
   },
   methods: {
     handleScroll(event) {
-      // console.log(window.top.scrollY)
       if (window.top.scrollY < 744) {
         this.pos = "a";
         // this.stickyNav = true;
@@ -208,15 +210,9 @@ export default {
     openModal() {
       this.guestModal = !this.guestModal;
     },
-    getPos() {
-      //  calc((100 - var(--mouse-x, 0))*1%) calc((100 - var(--mouse-y, 0))*1%);
-      // return {"background-position" : `calc((100 - (${this.x}, 0))*1%) calc((100 - (${this.y} , 0))*1%)`}
-      // background-position: calc(100% - 20px) calc(100% - 10px);
-      return {"background-position" : `calc((100 - (${this.x}))*1%) calc((100 - (${this.y}))*1%)`}
-    },
-    onMouseOver(e) {
+
+    calcMouse(e) {
       const div = this.$refs.myRef;
-      const mouseY = e.pageY - div.offsetTop;
       this.x = e.clientX - div.offsetLeft;
       this.y = e.pageY - div.offsetTop;
     },

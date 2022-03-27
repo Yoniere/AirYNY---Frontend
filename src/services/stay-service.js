@@ -2844,7 +2844,7 @@ export const stayService = {
 
 async function query(filterBy) {
     const stays = await storageService.query(STAYS_KEY)
-    if (!filterBy) return stays
+    if (!filterBy) return Promise.resolve(stays)
     const filteredStays = _filterStays(stays, JSON.parse(JSON.stringify(filterBy)))
     return Promise.resolve(filteredStays)
 }
@@ -2852,23 +2852,25 @@ async function query(filterBy) {
 function _filterStays(stays, filterBy) {
     let filteredStays = stays
     if (filterBy.country) {
+        console.log(filterBy , filteredStays );
+
         const regex = new RegExp(filterBy.country, 'i')
         filteredStays = filteredStays.filter(stay => regex.test(stay.address.country || stay.address.city))
     }
 
-    if (filterBy.type) {
+    if (filterBy.type.length) {
         filteredStays = filteredStays.filter((stay) => {
             return filterBy.type.some((label) => {
                 return label === stay.roomType
             })
         })
     }
+    console.log(filteredStays);
     if (filterBy.price) {
-        filteredStays = filteredStays.filter((stay) => {
-            return (stay.price > filterBy.price.minPrice && stay.price < filterBy.price.maxPrice)
+        filteredStays = filteredStays.filter((stay) => { 
+           return  stay.price > filterBy.price.minPrice && stay.price < filterBy.price.maxPrice
         })
     }
-
 
     return filteredStays
 }

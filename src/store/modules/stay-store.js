@@ -26,7 +26,7 @@ export default {
 
         },
         filterBy(state) {
-            return state.filterBy
+            return JSON.parse(JSON.stringify(state.filterBy))
         }
 
 

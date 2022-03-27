@@ -141,19 +141,7 @@ export default {
           },
         ],
       },
-      filterBy: {
-        country: "",
-        guests: {
-          adults: 0,
-          kids: 0,
-          Infants: 0,
-        },
-        stayTime: "",
-        price:{
-           maxPrice:2000,
-            minPrice:30,
-        }
-      },
+      filterBy:null,
     };
   },
   created() {
@@ -161,6 +149,7 @@ export default {
       this.setFilter,
       500
     );
+    this.filterBy = this.$store.getters.filterBy
   },
   methods: {
     setFilter() {
