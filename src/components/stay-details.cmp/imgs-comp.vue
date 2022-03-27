@@ -50,7 +50,7 @@
     </div>
   </section>
   <section class="main-gallery-section">
-  <section class="gallery ">
+  <section id="gallery" class="gallery ">
     <img
       class="main-img"
       :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[0]}`"

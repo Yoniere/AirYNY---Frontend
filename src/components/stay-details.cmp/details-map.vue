@@ -1,7 +1,7 @@
 <template>
   <hr class="hr-border" />
   <!-- <main class="map-details"> -->
-  <section class="map-container main-layout">
+  <section id="map" class="map-container main-layout">
     <h2>Where you’ll be</h2>
     <p>
       {{ stay.address.street }}

@@ -1,5 +1,5 @@
 <template>
-  <section v-if="stay" class="stay-details-reviews">
+  <section id="reviews" v-if="stay" class="stay-details-reviews">
       <div class="flex">
             <svg class="star"
             viewBox="0 0 32 32"

@@ -561,6 +561,11 @@
                                 .link {
                                     color: rgb(34, 34, 34);
                                     margin-right: 27px;
+                                    height: rem(80px);
+                                    padding-top: 30px;
+                                    &:hover {
+                                        border-bottom: 4px solid rgb(34, 34, 34);
+                                    }
                                 }
                             }
                         }
