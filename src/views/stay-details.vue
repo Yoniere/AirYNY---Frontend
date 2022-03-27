@@ -1,6 +1,6 @@
 <template >
   <app-header class="header-details" />
-  <section v-if="stay" class="main-layout">
+  <section v-if="stay" class="details-layout">
     <imgs-comp :stay="stay"></imgs-comp>
     <main class="flex main-details-comp space-between">
       <section class="flex-col">
