@@ -86,7 +86,7 @@
         </ul>
       </div>
 
-      <button class="reserve-btn" @click="setOrder">Reserve</button>
+      <button class="reserve-btn" @click="setOrder" :style="getPos">Reserve</button>
     </section>
     <div class="nav-bar-section">
       <nav class="checkout-nav">
@@ -210,8 +210,9 @@ export default {
     },
     getPos() {
       //  calc((100 - var(--mouse-x, 0))*1%) calc((100 - var(--mouse-y, 0))*1%);
-      // return `top: ${this.top}px; right: ${this.right}px; bottom: ${this.bottom}px; left: ${this.left}px;`
-      return `background-Position : calc(100 - (${this.x}, 0))+ %) , calc((100 - (${this.y} , 0)*1%) `;
+      // return {"background-position" : `calc((100 - (${this.x}, 0))*1%) calc((100 - (${this.y} , 0))*1%)`}
+      // background-position: calc(100% - 20px) calc(100% - 10px);
+      return {"background-position" : `calc((100 - (${this.x}))*1%) calc((100 - (${this.y}))*1%)`}
     },
     onMouseOver(e) {
       const div = this.$refs.myRef;
