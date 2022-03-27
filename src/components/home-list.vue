@@ -13,7 +13,7 @@
         >
           <img
             class="home-img"
-            :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/${stay}1`"
+            :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/${stay}1.jpg`"
             alt="img rated stay"
           />
           <div class="txt-container">
