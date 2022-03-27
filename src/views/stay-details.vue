@@ -73,6 +73,7 @@ export default {
           type: "addNewOrder",
           orderDetails,
         });
+        alert('order received')
       } catch {
         console.error;
       }

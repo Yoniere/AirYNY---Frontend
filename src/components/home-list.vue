@@ -31,7 +31,6 @@
           v-for="stay in uniqueStays"
           :key="stay._id"
           @click="goToUnique(stay)"
-          
         >
           <img
             class="home-card-img"
@@ -40,6 +39,7 @@
           />
 
           <h3 class="country-name">{{ stay.country }}</h3>
+          <!-- <span>{{ stay.country }}</span> -->
         </li>
       </ul>
     </div>
