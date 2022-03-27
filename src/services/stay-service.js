@@ -2831,7 +2831,7 @@ const stays = [{
 
 
 const STAYS_KEY = 'staysDB'
-// _createStay()
+_createStay()
 
 
 export const stayService = {
