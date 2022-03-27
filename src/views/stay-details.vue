@@ -1,5 +1,5 @@
 <template >
-<app-header  class="header-details"/>
+  <app-header class="header-details" />
   <section v-if="stay" class="main-layout">
     <imgs-comp :stay="stay"></imgs-comp>
     <main class="flex main-details-comp space-between">
@@ -14,7 +14,7 @@
       </section>
     </main>
     <reviews :stay="stay"></reviews>
-    <details-map :stay="stay" ></details-map>
+    <details-map :stay="stay"></details-map>
     <host :stay="stay"></host>
   </section>
 </template>
@@ -27,9 +27,9 @@ import initialInfo from "../components/stay-details.cmp/initial-info.vue";
 import mainAmenities from "../components/stay-details.cmp/main-amenities.vue";
 import stayDescription from "../components/stay-details.cmp/stay-description.vue";
 import amenities from "../components/stay-details.cmp/amenities.vue";
-import checkout from "../components/stay-details.cmp/checkout.vue"
+import checkout from "../components/stay-details.cmp/checkout.vue";
 import reviews from "../components/stay-details.cmp/reviews.vue";
-import detailsMap from "../components/stay-details.cmp/details-map.vue"
+import detailsMap from "../components/stay-details.cmp/details-map.vue";
 import host from "../components/stay-details.cmp/host.vue";
 
 export default {
@@ -54,23 +54,32 @@ export default {
     reviews,
     host,
     checkout,
-    detailsMap
+    detailsMap,
   },
   computed: {},
-  methods:{
+  methods: {
     async setOrder(filterBy) {
-      // console.log(filterBy)
-      try{
-     const newOrder= await this.$store.dispatch({type:'addNewOrder',filterBy})
+      var orderDetails = {
+        name: this.stay.name,
+        country: this.stay.address.country,
+        stay_id: this.stay.id,
+        pricePerNight: this.stay.price,
+        guests: filterBy.guests,
+        stayTime: filterBy.stayTime,
+      };
+      orderDetails = JSON.parse(JSON.stringify(orderDetails));
+      try {
+        const newOrder = await this.$store.dispatch({
+          type: "addNewOrder",
+          orderDetails,
+        });
+      } catch {
+        console.error;
       }
-      catch{
-        console.error
-      }
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style>
-
 </style>

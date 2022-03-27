@@ -20,62 +20,62 @@ export default {
 
         },
     },
-        getters: {
-            stays(state) {
-                return state.stays;
-
-            },
-            filterBy(state) {
-                return state.filterBy
-            }
-
-
+    getters: {
+        stays(state) {
+            return state.stays;
 
         },
-        mutations: {
-            setStay(state, { stays }) {
-                state.stays = stays
-                console.log(state.stays)
-            },
+        filterBy(state) {
+            return state.filterBy
+        }
 
-            setFilter(state, { filterBy }) {
-                state.filterBy = filterBy
+
+
+    },
+    mutations: {
+        setStay(state, { stays }) {
+            state.stays = stays
+                // console.log(state.stays)
+        },
+
+        setFilter(state, { filterBy }) {
+            state.filterBy = filterBy
                 // if (filterBy.country) state.filterBy.country = filterBy.country
                 // if (filterBy.price) state.filterBy.price = filterBy.price
                 // if (filterBy.type) state.filterBy.type = filterBy.type
                 // if (filterBy.guests) state.filterBy.guests = filterBy.guests
                 // if (filterBy.stayTime) state.filterBy.stayTime = filterBy.stayTime
-            },
-            ratedStays(state, { filterBy }) {
-                state.filterBy.country = filterBy
-            },
+        },
+        ratedStays(state, { filterBy }) {
+            state.filterBy.country = filterBy
+        },
 
-            uniqueStays(state, { filterBy }) {
-                state.filterBy.country = filterBy
+        uniqueStays(state, { filterBy }) {
+            state.filterBy.country = filterBy
+        }
+    },
+
+    actions: {
+        async loadStays({ commit, state }) {
+            const stays = await stayService.query(state.filterBy)
+            try {
+                commit({ type: 'setStay', stays })
+            } catch (err) {
+                console.error('Cannot Load stays', err)
+                throw err
             }
         },
- 
-        actions: {
-            async loadStays({ commit, state }) {
-                const stays = await stayService.query(state.filterBy)
-                try {
-                    commit({ type: 'setStay', stays })
-                } catch (err) {
-                    console.error('Cannot Load stays', err)
-                    throw err
-                }
-            },
-            async setFilter({ commit, dispatch }, { filterBy }) {
-                try {
-                    commit({ type: 'setFilter', filterBy })
-                    dispatch({ type: 'loadStays' })
-                } catch {
-                    console.error(err)
-                }
-
+        async setFilter({ commit, dispatch }, { filterBy }) {
+            try {
+                commit({ type: 'setFilter', filterBy })
+                dispatch({ type: 'loadStays' })
+            } catch {
+                console.error(err)
             }
 
-
-
         }
+
+
+
     }
+}
