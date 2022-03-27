@@ -4,18 +4,17 @@
             <span class="type-header"> The average nightly price is 100$ </span>
             <div class="flex-row range space-between">
             <span> 30  </span>
-            <!-- <input type="range" min="30" max="2000" v-model="sortBy.minPrice" />  -->
-            <el-slider range show-stops  :min="sortBy.minPrice" :max="sortBy.maxPrice" /> 
+            <el-slider range   :min="filterByPrice.minPrice" :max="filterByPrice.maxPrice" /> 
             <span>2000 </span>
             </div>
             <div class="flex-row prices space-between">
               <label>
               <span> min-price </span>
-            <input class="input-price relative" type="number"  v-model="sortBy.minPrice" /> 
+            <input class="input-price relative" type="number"  v-model="filterByPrice.minPrice" /> 
             </label> -
               <label>
             <span> max-price </span>
-            <input class="input-price relative" type="number"  v-model="sortBy.maxPrice" /> 
+            <input class="input-price relative" type="number"  v-model="filterByPrice.maxPrice" /> 
             </label>
             </div>
             </div>
@@ -27,7 +26,7 @@
 export default {
 data(){
     return{
-        sortBy:{
+        filterByPrice:{
             maxPrice:2000,
             minPrice:30,
         }
@@ -36,8 +35,8 @@ data(){
 },
 methods:{
     setSort(){
-        this.$emit('sortByPrice', JSON.parse(JSON.stringify(this.sortBy)))
-    }
+        this.$emit('filterByPrice', JSON.parse(JSON.stringify(this.filterByPrice)))
+    },
 }
 }
 </script>
