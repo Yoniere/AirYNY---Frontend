@@ -13,7 +13,7 @@
             class="dropdown clickable"
             v-model="filterBy.country"
           />
-          <datalist id="destination" class="e-caret-hide">
+          <datalist id="destination" class="caret-hide">
             <option value="Tel Aviv"></option>
             <option value="Barcelona"></option>
             <option value="Paris"></option>

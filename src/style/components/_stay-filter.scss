@@ -116,7 +116,6 @@
     input.dropdown {
       // margin-top: 16.34px;
       appearance: none;
-      color: white;
       font-family: inherit;
       // outline: none;
     }
@@ -228,4 +227,9 @@
   border-left: 0.1px solid #e1e1e1;
   margin-right: 0px;
   padding-left: 25px;
+}
+
+.caret-hide{
+  margin-top: rem(15px);
+
 }

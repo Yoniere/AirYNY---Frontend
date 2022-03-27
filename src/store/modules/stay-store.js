@@ -60,7 +60,6 @@ export default {
             }
         },
         setFilter({ commit, dispatch }, { filterBy }) {
-            console.log(filterBy);
             commit({ type: 'setFilter', filterBy })
             dispatch({ type: 'loadStays' })
         },
