@@ -1,11 +1,19 @@
 .main-layout {
-  padding-left: rem(80px);
-  padding-right: rem(80px);
+    padding-left: rem(80px);
+    padding-right: rem(80px);
+}
+
+.details-layout {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding-left: rem(80px);
+    padding-right: rem(80px);
 }
 
 .main-layout2 {
-  margin-top: 175px;
-  display: grid;
-  padding-left: rem(80px);
-  padding-right: rem(80px);
+    margin-top: 175px;
+    display: grid;
+    // grid-template-columns: 80px 1fr 80px;
+    padding-left: rem(80px);
+    padding-right: rem(80px);
 }
