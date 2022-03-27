@@ -35,7 +35,7 @@
       </div>
 
       <el-date-picker
-        class="date-input"
+        class="date-input-checkout"
         v-model="this.filterBy.stayTime"
         type="daterange"
         range-separator=""

@@ -1,5 +1,5 @@
 <template>
-  <section class="flex-col">
+  <section class="flex-col review-section">
     <div class="upper-review flex">
       <!-- <div class="review-img">
         <img class="img" :src="`${review.by.imgUrl}`" />
