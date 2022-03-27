@@ -2369,7 +2369,7 @@ const stays = [{
     },
     "id": "1155002",
     "bathrooms": 1,
-    "price": 1,
+    "price": 31,
     "securityDeposit": 250,
     "cleaningFee": 80,
     "extraPeople": 0,
@@ -2842,23 +2842,31 @@ export const stayService = {
 
 async function query(filterBy) {
    const stays = await storageService.query(STAYS_KEY)
-   if (filterBy.country) {
     const filteredStays =  _filterStays(stays,JSON.parse(JSON.stringify(filterBy)) )
     return Promise.resolve(filteredStays)
-   }
-    return Promise.resolve(stays)
+
 }
 
 function _filterStays(stays , filterBy) {
-    let filteredStays= []
-    const regex = new RegExp(filterBy.country, 'i')
-    filteredStays =  stays.filter(stay => regex.test(stay.address.country ||stay.address.city )
-    )
+    let filteredStays= stays
+    if(filterBy.country){
+        const regex = new RegExp(filterBy.country, 'i')
+        filteredStays =  filteredStays.filter(stay => regex.test(stay.address.country ||stay.address.city )
+        )
+    }
+  
     if (filterBy.type.length) {
         filteredStays = filteredStays.filter((stay) => {
-          return stay.propertyType.some((label) => filterBy.type.includes(label))
+            return  filterBy.type.some((label) =>{
+              return label === stay.roomType
+            })
         })
       }
+        filteredStays = filteredStays.filter((stay) => {
+            console.log(filterBy);
+            return (stay.price > filterBy.price.minPrice && stay.price < filterBy.price.maxPrice  )
+        })
+      
     
 return filteredStays
 }

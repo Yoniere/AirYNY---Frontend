@@ -5,6 +5,8 @@ export default {
         stays: [],
         filterBy: { country: '' ,
         price: {
+            minPrice:30,
+            maxPrice:2000
         
         },
         guests:{

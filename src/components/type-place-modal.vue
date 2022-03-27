@@ -6,7 +6,7 @@
             <span class="type-header">Entire place</span>
             <span class="type-title">Have a place to yourself</span>
             </div>
-            <input type="checkbox" id="entire place" value="Entire place"  class="checkmark"  v-model="sortBy" />
+            <input type="checkbox" id="entire place" value="Entire home/apt"  class="checkmark"  v-model="sortBy" />
          </label>
         </div>
       <div class="type-filter">
@@ -39,7 +39,7 @@
           </label>
            </div>
           <div class="type-save flex space-between">
-            <button class="save-btn">Clear</button><button class="save-btn" @click="setSort">Save</button>
+            <button class="save-btn"  @click="clearFilter">Clear</button><button class="save-btn" @click="setSort">Save</button>
         </div>
      </div>
 </template>
@@ -55,7 +55,11 @@ data(){
 },
 methods:{
     setSort(){
-        this.$emit('sort', JSON.parse(JSON.stringify(this.sortBy)))
+        this.$emit('sort', this.sortBy)
+    },
+   clearFilter() {
+     this.sortBy = []
+
     }
 }
 }
