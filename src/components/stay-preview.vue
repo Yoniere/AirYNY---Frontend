@@ -96,6 +96,7 @@ export default {
   methods: {
     goToDeatails() {
       this.$router.push(`/stay/${this.stay.id}`);
+      window.scrollTo(0, 0);
     },
     setLiked() {
       this.liked = !this.liked;
