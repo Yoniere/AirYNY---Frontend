@@ -2172,8 +2172,8 @@ const stays = [{
         "street": " Alberta,Canada",
         "country": " Canada",
         "location": {
-            "lat": -73.92922,
-            "lan": 40.68683
+            "lat": -114.979327,
+            "lan": 55.358039
         },
         "countryCode": "CA",
         "city": "Alberta"
@@ -2361,8 +2361,8 @@ const stays = [{
         "street": "  730-0022 Hiroshima, Hiroshima, Naka-ku Kanayamacho 2-16,japan",
         "country": " Japan",
         "location": {
-            "lat": 35.652832,
-            "lan": 139.839478
+            "lat": 34.378671,
+            "lan": 132.450786
         },
         "countryCode": "JAP",
         "city": "Hiroshima"
@@ -2462,8 +2462,8 @@ const stays = [{
         "street": "Sarpsborg, Østfold, Norway ",
         "country": "Norway",
         "location": {
-            "lan": 2.17561,
-            "lay": 41.38701
+            "lan": 69.024467,
+            "lat": 19.296485
 
         },
         "countryCode": "NOR",
@@ -2668,12 +2668,12 @@ const stays = [{
         "street": "Taguig, Kalakhang Maynila, Philippines",
         "country": "Philippines",
         "location": {
-            "lat": 6.83756,
-            "lan": 125.41301
+            "lan": 12.468594,
+            "lat": 122.549389
 
         },
-        "countryCode": "NOR",
-        "city": "Sarpsborg"
+        "countryCode": "PH",
+        "city": "Taguig"
     },
     "id": "11115999",
     "bathrooms": 1,
@@ -2844,8 +2844,8 @@ export const stayService = {
 
 async function query(filterBy) {
     const stays = await storageService.query(STAYS_KEY)
-    if(!filterBy) return stays
-    const filteredStays =  _filterStays(stays, JSON.parse(JSON.stringify(filterBy)))
+    if (!filterBy) return stays
+    const filteredStays = _filterStays(stays, JSON.parse(JSON.stringify(filterBy)))
     return Promise.resolve(filteredStays)
 }
 
