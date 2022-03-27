@@ -2172,8 +2172,8 @@ const stays = [{
         "street": " Alberta,Canada",
         "country": " Canada",
         "location": {
-            "lat": -73.92922,
-            "lan": 40.68683
+            "lat": -130.209466,
+            "lan": 54.107963
         },
         "countryCode": "CA",
         "city": "Alberta"
@@ -2361,8 +2361,8 @@ const stays = [{
         "street": "  730-0022 Hiroshima, Hiroshima, Naka-ku Kanayamacho 2-16,japan",
         "country": " Japan",
         "location": {
-            "lat": 35.652832,
-            "lan": 139.839478
+            "lan": 34.583610,
+            "lat": 135.416662
         },
         "countryCode": "JAP",
         "city": "Hiroshima"
@@ -2462,8 +2462,8 @@ const stays = [{
         "street": "Sarpsborg, Østfold, Norway ",
         "country": "Norway",
         "location": {
-            "lan": 2.17561,
-            "lay": 41.38701
+            "lat": 11.242113,
+            "lan": 64.862572
 
         },
         "countryCode": "NOR",
@@ -2672,7 +2672,7 @@ const stays = [{
             "lan": 125.41301
 
         },
-        "countryCode": "NOR",
+        "countryCode": "PH",
         "city": "Sarpsborg"
     },
     "id": "11115999",
@@ -2844,8 +2844,8 @@ export const stayService = {
 
 async function query(filterBy) {
     const stays = await storageService.query(STAYS_KEY)
-    if(!filterBy) return stays
-    const filteredStays =  _filterStays(stays, JSON.parse(JSON.stringify(filterBy)))
+    if (!filterBy) return stays
+    const filteredStays = _filterStays(stays, JSON.parse(JSON.stringify(filterBy)))
     return Promise.resolve(filteredStays)
 }
 
