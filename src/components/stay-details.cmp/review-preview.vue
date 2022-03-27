@@ -6,7 +6,7 @@
       </div> -->
       <div class="review-img q-pa-md q-gutter-sm">
         <q-avatar>
-          <img class="img" src="path/to/some_image.png" />
+          <img class="img" :src="getImage" />
         </q-avatar>
       </div>
       <div class="review-titles">
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+  import {utilService} from '../../services/util-service'
 export default {
   name: "reviews",
   props: {
@@ -32,7 +33,8 @@ export default {
   },
   computed: {
     getImage() {
-      return review.imgUrl;
+      const key= utilService.getRandomInt(0, 50)
+      return `https://i.pravatar.cc/150?img=${key}`
     },
   },
 };
