@@ -43,6 +43,7 @@
     height: 50vh;
     object-fit: cover;
     border-bottom: 0px;
+    max-height: 450px;
   }
 
   .country-name {
@@ -55,6 +56,9 @@
     margin-top: 17px;
     color: white;
     margin-left: rem(18px);
+  }
+  .popular {
+    padding-top: 5px;
   }
 }
 .txt-container {
