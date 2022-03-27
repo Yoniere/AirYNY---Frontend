@@ -1,5 +1,4 @@
 .mini-filter {
-<<<<<<< HEAD
     position: absolute;
     font-family: Cereal-Regular;
     top: 50%;
@@ -40,49 +39,6 @@
             box-shadow: none;
             margin: 0;
         }
-=======
-  position: absolute;
-  font-family: Cereal-Regular;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  line-height: 20px;
-  box-shadow: 0 1px 2px rgb(0 0 0 / 8%),
-    0 4px 12px rgb(0 0 0 / 5%);
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 40px;
-  height: 48px;
-  padding: 0 7px 0 16px;
-  width: 300px;
-  font-size: 14px;
-  text-indent: 5px;
-  span:before {
-    font-family: fas;
-    fill: $clr2;
-    background-color: #ff385c;
-    border-radius: 50%;
-    height: 30px;
-    padding: 1vh;
-  }
-  .search-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $clr2;
-    border-radius: 50%;
-    border: none;
-    background-color: #ff385c;
-    height: 32px;
-    padding: 10px;
-    margin-inline-end: 4px;
-
-    button {
-      background-color: transparent;
-      border: none;
-      box-shadow: none;
-      margin: 0;
->>>>>>> f95b03c927f60ac7b9c5d1d6a93df5174d82e492
     }
 }
 
@@ -222,8 +178,9 @@
 }
 
 .el-date-picker {
-  border-color: rgba(255, 255, 255, 0) !important;
+    border-color: rgba(255, 255, 255, 0) !important;
 }
+
 .guests-label {
     // position: relative;
     font-family: Cereal-Regular;
