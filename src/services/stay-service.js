@@ -1,4 +1,4 @@
-
+// import { filter } from 'cheerio/lib/api/traversing'
 import { storageService } from './async-storage-service.js'
 import { utilService } from './util-service.js'
 
@@ -2410,7 +2410,8 @@ const stays = [{
         "japan2.jpeg",
         "japan3.jpeg",
         "japan4.jpeg",
-
+        "japan5.jpeg",
+        "japan6.jpeg",
     ]
 },
 
@@ -2613,10 +2614,10 @@ const stays = [{
     "_id": "622f337a75c7d36e498aaafd",
     "imgUrls": [
         "norway1.jpeg",
-        "norway2.jpeg",
         "norway3.jpeg",
         "norway4.jpeg",
-
+        "norway5.jpeg",
+        "norway6.jpeg",
     ]
 },
 
@@ -2822,14 +2823,15 @@ const stays = [{
         "philippines2.jpeg",
         "philippines3.jpeg",
         "philippines4.jpeg",
-
+        "philippines5.jpeg",
+        "philippines6.jpeg",
     ]
 },
 ]
 
 
 const STAYS_KEY = 'staysDB'
-// _createStay()
+_createStay()
 
 
 export const stayService = {
@@ -2841,33 +2843,33 @@ export const stayService = {
 
 
 async function query(filterBy) {
-   const stays = await storageService.query(STAYS_KEY)
-    const filteredStays =  _filterStays(stays,JSON.parse(JSON.stringify(filterBy)) )
+    const stays = await storageService.query(STAYS_KEY)
+    const filteredStays = _filterStays(stays, JSON.parse(JSON.stringify(filterBy)))
     return Promise.resolve(filteredStays)
 }
 
-function _filterStays(stays , filterBy) {
-    let filteredStays= stays
-    if(filterBy.country){
+function _filterStays(stays, filterBy) {
+    let filteredStays = stays
+    if (filterBy.country) {
         const regex = new RegExp(filterBy.country, 'i')
-        filteredStays =  filteredStays.filter(stay => regex.test(stay.address.country ||stay.address.city )
+        filteredStays = filteredStays.filter(stay => regex.test(stay.address.country || stay.address.city)
         )
     }
-  
+
     if (filterBy.type.length) {
         filteredStays = filteredStays.filter((stay) => {
-            return  filterBy.type.some((label) =>{
-              return label === stay.roomType
+            return filterBy.type.some((label) => {
+                return label === stay.roomType
             })
         })
-      }
-        filteredStays = filteredStays.filter((stay) => {
-            console.log(filterBy);
-            return (stay.price > filterBy.price.minPrice && stay.price < filterBy.price.maxPrice  )
-        })
-      
-    
-return filteredStays
+    }
+    filteredStays = filteredStays.filter((stay) => {
+        console.log(filterBy);
+        return (stay.price > filterBy.price.minPrice && stay.price < filterBy.price.maxPrice)
+    })
+
+
+    return filteredStays
 }
 
 function getById(entityId) {
