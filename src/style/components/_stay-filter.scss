@@ -138,10 +138,22 @@
         background-color: #ebebeb;
     }
     button {
-        background-color: transparent;
-        border: none;
-        box-shadow: none;
-        margin: 0;
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+    color: $clr7;
+    border: 1px solid #b0b0b0;
+    background-color: $clr2;
+    // text-align: center;
+    font-size: 16px;
+    margin: 5px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
     }
     .search-btn {
         // position: absolute;
@@ -244,12 +256,6 @@
     }
     .input-container:hover {
         background-color: #ebebeb;
-    }
-    button {
-        background-color: transparent;
-        border: none;
-        box-shadow: none;
-        margin: 0;
     }
     .search-btn {
         position: absolute;

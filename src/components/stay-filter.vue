@@ -53,11 +53,10 @@
               </span>
             </span>
             <span>
-              <button @click="incAdults(1)">+</button>
+                <button @click="incAdults(-1)"> -  </button>
               {{ filterBy.guests.adults }}
-              <button @click="incAdults(-1)">
-                -
-              </button></span
+              <button @click="incAdults(1)">+</button>
+             </span
             >
           </li>
           <li class="flex space-between align-center">
@@ -66,9 +65,10 @@
               <span class="guide-age"> Ages 2-12 </span>
             </span>
             <span>
-              <button @click="incKids(1)">+</button>
+              <button @click="incKids(-1)">-</button>
               {{ filterBy.guests.kids }}
-              <button @click="incKids(-1)">-</button></span
+              <button @click="incKids(1)">+</button>
+              </span
             >
           </li>
           <li class="flex space-between align-center">
@@ -77,10 +77,10 @@
               <span class="guide-age">Under 2 </span>
             </span>
             <span>
-              <button @click="incInfants(1)">+</button>
+              <button @click="incInfants(-1)"> -</button>
               {{ filterBy.guests.Infants }}
-              <button @click="incInfants(-1)">
-                -
+              <button @click="incInfants(1)">+
+        
               </button></span
             >
           </li>

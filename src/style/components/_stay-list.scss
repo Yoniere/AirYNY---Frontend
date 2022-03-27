@@ -1,7 +1,7 @@
 
 .stay-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(326px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(321px,1fr));
     column-gap: 24px;
     row-gap: 40px;
     padding-top: 16px;
@@ -12,7 +12,7 @@
     height: 38px;
     cursor: pointer;
     border: 1px solid $clr3;
-    background-color:  $clr4;
+    background-color:  $clr2;
     outline: none;
     margin: 0;
     border-radius: 30px;
@@ -100,6 +100,18 @@ accent-color: $clr5;
     cursor: pointer;
     padding: rem(8px) rem(16px);
     margin-top: rem(14px);
+    border-radius: rem(12px);
+}
+.clear-btn{
+    font-size: 14px;
+    background-color: $clr2;
+    color:$clr7;
+    cursor: pointer;
+    padding: rem(8px) rem(16px);
+    margin-top: rem(14px);
+    border: none;
+    text-decoration: underline;
+    
 }
 
 
