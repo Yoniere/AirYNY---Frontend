@@ -170,7 +170,7 @@ export default {
       }
     },
     getGuests() {
-      console.log(this.filterBy);
+      // console.log(this.filterBy);
       if (
         (this.filterBy.guests.adults === 0 || !this.filterBy.guests.adults) &&
         this.filterBy.guests.kids === 0 &&

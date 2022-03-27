@@ -39,9 +39,12 @@ export default {
             },
 
             setFilter(state, { filterBy }) {
-                if (filterBy.country) state.filterBy.country = filterBy.country
-                if (filterBy.price) state.filterBy.price = filterBy.price
-                if (filterBy.type) state.filterBy.type = filterBy.type
+                state.filterBy = filterBy
+                // if (filterBy.country) state.filterBy.country = filterBy.country
+                // if (filterBy.price) state.filterBy.price = filterBy.price
+                // if (filterBy.type) state.filterBy.type = filterBy.type
+                // if (filterBy.guests) state.filterBy.guests = filterBy.guests
+                // if (filterBy.stayTime) state.filterBy.stayTime = filterBy.stayTime
             },
             ratedStays(state, { filterBy }) {
                 state.filterBy.country = filterBy
