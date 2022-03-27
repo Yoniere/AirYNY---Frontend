@@ -91,10 +91,10 @@
     <div class="nav-bar-section">
       <nav class="checkout-nav">
         <ul class="nav-list">
-          <a class="link" href="`stay/${stay.id}/#gallery`">Photos</a>
-          <a class="link" href="\">Amenities</a>
-          <a class="link" href="\">Reviews</a>
-          <a class="link" href="\">Location</a>
+          <a class="link" @click="scrollMeTo('gallery')">Photos</a>
+          <a class="link" @click="scrollMeTo('amentiy-section')">Amenities</a>
+          <a class="link" @click="scrollMeTo('reviews')">Reviews</a>
+          <a class="link" @click="scrollMeTo('map')">Location</a>
         </ul>
       </nav>
     </div>
@@ -204,6 +204,15 @@ export default {
       }
       // console.log(this.pos)
     },
+
+    scrollMeTo(id) {
+    var element = document.getElementById(id)
+    console.log(element)
+    var top = element.offsetTop;
+
+    window.scrollTo(0, top);
+  },
+
 
     openModal() {
       this.guestModal = !this.guestModal;
