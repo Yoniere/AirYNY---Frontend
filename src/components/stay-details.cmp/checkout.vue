@@ -143,29 +143,29 @@ export default {
     },
 
     checkoutPos() {
-      if (this.pos === "a") {
-        return "static";
-      } else if (this.pos === "b") {
-        return "fixed";
-      } else if (this.pos === "c") {
-        return "static-second";
-      } else {
-        return "fixed-top";
+      if (this.pos === 'a') {
+        return 'static';
+      } else if (this.pos === 'b') {
+        return 'fixed';
+      } else if (this.pos === 'c') {
+        return 'static-second';
+      } else if(this.pos === 'd') {
+        return 'fixed-top';
       }
     },
 
     getFlexRow() {
-      if (this.pos === "d") {
+      if (this.pos === 'd') {
         return "display:flex;align-items: center;";
       }
     },
     getFlexColumn() {
-      if (this.pos === "d") {
+      if (this.pos === 'd') {
         return "flex-direction: column;margin-right: 16px;";
       }
     },
     getZeroMargin() {
-      if (this.pos === "d") {
+      if (this.pos === 'd') {
         return "margin-left: 0rem;";
       }
     },

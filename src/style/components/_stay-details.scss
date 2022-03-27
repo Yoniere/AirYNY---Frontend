@@ -501,8 +501,8 @@
                     
                     .fixed {
                         position: fixed;
-                        top: 50px;
-                        right: 220px;
+                        top: rem(50px);
+                        right: rem(220px);
                     }
                     
                     .static {
