@@ -130,7 +130,7 @@ export default {
   created() {
     window.addEventListener("scroll", this.handleScroll);
     this.filterBy = this.$store.getters.filterBy;
-    console.log(this.filterBy);
+    // console.log(this.filterBy);
   },
   unmounted() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -233,7 +233,7 @@ export default {
       if (this.filterBy.guests.Infants === -1) this.filterBy.guests.Infants = 0;
     },
     setOrder() {
-      this.$emit("setOrder", JSON.parse(JSON.stringify(this.filterBy)));
+      this.$emit("setOrder",this.filterBy);
     },
   },
 };
