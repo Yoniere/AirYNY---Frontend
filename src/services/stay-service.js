@@ -2409,7 +2409,8 @@ const stays = [{
         "japan2.jpeg",
         "japan3.jpeg",
         "japan4.jpeg",
-
+        "japan5.jpeg",
+        "japan6.jpeg",
     ]
 },
 
@@ -2612,10 +2613,10 @@ const stays = [{
     "_id": "622f337a75c7d36e498aaafd",
     "imgUrls": [
         "norway1.jpeg",
-        "norway2.jpeg",
         "norway3.jpeg",
         "norway4.jpeg",
-
+        "norway5.jpeg",
+        "norway6.jpeg",
     ]
 },
 
@@ -2821,7 +2822,8 @@ const stays = [{
         "philippines2.jpeg",
         "philippines3.jpeg",
         "philippines4.jpeg",
-
+        "philippines5.jpeg",
+        "philippines6.jpeg",
     ]
 },
 ]
