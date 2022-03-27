@@ -31,7 +31,7 @@
         border: none;
         background-color: #ff385c;
         height: 32px;
-        padding: 10px;
+        width: 32px;
         margin-inline-end: 4px;
         button {
             background-color: transparent;
@@ -43,114 +43,6 @@
 }
 
 .filter {
-  justify-content: center;
-  label {
-    font-size: rem(17px);
-    font-weight: 800;
-  }
-  input {
-    min-width: 200px;
-    // height: 40px;
-    border: none;
-    background-color: transparent;
-    outline: none;
-  }
-}
-.main-filter {
-  font-family: Cereal-Regular;
-  gap: 5px;
-  transform-origin: top;
-  position: absolute;
-  transition: all 0.2s;
-  transition-property: all;
-  transition-duration: 0.2s;
-  transition-timing-function: ease;
-  transition-delay: 0s;
-  top: 75px;
-  // line-height: 20px;
-  box-shadow: 0 1px 2px rgb(0 0 0 / 8%),
-    0 4px 12px rgb(0 0 0 / 5%);
-  background-color: $clr2;
-  border: 1px solid $clr3;
-  border-radius: rem(40px);
-  font-size: rem(14px);
-  height: 66px;
-  max-width: 850px;
-  align-self: center;
-  //neomi edit
-  max-width: rem(850px);
-  line-height: rem(20px);
-  font-size: 16px;
-  color: $clr5;
-
-  .input-container {
-    border-radius: 40px;
-    padding: 12.5px 12.5px 12.5px 25px;
-    height: 100%;
-    cursor: pointer;
-
-    //neomi edit
-    flex-basis: 0%;
-    flex-grow: 1.5;
-    // margin: -1px;
-
-    .title-destination {
-      font-size: 12px;
-      line-height: 16px;
-      padding-bottom: 2px;
-      letter-spacing: 0.48px;
-    }
-    .dropdown {
-      font-size: 14px;
-      line-height: 18px;
-      width: rem(293.975px);
-      word-spacing: 0px;
-      text-align: left;
-      // border-bottom: 32px;
-      // margin: 0px;
-      margin-right: -17px;
-      // margin-bottom: 16.34px;
-    }
-    input.dropdown {
-      // margin-top: 16.34px;
-      appearance: none;
-      font-family: inherit;
-      // outline: none;
-    }
-    .location-filter {
-      border-right: 0.1px solid #e1e1e1;
-      // margin-bottom: 16.34px;
-    }
-    .guests {
-      // margin-top: 1px;
-
-      font-weight: 400;
-      font-size: 14px;
-      background-color: transparent;
-      line-height: 18px;
-      font-family: Cereal-Regular;
-      font-size: 14px;
-      line-height: 18px;
-      word-spacing: 0px;
-      text-align: left;
-      margin: 0px;
-      color: #717171;
-    }
-  }
-  .input-container:hover {
-    background-color: #ebebeb;
-  }
-  button {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    margin: 0;
-  }
-  .search-btn {
-    position: absolute;
-    right: 0;
-    top: 0;
-    display: flex;
     justify-content: center;
     label {
         font-size: rem(17px);
@@ -163,7 +55,112 @@
         background-color: transparent;
         outline: none;
     }
-  }
+}
+
+.main-filter {
+    font-family: Cereal-Regular;
+    gap: 5px;
+    transform-origin: top;
+    position: absolute;
+    transition: all 0.2s;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    top: 75px;
+    // line-height: 20px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+    background-color: $clr2;
+    border: 1px solid $clr3;
+    border-radius: rem(40px);
+    font-size: rem(14px);
+    height: 66px;
+    max-width: 850px;
+    align-self: center;
+    //neomi edit
+    max-width: rem(850px);
+    line-height: rem(20px);
+    font-size: 16px;
+    color: $clr5;
+    .input-container {
+        border-radius: 40px;
+        padding: 12.5px 12.5px 12.5px 25px;
+        height: 100%;
+        cursor: pointer;
+        //neomi edit
+        flex-basis: 0%;
+        flex-grow: 1.5;
+        // margin: -1px;
+        .title-destination {
+            font-size: 12px;
+            line-height: 16px;
+            padding-bottom: 2px;
+            letter-spacing: 0.48px;
+        }
+        .dropdown {
+            font-size: 14px;
+            line-height: 18px;
+            width: rem(293.975px);
+            word-spacing: 0px;
+            text-align: left;
+            // border-bottom: 32px;
+            // margin: 0px;
+            margin-right: -17px;
+            // margin-bottom: 16.34px;
+        }
+        input.dropdown {
+            // margin-top: 16.34px;
+            appearance: none;
+            font-family: inherit;
+            // outline: none;
+        }
+        .location-filter {
+            border-right: 0.1px solid #e1e1e1;
+            // margin-bottom: 16.34px;
+        }
+        .guests {
+            // margin-top: 1px;
+            font-weight: 400;
+            font-size: 14px;
+            background-color: transparent;
+            line-height: 18px;
+            font-family: Cereal-Regular;
+            font-size: 14px;
+            line-height: 18px;
+            word-spacing: 0px;
+            text-align: left;
+            margin: 0px;
+            color: #717171;
+        }
+    }
+    .input-container:hover {
+        background-color: #ebebeb;
+    }
+    button {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        margin: 0;
+    }
+    .search-btn {
+        // position: absolute;
+        // right: 0;
+        // top: 0;
+        display: flex;
+        justify-content: center;
+        width: rem(48px);
+        label {
+            font-size: rem(17px);
+            font-weight: 800;
+        }
+        input {
+            min-width: 200px;
+            // height: 40px;
+            border: none;
+            background-color: transparent;
+            outline: none;
+        }
+    }
 }
 
 .main-filter {
@@ -334,11 +331,11 @@
 }
 
 .border-guests {
-  border-left: 0.1px solid #e1e1e1;
-  margin-right: 0px;
-  padding-left: 25px;
+    border-left: 0.1px solid #e1e1e1;
+    margin-right: 0px;
+    padding-left: 25px;
 }
 
-.caret-hide{
-  margin-top: rem(15px);
+.caret-hide {
+    margin-top: rem(15px);
 }
