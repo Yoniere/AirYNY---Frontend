@@ -19,6 +19,7 @@ export default {
             },
 
         },
+    },
         getters: {
             stays(state) {
                 return state.stays;
@@ -75,4 +76,3 @@ export default {
 
         }
     }
-}
