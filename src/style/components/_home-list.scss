@@ -39,10 +39,6 @@
   position: relative;
 
   .home-img {
-    // border-top-left-radius: 12px;
-    // border-top-right-radius: 12px;
-    // border-bottom-left-radius: 12px;
-    // border-bottom-right-radius: 12px;
     border-radius: 12px;
     height: 50vh;
     object-fit: cover;
@@ -67,11 +63,12 @@
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
   background-color: #05050566;
-  border-radius: 12px !important;
+  // border-radius: 12px !important;
   font-family: Cereal-Regular;
   padding-bottom: 5px;
-  border-radius: 12px !important;
-
+  // border-radius: 12px !important;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
   .dist-country {
     font-family: Cereal-Regular;
     color: white;
