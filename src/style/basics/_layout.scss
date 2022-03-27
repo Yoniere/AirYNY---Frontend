@@ -13,7 +13,30 @@
 .main-layout2 {
     margin-top: 175px;
     display: grid;
-    // grid-template-columns: 80px 1fr 80px;
     padding-left: rem(80px);
     padding-right: rem(80px);
+}
+
+@media screen and (max-width: 500px) {
+    .main-layout{
+        padding-left: rem(20px);
+        padding-right: rem(20px);
+    }
+    .main-layout2 {
+        padding: 0 rem(20px);
+        display: flex;
+        flex-direction: column;
+    }
+    .main-header.fullHeader{
+        display: flex !important;
+        top: 0 !important;
+        padding: 0.5rem !important;
+        height: 100px !important;
+    }
+    .explore-buttons{
+        overflow: scroll auto;
+        button{
+            height: rem(50px);
+        }
+    }
 }

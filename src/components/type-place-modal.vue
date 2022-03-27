@@ -39,7 +39,7 @@
           </label>
            </div>
           <div class="type-save flex space-between">
-            <button class="save-btn"  @click="clearFilter">Clear</button><button class="save-btn" @click="setSort">Save</button>
+            <button class="clear-btn"  @click="clearFilter">Clear</button><button class="save-btn" @click="setSort">Save</button>
         </div>
      </div>
 </template>
@@ -52,6 +52,9 @@ data(){
         sortBy:[]
 
     }
+},
+created(){
+ this.sortBy = this.$store.getters.filterBy.type
 },
 methods:{
     setSort(){

@@ -38,7 +38,6 @@ export default {
     top: 0;
     left: 0;
     position: absolute;
-     aspect-ratio: 3 / 2;
 
 } 
  .el-carousel__button{

@@ -4,7 +4,7 @@
     :class="this.stickyNav ? 'fix' : 'fullHeader'"
   >
     <div
-      class="flex space-between header-features main-layout"
+      class="flex space-between header-features"
     >
       <div class="logo-container">
         <router-link to="/"
