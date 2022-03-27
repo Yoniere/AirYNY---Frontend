@@ -4,7 +4,8 @@
             <span class="type-header"> The average nightly price is 100$ </span>
             <div class="flex-row range space-between">
             <span> 30  </span>
-            <input type="range" min="30" max="2000" v-model="sortBy.minPrice" /> 
+            <!-- <input type="range" min="30" max="2000" v-model="sortBy.minPrice" />  -->
+            <el-slider range show-stops  :min="sortBy.minPrice" :max="sortBy.maxPrice" /> 
             <span>2000 </span>
             </div>
             <div class="flex-row prices space-between">
