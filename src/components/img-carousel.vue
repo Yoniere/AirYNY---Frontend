@@ -1,6 +1,5 @@
 <template>
   <el-carousel
-    :trigger="click"
     indicator-position="inside"
     :autoplay="false"
     height="262.5px"
@@ -10,7 +9,7 @@
       <img
         :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${img}`"
         alt="imgStay"
-          height="100%"
+        height="100%"
       />
     </el-carousel-item>
   </el-carousel>
