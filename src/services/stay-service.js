@@ -2863,10 +2863,11 @@ function _filterStays(stays, filterBy) {
             })
         })
     }
-    filteredStays = filteredStays.filter((stay) => {
-        // console.log(filterBy);
-        return (stay.price > filterBy.price.minPrice && stay.price < filterBy.price.maxPrice)
-    })
+    if (filterBy.price) {
+        filteredStays = filteredStays.filter((stay) => {
+            return (stay.price > filterBy.price.minPrice && stay.price < filterBy.price.maxPrice)
+        })
+    }
 
 
     return filteredStays
