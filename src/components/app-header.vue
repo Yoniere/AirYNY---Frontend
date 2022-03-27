@@ -92,8 +92,7 @@ export default {
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
-      this.filter =  this.$store.getters.filterBy;
-    
+    this.filter = this.$store.getters.filterBy;
   },
   data() {
     return {
@@ -128,7 +127,9 @@ export default {
     },
     getFilter() {
       console.log(this.filter);
-      return this.filter.country ? `${this.filter.country}`: "Start to search";
+      return this.filter.country
+        ? `${this.filter.country}`
+        : "Start to search";
     },
   },
   unmounted() {
