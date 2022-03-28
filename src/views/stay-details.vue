@@ -66,6 +66,8 @@ export default {
         pricePerNight: this.stay.price,
         guests: filterBy.guests,
         stayTime: filterBy.stayTime,
+        status: 'Pending',
+
       };
       orderDetails = JSON.parse(JSON.stringify(orderDetails));
       try {

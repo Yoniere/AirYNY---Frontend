@@ -1,15 +1,45 @@
 
-import {storageService} from './async-storage-service'
+import {storageService} from './async-storage-service.js'
+import { stayService } from './stay-service.js';
+import { orderService } from './order-service.js';
 
 
 const STORAGE_KEY = 'userDB';
 export const userService = {
     getLoggedinUser,
     saveUser,
+    getUserStays,
+    getUserOrdar
     }
 
 login()
 
+// function getUserStays(entityId){
+//         return stayService.query().then((entities) =>
+//           entities.find((entity) => entity.host.id === entityId)
+//         )
+// }
+
+async function getUserStays(entityId){
+    const stays =[]
+       await stayService.query().then((entities) =>
+          entities.find((entity) => {
+            if(entity.host.id === entityId) stays.push(entity)
+          }))
+      return stays
+}
+async function getUserOrdar(){
+    const orders = await orderService.query()
+      return orders
+}
+// async function getUserOrdar(entityId){
+//     const orders =[]
+//        await orderService.query().then((entities) =>
+//           entities.find((entity) => {
+//             if(entity.stay_id === entityId) stays.push(entity)
+//           }))
+//       return orders
+// }
 
 
 function login() {
@@ -18,8 +48,7 @@ function login() {
         return logUser
     }else{
     
-        const user = {fullName: 'yona ', _id:'abc123' ,
-        password:'yona'
+        const user = {fullName: 'yona ', id:'35858044' , password:'yona'
         } 
         storageService.store(STORAGE_KEY, user)  
     }

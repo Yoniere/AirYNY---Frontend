@@ -136,7 +136,6 @@ export default {
         : "https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648055648/airyny/logo1.png";
     },
     getFilter() {
-      console.log(this.filter);
       return this.filter.country
         ? `${this.filter.country}`
         : "Start to search";

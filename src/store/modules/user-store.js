@@ -1,4 +1,5 @@
 import { userService } from "../../services/user-service.js"
+
 import { socketService, SOCKET_EMIT_USER_WATCH, SOCKET_EVENT_USER_UPDATED } from '../../services/socket.service.js'
 
 
@@ -11,11 +12,20 @@ export default {
     getters: {
         user(state){
             return  JSON.parse(JSON.stringify(state.user))
+        },
+        userStays(state){
+            return  JSON.parse(JSON.stringify(state.user.stays))
         }
     },
     mutations: {
         saveUser(state, {user}){
           state.user = user
+       },
+       setStaysUser(state, {stays}){
+          state.user.stays = stays
+       },
+       setOrderUser(state, {orders}){
+          state.user.orders = orders
        }
             
 
@@ -31,6 +41,18 @@ export default {
                     console.error('Cannot change user', err)
                     throw err
                 })
+        },
+        async loadStaysUser({ commit, state }) {
+            const stays = await userService.getUserStays(state.user.id)
+            const orders = await userService.getUserOrdar()
+            console.log(orders);
+            try {
+                commit({ type: 'setStaysUser', stays })
+                commit({ type: 'setOrderUser', orders })
+            } catch (err) {
+                console.error('Cannot Load stays', err)
+                throw err
+            }
         },
 
     }

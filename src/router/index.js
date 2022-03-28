@@ -31,21 +31,11 @@ const router = createRouter({
       component: userDetails,
     },
     {
-      path: '/user/:id/dashboard',
+      path: '/dashboard',
       name: 'user-dashboard',
       component: userDashboard,
     },
-    // {
-    //         path: '/toy/details/:toyId',
-    //         name: 'toy-details',
-    //         component: toyDetails,
-    //         children: [{
-    //             path: 'chat',
-    //             name: 'chat',
-    //             component: chat
-    //         }, ]
 
-    //     },
 
 
 

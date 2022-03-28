@@ -36,7 +36,6 @@ function _filterStays(stays, filterBy) {
         })
     }
     filteredStays = filteredStays.filter((stay) => {
-        // console.log(filterBy);
         return (stay.price > filterBy.price.minPrice && stay.price < filterBy.price.maxPrice)
     })
 
@@ -67,16 +66,4 @@ async function add(orderDetails) {
         return addedOrder
     }
 
-}
-
-function _createStay() {
-    // let stays = utilService.loadFromStorage(STAYS_KEY);
-    // if (!stays || !stays.length) {
-    //     stays = [];
-    //     stays.map((stay) => {
-    //         stays.push(stay);
-    //     });
-    utilService.saveToStorage(STAYS_KEY, stays);
-    // } 
-    return stays;
 }
