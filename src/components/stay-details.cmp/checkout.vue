@@ -49,7 +49,7 @@
         <span class="guests"> {{ getGuests }}</span>
       </div>
 
-      <div v-if="guestModal" class="guests-Modal">
+      <div v-if="guestModal" class="checkout-guests-modal">
         <ul>
           <li class="flex space-between align-center">
             <span class="flex-col"
@@ -86,7 +86,15 @@
         </ul>
       </div>
 
-      <button  ref="myRef" class="reserve-btn" @click="setOrder" @mousemove="calcMouse" :style="mousePos">Reserve</button>
+      <button
+        ref="myRef"
+        class="reserve-btn"
+        @click="setOrder"
+        @mousemove="calcMouse"
+        :style="mousePos"
+      >
+        Reserve
+      </button>
     </section>
     <div class="nav-bar-section">
       <nav class="checkout-nav">
@@ -116,13 +124,14 @@ export default {
       pos: "",
       x: 0,
       y: 0,
-      filterBy: null
+      filterBy: null,
     };
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
     this.filterBy = this.$store.getters.filterBy;
     // console.log(this.filterBy);
+    this.getElInputClass();
   },
   unmounted() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -134,33 +143,35 @@ export default {
       return this.stay.reviewScores.rating / 10;
     },
     mousePos() {
-      return {"background-position" : `calc((100 - (${this.x}))*1%) calc((100 - (${this.y}))*1%)`}
+      return {
+        "background-position": `calc((100 - (${this.x}))*1%) calc((100 - (${this.y}))*1%)`,
+      };
     },
 
     checkoutPos() {
-      if (this.pos === 'a') {
-        return 'static';
-      } else if (this.pos === 'b') {
-        return 'fixed';
-      } else if (this.pos === 'c') {
-        return 'static-second';
-      } else if(this.pos === 'd') {
-        return 'fixed-top';
+      if (this.pos === "a") {
+        return "static";
+      } else if (this.pos === "b") {
+        return "fixed";
+      } else if (this.pos === "c") {
+        return "static-second";
+      } else if (this.pos === "d") {
+        return "fixed-top";
       }
     },
 
     getFlexRow() {
-      if (this.pos === 'd') {
+      if (this.pos === "d") {
         return "display:flex;align-items: center;";
       }
     },
     getFlexColumn() {
-      if (this.pos === 'd') {
+      if (this.pos === "d") {
         return "flex-direction: column;margin-right: 16px;";
       }
     },
     getZeroMargin() {
-      if (this.pos === 'd') {
+      if (this.pos === "d") {
         return "margin-left: 0rem;";
       }
     },
@@ -181,6 +192,10 @@ export default {
     },
   },
   methods: {
+    getElInputClass() {
+      const elInput = document.querySelectorAll('.el-range-input');
+      console.log(elInput);
+    },
     handleScroll(event) {
       if (window.top.scrollY < 744) {
         this.pos = "a";
@@ -199,13 +214,12 @@ export default {
     },
 
     scrollMeTo(id) {
-    var element = document.getElementById(id)
-    console.log(element)
-    var top = element.offsetTop;
+      var element = document.getElementById(id);
+      console.log(element);
+      var top = element.offsetTop;
 
-    window.scrollTo(0, top);
-  },
-
+      window.scrollTo(0, top);
+    },
 
     openModal() {
       this.guestModal = !this.guestModal;
@@ -229,7 +243,7 @@ export default {
       if (this.filterBy.guests.Infants === -1) this.filterBy.guests.Infants = 0;
     },
     setOrder() {
-      this.$emit("setOrder",this.filterBy);
+      this.$emit("setOrder", this.filterBy);
     },
   },
 };
