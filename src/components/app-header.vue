@@ -61,6 +61,7 @@
             src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648059841/airyny/world-icon.svg"
           />
         </button>
+        <label @click="openModalUser" class="relative">
         <button class="profile-btn flex">
           <img
             class="menu-img"
@@ -71,6 +72,9 @@
             src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648059841/airyny/profile-icon.svg"
           />
         </button>
+        </label>
+        <user-details-modal  v-if="modalUser" />
+
       </div>
     </div>
 
@@ -83,12 +87,14 @@
 
 <script>
 import stayFilter from "./stay-filter.vue";
+import userDetailsModal from "./user-deatils-modal.vue";
 
 export default {
   name: "stay-header",
 
   components: {
     stayFilter,
+    userDetailsModal
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
@@ -99,6 +105,7 @@ export default {
       stickyNav: false,
       openfilter: true,
       filter: null,
+      modalUser:false,
     };
   },
 
@@ -118,6 +125,9 @@ export default {
     setMiniFilter(filterBy) {
       this.filter = filterBy;
     },
+    openModalUser(){
+      this.modalUser =!this.modalUser
+    }
   },
   computed: {
     getLogo() {

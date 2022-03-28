@@ -59,8 +59,16 @@ export default {
         JSON.parse(JSON.stringify(this.filterByPrice))
       );
     },
+<<<<<<< HEAD
   },
 };
+=======
+    setPrice(val){
+        console.log(val);
+    }
+}
+}
+>>>>>>> 262a378701a98ced3f11aad139473df353bd0452
 </script>
 
 <style>

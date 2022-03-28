@@ -22,7 +22,9 @@
         </label>
       </div>
 
-      <div class="input-container flex-col date-list">
+      <div
+        class="main-time-picker input-container flex-col date-list"
+      >
         <span class="demonstration"></span>
         <el-date-picker
           v-model="filterBy.stayTime"
@@ -53,11 +55,10 @@
               </span>
             </span>
             <span>
-                <button @click="incAdults(-1)"> -  </button>
+              <button @click="incAdults(-1)">-</button>
               {{ filterBy.guests.adults }}
               <button @click="incAdults(1)">+</button>
-             </span
-            >
+            </span>
           </li>
           <li class="flex space-between align-center">
             <span class="flex-col">
@@ -68,8 +69,7 @@
               <button @click="incKids(-1)">-</button>
               {{ filterBy.guests.kids }}
               <button @click="incKids(1)">+</button>
-              </span
-            >
+            </span>
           </li>
           <li class="flex space-between align-center">
             <span class="flex-col">
@@ -77,10 +77,10 @@
               <span class="guide-age">Under 2 </span>
             </span>
             <span>
-              <button @click="incInfants(-1)"> -</button>
+              <button @click="incInfants(-1)">-</button>
               {{ filterBy.guests.Infants }}
-              <button @click="incInfants(1)">+
-        
+              <button @click="incInfants(1)">
+                +
               </button></span
             >
           </li>
@@ -141,7 +141,7 @@ export default {
           },
         ],
       },
-      filterBy:null,
+      filterBy: null,
     };
   },
   created() {
@@ -149,7 +149,7 @@ export default {
       this.setFilter,
       500
     );
-    this.filterBy = this.$store.getters.filterBy
+    this.filterBy = this.$store.getters.filterBy;
   },
   methods: {
     setFilter() {
@@ -160,7 +160,9 @@ export default {
       this.$router.push(`/stay`);
       this.guestModal = false;
       this.$emit(
-        "filterd",JSON.parse(JSON.stringify(this.filterBy)) );
+        "filterd",
+        JSON.parse(JSON.stringify(this.filterBy))
+      );
     },
     openModal() {
       this.guestModal = !this.guestModal;

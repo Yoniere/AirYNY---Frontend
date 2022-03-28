@@ -1,7 +1,25 @@
-<template></template>
+<template>
+<app-header  class="user-deatails"/>
+</template>
 
 <script>
-export default {};
+import appHeader from '../components/app-header.vue'
+export default {
+    data(){
+        return{
+
+        }
+    },
+created(){
+
+},
+components:{
+    appHeader
+
+}
+   
+}
 </script>
 
-<style></style>
+<style>
+</style>
