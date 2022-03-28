@@ -1,5 +1,9 @@
 <template>
-<app-header  class="user-deatails"/>
+<app-header  class=" user-deatails"/>
+<section class="main-layout2">
+   
+</section>
+
 </template>
 
 <script>

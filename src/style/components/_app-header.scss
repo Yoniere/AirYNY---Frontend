@@ -167,8 +167,41 @@
   }
 }
 
-// .main-header.header-fix{
-//   background-color: $clr2;
-//   top: 0;
 
-//   }
+.user-deatails {
+  position: fixed;
+  .main-header {
+    position: fixed;
+    z-index: 20;
+    background-color: $clr2;
+    top: 0;
+    width: 100%;
+    height: rem(80px);
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 80px 1fr 80px;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08) !important;
+    padding: rem(15px);
+    align-items: center;
+  }
+  a {
+    color: $clr5 !important;
+    text-shadow: none;
+    font-weight: bold;
+  }
+  .logo-container {
+    width: 130px;
+  }
+  .logo {
+    content: url("https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648055648/airyny/logo2.png");
+    height: rem(70px);
+    width: rem(140px);
+
+  }
+  .filter{
+    visibility: hidden;
+  }
+  .mini-filter{
+    visibility: hidden;
+  }
+}
