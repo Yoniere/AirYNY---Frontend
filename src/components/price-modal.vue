@@ -4,11 +4,15 @@
       <span class="type-header"> The average nightly price is 100$ </span>
       <div class="flex-row range space-between">
         <span> 30 </span>
-        <el-slider
-          range
-          :min="filterByPrice.minPrice"
-          :max="filterByPrice.maxPrice"
-        />
+        <HistogramSlider :width="800" :bar-height="72" :data="pricesToShow" :drag-interval="true"
+      :force-edges="false" :min="30" :max="2000" primaryColor="#b0b0b0" barRadius="6" />
+
+    border-top-left-radius: 1px !important;
+    border-top-right-radius: 1px !important;
+    margin-right: 1px !important;
+    background: rgb(176, 176, 176)
+
+
         <span>2000 </span>
       </div>
       <div class="flex-row prices space-between">
@@ -40,6 +44,11 @@
 
 <script>
 export default {
+  props: {
+    stays: {
+      type: Array,
+    },
+  },
   data() {
     return {
       filterByPrice: {
@@ -51,7 +60,7 @@ export default {
   methods: {
     setSort(type) {
       // console.log(type)
-      if (type === 'clear') {
+      if (type === "clear") {
         this.filterByPrice = { maxPrice: 2000, minPrice: 30 };
       }
       this.$emit(
@@ -60,6 +69,19 @@ export default {
       );
     },
   },
+  computed: {
+          pricesToShow() {
+      var prices = [];
+      prices = this.stays.map(stay=>prices.push(stay.price))
+      return prices
+    },
+    minPrice() {
+       return Math.min(this.pricesToShow)
+    },
+    maxPrice() {
+        return Math.max(this.pricesToShow)
+    }
+  }
 };
 </script>
 

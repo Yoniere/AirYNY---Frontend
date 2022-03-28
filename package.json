@@ -18,6 +18,7 @@
     "vue": "^3.2.31",
     "vue-router": "^4.0.12",
     "vue3-gmap-custom-marker": "^0.0.2",
+    "vue3-histogram-slider": "^0.4.16",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
