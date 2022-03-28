@@ -1,0 +1,26 @@
+.user-modal {
+    position: absolute;
+   right: rem(30px);
+   top: rem(60px);
+    width: rem(240px);
+    height: rem(360px);
+    z-index: 20;
+    justify-content: flex-start;
+    background: $clr2;
+    border: 0.5px solid hsla(0,0%,46.3%,.28);
+    border-radius: 12px;
+    box-shadow: 0 0 3px 0  $clr5;
+    transition: box-shadow 0.2s ease ;
+    a{
+        color: $clr5;
+        font-size: 14px;
+        padding: rem(15px) rem(20px);
+        cursor: pointer;
+        font-family: Cereal-medium;
+        text-shadow: none;
+    }
+    a:hover{
+        background-color: hsla(0,0%,92.5%,.48627450980392156);;
+    
+    }
+}

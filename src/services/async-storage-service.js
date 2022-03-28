@@ -4,6 +4,8 @@ export const storageService = {
   post,
   put,
   remove,
+  store,
+  load
 }
 
 function query(entityType) {
@@ -57,4 +59,13 @@ function _makeId(length = 5) {
     text += possible.charAt(Math.floor(Math.random() * possible.length))
   }
   return text
+}
+
+function load(key) {
+  var val = localStorage.getItem(key)
+  return (val)? JSON.parse(val) : null;
+}
+
+function store(key, val) {
+  localStorage[key] = JSON.stringify(val);
 }

@@ -1,5 +1,5 @@
 <template>
-    <div  class="price-modal"> 
+    <div v-close-modal class="price-modal"> 
            <div class="flex-col">
             <span class="type-header"> The average nightly price is 100$ </span>
             <div class="flex-row range space-between">
@@ -37,6 +37,9 @@ methods:{
     setSort(){
         this.$emit('filterByPrice', JSON.parse(JSON.stringify(this.filterByPrice)))
     },
+    setPrice(val){
+        console.log(val);
+    }
 }
 }
 </script>
