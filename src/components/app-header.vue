@@ -3,9 +3,7 @@
     class="main-header"
     :class="this.stickyNav ? 'fix' : 'fullHeader'"
   >
-    <div
-      class="flex space-between header-features"
-    >
+    <div class="flex space-between header-features">
       <div class="logo-container">
         <router-link to="/"
           ><img
@@ -13,42 +11,43 @@
             :src="getLogo"
         /></router-link>
       </div>
-      <button
-        class="mini-filter flex space-between align-center clickable"
-        :class="this.openfilter ? 'hide' : 'fixed'"
-        @click="toggle"
-      >
-        <span> {{ getFilter }}</span>
+      <div class="mini-filter-container">
+        <button
+          class="mini-filter flex space-between align-center clickable"
+          :class="this.openfilter ? 'hide' : 'fixed'"
+          @click="toggle"
+        >
+          <span> {{ getFilter }}</span>
 
-        <div class="search-btn">
-          <button @click="setFilter">
-            <svg
-              viewBox="0 0 32 32"
-              xmlns="http://www.w3.org/2000/svg"
-              style="
-                display: block;
-                fill: none;
-                height: 12px;
-                width: 12px;
-                stroke: white;
-                stroke-width: 5;
-                overflow: visible;
-              "
-              aria-hidden="true"
-              role="presentation"
-              focusable="false"
-            >
-              <g fill="none">
-                <path
-                  d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 
+          <div class="search-btn">
+            <button @click="setFilter">
+              <svg
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                style="
+                  display: block;
+                  fill: none;
+                  height: 12px;
+                  width: 12px;
+                  stroke: white;
+                  stroke-width: 5;
+                  overflow: visible;
+                "
+                aria-hidden="true"
+                role="presentation"
+                focusable="false"
+              >
+                <g fill="none">
+                  <path
+                    d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 
           0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"
-                ></path>
-              </g>
-            </svg>
-          </button>
-        </div>
-      </button>
-
+                  ></path>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </button>
+      </div>
       <div
         class="flex align-center menu-btns"
         :class="this.stickyNav ? 'header-fix' : ''"
@@ -62,19 +61,18 @@
           />
         </button>
         <label @click="openModalUser" class="relative">
-        <button class="profile-btn flex">
-          <img
-            class="menu-img"
-            src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648059841/airyny/menu-icon.svg"
-          />
-          <img
-            class="profile-img"
-            src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648059841/airyny/profile-icon.svg"
-          />
-        </button>
+          <button class="profile-btn flex">
+            <img
+              class="menu-img"
+              src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648059841/airyny/menu-icon.svg"
+            />
+            <img
+              class="profile-img"
+              src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648059841/airyny/profile-icon.svg"
+            />
+          </button>
         </label>
-        <user-details-modal  v-if="modalUser" />
-
+        <user-details-modal v-if="modalUser" />
       </div>
     </div>
 
@@ -94,7 +92,7 @@ export default {
 
   components: {
     stayFilter,
-    userDetailsModal
+    userDetailsModal,
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
@@ -105,7 +103,7 @@ export default {
       stickyNav: false,
       openfilter: true,
       filter: null,
-      modalUser:false,
+      modalUser: false,
     };
   },
 
@@ -125,9 +123,9 @@ export default {
     setMiniFilter(filterBy) {
       this.filter = filterBy;
     },
-    openModalUser(){
-      this.modalUser =!this.modalUser
-    }
+    openModalUser() {
+      this.modalUser = !this.modalUser;
+    },
   },
   computed: {
     getLogo() {

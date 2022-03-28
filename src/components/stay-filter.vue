@@ -47,7 +47,9 @@
       </div>
       <div v-if="guestModal" class="guests-Modal">
         <ul>
-          <li class="flex space-between align-center">
+          <li
+            class="guest-li flex space-between align-center"
+          >
             <span class="flex-col"
               >Adults
               <span class="guide-age"

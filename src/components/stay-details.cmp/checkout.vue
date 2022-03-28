@@ -1,7 +1,14 @@
 <template>
-  <section v-if="filterBy" class="checkout" :class="checkoutPos">
+  <section
+    v-if="filterBy"
+    class="checkout"
+    :class="checkoutPos"
+  >
     <section :style="getFlexRow">
-      <div class="checkout-title flex space-between" :style="getFlexColumn">
+      <div
+        class="checkout-title flex space-between"
+        :style="getFlexColumn"
+      >
         <div class="checkout-title-left">
           <h1 class="title">
             <span class="price">${{ stay.price }}</span>
@@ -9,14 +16,22 @@
           </h1>
         </div>
         <div class="checkout-title-right flex">
-          <div class="flex card-rate" :style="getZeroMargin">
+          <div
+            class="flex card-rate"
+            :style="getZeroMargin"
+          >
             <svg
               viewBox="0 0 32 32"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
               role="presentation"
               focusable="false"
-              style="display: block; height: 14px; width: 14px; fill: #ff385c"
+              style="
+                display: block;
+                height: 14px;
+                width: 14px;
+                fill: #ff385c;
+              "
             >
               <path
                 d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965
@@ -54,13 +69,15 @@
           <li class="flex space-between align-center">
             <span class="flex-col"
               >Adults
-              <span class="guide-age">Ages 13 or above </span>
+              <span class="guide-age"
+                >Ages 13 or above
+              </span>
             </span>
             <span>
-              <button @click="incAdults(1)">+</button>
+              <button @click="incAdults(-1)">-</button>
               {{ filterBy.guests.adults }}
-              <button @click="incAdults(-1)">-</button></span
-            >
+              <button @click="incAdults(1)">+</button>
+            </span>
           </li>
           <li class="flex space-between align-center">
             <span class="flex-col">
@@ -68,9 +85,10 @@
               <span class="guide-age"> Ages 2-12 </span>
             </span>
             <span>
-              <button @click="incKids(1)">+</button> {{ filterBy.guests.kids }}
-              <button @click="incKids(-1)">-</button></span
-            >
+              <button @click="incKids(-1)">-</button>
+              {{ filterBy.guests.kids }}
+              <button @click="incKids(1)">+</button>
+            </span>
           </li>
           <li class="flex space-between align-center">
             <span class="flex-col">
@@ -78,10 +96,10 @@
               <span class="guide-age">Under 2 </span>
             </span>
             <span>
-              <button @click="incInfants(1)">+</button>
+              <button @click="incInfants(-1)">-</button>
               {{ filterBy.guests.Infants }}
-              <button @click="incInfants(-1)">-</button></span
-            >
+              <button @click="incInfants(1)">+</button>
+            </span>
           </li>
         </ul>
       </div>
@@ -99,10 +117,20 @@
     <div class="nav-bar-section">
       <nav class="checkout-nav">
         <ul class="nav-list">
-          <a class="link" @click="scrollMeTo('gallery')">Photos</a>
-          <a class="link" @click="scrollMeTo('amentiy-section')">Amenities</a>
-          <a class="link" @click="scrollMeTo('reviews')">Reviews</a>
-          <a class="link" @click="scrollMeTo('map')">Location</a>
+          <a class="link" @click="scrollMeTo('gallery')"
+            >Photos</a
+          >
+          <a
+            class="link"
+            @click="scrollMeTo('amentiy-section')"
+            >Amenities</a
+          >
+          <a class="link" @click="scrollMeTo('reviews')"
+            >Reviews</a
+          >
+          <a class="link" @click="scrollMeTo('map')"
+            >Location</a
+          >
         </ul>
       </nav>
     </div>
@@ -177,7 +205,8 @@ export default {
     },
     getGuests() {
       if (
-        (this.filterBy.guests.adults === 0 || !this.filterBy.guests.adults) &&
+        (this.filterBy.guests.adults === 0 ||
+          !this.filterBy.guests.adults) &&
         this.filterBy.guests.kids === 0 &&
         this.filterBy.guests.Infants === 0
       ) {
@@ -193,7 +222,9 @@ export default {
   },
   methods: {
     getElInputClass() {
-      const elInput = document.querySelectorAll('.el-range-input');
+      const elInput = document.querySelectorAll(
+        ".el-range-input"
+      );
       console.log(elInput);
     },
     handleScroll(event) {
@@ -231,16 +262,22 @@ export default {
       this.y = e.pageY - div.offsetTop;
     },
     incAdults(val) {
-      this.filterBy.guests.adults = this.filterBy.guests.adults + val;
-      if (this.filterBy.guests.adults === -1) this.filterBy.guests.adults = 0;
+      this.filterBy.guests.adults =
+        this.filterBy.guests.adults + val;
+      if (this.filterBy.guests.adults === -1)
+        this.filterBy.guests.adults = 0;
     },
     incKids(val) {
-      this.filterBy.guests.kids = this.filterBy.guests.kids + val;
-      if (this.filterBy.guests.kids === -1) this.filterBy.guests.kids = 0;
+      this.filterBy.guests.kids =
+        this.filterBy.guests.kids + val;
+      if (this.filterBy.guests.kids === -1)
+        this.filterBy.guests.kids = 0;
     },
     incInfants(val) {
-      this.filterBy.guests.Infants = this.filterBy.guests.Infants + val;
-      if (this.filterBy.guests.Infants === -1) this.filterBy.guests.Infants = 0;
+      this.filterBy.guests.Infants =
+        this.filterBy.guests.Infants + val;
+      if (this.filterBy.guests.Infants === -1)
+        this.filterBy.guests.Infants = 0;
     },
     setOrder() {
       this.$emit("setOrder", this.filterBy);
@@ -248,5 +285,4 @@ export default {
   },
 };
 </script>
-<style>
-</style>
+<style></style>
