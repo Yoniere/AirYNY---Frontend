@@ -107,7 +107,7 @@
       width: rem(293.975px);
       word-spacing: 0px;
       text-align: left;
-      // border-bottom: 32px;
+      padding-bottom: 29px;
       // margin: 0px;
       margin-right: -17px;
       // margin-bottom: 16.34px;
@@ -117,7 +117,7 @@
       appearance: none;
       font-family: inherit;
       // outline: none;
-      color: $clr7;
+      color: #71717100;
     }
     .location-filter {
       border-right: 0.1px solid #e1e1e1;
@@ -277,24 +277,18 @@
   position: relative;
   -webkit-appearance: none;
   background-color: #ffffff00;
-  /* background-color: var(--el-input-bg-color,var(--el-fill-color-blank)); */
   background-image: none;
   border-radius: var(
     --el-input-border-radius,
     var(--el-border-radius-base)
   );
   font-family: Cereal-Regular;
-  /* box-sizing: border-box; */
-  /* color: var(--el-input-text-color,var(--el-text-color-regular)); */
-  /* display: inline-block; */
   font-size: inherit;
   height: 32px;
   line-height: 32px;
-  /* outline: 0; */
   padding: 0 11px;
   transition: var(--el-transition-box-shadow);
   width: 100%;
-  /* box-shadow: 0 0 0 1px var(--el-input-border-color,var(--el-border-color)) inset; */
   border: none;
   box-shadow: none;
 }
@@ -442,17 +436,18 @@
   .el-date-table-cell
   .el-date-table-cell__text {
   font-family: Cereal-Regular;
-  width: 24px;
-  height: 24px;
+  width: 42px;
+  height: 42px;
   display: block;
   margin: 0 auto;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 30px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50%;
   font-weight: 600;
+  text-align: center;
 }
 
 .el-date-range-picker__content.is-left {
@@ -478,4 +473,46 @@
   border: 1px solid var(--el-datepicker-border-color);
   box-shadow: var(--el-box-shadow-light);
   top: 175px;
+}
+
+.el-date-editor .el-range-input {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  outline: 0;
+  display: inline-block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 39%;
+  text-align: center;
+  font-size: var(--el-font-size-base);
+}
+
+.el-date-editor .el-range-input::placeholder {
+  color: #222222;
+}
+
+.el-date-table td .el-date-table-cell {
+  height: 45px;
+  padding: 3px 0;
+  box-sizing: border-box;
+}
+
+.el-date-table td.in-range .el-date-table-cell {
+  background-color: #f7f7f7;
+}
+
+.el-date-range-picker .el-picker-panel__content {
+  margin: 0;
+}
+
+// maby delete
+.el-date-range-picker__content {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  margin: 0px;
+  /* align-content: space-around; */
+  padding: 19px;
 }
