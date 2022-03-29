@@ -1,5 +1,6 @@
 import { storageService } from './async-storage-service.js'
 import { utilService } from './util-service.js'
+import { userService } from './user-service.js'
 
 
 
@@ -10,7 +11,8 @@ export const orderService = {
     add,
     query,
     remove,
-    getById
+    getById,
+    getEmptyOrder
 }
 
 
@@ -65,5 +67,23 @@ async function add(orderDetails) {
 
         return addedOrder
     }
+
+}
+
+
+function getEmptyOrder(){
+    const key= utilService.getRandomInt(0,50)
+   return {
+        name:'',
+        country: '',
+        guestName:userService.getLoggedinUser().fullName,
+        stay_id: '',
+        pricePerNight: '',
+        guests:'',
+        stayTime: '',
+        status: 'Pending',
+        ImgUrl:`https://i.pravatar.cc/150?img=${key}`
+      };
+
 
 }

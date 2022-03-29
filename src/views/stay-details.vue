@@ -1,4 +1,4 @@
-<template >
+<template>
   <app-header class="header-details" />
   <section v-if="stay" class="details-layout">
     <imgs-comp :stay="stay"></imgs-comp>
@@ -22,6 +22,7 @@
 <script>
 import appHeader from "../components/app-header.vue";
 import { stayService } from "../services/stay-service.js";
+import { orderService } from "../services/order-service.js";
 import ImgsComp from "../components/stay-details.cmp/imgs-comp.vue";
 import initialInfo from "../components/stay-details.cmp/initial-info.vue";
 import mainAmenities from "../components/stay-details.cmp/main-amenities.vue";
@@ -59,23 +60,21 @@ export default {
   computed: {},
   methods: {
     async setOrder(filterBy) {
-      var orderDetails = {
-        name: this.stay.name,
-        country: this.stay.address.country,
-        stay_id: this.stay.id,
-        pricePerNight: this.stay.price,
-        guests: filterBy.guests,
-        stayTime: filterBy.stayTime,
-        status: 'Pending',
+      const order = orderService.getEmptyOrder();
+      order.name = this.stay.name;
+      order.country = this.stay.address.country;
+      order.stay_id = this.stay.id;
+      order.pricePerNight = this.stay.price;
+      order.guests = filterBy.guests;
+      order.stayTime = filterBy.stayTime;
+      order.status = "Pending";
+      const orderToSave = JSON.parse(JSON.stringify(order));
 
-      };
-      orderDetails = JSON.parse(JSON.stringify(orderDetails));
       try {
         const newOrder = await this.$store.dispatch({
-          type: "addNewOrder",
-          orderDetails,
+          type: "addNewOrder",orderToSave
         });
-        alert('order received')
+        alert("order received");
       } catch {
         console.error;
       }
@@ -84,5 +83,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

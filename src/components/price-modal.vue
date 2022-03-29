@@ -59,7 +59,6 @@ export default {
   },
   methods: {
     setSort(type) {
-      // console.log(type)
       if (type === "clear") {
         this.filterByPrice = { maxPrice: 2000, minPrice: 30 };
       }

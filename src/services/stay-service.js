@@ -2852,7 +2852,6 @@ async function query(filterBy) {
 function _filterStays(stays, filterBy) {
     let filteredStays = stays
     if (filterBy.country) {
-        console.log(filterBy, filteredStays);
 
         const regex = new RegExp(filterBy.country, 'i')
         filteredStays = filteredStays.filter(stay => regex.test(stay.address.country || stay.address.city))

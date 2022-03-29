@@ -103,10 +103,8 @@ export default {
         window.scrollTo(0, 0);
     },
 
-    goToUnique(stay) {
-      console.log("stay", stay);
+    goToUnique(stay) { 
       delete stay.km;
-      console.log("stay", stay);
       this.$router.push(`/stay/${stay.id}`);
         window.scrollTo(0, 0);
     },

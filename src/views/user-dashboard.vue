@@ -1,5 +1,4 @@
 <template>
-<!-- <app-header  class="header-details"/> -->
 <app-header  class="user-details"/>
 <section class="main-layout2">
 <div class="my-details flex-col">
@@ -13,6 +12,7 @@
     <div class="user-order" v-if="renderOrder">
        <table>
      <tr>
+         <th></th>
          <th>Guest name</th>
          <th>stay name</th>
          <th>check in - check out </th>
@@ -24,18 +24,21 @@
          <td> 
              <div class="review-img q-pa-md q-gutter-sm">
               <q-avatar>
-                <img class="img" :src="getImage" />
+                <img class="img" :src="order.ImgUrl" />
               </q-avatar>
            </div>
         </td>
+           <td> {{order.guestName}}</td>
            <td> {{order.name}}</td>
-            <!-- <td> {{order.stayTime[0].slice(0.5)}} - {{order.stayTime[1].slice(0.5)}}</td>  -->
            <td> {{formattedTime(order.stayTime[0])}} - {{formattedTime(order.stayTime[1])}}</td> 
            <td> {{order.status}}</td>
            <td> {{order.pricePerNight}} $ </td>
-           <td class="flex-row"> 
-               <button class="btn clikable"> Approve </button>
-               <button class="btn clikable"> Decline </button>
+           <td v-if="order.status !== 'Pending'"> 
+               <button class="btn clikable" @click="changeOrderStatusBack(order)"
+               :style="{color: (order.status ==='Decline' ) ? 'red': 'green'}"> {{order.status}} </button> </td>
+           <td  v-else class="flex-row"> 
+               <button @click="changeOrderStatus(order,'Approve')" class="btn clikable"> Approve </button>
+               <button @click="changeOrderStatus(order,'Decline')" class="btn clikable"> Decline </button>
            </td>
         </tr>
     </table>
@@ -76,6 +79,7 @@
 <script>
 import appHeader from '../components/app-header.vue'
 import {utilService} from '../services/util-service.js'
+import {orderService} from '../services/order-service.js'
 export default {
     data(){
         return{
@@ -87,9 +91,6 @@ export default {
 async created(){
     const user = await this.$store.getters.user
     this.user = user;
-
-
-
 },
 methods:{
     toggle(){
@@ -99,16 +100,20 @@ methods:{
       formattedTime(time){
         return time.slice(0,10)
 
+    },
+    changeOrderStatus(order,val){
+        order.status = val
+        orderService.add(order)
+    },
+    changeOrderStatusBack(order){
+        if(order.status === 'Approve')  order.status= 'Decline'
+        else order.status = 'Approve'
+        orderService.add(order)
     }
 
 
 },
-computed:{
-    getImage() {
-      const key= utilService.getRandomInt(0, 50)
-      return `https://i.pravatar.cc/150?img=${key}`
-    },
-  
+computed:{  
 },
 components:{
     appHeader
