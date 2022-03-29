@@ -13,6 +13,7 @@
     border: 1px solid #ddd;
     border-radius: 40px;
     height: 48px;
+    // width: 48px;
     padding: 0 7px 0 16px;
     width: 300px;
     font-size: 14px;
@@ -24,6 +25,11 @@
       border-radius: 50%;
       height: 30px;
       padding: 10px;
+    }
+    span {
+      color: #343434;
+      font-size: 14px;
+      font-weight: 600;
     }
     .search-btn {
       display: flex;
@@ -82,10 +88,9 @@
   font-size: rem(14px);
   height: 66px;
   max-width: 850px;
-
   align-self: center;
   //neomi edit
-  max-width: rem(850px);
+  min-width: rem(850px);
   line-height: rem(20px);
   font-size: 16px;
   color: $clr5;
@@ -121,11 +126,10 @@
       appearance: none;
       font-family: inherit;
       // outline: none;
-      color: #71717100;
+      // color: #71717100;
     }
     .location-filter {
       //   border-right: 0.1px solid #e1e1e1;
-
       line-height: 11.5px;
     }
     .guests {
@@ -158,7 +162,7 @@
     // top: 0;
     // display: flex;
     // justify-content: center;
-    // width: rem(48px);
+    width: rem(48px);
     position: absolute;
     right: 0;
     top: 0;
@@ -174,7 +178,6 @@
     margin-top: 8px;
     padding: 0 8px;
     cursor: pointer;
-
     label {
       font-size: rem(17px);
       font-weight: 800;
@@ -312,9 +315,11 @@
   border: none;
   box-shadow: none;
 }
+
 .el-input__inner:hover {
   box-shadow: none !important;
 }
+
 .el-date-table td.end-date .el-date-table-cell__text,
 .el-date-table td.start-date .el-date-table-cell__text {
   font-family: Cereal-Regular;
@@ -345,6 +350,7 @@
   /* visibility: hidden; */
   margin-left: -70px;
 }
+
 .el-date-editor .el-range__close-icon {
   font-size: 14px;
   color: var(--el-text-color-placeholder);
@@ -358,6 +364,7 @@
   vertical-align: middle;
   visibility: collapse;
 }
+
 .el-date-editor .el-range__icon {
   height: inherit;
   font-size: 14px;
@@ -367,6 +374,7 @@
   height: 42px;
   /* padding-right: 4px; */
 }
+
 .el-date-editor .el-range__close-icon:hover {
   font-size: 14px;
   color: var(--el-text-color-placeholder);
@@ -378,8 +386,10 @@
 }
 
 .el-range-editor.is-active:hover {
-  box-shadow: none !important; /* box-shadow: 0 0 0 1px var(--el-input-focus-border-color) inset; */
+  box-shadow: none !important;
+  /* box-shadow: 0 0 0 1px var(--el-input-focus-border-color) inset; */
 }
+
 .el-range-editor.is-active {
   box-shadow: none !important;
 }
@@ -444,6 +454,7 @@
   text-align: center;
   color: #222222;
 }
+
 .el-date-table th {
   font-size: 12px;
   font-family: Cereal-Regular;

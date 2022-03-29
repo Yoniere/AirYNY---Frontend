@@ -4,11 +4,9 @@
 @import "setup/functions.scss";
 @import "setup/mixins";
 // BASICS
-
 @import "basics/helpers";
 @import "basics/base";
 @import "basics/layout";
-
 // components
 @import "components/map-details";
 @import "components/home-list";
@@ -22,3 +20,4 @@
 @import "components/user-modal";
 @import "components/user-details.scss";
 @import "components/footer";
+@import "basics/mq";
