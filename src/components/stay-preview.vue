@@ -100,6 +100,8 @@ export default {
     },
     setLiked() {
       this.liked = !this.liked;
+      this.$emit('stayLiked', this.stay.id)
+
     },
   },
   computed: {

@@ -48,7 +48,8 @@ function login() {
         return logUser
     }else{
     
-        const user = {fullName: 'yona ', id:'35858044' , password:'yona'
+        const user = {fullName: 'yona ', id:'35858044' , password:'yona',
+        likedStays:[]
         } 
         storageService.store(STORAGE_KEY, user)  
     }

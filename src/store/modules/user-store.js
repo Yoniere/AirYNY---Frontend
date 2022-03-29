@@ -24,6 +24,14 @@ export default {
        setStaysUser(state, {stays}){
           state.user.stays = stays
        },
+       setLikedStay(state, {stayId}){
+           if(state.user.likedStays.includes(stayId)) {
+              const idx =state.user.likedStays.findIndex(id => id=== stayId )
+              state.user.likedStays.splice( idx , 1)
+              
+           }
+           else state.user.likedStays.push(stayId)
+       },
        setOrderUser(state, {orders}){
           state.user.orders = orders
        }
@@ -53,6 +61,15 @@ export default {
                 throw err
             }
         },
+        async setLikedStay({commit, state},{stayId} ){
+            commit({ type: 'setLikedStay', stayId })
+            try{
+               await userService.saveUser(state.user)
+            } catch (err) {
+            console.error('Cannot Load stays', err)
+            throw err
+        }
+        }
 
     }
 }

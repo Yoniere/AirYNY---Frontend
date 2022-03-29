@@ -41,6 +41,9 @@
     text-decoration: underline;
     border: none;
   }
+  .stay-name-details{
+    text-align: start;
+  }
 }
 
 .user-stays {
@@ -59,4 +62,8 @@
     height: 40px !important;
     width: 40px !important;
   }
+  .stay-name-details{
+    text-align: start ;
+  }
+
 }
