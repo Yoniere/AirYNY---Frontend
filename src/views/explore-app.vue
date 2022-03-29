@@ -22,7 +22,7 @@
 </div>
   
     <h1> {{title}}</h1>
-    <stay-list :stays="stays" v-if="stays"  > </stay-list>
+    <stay-list :stays="stays" v-if="stays" @stayLiked="setLiked" > </stay-list>
   </section>
 </template>
 
@@ -81,6 +81,12 @@ export default {
         filterBy: JSON.parse(JSON.stringify(this.filterBy)) ,
       });
       this.modalPrice = false
+    },
+    setLiked(stay){
+        this.$store.dispatch({
+        type: "setLikedStay",
+        stayId: JSON.parse(JSON.stringify(stay)) ,
+      });
     }
   },
   components: {

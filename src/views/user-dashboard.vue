@@ -29,7 +29,7 @@
            </div>
         </td>
            <td> {{order.guestName}}</td>
-           <td> {{order.name}}</td>
+           <td class="stay-name-details"> {{order.name}}</td>
            <td> {{formattedTime(order.stayTime[0])}} - {{formattedTime(order.stayTime[1])}}</td> 
            <td> {{order.status}}</td>
            <td> {{order.pricePerNight}} $ </td>
@@ -60,7 +60,7 @@
             </q-avatar>
         </div>
             </td>
-           <td> {{stay.name}}</td>
+           <td class="stay-name-details"> {{stay.name}}</td>
            <td> {{stay.price}}</td>
            <td> {{stay.address.country}},
                {{stay.address.city}}
