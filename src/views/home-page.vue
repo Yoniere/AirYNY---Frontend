@@ -1,5 +1,5 @@
 <template>
-  <app-header />
+  <app-header  @openModalLogin="openModalLogin"/>
   <main class="home-page">
     <section class="main-hero main-layout2">
       <h1>Let your curiosity do the booking</h1>
@@ -20,17 +20,31 @@
         <span class="host-btn-txt">Lets try</span>
       </button>
     </section>
+     <login-modal v-if="modalLoginIsOpen" @login="setLogin"  />
   </main>
 </template>
 
 <script>
 import appHeader from "../components/app-header.vue";
 import homeList from "../components/home-list.vue";
+import loginModal from "../components/login-modal.vue";
+import {userService} from "../services/user-service.js";
 
 export default {
   name: "home-page",
   data() {
-    return {};
+    return {
+      modalLoginIsOpen:false,
+    };
+  },
+  methods: {
+    openModalLogin(){
+      this.modalLoginIsOpen = true
+    },
+    setLogin(user){
+      userService.login(user)
+      this.modalLoginIsOpen= false    
+      },
   },
   computed: {
     stays() {
@@ -40,6 +54,7 @@ export default {
   components: {
     homeList,
     appHeader,
+    loginModal
   },
 };
 </script>

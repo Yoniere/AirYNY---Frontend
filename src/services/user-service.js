@@ -10,10 +10,11 @@ export const userService = {
     saveUser,
     getUserStays,
     getUserOrdar,
-    getUserLikedStays
+    getUserLikedStays,
+    login
     }
 
-login()
+// login()
 
 // function getUserStays(entityId){
 //         return stayService.query().then((entities) =>
