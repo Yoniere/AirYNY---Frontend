@@ -119,7 +119,9 @@
       // margin-bottom: 16.34px;
       max-width: 245px;
     }
+
     input.dropdown {
+      -webkit-appearance: none;
       // margin-top: 16.34px;
       appearance: none;
       font-family: inherit;
