@@ -49,6 +49,20 @@
         margin: 0;
       }
     }
+    @include for-narrow-layout {
+      display: flex;
+      visibility: visible;
+      // position: static;
+      top: 40px;
+      min-width: 100vw;
+      align-items: center;
+      justify-content: center;
+      align-content: space-between;
+      gap: 5px;
+    }
+    @include for-normal-layout {
+      // left: 10px;
+    }
   }
 }
 
@@ -69,6 +83,42 @@
 }
 
 .main-filter {
+  //1190
+  @include for-wide-layout {
+  }
+
+  //949
+  @include for-normal-layout {
+    .el-date-editor {
+      --el-date-editor-width: unset;
+      --el-date-editor-monthrange-width: unset;
+      --el-date-editor-daterange-width: unset;
+      max-width: 350px;
+      // --el-date-editor-datetimerange-width: 400px;
+    }
+    // width: 500px;
+    .input-container {
+      border-radius: 40px;
+      padding: 12.5px 3.5px 12.5px 11px !important;
+      height: 100%;
+      cursor: pointer;
+      flex-basis: 0%;
+      flex-grow: 1.5;
+    }
+    // .dropdown {
+    //   max-width: rem(150.975px);
+    // }
+  }
+
+  //743
+  @include for-narrow-layout {
+    display: none;
+  }
+
+  //375
+  @include for-mobile-layout {
+  }
+
   font-family: Cereal-Regular;
   gap: 5px;
   transform-origin: top;
@@ -88,10 +138,11 @@
   height: 66px;
   max-width: 850px;
   align-self: center;
-  min-width: rem(850px);
+  // min-width: rem(850px);
   line-height: rem(20px);
   font-size: 16px;
   color: $clr5;
+
   .input-container {
     border-radius: 40px;
     padding: 12.5px 12.5px 12.5px 25px;
@@ -110,14 +161,14 @@
     .dropdown {
       font-size: 14px;
       line-height: 18px;
-      width: rem(293.975px);
+      max-width: rem(293.975px);
       word-spacing: 0px;
       text-align: left;
       padding-bottom: 29px;
       // margin: 0px;
       margin-right: -17px;
       // margin-bottom: 16.34px;
-      max-width: 245px;
+      // max-width: 245px;
     }
 
     input.dropdown {
@@ -178,7 +229,7 @@
       font-weight: 800;
     }
     input {
-      min-width: 200px;
+      // min-width: 200px;
       // height: 40px;
       border: none;
       background-color: transparent;
@@ -189,7 +240,7 @@
 
 .filter.hide {
   transform: scale(0.35, 0.74);
-visibility: hidden;
+  visibility: hidden;
   top: 55px;
   position: fixed;
 }
@@ -393,6 +444,20 @@ visibility: hidden;
 }
 
 .el-popper {
+  // font-family: Cereal-Regular;
+  // position: inherit;
+  // border-radius: var(--el-popper-border-radius);
+  // padding: 5px 11px;
+  // z-index: 2000;
+  // font-size: 12px;
+  // line-height: 20px;
+  // /* min-width: 10px; */
+  // word-wrap: break-word;
+  // visibility: visible;
+  // min-width: 900px;
+  // min-height: 538px;
+  // margin-top: 30px;
+
   font-family: Cereal-Regular;
   position: inherit;
   border-radius: var(--el-popper-border-radius);
@@ -400,20 +465,24 @@ visibility: hidden;
   z-index: 2000;
   font-size: 12px;
   line-height: 20px;
-  /* min-width: 10px; */
+  min-width: 10px;
   word-wrap: break-word;
   visibility: visible;
-  min-width: 900px;
-  min-height: 538px;
+  /* min-width: 900px; */
+  /* min-height: 538px; */
   margin-top: 30px;
 }
 
 .el-date-range-picker .el-picker-panel__body {
   font-family: Cereal-Regular;
-  min-width: 59vw;
-  padding: 27px;
+  max-width: rem(840px);
+  // padding: 27px;
   margin-top: 71px;
   /* max-height: 100%; */
+
+  // font-family: Cereal-Regular;
+  // max-width: 103.5rem;
+  // padding: 40px;
 }
 
 .el-date-range-picker__header {
@@ -506,9 +575,27 @@ visibility: hidden;
   background: var(--el-color-white);
   border: 1px solid var(--el-datepicker-border-color);
   box-shadow: var(--el-box-shadow-light);
-  top: 175px;
+  // top: 175px !important;
+  position: static;
+  // top: 0px;
+  // left: 0px !important;
 }
-
+// .el-picker__popper.el-popper[role="tooltip"]::after {
+//   font-family: Cereal-Regular;
+//   background: var(--el-color-white);
+//   border: 1px solid var(--el-datepicker-border-color);
+//   box-shadow: var(--el-box-shadow-light);
+//   // top: 175px !important;
+//   position: relative;
+// }
+// .el-picker__popper.el-popper[role="tooltip"]:hover {
+//   font-family: Cereal-Regular;
+//   background: var(--el-color-white);
+//   border: 1px solid var(--el-datepicker-border-color);
+//   box-shadow: var(--el-box-shadow-light);
+//   // top: 175px !important;
+//   position: relative;
+// }
 .el-date-editor .el-range-input {
   -webkit-appearance: none;
   appearance: none;
@@ -536,9 +623,11 @@ visibility: hidden;
 .el-date-table td.in-range .el-date-table-cell {
   background-color: #f7f7f7;
 }
-
+.el-date-range-picker {
+  // width: 0px;
+}
 .el-date-range-picker .el-picker-panel__content {
-  margin: 0;
+  margin: 0px;
 }
 
 // maby delete
@@ -550,3 +639,9 @@ visibility: hidden;
   /* align-content: space-around; */
   padding: 19px;
 }
+
+// .el-picker__popper.el-popper[role="tooltip"] {
+//   position: static;
+//   top: 0px;
+//   left: 0px !important;
+// }

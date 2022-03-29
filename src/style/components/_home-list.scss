@@ -31,7 +31,7 @@
   }
 }
 .home-card {
-  grid-template-columns: repeat(4, 1fr);
+  // grid-template-columns: repeat(4, 1fr);
   // background-color: #ff385c;
   // border-radius: 12px !important;
   // font-family: Cereal-Regular;
@@ -60,10 +60,12 @@
   .popular {
     padding-top: 5px;
   }
+  @include for-wide-layout {
+  }
 }
 .txt-container {
   position: absolute;
-  bottom: 4px;
+  bottom: 5px;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
   background-color: #05050566;
