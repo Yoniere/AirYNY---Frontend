@@ -1,18 +1,26 @@
-
-import {storageService} from './async-storage-service.js'
+import { storageService } from './async-storage-service.js'
 import { stayService } from './stay-service.js';
 import { orderService } from './order-service.js';
+import { httpService } from './http.service.js';
+import { utilService } from './util-service.js'
 
 
 const STORAGE_KEY = 'userDB';
+const ENDPOINT = 'auth'
+
 export const userService = {
     getLoggedinUser,
     saveUser,
     getUserStays,
-    getUserOrdar
-    }
+    getUserOrder,
+    getUserLikedStays,
+    login,
+    signup,
+    logout
 
-login()
+}
+
+// login()
 
 // function getUserStays(entityId){
 //         return stayService.query().then((entities) =>
@@ -20,17 +28,29 @@ login()
 //         )
 // }
 
-async function getUserStays(entityId){
-    const stays =[]
-       await stayService.query().then((entities) =>
-          entities.find((entity) => {
-            if(entity.host.id === entityId) stays.push(entity)
-          }))
-      return stays
+async function getUserStays(entityId) {
+    const stays = []
+    await stayService.query().then((entities) =>
+        entities.find((entity) => {
+            if (entity.host.id === entityId) stays.push(entity)
+        }))
+    return stays
 }
-async function getUserOrdar(){
-    const orders = await orderService.query()
-      return orders
+
+
+async function getUserLikedStays(likedStays) {
+    return await Promise.all(likedStays.map(likedStay => {
+        return stayService.getById(likedStay)
+    }))
+}
+async function getUserOrder() {
+    try {
+        const orders = await orderService.query()
+        return orders
+    } catch {
+        console.error('cannot get user order')
+    }
+
 }
 // async function getUserOrdar(entityId){
 //     const orders =[]
@@ -41,44 +61,54 @@ async function getUserOrdar(){
 //       return orders
 // }
 
-
-function login() {
-    const logUser = getLoggedinUser()
-    if(logUser){
-        return logUser
-    }else{
-    
-        const user = {fullName: 'yona ', id:'35858044' , password:'yona',
-        likedStays:[]
-        } 
-        storageService.store(STORAGE_KEY, user)  
+async function login(userInfo) {
+    try {
+        const loggedInUser = await httpService.post(`${ENDPOINT}/login`, userInfo)
+        utilService.saveToSessionStorage(KEY, loggedInUser)
+        return loggedInUser
+    } catch {
+        console.log('cant login')
     }
-    
-  
+
 }
 
 
-function getLoggedinUser() {
-    return storageService.load(STORAGE_KEY)
+async function getLoggedinUser() {
+    try {
+        return utilService.loadFromStorage(STORAGE_KEY)
+    } catch {
+
+    }
 }
 
 function saveUser(user) {
     const userToSave = JSON.parse(JSON.stringify(user))
     storageService.store(STORAGE_KEY, userToSave)
-    return  Promise.resolve(userToSave)
+    return Promise.resolve(userToSave)
 }
 
-function setUserActivities(txt, todo) {
-    var activity = {
-      txt,
-      todo,
-      at: Date.now(),
-    }
-   const loggedUser= getLoggedinUser()
-   loggedUser.activities.unshift(activity)
-    storageService.store(STORAGE_KEY, loggedUser)
-  }
 
+async function logout() {
+    try {
+        const loggedOutUser = await httpService.post(`${ENDPOINT}/logout`)
+        utilService.removeFromSessionStorage(KEY)
+        return loggedOutUser
+            // utilService.removeFromSessionStorage(KEY)
+            // return logoutUser
+    } catch {
+        console.log('logout failed')
+    }
+}
+// signup()
+async function signup(userDetails) {
+    try {
+        return await httpService.post(`${ENDPOINT}/signup`, userDetails)
+            // return signUser.data
+    } catch {
+        console.log('cant login')
+    }
+
+}
 
 
 
@@ -193,4 +223,3 @@ function setUserActivities(txt, todo) {
 // //     var user = getLoggedinUser()
 // //      if (user) socketService.emit('set-user-socket', user._id)
 // //  })();
-
