@@ -79,7 +79,6 @@
   transition-timing-function: ease;
   transition-delay: 0s;
   top: 75px;
-  // line-height: 20px;
   box-shadow: 0 1px 2px rgb(0 0 0 / 8%),
     0 4px 12px rgb(0 0 0 / 5%);
   background-color: $clr2;
@@ -89,7 +88,6 @@
   height: 66px;
   max-width: 850px;
   align-self: center;
-  //neomi edit
   min-width: rem(850px);
   line-height: rem(20px);
   font-size: 16px;
@@ -157,11 +155,6 @@
     margin: 0;
   }
   .search-btn {
-    // position: absolute;
-    // right: 0;
-    // top: 0;
-    // display: flex;
-    // justify-content: center;
     width: rem(48px);
     position: absolute;
     right: 0;
@@ -387,7 +380,6 @@ visibility: hidden;
 
 .el-range-editor.is-active:hover {
   box-shadow: none !important;
-  /* box-shadow: 0 0 0 1px var(--el-input-focus-border-color) inset; */
 }
 
 .el-range-editor.is-active {
