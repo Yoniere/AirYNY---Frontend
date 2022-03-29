@@ -189,7 +189,7 @@
 
 .filter.hide {
   transform: scale(0.35, 0.74);
-  opacity: 0;
+visibility: hidden;
   top: 55px;
   position: fixed;
 }
