@@ -4,6 +4,7 @@ import explorePage from '../views/explore-app.vue'
 import stayDetails from '../views/stay-details.vue'
 import userDetails from '../views/user-details.vue'
 import userDashboard from '../views/user-dashboard.vue'
+import userWishList from '../views/user-wish-list.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -34,6 +35,11 @@ const router = createRouter({
       path: '/dashboard',
       name: 'user-dashboard',
       component: userDashboard,
+    },
+    {
+      path: '/wishList',
+      name: 'user-wish-list',
+      component: userWishList,
     },
 
 

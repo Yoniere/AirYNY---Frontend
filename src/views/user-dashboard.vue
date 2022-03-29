@@ -68,9 +68,6 @@
            <td> edit</td>
         </tr>
     </table>
-
-
-      
        </div>
 </section>
 
