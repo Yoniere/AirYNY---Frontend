@@ -22,12 +22,12 @@ import './style/styles.scss'
 
 // Use plugin with defaults
 const app = createApp(App)
-    // app.use(VCalendar, { SetupCalendar, Calendar, DatePicker })
+// app.use(VCalendar, { SetupCalendar, Calendar, DatePicker })
 
 
 app.use(VueGoogleMaps, {
     load: {
-        key: 'api key',
+        key: 'AIzaSyBAZNoPniCUAnGdMTF7BMOGgMeW_bcjBK8',
 
     }
 })
