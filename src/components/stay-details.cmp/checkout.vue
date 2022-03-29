@@ -225,7 +225,6 @@ export default {
       const elInput = document.querySelectorAll(
         ".el-range-input"
       );
-      console.log(elInput);
     },
     handleScroll(event) {
       if (window.top.scrollY < 744) {
@@ -246,7 +245,6 @@ export default {
 
     scrollMeTo(id) {
       var element = document.getElementById(id);
-      console.log(element);
       var top = element.offsetTop;
 
       window.scrollTo(0, top);

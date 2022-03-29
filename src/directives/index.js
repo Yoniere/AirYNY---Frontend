@@ -10,6 +10,8 @@ export const closeDirevtive = {
       var{left ,top , width , height} = el.getBoundingClientRect()
       if(!(clientX > left && clientX < left + width && clientY >top && clientY < top + height)){
         console.log('hi');
+        console.log(expression);
+        console.log(context);
         context[expression]()
       }
     }

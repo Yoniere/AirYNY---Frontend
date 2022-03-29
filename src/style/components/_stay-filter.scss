@@ -1,549 +1,558 @@
 .mini-filter-container {
-    display: flex;
-    .mini-filter {
-        position: absolute;
-        font-family: Cereal-Regular;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        line-height: 20px;
-        box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 40px;
-        height: 48px;
-        // width: 48px;
-        padding: 0 7px 0 16px;
-        width: 300px;
-        font-size: 14px;
-        text-indent: 5px;
-        span:before {
-            font-family: fas;
-            fill: $clr2;
-            background-color: #ff385c;
-            border-radius: 50%;
-            height: 30px;
-            padding: 10px;
-        }
-        span {
-            color: #343434;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        .search-btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: $clr2;
-            border-radius: 50%;
-            border: none;
-            background-color: #ff385c;
-            height: 32px;
-            width: 32px;
-            margin-inline-end: 4px;
-            button {
-                background-color: transparent;
-                border: none;
-                box-shadow: none;
-                margin: 0;
-            }
-        }
-    }
-}
-
-.filter {
-    justify-content: center;
-    // width: 80vw;
-    label {
-        // font-size: 0.0625rem;
-        font-weight: 800;
-    }
-    input {
-        min-width: 200px;
-        // height: 40px;
-        border: none;
-        background-color: transparent;
-        outline: none;
-    }
-}
-
-.main-filter {
-    font-family: Cereal-Regular;
-    gap: 5px;
-    transform-origin: top;
+  display: flex;
+  .mini-filter {
     position: absolute;
-    transition: all 0.2s;
-    transition-property: all;
-    transition-duration: 0.2s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-    top: 75px;
-    // line-height: 20px;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
-    background-color: $clr2;
-    border: 1px solid $clr3;
-    border-radius: rem(40px);
-    font-size: rem(14px);
-    height: 66px;
-    max-width: 850px;
-    align-self: center;
-    //neomi edit
-    max-width: rem(850px);
-    line-height: rem(20px);
-    font-size: 16px;
-    color: $clr5;
-    .input-container {
-        border-radius: 40px;
-        padding: 12.5px 12.5px 12.5px 25px;
-        height: 100%;
-        cursor: pointer;
-        //neomi edit
-        flex-basis: 0%;
-        flex-grow: 1.5;
-        // margin: -1px;
-        .title-destination {
-            font-size: 12px;
-            line-height: 16px;
-            padding-bottom: 2px;
-            letter-spacing: 0.48px;
-        }
-        .dropdown {
-            font-size: 14px;
-            line-height: 18px;
-            width: rem(293.975px);
-            word-spacing: 0px;
-            text-align: left;
-            padding-bottom: 29px;
-            // margin: 0px;
-            margin-right: -17px;
-            // margin-bottom: 16.34px;
-            max-width: 245px;
-        }
-        input.dropdown {
-            // margin-top: 16.34px;
-            appearance: none;
-            font-family: inherit;
-            // outline: none;
-            // color: #71717100;
-        }
-        .location-filter {
-            //   border-right: 0.1px solid #e1e1e1;
-            line-height: 11.5px;
-        }
-        .guests {
-            // margin-top: 1px;
-            font-weight: 400;
-            font-size: 14px;
-            background-color: transparent;
-            line-height: 18px;
-            font-family: Cereal-Regular;
-            font-size: 14px;
-            line-height: 18px;
-            word-spacing: 0px;
-            text-align: left;
-            margin: 0px;
-            color: $clr7;
-        }
+    font-family: Cereal-Regular;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 20px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 8%),
+      0 4px 12px rgb(0 0 0 / 5%);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 40px;
+    height: 48px;
+    // width: 48px;
+    padding: 0 7px 0 16px;
+    width: 300px;
+    font-size: 14px;
+    text-indent: 5px;
+    span:before {
+      font-family: fas;
+      fill: $clr2;
+      background-color: #ff385c;
+      border-radius: 50%;
+      height: 30px;
+      padding: 10px;
     }
-    .input-container:hover {
-        background-color: #ebebeb;
+    span {
+      color: #343434;
+      font-size: 14px;
+      font-weight: 600;
     }
-    button {
+    .search-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $clr2;
+      border-radius: 50%;
+      border: none;
+      background-color: #ff385c;
+      height: 32px;
+      width: 32px;
+      margin-inline-end: 4px;
+      button {
         background-color: transparent;
         border: none;
         box-shadow: none;
         margin: 0;
+      }
     }
-    .search-btn {
-        // position: absolute;
-        // right: 0;
-        // top: 0;
-        // display: flex;
-        // justify-content: center;
-        width: rem(48px);
-        position: absolute;
-        right: 0;
-        top: 0;
-        display: flex;
-        justify-content: center;
-        height: 48px;
-        align-items: center;
-        color: $clr2;
-        border-radius: 50%;
-        border: none;
-        background-color: #ff385c;
-        margin-right: 8px;
-        margin-top: 8px;
-        padding: 0 8px;
-        cursor: pointer;
-        label {
-            font-size: rem(17px);
-            font-weight: 800;
-        }
-        input {
-            min-width: 200px;
-            // height: 40px;
-            border: none;
-            background-color: transparent;
-            outline: none;
-        }
+  }
+}
+
+.filter {
+  justify-content: center;
+  // width: 80vw;
+  label {
+    // font-size: 0.0625rem;
+    font-weight: 800;
+  }
+  input {
+    min-width: 200px;
+    // height: 40px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+  }
+}
+
+.main-filter {
+  font-family: Cereal-Regular;
+  gap: 5px;
+  transform-origin: top;
+  position: absolute;
+  transition: all 0.2s;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  top: 75px;
+  // line-height: 20px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%),
+    0 4px 12px rgb(0 0 0 / 5%);
+  background-color: $clr2;
+  border: 1px solid $clr3;
+  border-radius: rem(40px);
+  font-size: rem(14px);
+  height: 66px;
+  max-width: 850px;
+  align-self: center;
+  //neomi edit
+  min-width: rem(850px);
+  line-height: rem(20px);
+  font-size: 16px;
+  color: $clr5;
+  .input-container {
+    border-radius: 40px;
+    padding: 12.5px 12.5px 12.5px 25px;
+    height: 100%;
+    cursor: pointer;
+    //neomi edit
+    flex-basis: 0%;
+    flex-grow: 1.5;
+    // margin: -1px;
+    .title-destination {
+      font-size: 12px;
+      line-height: 16px;
+      padding-bottom: 2px;
+      letter-spacing: 0.48px;
     }
+    .dropdown {
+      font-size: 14px;
+      line-height: 18px;
+      width: rem(293.975px);
+      word-spacing: 0px;
+      text-align: left;
+      padding-bottom: 29px;
+      // margin: 0px;
+      margin-right: -17px;
+      // margin-bottom: 16.34px;
+      max-width: 245px;
+    }
+    input.dropdown {
+      // margin-top: 16.34px;
+      appearance: none;
+      font-family: inherit;
+      // outline: none;
+      // color: #71717100;
+    }
+    .location-filter {
+      //   border-right: 0.1px solid #e1e1e1;
+      line-height: 11.5px;
+    }
+    .guests {
+      // margin-top: 1px;
+      font-weight: 400;
+      font-size: 14px;
+      background-color: transparent;
+      line-height: 18px;
+      font-family: Cereal-Regular;
+      font-size: 14px;
+      line-height: 18px;
+      word-spacing: 0px;
+      text-align: left;
+      margin: 0px;
+      color: $clr7;
+    }
+  }
+  .input-container:hover {
+    background-color: #ebebeb;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+  }
+  .search-btn {
+    // position: absolute;
+    // right: 0;
+    // top: 0;
+    // display: flex;
+    // justify-content: center;
+    width: rem(48px);
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    height: 48px;
+    align-items: center;
+    color: $clr2;
+    border-radius: 50%;
+    border: none;
+    background-color: #ff385c;
+    margin-right: 8px;
+    margin-top: 8px;
+    padding: 0 8px;
+    cursor: pointer;
+    label {
+      font-size: rem(17px);
+      font-weight: 800;
+    }
+    input {
+      min-width: 200px;
+      // height: 40px;
+      border: none;
+      background-color: transparent;
+      outline: none;
+    }
+  }
 }
 
 .filter.hide {
-    transform: scale(0.35, 0.74);
-    opacity: 0;
-    top: 55px;
-    position: fixed;
+  transform: scale(0.35, 0.74);
+  opacity: 0;
+  top: 55px;
+  position: fixed;
 }
 
 .date-list {
-    height: 100%;
-    justify-content: center;
+  height: 100%;
+  justify-content: center;
 }
 
 .el-date-editor .el-range-input {
-    text-align: start !important;
+  text-align: start !important;
 }
 
 .el-date-picker {
-    border-color: rgba(255, 255, 255, 0) !important;
+  border-color: rgba(255, 255, 255, 0) !important;
 }
 
 .guests-label {
-    // position: relative;
-    font-family: Cereal-Regular;
-    font-weight: 200;
-    font-size: 12px !important;
-    line-height: 16px;
-    padding-bottom: 2px;
-    letter-spacing: 0.48px;
+  // position: relative;
+  font-family: Cereal-Regular;
+  font-weight: 200;
+  font-size: 12px !important;
+  line-height: 16px;
+  padding-bottom: 2px;
+  letter-spacing: 0.48px;
 }
 
 .guests-Modal {
-    display: flex;
-    margin-top: 16.34px;
-    z-index: 100;
+  display: flex;
+  margin-top: 16.34px;
+  z-index: 100;
+  background-color: $clr2;
+  border-radius: 32px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%),
+    0 4px 12px rgb(0 0 0 / 5%);
+  top: rem(60px);
+  height: 370px;
+  width: 380px;
+  padding: 16px 32px;
+  position: absolute;
+  right: 0;
+  line-height: rem(20px);
+  font-size: 16px;
+  font-weight: 600;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: stretch;
+  justify-content: center;
+  .guide-age {
+    font-size: 14px;
+    font-weight: 400;
+    color: #484848;
+  }
+  button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: $clr7;
+    border: 1px solid #b0b0b0;
     background-color: $clr2;
-    border-radius: 32px;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
-    top: rem(60px);
-    height: 370px;
-    width: 380px;
-    padding: 16px 32px;
-    position: absolute;
-    right: 0;
-    line-height: rem(20px);
+    text-align: center;
     font-size: 16px;
-    font-weight: 600;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: stretch;
+    margin: 5px;
+    align-items: center;
     justify-content: center;
-    .guide-age {
-        font-size: 14px;
-        font-weight: 400;
-        color: #484848;
-    }
-    button {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        cursor: pointer;
-        color: $clr7;
-        border: 1px solid #b0b0b0;
-        background-color: $clr2;
-        text-align: center;
-        font-size: 16px;
-        margin: 5px;
-        align-items: center;
-        justify-content: center;
-    }
-    li {
-        padding: 36px 0px;
-    }
-    li:nth-child(1) {
-        border-bottom: 0.5px solid #e1e1e1;
-    }
-    li:nth-child(2) {
-        border-bottom: 0.5px solid #e1e1e1;
-    }
+  }
+  li {
+    padding: 36px 0px;
+  }
+  li:nth-child(1) {
+    border-bottom: 0.5px solid #e1e1e1;
+  }
+  li:nth-child(2) {
+    border-bottom: 0.5px solid #e1e1e1;
+  }
 }
 
 .input-container:nth-child(odd) {
-    width: 25%;
+  width: 25%;
 }
 
 .input-container:nth-child(even) {
-    width: 50%;
+  width: 50%;
 }
 
 .demonstration {
-    width: 100%;
+  width: 100%;
 }
 
 .border-guests {
-    border-left: 0.1px solid #e1e1e1;
-    margin-right: 0px;
-    padding-left: 25px;
-    padding-bottom: 4px;
+  border-left: 0.1px solid #e1e1e1;
+  margin-right: 0px;
+  padding-left: 25px;
+  padding-bottom: 4px;
 }
 
 .caret-hide {
-    margin-top: rem(15px);
+  margin-top: rem(15px);
 }
 
 .el-input__inner {
-    position: relative;
-    -webkit-appearance: none;
-    background-color: #ffffff00;
-    background-image: none;
-    border-radius: var( --el-input-border-radius, var(--el-border-radius-base));
-    font-family: Cereal-Regular;
-    font-size: inherit;
-    height: 32px;
-    line-height: 32px;
-    padding: 0 11px;
-    transition: var(--el-transition-box-shadow);
-    width: 100%;
-    border: none;
-    box-shadow: none;
+  position: relative;
+  -webkit-appearance: none;
+  background-color: #ffffff00;
+  background-image: none;
+  border-radius: var(
+    --el-input-border-radius,
+    var(--el-border-radius-base)
+  );
+  font-family: Cereal-Regular;
+  font-size: inherit;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 11px;
+  transition: var(--el-transition-box-shadow);
+  width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .el-input__inner:hover {
-    box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .el-date-table td.end-date .el-date-table-cell__text,
 .el-date-table td.start-date .el-date-table-cell__text {
-    font-family: Cereal-Regular;
-    background-color: #222222;
+  font-family: Cereal-Regular;
+  background-color: #222222;
 }
 
 .el-date-editor .el-range-separator {
-    font-family: Cereal-Regular;
-    flex: 1;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    //   padding: 0 5px;
-    padding: 20px 5px;
-    margin: 0;
-    font-size: 14px;
-    word-break: keep-all;
-    color: var(--el-text-color-primary);
-    border-right: 0.1px solid #e1e1e1;
-    /* border-block-start-color: red; */
-    margin-right: 68px;
-    margin-left: -62px;
+  font-family: Cereal-Regular;
+  flex: 1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  //   padding: 0 5px;
+  padding: 20px 5px;
+  margin: 0;
+  font-size: 14px;
+  word-break: keep-all;
+  color: var(--el-text-color-primary);
+  border-right: 0.1px solid #e1e1e1;
+  /* border-block-start-color: red; */
+  margin-right: 68px;
+  margin-left: -62px;
 }
 
 .el-date-editor .el-range__close-icon--hidden {
-    opacity: 2px;
-    /* visibility: hidden; */
-    margin-left: -70px;
+  opacity: 2px;
+  /* visibility: hidden; */
+  margin-left: -70px;
 }
 
 .el-date-editor .el-range__close-icon {
-    font-size: 14px;
-    color: var(--el-text-color-placeholder);
-    height: inherit;
-    width: unset;
-    cursor: pointer;
-    box-shadow: none !important;
+  font-size: 14px;
+  color: var(--el-text-color-placeholder);
+  height: inherit;
+  width: unset;
+  cursor: pointer;
+  box-shadow: none !important;
 }
 
 .el-date-editor .el-range__icon svg {
-    vertical-align: middle;
-    visibility: collapse;
+  vertical-align: middle;
+  visibility: collapse;
 }
 
 .el-date-editor .el-range__icon {
-    height: inherit;
-    font-size: 14px;
-    color: var(--el-text-color-placeholder);
-    float: left;
-    border-left: 0.1px solid #e1e1e1;
-    height: 42px;
-    /* padding-right: 4px; */
+  height: inherit;
+  font-size: 14px;
+  color: var(--el-text-color-placeholder);
+  float: left;
+  border-left: 0.1px solid #e1e1e1;
+  height: 42px;
+  /* padding-right: 4px; */
 }
 
 .el-date-editor .el-range__close-icon:hover {
-    font-size: 14px;
-    color: var(--el-text-color-placeholder);
-    height: inherit;
-    width: unset;
-    cursor: pointer;
-    margin-left: -70px;
-    box-shadow: none !important;
+  font-size: 14px;
+  color: var(--el-text-color-placeholder);
+  height: inherit;
+  width: unset;
+  cursor: pointer;
+  margin-left: -70px;
+  box-shadow: none !important;
 }
 
 .el-range-editor.is-active:hover {
-    box-shadow: none !important;
-    /* box-shadow: 0 0 0 1px var(--el-input-focus-border-color) inset; */
+  box-shadow: none !important;
+  /* box-shadow: 0 0 0 1px var(--el-input-focus-border-color) inset; */
 }
 
 .el-range-editor.is-active {
-    box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .el-range-editor.is-active:hover {
-    box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .el-popper {
-    font-family: Cereal-Regular;
-    position: inherit;
-    border-radius: var(--el-popper-border-radius);
-    padding: 5px 11px;
-    z-index: 2000;
-    font-size: 12px;
-    line-height: 20px;
-    /* min-width: 10px; */
-    word-wrap: break-word;
-    visibility: visible;
-    min-width: 900px;
-    min-height: 538px;
-    margin-top: 30px;
+  font-family: Cereal-Regular;
+  position: inherit;
+  border-radius: var(--el-popper-border-radius);
+  padding: 5px 11px;
+  z-index: 2000;
+  font-size: 12px;
+  line-height: 20px;
+  /* min-width: 10px; */
+  word-wrap: break-word;
+  visibility: visible;
+  min-width: 900px;
+  min-height: 538px;
+  margin-top: 30px;
 }
 
 .el-date-range-picker .el-picker-panel__body {
-    font-family: Cereal-Regular;
-    min-width: 59vw;
-    padding: 27px;
-    margin-top: 71px;
-    /* max-height: 100%; */
+  font-family: Cereal-Regular;
+  min-width: 59vw;
+  padding: 27px;
+  margin-top: 71px;
+  /* max-height: 100%; */
 }
 
 .el-date-range-picker__header {
-    font-family: Cereal-Regular;
-    position: relative;
-    text-align: center;
-    height: 20px;
-    font-size: 16px;
-    font-weight: 600;
-    // margin-bottom: 19px;
-    padding-bottom: 44px;
-    color: #222222;
-    // padding-bottom: 30;
-    padding-bottom: 44px;
+  font-family: Cereal-Regular;
+  position: relative;
+  text-align: center;
+  height: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  // margin-bottom: 19px;
+  padding-bottom: 44px;
+  color: #222222;
+  // padding-bottom: 30;
+  padding-bottom: 44px;
 }
 
 .el-date-range-picker__header div {
-    font-family: Cereal-Regular;
-    font-size: 16px;
-    font-weight: 600;
-    margin-right: 50px;
+  font-family: Cereal-Regular;
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 50px;
 }
 
 .el-date-table {
-    font-family: Cereal-Regular;
-    font-size: 16px;
-    -webkit-user-select: none;
-    user-select: none;
-    line-height: 20px;
-    padding-right: 20px;
-    padding-right: 20px;
-    text-align: center;
-    color: #222222;
+  font-family: Cereal-Regular;
+  font-size: 16px;
+  -webkit-user-select: none;
+  user-select: none;
+  line-height: 20px;
+  padding-right: 20px;
+  padding-right: 20px;
+  text-align: center;
+  color: #222222;
 }
 
 .el-date-table th {
-    font-size: 12px;
-    font-family: Cereal-Regular;
-    padding: 5px;
-    line-height: 20px;
-    /* top: var(--el-datepicker-header-text-color); */
-    font-weight: 400;
-    border-bottom: solid 1px var(--el-border-color-lighter);
-    top: 62px;
-    color: #757575;
+  font-size: 12px;
+  font-family: Cereal-Regular;
+  padding: 5px;
+  line-height: 20px;
+  /* top: var(--el-datepicker-header-text-color); */
+  font-weight: 400;
+  border-bottom: solid 1px var(--el-border-color-lighter);
+  top: 62px;
+  color: #757575;
 }
 
 .el-date-table td.available:hover {
-    color: #484848;
+  color: #484848;
 }
 
-.el-date-table td .el-date-table-cell .el-date-table-cell__text {
-    font-family: Cereal-Regular;
-    width: 42px;
-    height: 42px;
-    display: block;
-    margin: 0 auto;
-    font-size: 14px;
-    line-height: 30px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    font-weight: 600;
-    text-align: center;
+.el-date-table
+  td
+  .el-date-table-cell
+  .el-date-table-cell__text {
+  font-family: Cereal-Regular;
+  width: 42px;
+  height: 42px;
+  display: block;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  font-weight: 600;
+  text-align: center;
 }
 
 .el-date-range-picker__content.is-left {
-    /* padding: 24px; */
-    border-right: none;
+  /* padding: 24px; */
+  border-right: none;
 }
 
 .el-date-table th {
-    font-family: Cereal-Regular;
-    font-size: 12px;
-    padding: 5px;
-    line-height: 20px;
-    /* top: var(--el-datepicker-header-text-color); */
-    font-weight: 400;
-    border-bottom: 0px;
-    top: 62px;
-    color: #757575;
+  font-family: Cereal-Regular;
+  font-size: 12px;
+  padding: 5px;
+  line-height: 20px;
+  /* top: var(--el-datepicker-header-text-color); */
+  font-weight: 400;
+  border-bottom: 0px;
+  top: 62px;
+  color: #757575;
 }
 
 .el-picker__popper.el-popper[role="tooltip"] {
-    font-family: Cereal-Regular;
-    background: var(--el-color-white);
-    border: 1px solid var(--el-datepicker-border-color);
-    box-shadow: var(--el-box-shadow-light);
-    top: 175px;
+  font-family: Cereal-Regular;
+  background: var(--el-color-white);
+  border: 1px solid var(--el-datepicker-border-color);
+  box-shadow: var(--el-box-shadow-light);
+  top: 175px;
 }
 
 .el-date-editor .el-range-input {
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    outline: 0;
-    display: inline-block;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    width: 39%;
-    text-align: center;
-    font-size: var(--el-font-size-base);
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  outline: 0;
+  display: inline-block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 39%;
+  text-align: center;
+  font-size: var(--el-font-size-base);
 }
 
 .el-date-editor .el-range-input::placeholder {
-    color: #222222;
+  color: #222222;
 }
 
 .el-date-table td .el-date-table-cell {
-    height: 45px;
-    padding: 3px 0;
-    box-sizing: border-box;
+  height: 45px;
+  padding: 3px 0;
+  box-sizing: border-box;
 }
 
 .el-date-table td.in-range .el-date-table-cell {
-    background-color: #f7f7f7;
+  background-color: #f7f7f7;
 }
 
 .el-date-range-picker .el-picker-panel__content {
-    margin: 0;
+  margin: 0;
 }
 
 // maby delete
 .el-date-range-picker__content {
-    float: left;
-    width: 50%;
-    box-sizing: border-box;
-    margin: 0px;
-    /* align-content: space-around; */
-    padding: 19px;
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  margin: 0px;
+  /* align-content: space-around; */
+  padding: 19px;
 }

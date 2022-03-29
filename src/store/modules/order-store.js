@@ -18,9 +18,9 @@ export default {
     },
 
     actions: {
-        async addNewOrder({ commit }, { orderDetails }) {
+        async addNewOrder({ commit }, { orderToSave }) {
             try {
-                const newOrder = await orderService.add(orderDetails)
+                const newOrder = await orderService.add(orderToSave)
                 console.log('orderadded')
                 commit({ type: 'setOrder', newOrder })
                 return newOrder

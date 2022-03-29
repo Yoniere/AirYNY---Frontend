@@ -45,7 +45,6 @@ export default {
         async loadStaysUser({ commit, state }) {
             const stays = await userService.getUserStays(state.user.id)
             const orders = await userService.getUserOrdar()
-            console.log(orders);
             try {
                 commit({ type: 'setStaysUser', stays })
                 commit({ type: 'setOrderUser', orders })
