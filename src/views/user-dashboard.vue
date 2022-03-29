@@ -10,7 +10,7 @@
     </button>
     </div>
     <div class="user-order" v-if="renderOrder">
-       <table>
+       <table  style="overflow-x: auto;">
      <tr>
          <th></th>
          <th>Guest name</th>

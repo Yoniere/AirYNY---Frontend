@@ -44,6 +44,10 @@
   .stay-name-details{
     text-align: start;
   }
+  @include for-narrow-layout {
+    align-items: center;
+    overflow: scroll auto;
+  }
 }
 
 .user-stays {

@@ -1,0 +1,44 @@
+
+
+.login-modal{
+    width: 400px;
+    height: 400px;
+    background-color: $clr2;
+    transform: translate(-50%, -50%);
+    padding: rem(16px);
+    top: 50vh;
+    left: 50vw;
+    z-index: 50;
+    transition: all ease-in-out 1s;
+    position: absolute;
+   .flex-col{
+       gap: rem(20px);
+   }
+   h1{
+    font-size: rem(16px);
+    font-weight: 800;
+    font-family: Cereal-Bold;
+    border-bottom: 1px solid $clr5;
+    text-align: center;
+    padding-bottom: rem(16px);
+   }
+   span{
+       color:$clr5;
+       font-size: rem(16px);
+       font-weight: 600;
+       margin-inline-end: rem(10px);
+   }
+   input{
+       width: 70%;
+       height: rem(50px);
+       border-radius: 12px;
+   }
+   .btn-login{
+       background-color: $clr8;
+       color: $clr2;
+       border-radius: 12px;
+       height: rem(40px);
+       width: rem(60px);
+       align-self: self-end;
+   }
+}

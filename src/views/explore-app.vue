@@ -1,5 +1,5 @@
 <template>
-<app-header class="header-explore" />
+<app-header class="header-explore" @openModalLogin="openModalLogin" />
   <section class="main-layout2">
     <div class="explore-buttons flex">
     <button @click="ChangeModalPrice" class="sort-btn relative flex align-center"> price
@@ -23,6 +23,7 @@
   
     <h1> {{title}}</h1>
     <stay-list :stays="stays" v-if="stays" @stayLiked="setLiked" > </stay-list>
+       <login-modal v-if="modalLoginIsOpen" @login="setLogin"  />
   </section>
 </template>
 
@@ -31,6 +32,9 @@ import appHeader from "../components/app-header.vue";
 import stayList from "../components/stay-list.vue";
 import typePlaceModal from '../components/type-place-modal.vue'
 import priceModal from '../components/price-modal.vue'
+import loginModal from "../components/login-modal.vue";
+import {userService} from "../services/user-service.js";
+
 
 export default {
   created() {},
@@ -46,6 +50,7 @@ export default {
       },
       modalPrice:false,
       modalType:false,
+      modalLoginIsOpen:false,
     };
   },
   computed: {
@@ -59,6 +64,13 @@ export default {
     }
   },
   methods: {
+    openModalLogin(){
+      this.modalLoginIsOpen = true
+    },
+    setLogin(user){
+      userService.login(user)
+      this.modalLoginIsOpen= false    
+      },
     ChangeModalPrice(){
       this.modalPrice = !this.modalPrice
     },
@@ -94,6 +106,7 @@ export default {
     appHeader,
     typePlaceModal,
     priceModal,
+    loginModal
   },
 };
 </script>

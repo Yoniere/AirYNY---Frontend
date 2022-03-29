@@ -1,5 +1,5 @@
 <template>
-  <app-header class="header-details" />
+  <app-header class="header-details"   @openModalLogin="openModalLogin"/>
   <section v-if="stay" class="details-layout">
     <imgs-comp :stay="stay"></imgs-comp>
     <main class="flex main-details-comp space-between">
@@ -16,6 +16,7 @@
     <reviews :stay="stay"></reviews>
     <details-map :stay="stay"></details-map>
     <host :stay="stay"></host>
+    <login-modal v-if="modalLoginIsOpen" @login="setLogin" />
   </section>
 </template>
 
@@ -23,6 +24,7 @@
 import appHeader from "../components/app-header.vue";
 import { stayService } from "../services/stay-service.js";
 import { orderService } from "../services/order-service.js";
+import { userService } from "../services/user-service.js";
 import ImgsComp from "../components/stay-details.cmp/imgs-comp.vue";
 import initialInfo from "../components/stay-details.cmp/initial-info.vue";
 import mainAmenities from "../components/stay-details.cmp/main-amenities.vue";
@@ -32,11 +34,13 @@ import checkout from "../components/stay-details.cmp/checkout.vue";
 import reviews from "../components/stay-details.cmp/reviews.vue";
 import detailsMap from "../components/stay-details.cmp/details-map.vue";
 import host from "../components/stay-details.cmp/host.vue";
+import loginModal from "../components/login-modal.vue";
 
 export default {
   data() {
     return {
       stay: null,
+      modalLoginIsOpen:false,
     };
   },
 
@@ -57,9 +61,17 @@ export default {
     host,
     checkout,
     detailsMap,
+    loginModal
   },
   computed: {},
   methods: {
+    openModalLogin(){
+      this.modalLoginIsOpen = true
+    },
+    setLogin(user){
+      userService.login(user)
+      this.modalLoginIsOpen= false    
+      },
     async setOrder(filterBy) {
       const order = orderService.getEmptyOrder();
       order.name = this.stay.name;
