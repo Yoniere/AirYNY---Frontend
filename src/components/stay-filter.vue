@@ -12,6 +12,8 @@
             placeholder="Where are you going?"
             class="dropdown clickable"
             v-model="filterBy.country"
+            autocomplete="off"
+            spellcheck="off"
           />
           <datalist id="destination" class="caret-hide">
             <option value="Tel Aviv"></option>

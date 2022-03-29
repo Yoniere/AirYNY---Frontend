@@ -93,6 +93,10 @@ export default {
       liked: false,
     };
   },
+  created(){
+    if(this.stay.isLiked === true) this.liked = true
+
+  },
   methods: {
     goToDeatails() {
       console.log(this.stay)

@@ -9,7 +9,8 @@ export const userService = {
     getLoggedinUser,
     saveUser,
     getUserStays,
-    getUserOrdar
+    getUserOrdar,
+    getUserLikedStays
     }
 
 login()
@@ -27,6 +28,10 @@ async function getUserStays(entityId){
             if(entity.host.id === entityId) stays.push(entity)
           }))
       return stays
+}
+async function  getUserLikedStays(likedStays){
+    return await Promise.all(likedStays.map(likedStay =>{
+     return  stayService.getById(likedStay)}))
 }
 async function getUserOrdar(){
     const orders = await orderService.query()
@@ -48,8 +53,12 @@ function login() {
         return logUser
     }else{
     
-        const user = {fullName: 'yona ', id:'35858044' , password:'yona',
-        likedStays:[]
+        const user = {
+            fullName: 'yona ',
+             id:'35858044' , 
+             password:'yona',
+             likedStays:[],
+             imgUrl:'https://i.pravatar.cc/150?img=61'
         } 
         storageService.store(STORAGE_KEY, user)  
     }
