@@ -13,6 +13,7 @@
     border: 1px solid #ddd;
     border-radius: 40px;
     height: 48px;
+    // width: 48px;
     padding: 0 7px 0 16px;
     width: 300px;
     font-size: 14px;
@@ -24,6 +25,11 @@
       border-radius: 50%;
       height: 30px;
       padding: 10px;
+    }
+    span {
+      color: #343434;
+      font-size: 14px;
+      font-weight: 600;
     }
     .search-btn {
       display: flex;
@@ -121,7 +127,7 @@
       appearance: none;
       font-family: inherit;
       // outline: none;
-      color: #71717100;
+      // color: #71717100;
     }
     .location-filter {
       //   border-right: 0.1px solid #e1e1e1;
