@@ -5,10 +5,6 @@ export default {
         orders: [],
     },
     getters: {
-        stays(state) {
-            return state.orders;
-
-        },
     },
     mutations: {
         setOrder(state, { newOrder }) {
