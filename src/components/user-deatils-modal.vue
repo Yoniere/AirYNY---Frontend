@@ -1,7 +1,7 @@
 <template>
 <section class="user-modal flex-col">
-   <router-link to="/Messages"> Messages</router-link>
-   <router-link to="/Trips"> Trips</router-link>
+   <router-link to="/"> Messages</router-link>
+   <router-link to="/"> Trips</router-link>
    <router-link to="/wish-list"> Wish List</router-link>
    <router-link to="/dashboard"> Dashboard</router-link>
    <router-link to="/Account"> Account</router-link>
