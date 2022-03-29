@@ -95,7 +95,8 @@ export default {
   },
   methods: {
     goToDeatails() {
-      this.$router.push(`/stay/${this.stay.id}`);
+      console.log(this.stay)
+      this.$router.push(`/stay/${this.stay._id}`);
       window.scrollTo(0, 0);
     },
     setLiked() {

@@ -42,6 +42,7 @@ export default {
 
   async created() {
     const id = this.$route.params.id;
+    console.log(id)
     const stay = await stayService.getById(id);
     this.stay = stay;
   },
