@@ -1,42 +1,48 @@
 .main-layout {
-    padding-left: rem(80px);
-    padding-right: rem(80px);
+  padding-left: rem(80px);
+  padding-right: rem(80px);
 }
 
 .details-layout {
-    margin: 0 auto;
-    max-width: 1280px;
-    padding-left: rem(80px);
-    padding-right: rem(80px);
+  margin: 0 auto;
+  max-width: 1280px;
+  padding-left: rem(80px);
+  padding-right: rem(80px);
+
+  // @include for-wide-layout {
+  //     max-width: 1120px;
+  //     padding-left: rem(40px);
+  //     padding-right: rem(40px);
+  // }
 }
 
 .main-layout2 {
-    margin-top: 175px;
-    display: grid;
-    padding-left: rem(80px);
-    padding-right: rem(80px);
+  margin-top: 175px;
+  display: grid;
+  padding-left: rem(80px);
+  padding-right: rem(80px);
 }
 
 @media screen and (max-width: 500px) {
-    .main-layout{
-        padding-left: rem(20px);
-        padding-right: rem(20px);
+  .main-layout {
+    padding-left: rem(20px);
+    padding-right: rem(20px);
+  }
+  .main-layout2 {
+    padding: 0 rem(20px);
+    display: flex;
+    flex-direction: column;
+  }
+  .main-header.fullHeader {
+    display: flex !important;
+    top: 0 !important;
+    padding: 0.5rem !important;
+    height: 100px !important;
+  }
+  .explore-buttons {
+    overflow: scroll auto;
+    button {
+      height: rem(50px);
     }
-    .main-layout2 {
-        padding: 0 rem(20px);
-        display: flex;
-        flex-direction: column;
-    }
-    .main-header.fullHeader{
-        display: flex !important;
-        top: 0 !important;
-        padding: 0.5rem !important;
-        height: 100px !important;
-    }
-    .explore-buttons{
-        overflow: scroll auto;
-        button{
-            height: rem(50px);
-        }
-    }
+  }
 }
