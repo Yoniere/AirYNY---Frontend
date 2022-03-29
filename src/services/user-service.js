@@ -9,7 +9,7 @@ export const userService = {
     getLoggedinUser,
     saveUser,
     getUserStays,
-    getUserOrdar,
+    getUserOrder,
     getUserLikedStays,
     login
     }
@@ -34,7 +34,7 @@ async function  getUserLikedStays(likedStays){
     return await Promise.all(likedStays.map(likedStay =>{
      return  stayService.getById(likedStay)}))
 }
-async function getUserOrdar(){
+async function getUserOrder(){
     const orders = await orderService.query()
       return orders
 }

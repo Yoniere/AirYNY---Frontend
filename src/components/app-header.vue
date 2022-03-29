@@ -72,7 +72,8 @@
             />
           </button>
         </label>
-        <user-details-modal v-if="modalUser" @openModalLogin="openModalLogin" />
+        <user-details-modal v-if="modalUser" @openModalLogin="openModalLogin" 
+        @closeLoginModal="closeLoginModal"/>
       </div>
     </div>
 
@@ -127,6 +128,7 @@ export default {
       this.modalUser = !this.modalUser;
     },
     openModalLogin(){
+      this.modalUser=false
          this.$emit('openModalLogin')
       },
   },

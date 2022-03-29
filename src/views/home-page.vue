@@ -1,5 +1,5 @@
 <template>
-  <app-header  @openModalLogin="openModalLogin"/>
+  <app-header  @openModalLogin="openModalLogin" />
   <main class="home-page">
     <section class="main-hero main-layout2">
       <h1>Let your curiosity do the booking</h1>
@@ -20,7 +20,7 @@
         <span class="host-btn-txt">Lets try</span>
       </button>
     </section>
-     <login-modal v-if="modalLoginIsOpen" @login="setLogin"  />
+     <login-modal v-if="modalLoginIsOpen" @login="setLogin" @closeLoginModal="closeLoginModal" />
   </main>
 </template>
 
@@ -41,6 +41,9 @@ export default {
     openModalLogin(){
       this.modalLoginIsOpen = true
     },
+    closeLoginModal(){
+      this.modalLoginIsOpen = false
+    },
     setLogin(user){
       userService.login(user)
       this.modalLoginIsOpen= false    
@@ -52,8 +55,8 @@ export default {
     },
   },
   components: {
-    homeList,
     appHeader,
+    homeList,
     loginModal
   },
 };
