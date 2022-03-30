@@ -90,9 +90,10 @@
           </li>
         </ul>
       </div>
+      <label @click="setFilter">
 
       <div class="search-btn">
-        <button @click="setFilter">
+        <button >
           <svg
             viewBox="0 0 32 32"
             xmlns="http://www.w3.org/2000/svg"
@@ -118,6 +119,7 @@
           </svg>
         </button>
       </div>
+      </label>
     </div>
   </section>
 </template>
@@ -157,10 +159,7 @@ export default {
   },
   methods: {
     setFilter() {
-      this.$store.dispatch({
-        type: "setFilter",
-        filterBy: JSON.parse(JSON.stringify(this.filterBy)),
-      });
+      this.$store.dispatch({type: "setFilter",  filterBy: JSON.parse(JSON.stringify(this.filterBy))});
       this.$router.push(`/stay`);
       this.guestModal = false;
       this.$emit(

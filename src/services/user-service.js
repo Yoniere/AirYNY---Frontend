@@ -1,56 +1,46 @@
-import { storageService } from './async-storage-service.js'
-import { stayService } from './stay-service.js';
-import { orderService } from './order-service.js';
-import { httpService } from './http.service.js';
-import { utilService } from './util-service.js'
+import { storageService } from "./async-storage-service.js";
+import { stayService } from "./stay-service.js";
+import { orderService } from "./order-service.js";
+import { httpService } from "./http.service.js";
+import { utilService } from "./util-service.js";
 
-
-const STORAGE_KEY = 'userDB';
-const ENDPOINT = 'auth'
+const STORAGE_KEY = "userDB";
+const ENDPOINT = "auth";
 
 export const userService = {
-    getLoggedinUser,
-    saveUser,
-    getUserStays,
-    getUserOrder,
-    getUserLikedStays,
-    login,
-    signup,
-    logout
-
-}
-
-// login()
-
-// function getUserStays(entityId){
-//         return stayService.query().then((entities) =>
-//           entities.find((entity) => entity.host.id === entityId)
-//         )
-// }
+  getLoggedinUser,
+  saveUser,
+  getUserStays,
+  getUserOrder,
+  getUserLikedStays,
+  login,
+  signup,
+  logout,
+};
 
 async function getUserStays(entityId) {
-    const stays = []
-    await stayService.query().then((entities) =>
-        entities.find((entity) => {
-            if (entity.host.id === entityId) stays.push(entity)
-        }))
-    return stays
+  const userStays = [];
+  const stays = await stayService.query(entityId);
+  stays.find((stay) => {
+    if (stay.host.id === entityId) userStays.push(stay);
+  });
+  return userStays;
 }
-
 
 async function getUserLikedStays(likedStays) {
-    return await Promise.all(likedStays.map(likedStay => {
-        return stayService.getById(likedStay)
-    }))
+  return await Promise.all(
+    likedStays.map((likedStay) => {
+      return stayService.getById(likedStay);
+    })
+  );
 }
 async function getUserOrder() {
-    try {
-        const orders = await orderService.query()
-        return orders
-    } catch {
-        console.error('cannot get user order')
-    }
-
+  try {
+    const orders = await orderService.query();
+    return orders;
+  } catch {
+    console.error("cannot get user order");
+  }
 }
 // async function getUserOrdar(entityId){
 //     const orders =[]
@@ -62,80 +52,49 @@ async function getUserOrder() {
 // }
 
 async function login(userInfo) {
-    try {
-        const loggedInUser = await httpService.post(`${ENDPOINT}/login`, userInfo)
-        utilService.saveToSessionStorage(KEY, loggedInUser)
-        return loggedInUser
-    } catch {
-        console.log('cant login')
-    }
-
+  try {
+    const loggedInUser = await httpService.post(`${ENDPOINT}/login`, userInfo);
+    utilService.saveToSessionStorage(STORAGE_KEY, loggedInUser);
+    return loggedInUser;
+  } catch {
+    console.log("cant login");
+  }
 }
 
-
-async function getLoggedinUser() {
-    try {
-        return utilService.loadFromStorage(STORAGE_KEY)
-    } catch {
-
-    }
+function getLoggedinUser() {
+  return JSON.parse(sessionStorage.getItem(STORAGE_KEY) || "null");
 }
 
-function saveUser(user) {
-    const userToSave = JSON.parse(JSON.stringify(user))
-    storageService.store(STORAGE_KEY, userToSave)
-    return Promise.resolve(userToSave)
+async function saveUser(user) {
+  user = await httpService.put(`user/${user._id}`, user);
+  // Handle case in which admin updates other user's details
+  if (getLoggedinUser()._id === user._id) _saveLocalUser(user);
+  return user;
 }
 
+function _saveLocalUser(user) {
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(user))
+    return user
+}
 
 async function logout() {
-    try {
-        const loggedOutUser = await httpService.post(`${ENDPOINT}/logout`)
-        utilService.removeFromSessionStorage(KEY)
-        return loggedOutUser
-            // utilService.removeFromSessionStorage(KEY)
-            // return logoutUser
-    } catch {
-        console.log('logout failed')
-    }
+  try {
+    const loggedOutUser = await httpService.post(`${ENDPOINT}/logout`);
+    utilService.removeFromSessionStorage(STORAGE_KEY);
+    return loggedOutUser;
+  } catch {
+    console.log("logout failed");
+  }
 }
 // signup()
 async function signup(userDetails) {
-    try {
-        return await httpService.post(`${ENDPOINT}/signup`, userDetails)
-            // return signUser.data
-    } catch {
-        console.log('cant login')
-    }
-
+  try {
+    return await httpService.post(`${ENDPOINT}/signup`, userDetails);
+    // return signUser.data
+  } catch {
+    console.log("cant login");
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import { httpService } from './http.service'
 // const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
@@ -154,7 +113,6 @@ async function signup(userDetails) {
 // // Debug technique
 // window.userService = userService
 
-
 // function getUsers() {
 //     return httpService.get(`user`)
 // }
@@ -164,7 +122,6 @@ async function signup(userDetails) {
 //     gWatchedUser = user;
 //     return user;
 // }
-
 
 // async function update(user) {
 //     user = await httpService.put(`user/${user._id}`, user)
@@ -186,7 +143,6 @@ async function signup(userDetails) {
 //     return await httpService.post('auth/logout')
 // }
 
-
 // function _saveLocalUser(user) {
 //     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
 //     return user
@@ -196,9 +152,7 @@ async function signup(userDetails) {
 //      return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || 'null')
 //  }
 
-
-
-// // This IIFE functions for Dev purposes 
+// // This IIFE functions for Dev purposes
 // // It allows testing of real time updates (such as sockets) by listening to storage events
 // // (async () => {
 // //     var user = getLoggedinUser()

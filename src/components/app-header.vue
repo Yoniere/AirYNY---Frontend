@@ -1,14 +1,9 @@
 <template>
-  <section
-    class="main-header"
-    :class="this.stickyNav ? 'fix' : 'fullHeader'"
-  >
+  <section class="main-header" :class="this.stickyNav ? 'fix' : 'fullHeader'">
     <div class="flex space-between header-features">
       <div class="logo-container">
         <router-link to="/"
-          ><img
-            class="logo flex align-center"
-            :src="getLogo"
+          ><img class="logo flex align-center" :src="getLogo"
         /></router-link>
       </div>
       <div class="mini-filter-container">
@@ -72,15 +67,16 @@
             />
           </button>
         </label>
-        <user-details-modal v-if="modalUser" @openModalLogin="openModalLogin" 
-        @closeLoginModal="closeLoginModal"/>
+        <user-details-modal
+          v-if="modalUser"
+          @openModalLogin="openModalLogin"
+          @closeLoginModal="closeLoginModal"
+          @closeModalDetails="closeModalUser"
+        />
       </div>
     </div>
 
-    <stay-filter
-      :class="openfilter ? '' : 'hide'"
-      @filterd="setMiniFilter"
-    />
+    <stay-filter :class="openfilter ? '' : 'hide'" @filterd="setMiniFilter" />
   </section>
 </template>
 
@@ -127,10 +123,13 @@ export default {
     openModalUser() {
       this.modalUser = !this.modalUser;
     },
-    openModalLogin(){
-      this.modalUser=false
-         this.$emit('openModalLogin')
-      },
+    closeModalUser() {
+      this.modalUser = false;
+    },
+    openModalLogin() {
+      this.modalUser = false;
+      this.$emit("openModalLogin");
+    },
   },
   computed: {
     getLogo() {
@@ -139,9 +138,7 @@ export default {
         : "https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648055648/airyny/logo1.png";
     },
     getFilter() {
-      return this.filter.country
-        ? `${this.filter.country}`
-        : "Start to search";
+      return this.filter.country ? `${this.filter.country}` : "Start to search";
     },
   },
   unmounted() {

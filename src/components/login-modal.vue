@@ -21,6 +21,7 @@
         />
       </div>
       <button class="btn-login" @click="setLogin">Login</button>
+      <p>{{ msg }}</p>
     </div>
   </section>
 </template>
@@ -33,13 +34,14 @@ export default {
         username: "",
         password: "",
       },
+      msg: "",
     };
   },
   methods: {
     setLogin() {
         if(!this.user.username || !this.user.password){
-            alert('pass a username or password')
-            return
+           this.msg = "Please enter username/password"
+        return;
         } 
       this.$emit("login", JSON.parse(JSON.stringify(this.user)) );
       this.user.username=''

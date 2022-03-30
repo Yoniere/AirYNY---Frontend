@@ -45,7 +45,7 @@ export default {
       this.modalLoginIsOpen = false
     },
     setLogin(user){
-      userService.login(user)
+      this.$store.dispatch({ type: 'login', userCred: user })
       this.modalLoginIsOpen= false    
       },
   },

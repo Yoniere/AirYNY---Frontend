@@ -8,7 +8,7 @@ export default {
     },
     mutations: {
         setOrder(state, { newOrder }) {
-            state.orders.push(newOrder)
+            state.orders.unshift(newOrder)
         },
 
     },
@@ -17,7 +17,6 @@ export default {
         async addNewOrder({ commit }, { orderToSave }) {
             try {
                 const newOrder = await orderService.add(orderToSave)
-                console.log('orderadded')
                 commit({ type: 'setOrder', newOrder })
                 return newOrder
             } catch {

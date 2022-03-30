@@ -67,8 +67,13 @@ export default {
     openModalLogin(){
       this.modalLoginIsOpen = true
     },
-    setLogin(user){
-      userService.login(user)
+    async setLogin(user){
+       try {
+        await this.$store.dispatch({ type: "login", userCred: user });
+      } catch(err) {
+          console.log(err)
+          this.msg = "Failed to login"
+      }
       this.modalLoginIsOpen= false    
       },
     ChangeModalPrice(){

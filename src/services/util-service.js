@@ -8,6 +8,7 @@ export const utilService = {
   saveToStorage,
   loadFromSessionStorage,
   saveToSessionStorage,
+  removeFromSessionStorage
 }
 
 function makeId(length = 5) {
@@ -107,4 +108,7 @@ function loadFromSessionStorage(key) {
 
 function saveToSessionStorage(key, val) {
   sessionStorage[key] = JSON.stringify(val)
+}
+function removeFromSessionStorage(key) {
+  sessionStorage.removeItem(key);
 }
