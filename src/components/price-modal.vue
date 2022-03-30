@@ -7,13 +7,13 @@
       <div class="flex-row range space-between">
         <span> 30 </span>
         <HistogramSlider
-          :width="800"
+          :width="250"
           :bar-height="72"
           :data="pricesToShow"
           :drag-interval="true"
           :force-edges="false"
           :min="30"
-          :max="2000"
+          :max="400"
           primaryColor="#b0b0b0"
           barRadius="6"
         />
