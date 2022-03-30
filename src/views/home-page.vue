@@ -3,7 +3,7 @@
   <main class="home-page">
     <section class="main-hero main-layout2">
       <h1>Let your curiosity do the booking</h1>
-      <button class="flexible">
+      <button @click="flexibleClick" class="flexible">
         <h3>I'm flexible</h3>
       </button>
     </section>
@@ -48,6 +48,9 @@ export default {
       this.$store.dispatch({ type: 'login', userCred: user })
       this.modalLoginIsOpen= false    
       },
+      flexibleClick() {
+         this.$router.push('/stay/');
+      }
   },
   computed: {
     stays() {
