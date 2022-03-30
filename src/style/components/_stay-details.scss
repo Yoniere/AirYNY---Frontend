@@ -709,6 +709,9 @@
 .checkout-area {
     position: relative;
     margin-left: 80px;
+    @include for-narrow-layout {
+        margin: 0px
+    }
 }
 
 .fixed {
@@ -732,6 +735,9 @@
         flex-direction: row;
         width: -webkit-fill-available;
         left: 0px;
+        .checkout-title-right {
+            display: none;
+        }
         .el-date-editor {
             display: none;
         }
@@ -758,10 +764,13 @@
         padding-top: rem(16px);
         padding-bottom: rem(16px);
         background-color: #fff;
-        display: flex;
-        flex-direction: row;
+        // display: flex;
+        // flex-direction: row;
         width: -webkit-fill-available;
         left: 0px;
+        .checkout-title-right {
+            display: none;
+        }
         .el-date-editor {
             display: none;
         }
@@ -782,6 +791,7 @@
     position: absolute;
     bottom: 0px;
     right: 0px;
+    margin-bottom: 50px;
     @include for-narrow-layout {
         margin-top: 0rem;
         position: fixed;
@@ -798,6 +808,9 @@
         flex-direction: row;
         width: -webkit-fill-available;
         left: 0px;
+        .checkout-title-right {
+            display: none;
+        }
         .el-date-editor {
             display: none;
         }
@@ -811,6 +824,7 @@
 }
 
 .fixed-top {
+    margin-top: 0px;
     top: 0px;
     position: fixed;
     height: rem(80px);
@@ -833,6 +847,9 @@
             display: none;
         }
     }
+    .checkout-title-right {
+        display: none;
+    }
     .el-date-editor {
         display: none;
     }
@@ -845,6 +862,7 @@
     .reserve-btn {
         width: rem(108.219px);
         height: rem(48px);
+        min-width: unset;
     }
     .checkout-nav {
         display: block;
@@ -872,7 +890,6 @@
 }
 
 // .checkout {}
-
 .checkout .date-input-checkout {
     .date-input-checkout:nth-child(1) {
         border-top-left-radius: 0.5px solid #e1e1e1;
