@@ -4,7 +4,6 @@
       <h2 class="popular-header">
         <span>Popular Destinations</span>
       </h2>
-
       <ul class="home-list">
         <li
           class="home-card clickable"
@@ -101,13 +100,13 @@ export default {
         filterBy: JSON.parse(JSON.stringify(this.filterBy)),
       });
       this.$router.push(`/stay`);
-      window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
     },
 
-    goToUnique(stay) {
+    goToUnique(stay) { 
       delete stay.km;
       this.$router.push(`/stay/${stay.id}`);
-      window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
     },
   },
 };

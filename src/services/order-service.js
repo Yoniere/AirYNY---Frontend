@@ -96,7 +96,7 @@ function getEmptyOrder() {
     return {
         name: '',
         country: '',
-        guestName: userService.getLoggedinUser().fullName,
+        guestName: userService.getLoggedinUser().fullname,
         stay_id: '',
         pricePerNight: '',
         guests: '',
