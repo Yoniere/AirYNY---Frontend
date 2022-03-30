@@ -18,11 +18,11 @@ export const userService = {
   logout,
 };
 
-async function getUserStays(entityId) {
-  let stays = await stayService.query();
-  try{
-    console.log(entityId);
-  let userStays =  stays.filter(stay => stay.host.id === entityId )
+ async function getUserStays(entityId) {
+  let userStays =[]
+  const stays = await stayService.query();
+   try{
+   userStays =  stays.filter(stay => stay.host.id === entityId )
   return userStays
   }catch{
     console.log('baiaaa');
