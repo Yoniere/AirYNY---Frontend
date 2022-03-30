@@ -14,10 +14,8 @@ export default {
             type: [],
             price: {
                 minPrice: 30,
-                maxPrice: 2000
-
+                maxPrice: 500
             },
-
         },
     },
     getters: {
