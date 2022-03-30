@@ -99,7 +99,6 @@ export default {
   },
   methods: {
     goToDeatails() {
-      console.log(this.stay)
       this.$router.push(`/stay/${this.stay._id}`);
       window.scrollTo(0, 0);
     },

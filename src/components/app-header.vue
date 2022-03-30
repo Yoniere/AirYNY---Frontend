@@ -94,6 +94,8 @@
         <user-details-modal
           v-if="modalUser"
           @openModalLogin="openModalLogin"
+          @closeLoginModal="closeLoginModal"
+          @closeModalDetails="closeModalUser"
         />
       </div>
     </div>
@@ -148,7 +150,11 @@ export default {
     openModalUser() {
       this.modalUser = !this.modalUser;
     },
+    closeModalUser() {
+      this.modalUser = false;
+    },
     openModalLogin() {
+      this.modalUser = false;
       this.$emit("openModalLogin");
     },
   },

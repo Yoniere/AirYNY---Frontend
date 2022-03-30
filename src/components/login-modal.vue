@@ -1,6 +1,8 @@
 <template>
   <section class="login-modal">
-    <h1>login / signup</h1>
+    <h1 class="flex space-between">login / signup
+    <button class="close-login" @click="closeModal"> X </button>
+    </h1>
     <div class="flex-col">
       <div>
         <span> username :</span>
@@ -19,6 +21,7 @@
         />
       </div>
       <button class="btn-login" @click="setLogin">Login</button>
+      <p>{{ msg }}</p>
     </div>
   </section>
 </template>
@@ -31,18 +34,22 @@ export default {
         username: "",
         password: "",
       },
+      msg: "",
     };
   },
   methods: {
     setLogin() {
         if(!this.user.username || !this.user.password){
-            alert('pass a username or password')
-            return
+           this.msg = "Please enter username/password"
+        return;
         } 
       this.$emit("login", JSON.parse(JSON.stringify(this.user)) );
       this.user.username=''
       this.user.password=''
     },
+    closeModal(){
+      this.$emit('closeLoginModal')
+    }
   },
 };
 </script>

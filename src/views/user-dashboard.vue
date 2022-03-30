@@ -88,6 +88,7 @@ export default {
 async created(){
     const user = await this.$store.getters.user
     this.user = user;
+    console.log(user);
 },
 methods:{
     toggle(){
@@ -95,6 +96,7 @@ methods:{
 
     },
       formattedTime(time){
+          console.log(time);
         return time.slice(0,10)
 
     },
