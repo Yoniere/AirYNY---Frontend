@@ -56,10 +56,12 @@ async function add(orderDetails) {
 
 function getEmptyOrder() {
     const key = utilService.getRandomInt(0, 50)
+    let userName =  userService.getLoggedinUser()
+    if(!userName)  userName = {fullname:'guset'}
     return {
         name: '',
         country: '',
-        guestName: userService.getLoggedinUser().fullname,
+        guestName:userName.fullname,
         stay_id: '',
         pricePerNight: '',
         guests: '',
