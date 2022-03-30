@@ -16,12 +16,6 @@ export const orderService = {
 }
 
 
-// async function query(filterBy) {
-//     const stays = await storageService.query(ORDERS_KEY)
-//     if (!filterBy) return stays
-//     const filteredStays = _filterStays(stays, JSON.parse(JSON.stringify(filterBy)))
-//     return Promise.resolve(filteredStays)
-// }
 
 async function query() {
     try {
@@ -31,33 +25,7 @@ async function query() {
     }
 }
 
-function _filterStays(stays, filterBy) {
-    let filteredStays = stays
-    if (filterBy.country) {
-        const regex = new RegExp(filterBy.country, 'i')
-        filteredStays = filteredStays.filter(stay => regex.test(stay.address.country || stay.address.city))
-    }
 
-    if (filterBy.type) {
-        filteredStays = filteredStays.filter((stay) => {
-            return filterBy.type.some((label) => {
-                return label === stay.roomType
-            })
-        })
-    }
-    filteredStays = filteredStays.filter((stay) => {
-        return (stay.price > filterBy.price.minPrice && stay.price < filterBy.price.maxPrice)
-    })
-
-
-    return filteredStays
-}
-
-// function getById(entityId) {
-//     return query().then((entities) =>
-//         entities.find((entity) => entity.id === entityId)
-//     )
-// }
 
 async function getById(entityId) {
     try {
@@ -67,28 +35,23 @@ async function getById(entityId) {
     }
 }
 
-// function remove(stayId) {
 
-//     return storageService.delete(ORDERS_KEY, stayId)
-
-// }
 async function add(orderDetails) {
+    try{
+        if (orderDetails._id) {
+            orderDetails = await httpService.put(`${ENDPOINT}/${orderDetails._id}`, orderDetails);
+            return orderDetails
+        } 
+           else{
+            const addedOrder = await httpService.post(ENDPOINT, orderDetails)
+            return addedOrder
+           } 
 
-    // if (orderDetails._id) {
-    //     const updatedOrder = await storageService.put(ORDERS_KEY, orderDetails)
-    //     return updatedOrder
-
-    // } else {
-    try {
-        const addedOrder = await httpService.post(ENDPOINT, orderDetails)
-
-        return addedOrder
     } catch {
-        console.error('cannot add new order')
+        console.error('cannot load order')
     }
-
-    // }
-
+   
+      
 }
 
 function getEmptyOrder() {

@@ -101,12 +101,9 @@ export default {
     },
      async loadStaysLikedUser({ commit, state }, { likedStays }) {
       try {
-          // const stays = await userService.getUserLikedStays(likedStays);
-          console.log(state.loggedinUser);
-          console.log(likedStays);
-
-          // stays.forEach(stay => stay.isLiked= true)
-        // return stays
+          const stays = await userService.getUserLikedStays(likedStays);
+          stays.forEach(stay => stay.isLiked= true)
+        return stays
         // commit({ type: 'setOrderUser', orders })
       } catch (err) {
         console.error("Cannot Load stays", err);

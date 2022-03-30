@@ -2,10 +2,10 @@
 <app-header  class="user-details"/>
 <section class="main-layout2">
 <div class="my-details flex-col">
-    <button class="flex align-center" @click="toggle"> 
+    <button class="flex align-center" @click="toggle(false)"> 
     <img src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648118112/airyny/home48-icon.svg"/>
      My Stays</button>
-    <button @click="toggle" class="flex align-center"><img src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648118112/airyny/freecancellation26-icon.png"/> 
+    <button @click="toggle(true)" class="flex align-center"><img src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648118112/airyny/freecancellation26-icon.png"/> 
     My Order
     </button>
     </div>
@@ -91,12 +91,12 @@ async created(){
     this.user = user;
 },
 methods:{
-    toggle(){
-        this.renderOrder= !this.renderOrder
+    toggle(val){
+        this.renderOrder= val
 
     },
       formattedTime(time){
-        // const formattedTime = time.split('').slice(0,10)
+        // const formattedTime = time.split('')
         // formattedTime.join()
         // console.log(formattedTime);
          return time
