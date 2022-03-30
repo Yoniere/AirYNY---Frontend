@@ -17,10 +17,12 @@
             v-text="message"
           />
           <datalist id="destination" class="caret-hide">
-            <option value="Tel Aviv"></option>
+            <option value="Porto"></option>
             <option value="Barcelona"></option>
-            <option value="Paris"></option>
+            <option value="Istanbul"></option>
             <option value="New York"></option>
+            <option value="Montreal"></option>
+            <option value="Rio de Janeiro"></option>
           </datalist>
         </label>
       </div>
