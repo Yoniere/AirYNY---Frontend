@@ -708,6 +708,9 @@
 .checkout-area {
     position: relative;
     margin-left: 80px;
+    @include for-narrow-layout {
+        margin: 0px
+    }
 }
 
 .fixed {
@@ -731,6 +734,9 @@
         flex-direction: row;
         width: -webkit-fill-available;
         left: 0px;
+        .checkout-title-right {
+            display: none;
+        }
         .el-date-editor {
             display: none;
         }
@@ -757,10 +763,13 @@
         padding-top: rem(16px);
         padding-bottom: rem(16px);
         background-color: #fff;
-        display: flex;
-        flex-direction: row;
+        // display: flex;
+        // flex-direction: row;
         width: -webkit-fill-available;
         left: 0px;
+        .checkout-title-right {
+            display: none;
+        }
         .el-date-editor {
             display: none;
         }
@@ -798,6 +807,9 @@
         flex-direction: row;
         width: -webkit-fill-available;
         left: 0px;
+        .checkout-title-right {
+            display: none;
+        }
         .el-date-editor {
             display: none;
         }
@@ -877,7 +889,6 @@
 }
 
 // .checkout {}
-
 .checkout .date-input-checkout {
     .date-input-checkout:nth-child(1) {
         border-top-left-radius: 0.5px solid #e1e1e1;
