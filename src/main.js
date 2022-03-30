@@ -14,7 +14,6 @@ import "vue3-histogram-slider/dist/histogram-slider.css";
 
 
 
-
 //style
 import './style/styles.scss'
 
@@ -31,6 +30,7 @@ app.use(VueGoogleMaps, {
 
     }
 })
+
 
 app.directive('custom-on', focusDirective)
 app.directive('close-modal', closeDirevtive)

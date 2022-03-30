@@ -8,7 +8,7 @@ import { httpService } from './http.service.js'
 
 const ENDPOINT = 'stay'
 const STAYS_KEY = 'staysDB'
-    // _createStay()
+// _createStay()
 
 
 export const stayService = {
@@ -100,7 +100,7 @@ async function getById(entityId) {
 //         stays.push(stay);
 //     });
 // utilService.saveToStorage(STAYS_KEY, stays);
-// } 
+// }
 //     return stays;
 // }
 

@@ -14,6 +14,7 @@
             v-model="filterBy.country"
             autocomplete="off"
             spellcheck="off"
+            v-text="message"
           />
           <datalist id="destination" class="caret-hide">
             <option value="Tel Aviv"></option>
@@ -42,12 +43,14 @@
         class="input-container flex-col"
         @click="openModal"
       >
+        <!-- tabindex="0" -->
         <span class="border-guests flex-col">
           <label class="guests-label"> Guests </label>
           <span class="guests"> {{ getGuests }}</span>
         </span>
       </div>
       <div v-if="guestModal" class="guests-Modal">
+        <!-- @blur="closeDropdown -->
         <ul>
           <li
             class="guest-li flex space-between align-center"
@@ -91,34 +94,33 @@
         </ul>
       </div>
       <label @click="setFilter">
-
-      <div class="search-btn">
-        <button >
-          <svg
-            viewBox="0 0 32 32"
-            xmlns="http://www.w3.org/2000/svg"
-            style="
-              display: block;
-              fill: none;
-              height: 12px;
-              width: 12px;
-              stroke: white;
-              stroke-width: 5.333333333333333;
-              overflow: visible;
-            "
-            aria-hidden="true"
-            role="presentation"
-            focusable="false"
-          >
-            <g fill="none">
-              <path
-                d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 
+        <div class="search-btn">
+          <button>
+            <svg
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+              style="
+                display: block;
+                fill: none;
+                height: 12px;
+                width: 12px;
+                stroke: white;
+                stroke-width: 5.333333333333333;
+                overflow: visible;
+              "
+              aria-hidden="true"
+              role="presentation"
+              focusable="false"
+            >
+              <g fill="none">
+                <path
+                  d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 
           0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"
-              ></path>
-            </g>
-          </svg>
-        </button>
-      </div>
+                ></path>
+              </g>
+            </svg>
+          </button>
+        </div>
       </label>
     </div>
   </section>
@@ -159,7 +161,10 @@ export default {
   },
   methods: {
     setFilter() {
-      this.$store.dispatch({type: "setFilter",  filterBy: JSON.parse(JSON.stringify(this.filterBy))});
+      this.$store.dispatch({
+        type: "setFilter",
+        filterBy: JSON.parse(JSON.stringify(this.filterBy)),
+      });
       this.$router.push(`/stay`);
       this.guestModal = false;
       this.$emit(
@@ -167,6 +172,11 @@ export default {
         JSON.parse(JSON.stringify(this.filterBy))
       );
     },
+
+    // closeDropdown() {
+    //   this.guestModal = false;
+    // },
+
     openModal() {
       this.guestModal = !this.guestModal;
     },
