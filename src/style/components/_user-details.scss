@@ -71,3 +71,13 @@
   }
 
 }
+
+.el-alert-title{
+  font-size: 14px;
+}
+.el-alert{
+  border: 2px solid $clr8;
+  background-color: $clr2 !important;
+  color: $clr8 !important;
+  
+}

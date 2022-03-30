@@ -99,7 +99,7 @@ methods:{
         // const formattedTime = time.split('')
         // formattedTime.join()
         // console.log(formattedTime);
-         return time
+         return time.slice(0,10)
 
     },
     changeOrderStatus(order,val){
