@@ -146,7 +146,6 @@
     transform: unset;
   }
   //  .filter.hide
- 
 
   .mini-filter {
     margin-top: rem(10px);
@@ -154,8 +153,6 @@
     top: 40px;
     z-index: 40;
     position: absolute;
-
-
   }
   a {
     color: $clr5 !important;
@@ -168,7 +165,7 @@
     width: rem(140px);
   }
 }
-.main-header.fix.header-details{
+.main-header.fix.header-details {
   .filter.hide {
     display: none !important;
   }
