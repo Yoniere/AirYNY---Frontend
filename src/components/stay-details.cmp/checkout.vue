@@ -213,20 +213,20 @@ export default {
       const elInput = document.querySelectorAll(".el-range-input");
     },
     handleScroll(event) {
-      if (window.top.scrollY < 744) {
+      if (window.top.scrollY < 662) {
         this.pos = "a";
         // this.stickyNav = true;
         // this.openfilter = false;
-      } else if (window.top.scrollY < 1410) {
+      } else if (window.top.scrollY < 1350) {
         this.pos = "b";
         // this.stickyNav = false;
         // this.openfilter = true;
-      } else if (window.top.scrollY < 1550) {
+      } else if (window.top.scrollY < 1500) {
         this.pos = "c";
       } else {
         this.pos = "d";
       }
-      // console.log(this.pos)
+      console.log(window.top.scrollY)
     },
 
     scrollMeTo(id) {
