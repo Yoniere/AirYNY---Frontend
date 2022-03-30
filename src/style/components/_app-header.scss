@@ -140,8 +140,14 @@
     display: none;
   }
   .filter.hide {
-    visibility: visible !important;
+    visibility: unset;
+    position: static;
+    display: flex;
+    transform: unset;
   }
+  //  .filter.hide
+ 
+
   .mini-filter {
     margin-top: rem(10px);
     visibility: visible;
@@ -158,6 +164,11 @@
     content: url("https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648055648/airyny/logo2.png");
     height: rem(70px);
     width: rem(140px);
+  }
+}
+.main-header.fix.header-details{
+  .filter.hide {
+    display: none !important;
   }
 }
 

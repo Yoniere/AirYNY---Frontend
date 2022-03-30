@@ -11,6 +11,9 @@
       </section>
       <section class="checkout-area">
         <checkout :stay="stay" @setOrder="setOrder"></checkout>
+       
+          <el-alert  title="order succeed" type="success" v-if="userOrder"/>
+           <el-alert title="please enter your full details order" type="error" v-if="fullDetailsOrder" />
       </section>
     </main>
     <reviews :stay="stay"></reviews>
@@ -41,6 +44,8 @@ export default {
     return {
       stay: null,
       modalLoginIsOpen:false,
+      userOrder: false,
+      fullDetailsOrder:false,
     };
   },
 
@@ -80,14 +85,23 @@ export default {
       order.pricePerNight = this.stay.price;
       order.guests = filterBy.guests;
       order.stayTime = filterBy.stayTime;
-      order.status = "Pending";
       const orderToSave = JSON.parse(JSON.stringify(order));
+      if(!order.stayTime){
+          this.fullDetailsOrder= true
+        setTimeout(()=>{
+           this.fullDetailsOrder= false
+        }, 5000);
+        return
+      } 
 
       try {
         const newOrder = await this.$store.dispatch({
           type: "addNewOrder",orderToSave
         });
-        alert("order received");
+        this.userOrder= true
+        setTimeout(()=>{
+           this.userOrder= false
+        }, 5000);
       } catch {
         console.error;
       }

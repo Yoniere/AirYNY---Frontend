@@ -55,6 +55,9 @@
     object-fit: cover;
     border-bottom: 0px;
     max-height: 450px;
+    @include for-narrow-layout {
+      max-height: 200px;
+    }
   }
 
   .country-name {
@@ -93,6 +96,9 @@
     font-size: 15px;
     font-weight: 400;
     margin-left: rem(18px);
+  }
+  @include for-narrow-layout {
+    bottom: 11px;
   }
 }
 .unique-dest-list {
