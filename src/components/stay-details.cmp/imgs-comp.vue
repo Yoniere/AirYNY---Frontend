@@ -41,8 +41,7 @@
 
         <button class="save-btn flex">
           <img class="save-img"
-            src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/heart-icon.svg"
-          />
+            src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/heart-icon.svg" />
           Save
         </button>
 
