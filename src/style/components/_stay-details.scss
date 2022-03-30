@@ -781,6 +781,7 @@
     position: absolute;
     bottom: 0px;
     right: 0px;
+    margin-bottom: 50px;
     @include for-narrow-layout {
         margin-top: 0rem;
         position: fixed;
@@ -810,6 +811,7 @@
 }
 
 .fixed-top {
+    margin-top: 0px;
     top: 0px;
     position: fixed;
     height: rem(80px);
@@ -832,6 +834,9 @@
             display: none;
         }
     }
+    .checkout-title-right {
+        display: none;
+    }
     .el-date-editor {
         display: none;
     }
@@ -844,6 +849,7 @@
     .reserve-btn {
         width: rem(108.219px);
         height: rem(48px);
+        min-width: unset;
     }
     .checkout-nav {
         display: block;
