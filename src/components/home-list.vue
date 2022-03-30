@@ -62,16 +62,25 @@ export default {
         "Australia",
       ],
       uniqueStays: [
-        { country: "Canada", id: 1155001, km: "9,644km" },
-        { country: "Japan", id: 1155002, km: "9,079 km" },
+        {
+          country: "Canada",
+          id: "62447fdb4a61d0a384daa6dd",
+          km: "9,644km",
+        },
+        {
+          country: "Japan",
+          id: "62447e554a61d0a384d970b2",
+          km: "9,079 km",
+        },
         {
           country: "Norway",
-          id: 11115033,
+          id: "62447b7a4a61d0a384d6ed7f",
           km: "5,315.6km",
         },
         {
+          // 11115999
           country: "Philippines",
-          id: 11115999,
+          id: "62447f9d4a61d0a384da7580",
           km: "8,979km",
         },
       ],
@@ -100,13 +109,13 @@ export default {
         filterBy: JSON.parse(JSON.stringify(this.filterBy)),
       });
       this.$router.push(`/stay`);
-        window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
     },
 
-    goToUnique(stay) { 
+    goToUnique(stay) {
       delete stay.km;
       this.$router.push(`/stay/${stay.id}`);
-        window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
     },
   },
 };

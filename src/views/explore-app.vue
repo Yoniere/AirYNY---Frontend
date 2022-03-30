@@ -181,8 +181,8 @@ export default {
     },
   },
   components: {
-    stayList,
     appHeader,
+    stayList,
     typePlaceModal,
     priceModal,
     loginModal,

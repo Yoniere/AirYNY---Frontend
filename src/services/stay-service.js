@@ -8,7 +8,7 @@ import { httpService } from './http.service.js'
 
 const ENDPOINT = 'stay'
 const STAYS_KEY = 'staysDB'
-    // _createStay()
+// _createStay()
 
 
 export const stayService = {
@@ -100,7 +100,7 @@ async function getById(entityId) {
 //         stays.push(stay);
 //     });
 // utilService.saveToStorage(STAYS_KEY, stays);
-// } 
+// }
 //     return stays;
 // }
 
@@ -2406,7 +2406,7 @@ async function getById(entityId) {
 //             "txt": "Great host. Very clean, nice place and friendly people. Thanks again!"
 //         }
 //     ],
-//     "_id": "622f337a75c7d36e498aaafb",
+    
 //     "imgUrls": [
 //         "canada1.jpeg",
 //         "canada2.jpeg",
@@ -2414,7 +2414,7 @@ async function getById(entityId) {
 //         "canada4.jpeg",
 //         "canada5.jpeg"
 //     ]
-// },
+// }
 
 
 // {
@@ -2514,7 +2514,7 @@ async function getById(entityId) {
 //         "japan5.jpeg",
 //         "japan6.jpeg",
 //     ]
-// },
+// }
 
 // {
 //     "name": "DOUBLE ROOM IN THE HEART OF BCN",
@@ -2720,7 +2720,7 @@ async function getById(entityId) {
 //         "norway5.jpeg",
 //         "norway6.jpeg",
 //     ]
-// },
+// }
 
 // {
 //     "name": "A Traveler's Pad in Romantic McKinley Hill Taguig",
@@ -2930,3 +2930,6 @@ async function getById(entityId) {
 // }
 
 // ]
+
+
+

@@ -35,15 +35,17 @@ export default {
     },
     setStaysUser(state, { stays }) {
       state.loggedinUser.stays = stays;
-      userService.saveUser(state.loggedinUser)
+      userService.saveUser(state.loggedinUser);
     },
     setOrderUser(state, { orders }) {
       state.loggedinUser.orders = orders;
-      userService.saveUser(state.loggedinUser)
+      userService.saveUser(state.loggedinUser);
     },
     setLikedStay(state, { stayId }) {
       if (state.loggedinUser.likedStays.includes(stayId)) {
-        const idx = state.loggedinUser.likedStays.findIndex((id) => id === stayId);
+        const idx = state.loggedinUser.likedStays.findIndex(
+          (id) => id === stayId
+        );
         state.loggedinUser.likedStays.splice(idx, 1);
       } else state.loggedinUser.likedStays.push(stayId);
     },
@@ -82,31 +84,28 @@ export default {
     async loadStaysUser({ commit, state }) {
       try {
         const stays = await userService.getUserStays(state.loggedinUser.id);
-        const orders = await userService.getUserOrder();
         commit({ type: "setStaysUser", stays });
+        const orders = await userService.getUserOrder();
         commit({ type: "setOrderUser", orders });
       } catch (err) {
         console.error("Cannot Load stays", err);
         throw err;
       }
     },
-      async setLikedStay({ commit, state }, { stayId }) {
+    async setLikedStay({ commit, state }, { stayId }) {
       commit({ type: "setLikedStay", stayId });
       try {
         await userService.saveUser(state.loggedinUser);
-          } catch (err) {
+      } catch (err) {
         console.error("Cannot Load stays", err);
         throw err;
       }
     },
-     async loadStaysLikedUser({ commit, state }, { likedStays }) {
+    async loadStaysLikedUser({ commit, state }, { likedStays }) {
       try {
-          // const stays = await userService.getUserLikedStays(likedStays);
-          console.log(state.loggedinUser);
-          console.log(likedStays);
-
-          // stays.forEach(stay => stay.isLiked= true)
-        // return stays
+        const stays = await userService.getUserLikedStays(likedStays);
+        stays.forEach((stay) => (stay.isLiked = true));
+        return stays;
         // commit({ type: 'setOrderUser', orders })
       } catch (err) {
         console.error("Cannot Load stays", err);
@@ -126,8 +125,6 @@ export default {
     //     });
     // },
 
-   
-  
     //   async loadAndWatchUser({ commit }, { userId }) {
     //     try {
     //         const user = await userService.getById(userId);
