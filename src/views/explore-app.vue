@@ -125,6 +125,7 @@ export default {
     title() {
       const filter = this.$store.getters.filterBy;
       const count = this.$store.getters.stays;
+      if (!filter || !count) return;
       return filter.country
         ? `${count.length} stays in ${filter.country}`
         : "explore stays";
