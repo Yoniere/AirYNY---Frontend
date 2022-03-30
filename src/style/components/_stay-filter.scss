@@ -5,7 +5,7 @@
       position: unset ;
      top: unset; 
      left: unset; 
-       transform: unset;
+     transform: translateY(20px);
      }
     position: absolute;
     font-family: Cereal-Regular;
@@ -630,9 +630,9 @@
 .el-date-table td.in-range .el-date-table-cell {
   background-color: #f7f7f7;
 }
-.el-date-range-picker {
-  // width: 0px;
-}
+// .el-date-range-picker {
+//   // width: 0px;
+// }
 .el-date-range-picker .el-picker-panel__content {
   margin: 0px;
 }
