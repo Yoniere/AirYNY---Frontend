@@ -8,7 +8,9 @@
   z-index: 20;
   background-color: transparent;
   position: absolute;
-
+  .world-img {
+    display: none;
+  }
   .header-features {
     color: $clr2;
     align-items: center;
@@ -30,6 +32,9 @@
   grid-template-columns: 80px 1fr 80px;
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08) !important;
   align-items: center;
+  .world-btn.world-svg {
+    display: none;
+  }
 
   @include for-narrow-layout {
     z-index: 25;
@@ -71,7 +76,7 @@
   background-color: inherit;
   .world-img {
     width: rem(19px);
-    height: rem(19px);
+    // height: rem(19px);
   }
 }
 .menu-btns {
