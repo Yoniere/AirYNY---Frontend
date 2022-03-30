@@ -86,9 +86,9 @@ export default {
         }
     },
 async created(){
+    this.$store.dispatch({ type: "loadStaysUser" });
     const user = await this.$store.getters.user
     this.user = user;
-    console.log(user);
 },
 methods:{
     toggle(){
@@ -96,8 +96,10 @@ methods:{
 
     },
       formattedTime(time){
-          console.log(time);
-        return time.slice(0,10)
+        // const formattedTime = time.split('').slice(0,10)
+        // formattedTime.join()
+        // console.log(formattedTime);
+         return time
 
     },
     changeOrderStatus(order,val){
