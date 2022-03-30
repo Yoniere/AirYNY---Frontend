@@ -62,22 +62,25 @@ export default {
         "Australia",
       ],
       uniqueStays: [
-        // {
-        //   country: "Canada",
-        //   id: "622f337a75c7d36e498aaafb",
-        //   km: "9,644km",
-        // },
-        // { country: "Japan", id: 1155002, km: "9,079 km" },
-        // {
-        // 11115033
-        //   country: "Norway",
-        //   id: "622f337a75c7d36e498aaafb",
-        //   km: "5,315.6km",
-        // },
+        {
+          country: "Canada",
+          id: "62447fdb4a61d0a384daa6dd",
+          km: "9,644km",
+        },
+        {
+          country: "Japan",
+          id: "62447e554a61d0a384d970b2",
+          km: "9,079 km",
+        },
+        {
+          country: "Norway",
+          id: "62447b7a4a61d0a384d6ed7f",
+          km: "5,315.6km",
+        },
         {
           // 11115999
           country: "Philippines",
-          _id: "622f337a75c7d36e498aaafd",
+          id: "62447f9d4a61d0a384da7580",
           km: "8,979km",
         },
       ],
