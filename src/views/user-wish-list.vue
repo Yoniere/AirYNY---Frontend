@@ -21,7 +21,6 @@ export default {
    async created(){
         this.user=  this.$store.getters.user
        this.stays =  await this.$store.dispatch({ type: 'loadStaysLikedUser', likedStays: this.user.likedStays })
-       console.log(this.stays); 
     },
     methods:{
         setLiked(stay){

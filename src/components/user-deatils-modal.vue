@@ -1,20 +1,20 @@
 <template>
-<section>
-  <section v-if="userLogged" class="user-modal flex-col">
-    <router-link to="/"> Messages</router-link>
-    <router-link to="/"> Trips</router-link>
-    <router-link to="/wishList"> Wish List</router-link>
-    <router-link to="/dashboard"> Dashboard</router-link>
-    <router-link to="/"> Account</router-link>
-    <router-link to="/Logout"> Logout</router-link>
-    <router-link to="/"> About</router-link>
-  </section>
-  <section v-else class="user-modal flex-col">
-    <router-link to="/"> Messages</router-link>
-    <span @click="openModalLogin"> Login</span>
-    <span> Logout</span>
-  </section>
- 
+  <section>
+    <section v-if="userLogged" class="user-modal flex-col">
+      <router-link to="/"> Messages</router-link>
+      <router-link to="/"> Trips</router-link>
+      <router-link to="/wishList"> Wish List</router-link>
+      <router-link to="/dashboard"> Dashboard</router-link>
+      <router-link to="/"> Account</router-link>
+      <span @click="doLogout">Logout</span>
+      <router-link to="/"> About</router-link>
+    </section>
+
+    <section v-else class="user-modal flex-col">
+      <router-link to="/"> Messages</router-link>
+      <span @click="openModalLogin"> Login</span>
+      <span> Logout</span>
+    </section>
   </section>
 </template>
 
@@ -29,20 +29,22 @@ export default {
   },
   async created() {
     const loggedInUser = await userService.getLoggedinUser();
-    console.log(loggedInUser);
-    // if (!loggedInUser) this.userLogged = false;
-    // else {
-    //   this.userLogged = true;
-    //   this.$store.dispatch({ type: "loadStaysUser" });
-    // }
+    if (!loggedInUser) this.userLogged = false;
+    else {
+      this.userLogged = true;
+    }
   },
-  methods:{
-      openModalLogin(){
-         this.$emit('openModalLogin')
-      },
+  methods: {
+    openModalLogin() {
+      this.$emit("openModalLogin");
+    },
+    doLogout() {
+      this.$emit("closeModalDetails");
+      this.$store.dispatch({ type: "logout" });
+      this.$router.push("/");
+    },
   },
-  components:{
-  }
+  components: {},
 };
 </script>
 
