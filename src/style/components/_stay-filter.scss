@@ -2,11 +2,13 @@
   display: flex;
   .mini-filter {
     @include for-wide-layout {
-      position: unset ;
-     top: unset; 
-     left: unset; 
-       transform: unset;
-     }
+      position: unset;
+      top: unset;
+      left: unset;
+      transform: unset;
+
+      margin: 0px;
+    }
     position: absolute;
     font-family: Cereal-Regular;
     top: 50%;
@@ -58,13 +60,12 @@
     @include for-narrow-layout {
       display: flex;
       visibility: visible;
-      // position: static;
-      top: 40px;
       min-width: 100vw;
       align-items: center;
       justify-content: center;
       align-content: space-between;
       gap: 5px;
+      margin: 0px;
     }
     @include for-normal-layout {
       // left: 10px;
