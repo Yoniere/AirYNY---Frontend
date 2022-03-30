@@ -1,6 +1,12 @@
 .mini-filter-container {
   display: flex;
   .mini-filter {
+    @include for-wide-layout {
+      position: unset ;
+     top: unset; 
+     left: unset; 
+       transform: unset;
+     }
     position: absolute;
     font-family: Cereal-Regular;
     top: 50%;
@@ -624,9 +630,9 @@
 .el-date-table td.in-range .el-date-table-cell {
   background-color: #f7f7f7;
 }
-.el-date-range-picker {
-  // width: 0px;
-}
+// .el-date-range-picker {
+//   // width: 0px;
+// }
 .el-date-range-picker .el-picker-panel__content {
   margin: 0px;
 }
