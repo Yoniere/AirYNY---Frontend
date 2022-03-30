@@ -19,12 +19,15 @@ export const userService = {
 };
 
 async function getUserStays(entityId) {
-  const userStays = [];
-  const stays = await stayService.query(entityId);
-  stays.find((stay) => {
-    if (stay.host.id === entityId) userStays.push(stay);
-  });
-  return userStays;
+  let stays = await stayService.query();
+  try{
+    console.log(entityId);
+  let userStays =  stays.filter(stay => stay.host.id === entityId )
+  return userStays
+  }catch{
+    console.log('baiaaa');
+    
+  }
 }
 
 async function getUserLikedStays(likedStays) {

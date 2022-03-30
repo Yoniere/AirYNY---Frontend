@@ -104,7 +104,7 @@ export default {
     },
     setLiked() {
       this.liked = !this.liked;
-      this.$emit('stayLiked', this.stay.id)
+      this.$emit('stayLiked', this.stay._id)
 
     },
   },
