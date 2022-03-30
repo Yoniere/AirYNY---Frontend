@@ -1,21 +1,32 @@
 .home-list {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(250px, 1fr)
-  );
+
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
+
   gap: 25px;
 
-  // .dist-country {
-  //   font-family: Cereal-Regular;
-  //   color: white;
-  //   line-height: 20px;
-  //   font-size: 15px;
-  //   font-weight: 400;
-  //   margin-left: rem(18px);
-  // }
-}
+  @include for-wide-layout {
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    grid-template-rows: repeat(2, minmax(240px, 1fr));
+  }
 
+  @include for-normal-layout {
+    grid-template-columns: repeat(2, minmax(218px, 1fr));
+    grid-template-rows: repeat(2, minmax(212px, 1fr));
+  }
+  @include for-narrow-layout {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(200px, 1fr)
+    );
+  }
+  @include for-mobile-layout {
+    grid-template-rows: repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    );
+  }
+}
 .popular-dest-list {
   padding: 0px;
   margin-bottom: rem(68px);
@@ -31,7 +42,7 @@
   }
 }
 .home-card {
-  // grid-template-columns: repeat(4, 1fr);
+  // grid-template-columns: repeat(2, 1fr);
   // background-color: #ff385c;
   // border-radius: 12px !important;
   // font-family: Cereal-Regular;
@@ -40,7 +51,7 @@
 
   .home-img {
     border-radius: 12px;
-    height: 50vh;
+    // height: 50vh;
     object-fit: cover;
     border-bottom: 0px;
     max-height: 450px;
@@ -65,7 +76,7 @@
 }
 .txt-container {
   position: absolute;
-  bottom: 5px;
+  bottom: 0px;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
   background-color: #05050566;
