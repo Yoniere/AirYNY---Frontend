@@ -1,14 +1,6 @@
 .mini-filter-container {
   display: flex;
   .mini-filter {
-    @include for-wide-layout {
-      position: unset;
-      top: unset;
-      left: unset;
-      transform: unset;
-
-      margin: 0px;
-    }
     position: absolute;
     font-family: Cereal-Regular;
     top: 50%;
