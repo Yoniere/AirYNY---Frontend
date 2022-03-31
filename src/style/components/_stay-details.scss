@@ -41,8 +41,10 @@
       }
     }
     .save-btn-details {
-      align-items: baseline;
-      height: rem(20px);
+      align-items: flex-end;
+      height: 1.25rem;
+      margin: 2px 4px 0px 6px;
+      /* align-items: baseline !important; */
       background-color: transparent;
       border: 0px;
       text-decoration: underline;
@@ -51,9 +53,9 @@
         BlinkMacSystemFont, Roboto, "Helvetica Neue",
         sans-serif;
       font-size: 14px;
-      line-height: 18px;
+      /* line-height: 18px; */
       font-weight: 500;
-      color: rgb(34, 34, 34);
+      color: #222222;
       padding: 0px;
       transition: box-shadow 0.2s ease 0s,
         -ms-transform 0.1s ease 0s,
