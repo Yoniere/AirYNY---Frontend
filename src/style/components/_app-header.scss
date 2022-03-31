@@ -232,6 +232,7 @@
     padding: rem(15px);
     align-items: center;
 
+
   }
   a {
     color: $clr5 !important;
@@ -246,6 +247,17 @@
     height: rem(70px);
     width: rem(140px);
   }
+  .world-svg{
+  color: black !important;
+  height: rem(19px);
+  }
+  .header-fix{
+    .world-svg{
+      display: none !important;
+       }
+
+  }
+
 }
 
 .user-details {
