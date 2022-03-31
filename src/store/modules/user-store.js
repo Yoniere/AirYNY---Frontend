@@ -42,12 +42,17 @@ export default {
       userService.saveUser(state.loggedinUser);
     },
     setLikedStay(state, { stayId }) {
-      if (state.loggedinUser.likedStays.includes(stayId)) {
+      if(!state.loggedinUser) return
+      if (!state.loggedinUser.likedStays){
+        state.loggedinUser = {likedStays:[stayId]}
+      }
+     else if (state.loggedinUser.likedStays.includes(stayId)) {
         const idx = state.loggedinUser.likedStays.findIndex(
           (id) => id === stayId
         );
         state.loggedinUser.likedStays.splice(idx, 1);
-      } else state.loggedinUser.likedStays.push(stayId);
+      }
+      else state.loggedinUser.likedStays.push(stayId)
     },
   },
   actions: {
@@ -93,6 +98,7 @@ export default {
       }
     },
     async setLikedStay({ commit, state }, { stayId }) {
+      if(!state.loggedinUser) return
       commit({ type: "setLikedStay", stayId });
       try {
         await userService.saveUser(state.loggedinUser);
