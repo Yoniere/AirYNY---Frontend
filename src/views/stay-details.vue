@@ -19,7 +19,7 @@
     <reviews :stay="stay"></reviews>
     <details-map :stay="stay"></details-map>
     <host :stay="stay"></host>
-    <login-modal v-if="modalLoginIsOpen" @login="setLogin" />
+    <login-modal v-if="modalLoginIsOpen" @login="setLogin" @closeLoginModal="closeLoginModal" />
   </section>
 </template>
 
@@ -72,6 +72,9 @@ export default {
   methods: {
     openModalLogin(){
       this.modalLoginIsOpen = true
+    },
+     closeLoginModal(){
+      this.modalLoginIsOpen = false
     },
     setLogin(user){
       userService.login(user)
