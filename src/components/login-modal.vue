@@ -12,7 +12,7 @@
         <input
           v-model="user.username"
           type="text"
-          placeholder="enter your username"
+          placeholder="Enter your username"
         />
       </div>
       <div class="password-container">
@@ -20,7 +20,7 @@
         <input
           v-model="user.password"
           type="password"
-          placeholder="enter your username"
+          placeholder="Enter your username"
         />
       </div>
       <button
