@@ -1,22 +1,22 @@
 <template>
   <section class="login-modal">
     <h1 class="flex space-between">
-      login or signup
+      Login or signup
       <button class="close-login" @click="closeModal">
         X
       </button>
     </h1>
     <div class="log-container flex-col">
-      <div>
-        <span> username :</span>
+      <div class="username-container">
+        <span class="username"> Username :</span>
         <input
           v-model="user.username"
           type="text"
           placeholder="enter your username"
         />
       </div>
-      <div>
-        <span> password :</span>
+      <div class="password-container">
+        <span class="password"> Password :</span>
         <input
           v-model="user.password"
           type="password"
@@ -30,7 +30,7 @@
         @mousemove="calcMouse"
         :style="mousePos"
       >
-        Login
+        Log in
       </button>
       <p>{{ msg }}</p>
     </div>

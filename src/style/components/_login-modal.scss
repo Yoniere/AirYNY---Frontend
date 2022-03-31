@@ -9,9 +9,12 @@
   z-index: 50;
   transition: all ease-in-out 1s;
   position: absolute;
+  border: 1px solid black;
+  border-radius: 12px;
   //   .log-container {
   //     display: flex;
   //   }
+  transition: opacity 0.2s ease;
   .flex-col {
     gap: rem(20px);
   }
@@ -24,10 +27,15 @@
     padding-bottom: rem(16px);
   }
   span {
+    width: 82px;
     color: $clr5;
     font-size: rem(16px);
     font-weight: 600;
     margin-inline-end: rem(10px);
+
+    .username {
+      left: 0px;
+    }
   }
   input {
     width: 70%;
