@@ -1,5 +1,5 @@
 <template>
-  <app-header  @openModalLogin="openModalLogin" />
+  <app-header @openModalLogin="openModalLogin" />
   <main class="home-page">
     <section class="main-hero main-layout2">
       <h1>Let your curiosity do the booking</h1>
@@ -20,7 +20,11 @@
         <span class="host-btn-txt">Lets try</span>
       </button>
     </section>
-     <login-modal v-if="modalLoginIsOpen" @login="setLogin" @closeLoginModal="closeLoginModal" />
+    <login-modal
+      v-if="modalLoginIsOpen"
+      @login="setLogin"
+      @closeLoginModal="closeLoginModal"
+    />
   </main>
 </template>
 
@@ -28,29 +32,32 @@
 import appHeader from "../components/app-header.vue";
 import homeList from "../components/home-list.vue";
 import loginModal from "../components/login-modal.vue";
-import {userService} from "../services/user-service.js";
+import { userService } from "../services/user-service.js";
 
 export default {
   name: "home-page",
   data() {
     return {
-      modalLoginIsOpen:false,
+      modalLoginIsOpen: false,
     };
   },
   methods: {
-    openModalLogin(){
-      this.modalLoginIsOpen = true
+    openModalLogin() {
+      this.modalLoginIsOpen = true;
     },
-    closeLoginModal(){
-      this.modalLoginIsOpen = false
+    closeLoginModal() {
+      this.modalLoginIsOpen = false;
     },
-    setLogin(user){
-      this.$store.dispatch({ type: 'login', userCred: user })
-      this.modalLoginIsOpen= false    
-      },
-      flexibleClick() {
-         this.$router.push('/stay/');
-      }
+    setLogin(user) {
+      this.$store.dispatch({
+        type: "login",
+        userCred: user,
+      });
+      this.modalLoginIsOpen = false;
+    },
+    flexibleClick() {
+      this.$router.push("/stay/");
+    },
   },
   computed: {
     stays() {
@@ -60,7 +67,7 @@ export default {
   components: {
     appHeader,
     homeList,
-    loginModal
+    loginModal,
   },
 };
 </script>

@@ -12,8 +12,8 @@
           :data="pricesToShow"
           :drag-interval="true"
           :force-edges="false"
-          :min="30"
-          :max="400"
+          :min="25"
+          :max="250"
           primaryColor="#b0b0b0"
           barRadius="6"
         />
@@ -26,23 +26,23 @@
         <span>2000 </span>
       </div>
       <div class="flex-row prices space-between">
-        <label>
+        <div class="input-price">
           <span> min-price </span>
           <input
-            class="input-price relative"
+            
             type="number"
             v-model="filterByPrice.minPrice"
           />
-        </label>
+        </div>
         -
-        <label>
+        <div class="input-price">
           <span> max-price </span>
           <input
-            class="input-price relative"
+            
             type="number"
             v-model="filterByPrice.maxPrice"
           />
-        </label>
+        </div>
       </div>
     </div>
     <div class="lower-modal-section flex space-between">
@@ -88,7 +88,7 @@ export default {
   computed: {
     pricesToShow() {
       var prices = [];
-      prices = this.stays.map((stay) =>
+      prices = this.stays.map(stay =>
         prices.push(stay.price)
       );
       return prices;

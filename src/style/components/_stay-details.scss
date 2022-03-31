@@ -1,5 +1,5 @@
 .upper-img-section {
-  padding-top: rem(24px);
+  padding-top: 1.79rem;
   max-width: rem(1120px);
   .second-header {
     height: rem(20px);
@@ -8,10 +8,10 @@
   .right-side-btns {
     height: 20px;
     .share-btn {
-      padding-top: 0px;
-      padding-bottom: 0px;
+      // padding-top: 0px;
+      // padding-bottom: 0px;
       height: 20px;
-      align-items: baseline;
+      align-items: baseline !important;
       background-color: transparent;
       border: 0px;
       text-decoration: underline;
@@ -20,7 +20,7 @@
         BlinkMacSystemFont, Roboto, "Helvetica Neue",
         sans-serif;
       font-size: 14px;
-      line-height: 18px;
+      // line-height: 18px;
       font-weight: 500;
       color: rgb(34, 34, 34);
       // padding: rem(8px);
@@ -87,14 +87,15 @@
     margin-bottom: rem(4px);
     padding: 0px;
     margin-top: 0px;
-    font-family: Circular, -apple-system, BlinkMacSystemFont,
-      Roboto, Helvetica Neue, sans-serif;
+    font-family: Cereal-Regular;
     color: #222222;
     font-weight: 600;
-    font-size: 26px;
+    font-size: 24px;
     line-height: 30px;
   }
   .rating {
+    color: #222222;
+
     font-size: 14px;
     font-weight: 600;
     margin-left: 6px;
@@ -164,15 +165,24 @@
 .main-gallery-section {
   max-width: none;
   .gallery {
-    max-width: rem(1120px);
+    max-width: 70rem;
     height: 100%;
     width: 100%;
-    padding-top: rem(24px);
+    padding-top: 1.5rem;
     display: grid;
-    grid-template-columns: repeat(4, minmax(180px, 1fr));
-    grid-template-rows: 236.19px 228.19px;
-    grid-gap: rem(8px);
-    gap: rem(8px);
+    grid-template-columns: repeat(4, minmax(170px, 1fr));
+    grid-template-rows: 168.19px 192.19px;
+    grid-gap: 0.5rem;
+    gap: 0.5rem;
+    // max-width: rem(1120px);
+    // height: 100%;
+    // width: 100%;
+    // padding-top: rem(24px);
+    // display: grid;
+    // grid-template-columns: repeat(4, minmax(180px, 1fr));
+    // grid-template-rows: 236.19px 228.19px;
+    // grid-gap: rem(8px);
+    // gap: rem(8px);
     @include for-narrow-layout {
       display: block;
     }
@@ -1139,8 +1149,9 @@
 .read-more-paragraph {
   margin: 0px;
   margin-top: rem(8px);
+  font-family: Cereal-Regular;
   .read-more {
-    font-size: rem(16px);
+    font-size: 15px;
     font-weight: 600;
     text-decoration: underline;
     cursor: pointer;
