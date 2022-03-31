@@ -1,7 +1,7 @@
 <template >
-  <section class=" upper-img-section">
+  <section class="upper-img-section">
     <h1 class="stay-name">{{ stay.name }}</h1>
-    <div class=" second-header flex space-between ">
+    <div class="second-header flex space-between">
       <div class="left-side-btns flex">
         <div class="flex card-rate">
           <svg
@@ -31,46 +31,52 @@
         </button>
       </div>
       <div class="right-side-btns flex">
+        <div>
+          <button class="share-btn flex">
+            <img
+              class="share-img"
+              src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/share24-icon.png"
+            />
+            Share
+          </button>
+        </div>
 
-        <button class="share-btn flex">
-          <img class="share-img"
-            src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/share24-icon.png"
-          />
-          Share
-        </button>
-
-        <button class="save-btn-details flex">
-          <img class="save-img"
-            src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/heart-icon.svg" />
-          Save
-        </button>
-
+        <div>
+          <button class="save-btn-details flex">
+            <img
+              class="save-img"
+              src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/heart-icon.svg"
+            />
+            Save
+          </button>
+        </div>
+        
       </div>
     </div>
   </section>
   <section class="main-gallery-section">
-  <section id="gallery" class="gallery ">
-    <img
-      class="main-img"
-      :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[0]}`"
-    />
-    <img
-      class="mid-upper-img"
-      :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[1]}`"
-    />
-    <img
-      class="right-upper-img"
-      :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[2]}`"
-    />
-    <img
-      class="mid-upper-img"
-      :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[3]}`"
-    />
-    <img
-      class="right-lower-img"
-      :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[4]}`"
-    />
-  </section>
+    <section id="gallery" class="gallery">
+      <img
+        class="main-img"
+        :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[0]}`"
+      />
+      <img
+        class="mid-upper-img"
+        :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[1]}`"
+      />
+      <img
+        class="right-upper-img"
+        :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[2]}`"
+      />
+      <img
+        class="mid-upper-img"
+        :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[3]}`"
+      />
+      <img
+        class="right-lower-img"
+        :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/${stay.imgUrls[4]}`"
+      />
+    </section>
   </section>
   <!-- <section class="main-layout">
     <div class="lower-img-section flex space-between">

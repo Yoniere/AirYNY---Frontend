@@ -167,8 +167,8 @@ export default {
         return "static";
       } else if (this.pos === "b") {
         return "fixed";
-      } else if (this.pos === "c") {
-        return "static-second";
+      // } else if (this.pos === "c") {
+      //   return "static-second";
       } else if (this.pos === "d") {
         return "fixed-top";
       }
@@ -217,12 +217,12 @@ export default {
         this.pos = "a";
         // this.stickyNav = true;
         // this.openfilter = false;
-      } else if (window.top.scrollY < 1350) {
+      } else if (window.top.scrollY < 1380) {
         this.pos = "b";
         // this.stickyNav = false;
         // this.openfilter = true;
-      } else if (window.top.scrollY < 1500) {
-        this.pos = "c";
+      // } else if (window.top.scrollY < 1500) {
+      //   this.pos = "c";
       } else {
         this.pos = "d";
       }

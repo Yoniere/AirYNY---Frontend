@@ -1,6 +1,7 @@
 <template>
   <!-- v-close-modal -->
   <div class="modal-container flex-col">
+    <div class="higer-modal-section">
     <div class="type-filter">
       <label class="type-filter-container flex">
         <div class="flex-col">
@@ -72,7 +73,8 @@
         />
       </label>
     </div>
-    <div class="type-save flex space-between">
+    </div>
+    <div class="type-save flex space-between lower-modal-section">
       <button class="clear-btn" @click="clearFilter">
         Clear</button
       ><button class="save-btn" @click="setSort">

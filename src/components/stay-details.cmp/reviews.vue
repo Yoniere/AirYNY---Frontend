@@ -30,7 +30,7 @@
 
           <div class="visual flex">
           <div class="grey-line"><span class="black-line" :style="{width:(value *10)+'%'}"></span></div>
-           <span v-if="value !== stay.reviewScores.length - 1" class="rate">{{value/2}} </span>
+           <span v-if="value !== stay.reviewScores.length - 1" class="rate">{{(value/2).toFixed(1)}} </span>
         </div>
        </div>
         </div>
@@ -61,9 +61,7 @@ export default {
     getRating() {
       return this.stay.reviewScores.rating / 10;
     },
-    // getRating() {
-    //   return review.
-    // }
+
   },
 };
 </script>
