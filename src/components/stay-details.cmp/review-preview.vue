@@ -14,12 +14,14 @@
         <h2 class="date">{{ review.at }}</h2>
       </div>
     </div>
-    <p class="paragraph-review">{{ review.txt }}</p>
+    <review-txt :review="review"></review-txt>
+    <!-- <p class="paragraph-review">{{ review.txt }}</p> -->
   </section>
 </template>
 
 <script>
   import {utilService} from '../../services/util-service'
+  import reviewTxt from './review-txt.vue';
 export default {
   name: "reviews",
   props: {
@@ -37,7 +39,16 @@ export default {
       return `https://i.pravatar.cc/150?img=${key}`
     },
   },
+  components:{
+    reviewTxt
+  }
 };
 </script>
 
 <style></style>
+
+
+
+
+
+
