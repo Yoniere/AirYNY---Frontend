@@ -37,9 +37,24 @@
     background: rgb(255, 255, 255);
     border: 0.5px solid rgba(118, 118, 118, 0.28);
     border-radius: 12px;
-    box-shadow: $clr5 0px 10px 37px;
+    // box-shadow: $clr5 0px 10px 37px;
     overflow: hidden;
     justify-content: flex-start;
+    .input-price {
+        cursor: text;
+        min-height: rem(56px);
+        width: 100%;
+        margin: 0px;
+        border: none;
+        color: rgb(34, 34, 34);
+        background-color: rgb(255, 255, 255);
+        border-radius: rem(8px);
+        box-shadow: rgb(176 176 176) 0px 0px 0px 1px inset;
+        font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+        font-size: rem(16px);
+        line-height: rem(20px);
+        font-weight: 400;
+    }
     .higer-modal-section {
         width: rem(440px);
         height: rem(264px);
