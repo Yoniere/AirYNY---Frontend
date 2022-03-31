@@ -90,6 +90,7 @@
     <login-modal
       v-if="modalLoginIsOpen"
       @login="setLogin"
+      @closeLoginModal="closeLoginModal"
     />
   </section>
 </template>
@@ -134,6 +135,9 @@ export default {
   methods: {
     openModalLogin() {
       this.modalLoginIsOpen = true;
+    },
+        closeLoginModal(){
+      this.modalLoginIsOpen = false
     },
     async setLogin(user) {
       try {

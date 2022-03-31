@@ -11,7 +11,7 @@
       </div>
       <div class="review-titles">
         <h1 class="name">{{ review.by.fullname }}</h1>
-        <h2 class="date">{{ review.at }}</h2>
+        <h2 class="date">{{ formatDate }}</h2>
       </div>
     </div>
     <review-txt :review="review"></review-txt>
@@ -31,14 +31,23 @@ export default {
   },
   createad() {},
   data() {
-    return {};
+    return {
+      start: new Date(2021, 0, 1) ,
+      end: new Date(),
+    };
   },
   computed: {
     getImage() {
       const key= utilService.getRandomInt(0, 50)
       return `https://i.pravatar.cc/150?img=${key}`
     },
-  },
+   formatDate() {
+  const time= new Date(this.start.getTime() + Math.random() * (this.end.getTime() - this.start.getTime()));
+  return time.toLocaleDateString('en')
+}
+
+
+},
   components:{
     reviewTxt
   }
