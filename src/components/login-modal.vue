@@ -68,11 +68,7 @@ export default {
       this.$emit("closeLoginModal");
     },
     calcMouse(e) {
-      console.log(e);
-      const div = this.$refs.myRefs;
-      console.log("x", this.x);
-      console.log("y", this.y);
-      console.log("div", div.offsetLeft);
+       const div = this.$refs.myRefs;
       this.x = e.clientX - div.offsetLeft;
       this.y = e.pageY - div.offsetTop;
     },

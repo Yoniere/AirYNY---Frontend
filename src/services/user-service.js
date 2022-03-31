@@ -3,6 +3,7 @@ import { stayService } from "./stay-service.js";
 import { orderService } from "./order-service.js";
 import { httpService } from "./http.service.js";
 import { utilService } from "./util-service.js";
+import { socketService } from "./socket.service.js";
 
 const STORAGE_KEY = "userDB";
 const ENDPOINT = "auth";
@@ -58,6 +59,7 @@ async function login(userInfo) {
   try {
     const loggedInUser = await httpService.post(`${ENDPOINT}/login`, userInfo);
     utilService.saveToSessionStorage(STORAGE_KEY, loggedInUser);
+    socketService.emit('set-user-socket',loggedInUser.id )
     return loggedInUser;
   } catch {
     console.log("cant login");
@@ -84,6 +86,7 @@ async function logout() {
   try {
     const loggedOutUser = await httpService.post(`${ENDPOINT}/logout`);
     utilService.removeFromSessionStorage(STORAGE_KEY);
+    socketService.emit('unset-user-socket',loggedOutUser.id )
     return loggedOutUser;
   } catch {
     console.log("logout failed");
@@ -175,8 +178,8 @@ async function signup(userDetails) {
 // //     })
 // // })();
 
-// //  This is relevant when backend is connected
-// //  (async () => {
-// //     var user = getLoggedinUser()
-// //      if (user) socketService.emit('set-user-socket', user._id)
-// //  })();
+//  This is relevant when backend is connected
+ (async () => {
+    var user = getLoggedinUser()
+     if (user) socketService.emit('set-user-socket', user.id)
+ })();

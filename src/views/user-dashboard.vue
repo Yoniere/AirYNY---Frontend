@@ -89,6 +89,7 @@ async created(){
     this.$store.dispatch({ type: "loadStaysUser" });
     const user = await this.$store.getters.user
     this.user = user;
+    socketService.on("order recived", this.addOrder);
 },
 methods:{
     toggle(val){
@@ -110,6 +111,11 @@ methods:{
         if(order.status === 'Approve')  order.status= 'Decline'
         else order.status = 'Approve'
         orderService.add(order)
+    },
+    addOrder(order){
+        console.log('from socket',order);
+        this.user.orders.push(order)
+
     }
 
 
