@@ -105,6 +105,7 @@
       @filterd="setMiniFilter"
     />
   </section>
+  
 </template>
 
 <script>
