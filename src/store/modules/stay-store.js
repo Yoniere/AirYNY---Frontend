@@ -42,9 +42,12 @@ export default {
             if (filterBy.type) state.filterBy.type = filterBy.type
             if (filterBy.guests) state.filterBy.guests = filterBy.guests
             if (filterBy.stayTime) state.filterBy.stayTime = filterBy.stayTime
+            if (filterBy.amenities) state.filterBy.amenities = filterBy.amenities
             // state.filterBy.filterBy = filterBy
             // console.log('state.filterBy', state.filterBy);
         },
+
+
         ratedStays(state, { filterBy }) {
             state.filterBy.country = filterBy
         },

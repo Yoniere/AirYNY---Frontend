@@ -9,7 +9,7 @@
         @click="ChangeModalPrice"
         class="sort-btn relative flex align-center"
       >
-        price
+        Price
         <span>
           <svg
             viewBox="0 0 32 32"

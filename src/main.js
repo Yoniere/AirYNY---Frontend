@@ -26,7 +26,7 @@ const app = createApp(App)
 
 app.use(VueGoogleMaps, {
     load: {
-        key: 'api key',
+        key: 'AIzaSyBAZNoPniCUAnGdMTF7BMOGgMeW_bcjBK8',
 
     }
 })
