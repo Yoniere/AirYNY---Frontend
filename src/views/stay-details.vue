@@ -99,7 +99,7 @@ export default {
         }, 5000);
         return
       } 
-         socketService.emit('addOrder', orderToSave );
+        
 
       try {
         const newOrder = await this.$store.dispatch({
@@ -109,6 +109,8 @@ export default {
         setTimeout(()=>{
            this.userOrder= false
         }, 5000);
+        
+         socketService.emit('addOrder', orderToSave );
      
       } catch {
         console.error;
