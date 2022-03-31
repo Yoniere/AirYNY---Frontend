@@ -1,6 +1,6 @@
 <template>
   <!-- v-close-modal -->
-  <div class="modal-container flex-col">
+  <div  class="modal-container flex-col">
     <div class="type-filter">
       <label class="type-filter-container flex">
         <div class="flex-col">

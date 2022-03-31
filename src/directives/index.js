@@ -1,3 +1,9 @@
+
+
+
+
+
+
 // export const focusDirective = {
 //   mounted: (el) => {
 //     el.focus()
@@ -13,7 +19,7 @@
 //         console.log('hi');
 //         console.log(expression);
 //         console.log(context);
-//         context[expression]()
+//         context.expression()
 //       }
 //     }
 //     setTimeout(() => {
@@ -29,7 +35,7 @@
 
 
 
-// const clickOutside = {
+// export const clickOutside = {
 //   beforeMount: (el, binding) => {
 //     el.clickOutsideEvent = event => {
 //       // here I check that click was outside the el and his children

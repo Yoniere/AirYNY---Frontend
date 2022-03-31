@@ -32,7 +32,7 @@ app.use(VueGoogleMaps, {
 })
 
 
-// app.directive('custom-on', focusDirective)
+// app.directive('click-outside', clickOutside)
 // app.directive('close-modal', closeDirevtive)
 app.use(store)
 app.use(Quasar)
