@@ -39,7 +39,7 @@
           Share
         </button>
 
-        <button class="save-btn flex">
+        <button class="save-btn-details flex">
           <img class="save-img"
             src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/heart-icon.svg" />
           Save
