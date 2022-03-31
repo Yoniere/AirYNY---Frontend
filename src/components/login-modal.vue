@@ -1,9 +1,12 @@
 <template>
   <section class="login-modal">
-    <h1 class="flex space-between">login / signup
-    <button class="close-login" @click="closeModal"> X </button>
+    <h1 class="flex space-between">
+      login or signup
+      <button class="close-login" @click="closeModal">
+        X
+      </button>
     </h1>
-    <div class="flex-col">
+    <div class="log-container flex-col">
       <div>
         <span> username :</span>
         <input
@@ -20,7 +23,15 @@
           placeholder="enter your username"
         />
       </div>
-      <button class="btn-login" @click="setLogin">Login</button>
+      <button
+        ref="myRefs"
+        class="btn-login"
+        @click="setLogin"
+        @mousemove="calcMouse"
+        :style="mousePos"
+      >
+        Login
+      </button>
       <p>{{ msg }}</p>
     </div>
   </section>
@@ -30,6 +41,8 @@
 export default {
   data() {
     return {
+      x: 0,
+      y: 0,
       user: {
         username: "",
         password: "",
@@ -37,19 +50,39 @@ export default {
       msg: "",
     };
   },
+  created() {},
   methods: {
     setLogin() {
-        if(!this.user.username || !this.user.password){
-           this.msg = "Please enter username/password"
+      if (!this.user.username || !this.user.password) {
+        this.msg = "Please enter username/password";
         return;
-        } 
-      this.$emit("login", JSON.parse(JSON.stringify(this.user)) );
-      this.user.username=''
-      this.user.password=''
+      }
+      this.$emit(
+        "login",
+        JSON.parse(JSON.stringify(this.user))
+      );
+      this.user.username = "";
+      this.user.password = "";
     },
-    closeModal(){
-      this.$emit('closeLoginModal')
-    }
+    closeModal() {
+      this.$emit("closeLoginModal");
+    },
+    calcMouse(e) {
+      console.log(e);
+      const div = this.$refs.myRefs;
+      console.log("x", this.x);
+      console.log("y", this.y);
+      console.log("div", div.offsetLeft);
+      this.x = e.clientX - div.offsetLeft;
+      this.y = e.pageY - div.offsetTop;
+    },
+  },
+  computed: {
+    mousePos() {
+      return {
+        "background-position": `calc((100 - (${this.x}))*1%) calc((100 - (${this.y}))*1%)`,
+      };
+    },
   },
 };
 </script>
