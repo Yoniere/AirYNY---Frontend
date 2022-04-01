@@ -1,8 +1,10 @@
 <template>
-  <app-header
-    class="header-explore"
+
+  <section class="upper-section-header-details">
+  <app-header class="header-details main-layout2"
     @openModalLogin="openModalLogin"
   />
+  </section>
   <section class="main-layout2">
     <div class="explore-buttons flex">
       <button
@@ -72,10 +74,10 @@
         </span>
       </button>
       <typePlaceModal v-if="modalType" @sort="setSort" />
-      <button class="sort-btn">Wifi</button>
-      <button class="sort-btn">TV</button>
+      <button class="sort-btn small-btn">Wifi</button>
+      <button class="sort-btn small-btn">TV</button>
       <button class="sort-btn">Kitchen</button>
-      <button class="sort-btn">AC</button>
+      <button class="sort-btn small-btn">AC</button>
       <button class="sort-btn">Smoking Allowed</button>
       <button class="sort-btn">Pet Allowed</button>
     </div>
@@ -136,8 +138,8 @@ export default {
     openModalLogin() {
       this.modalLoginIsOpen = true;
     },
-        closeLoginModal(){
-      this.modalLoginIsOpen = false
+    closeLoginModal() {
+      this.modalLoginIsOpen = false;
     },
     async setLogin(user) {
       try {

@@ -1,6 +1,6 @@
 .stay-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(321px, 1fr));
+    grid-template-columns: repeat( auto-fill, minmax(321px, 1fr));
     column-gap: 24px;
     row-gap: 40px;
     padding-top: 16px;
@@ -24,6 +24,9 @@
     margin-top: 4px;
     margin-bottom: 4px;
     gap: rem(1px);
+    &.small-btn {
+        width: 77px;
+    }
 }
 
 .sort-btn:hover {
@@ -54,6 +57,20 @@
         font-size: rem(16px);
         line-height: rem(20px);
         font-weight: 400;
+        padding-left: 10px;
+        padding-top: 5px;
+    }
+    input {
+        border: none !important;
+        width: 50px;
+        font-size: 15px !important;
+    }
+    .label {
+        font-size: 12px;
+        color: #a3a3a3;
+    }
+    .sep-min-max {
+        padding: 3px 9px 8px 9px;
     }
     .higer-modal-section {
         width: rem(440px);
@@ -100,14 +117,36 @@
     }
 }
 
+// .input-price:focus {
+//   border: 1px solid;
+// }
+// .input-price:active {
+//   border: 1px solid;
+// }
+.price-change input:active {
+    border: 0.3px solid #ffffff00;
+    width: 50px;
+    font-size: 15px !important;
+}
+
+.price-change input:focus {
+    border: 0.3px solid #ffffff00;
+    width: 50px;
+    font-size: 15px !important;
+}
+
 .range {
     margin-top: rem(28px);
-    width: 80%;
+    width: 100%;
+}
+
+.price-change {
+    display: flex;
 }
 
 .prices {
     margin-top: rem(28px);
-    width: 80%;
+    width: 100%;
     span {
         position: absolute;
         margin-top: rem(-20px);
@@ -223,6 +262,7 @@
 }
 
 .explore-buttons {
+    margin-top: 24px;
     @include for-wide-layout {
         align-items: center;
         button {

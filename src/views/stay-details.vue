@@ -1,5 +1,7 @@
 <template>
-  <app-header class="header-details"   @openModalLogin="openModalLogin"/>
+<section class="upper-section-header-details">
+  <app-header class="header-details details-layout"   @openModalLogin="openModalLogin"/>
+  </section>
   <section v-if="stay" class="details-layout">
     <el-alert  title="order Aprrove" v-if="orderStatus" type="success" class="alert-fixed" />
     <imgs-comp :stay="stay"></imgs-comp>
@@ -114,7 +116,6 @@ export default {
         }, 5000);
         return
       } 
-        
 
       try {
         const newOrder = await this.$store.dispatch({
@@ -124,9 +125,8 @@ export default {
         setTimeout(()=>{
            this.userOrder= false
         }, 5000);
-        
-         socketService.emit('addOrder', orderToSave );
-     
+            socketService.emit('addOrder', orderToSave );
+
       } catch {
         console.error;
       }

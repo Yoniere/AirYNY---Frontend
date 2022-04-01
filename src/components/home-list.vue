@@ -17,7 +17,9 @@
             alt="img rated stay"
           />
           <div class="txt-container">
-            <h3 class="country-name popular">{{ stay }}</h3>
+            <h3 class="country-name popular">
+              {{ stay }}
+            </h3>
           </div>
         </li>
       </ul>
@@ -56,10 +58,10 @@ export default {
   data() {
     return {
       ratedStays: [
-        "United States",
-        "Spain",
-        "Portugal",
-        "Australia",
+        "New York",
+        "Barcelona",
+        "Porto",
+        "Sydney",
       ],
       uniqueStays: [
         {
