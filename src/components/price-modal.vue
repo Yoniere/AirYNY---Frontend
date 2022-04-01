@@ -117,9 +117,7 @@ export default {
   computed: {
     pricesToShow() {
       var prices = [];
-      prices = this.stays.map((stay) =>
-        prices.push(stay.price)
-      );
+      prices = this.stays.map((stay) => stay.price);
       return prices;
     },
     minPrice() {

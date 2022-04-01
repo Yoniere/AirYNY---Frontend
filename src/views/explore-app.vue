@@ -72,10 +72,10 @@
         </span>
       </button>
       <typePlaceModal v-if="modalType" @sort="setSort" />
-      <button class="sort-btn">Wifi</button>
-      <button class="sort-btn">TV</button>
+      <button class="sort-btn small-btn">Wifi</button>
+      <button class="sort-btn small-btn">TV</button>
       <button class="sort-btn">Kitchen</button>
-      <button class="sort-btn">AC</button>
+      <button class="sort-btn small-btn">AC</button>
       <button class="sort-btn">Smoking Allowed</button>
       <button class="sort-btn">Pet Allowed</button>
     </div>
