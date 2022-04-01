@@ -96,10 +96,8 @@ export default {
   },
   methods: {
     setFilterPrice(ev) {
-      console.log(ev);
       this.filterByPrice.minPrice = ev.from;
       this.filterByPrice.maxPrice = ev.to;
-      console.log(this.filterByPrice);
     },
     setSort(type) {
       if (type === "clear") {

@@ -8,7 +8,7 @@ import { httpService } from './http.service.js'
 
 const ENDPOINT = 'stay'
 const STAYS_KEY = 'staysDB'
-// _createStay()
+    // _createStay()
 
 
 export const stayService = {

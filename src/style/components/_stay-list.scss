@@ -27,6 +27,9 @@
     &.small-btn {
         width: 77px;
     }
+    &:active {
+        border: 2px solid black
+    }
 }
 
 .sort-btn:hover {

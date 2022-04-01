@@ -16,6 +16,7 @@ export default {
                 minPrice: 30,
                 maxPrice: 500
             },
+            amenities: [],
         },
     },
     getters: {
@@ -43,8 +44,8 @@ export default {
             if (filterBy.guests) state.filterBy.guests = filterBy.guests
             if (filterBy.stayTime) state.filterBy.stayTime = filterBy.stayTime
             if (filterBy.amenities) state.filterBy.amenities = filterBy.amenities
-            // state.filterBy.filterBy = filterBy
-            // console.log('state.filterBy', state.filterBy);
+                // state.filterBy.filterBy = filterBy
+                // console.log('state.filterBy', state.filterBy);
         },
 
 

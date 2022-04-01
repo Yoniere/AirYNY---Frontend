@@ -74,12 +74,12 @@
         </span>
       </button>
       <typePlaceModal v-if="modalType" @sort="setSort" />
-      <button class="sort-btn small-btn">Wifi</button>
-      <button class="sort-btn small-btn">TV</button>
-      <button class="sort-btn">Kitchen</button>
-      <button class="sort-btn small-btn">AC</button>
-      <button class="sort-btn">Smoking Allowed</button>
-      <button class="sort-btn">Pet Allowed</button>
+      <button class="sort-btn small-btn" @click="setSortAmenities('Wifi')">Wifi</button>
+      <button class="sort-btn small-btn" @click="setSortAmenities('TV')">Elevator</button>
+      <button class="sort-btn" @click="setSortAmenities('Kitchen')">Gym</button>
+      <button class="sort-btn small-btn" @click="setSortAmenities('AC')">AC</button>
+      <button class="sort-btn" @click="setSortAmenities('Smoking Allowed')">Smoking Allowed</button>
+      <button class="sort-btn" @click="setSortAmenities('Pet Allowed')">Pet Allowed</button>
     </div>
 
     <h1>{{ title }}</h1>
@@ -115,6 +115,7 @@ export default {
           maxPrice: 2000,
         },
         type: [],
+        amenities:[],
       },
       modalPrice: false,
       modalType: false,
@@ -169,6 +170,15 @@ export default {
         filterBy: JSON.parse(JSON.stringify(this.filterBy)),
       });
       this.modalType = false;
+    },
+    setSortAmenities(amenity){
+      if (this.filterBy.amenities.includes(amenity)) return
+      
+      this.filterBy.amenities.push(amenity)
+            this.$store.dispatch({
+        type: "setFilter",
+        filterBy: JSON.parse(JSON.stringify(this.filterBy)),
+      });
     },
     setFilterByPrice(filterByPrice) {
       this.filterBy.price.minPrice = filterByPrice.minPrice;
