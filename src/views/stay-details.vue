@@ -15,8 +15,8 @@
       <section class="checkout-area">
         <checkout :stay="stay" @setOrder="setOrder"></checkout>
        
-          <el-alert  title="order succeed" type="success" v-if="userOrder"/>
-           <el-alert title="please enter your full details order" type="error" v-if="fullDetailsOrder" />
+           <el-alert  title="order succeed" type="success" v-if="userOrder" class="alert-order"/> 
+           <el-alert title="please enter your full details order" type="error" v-if="fullDetailsOrder" class="alert-order"/>
       </section>
     </main>
     <reviews :stay="stay"></reviews>
