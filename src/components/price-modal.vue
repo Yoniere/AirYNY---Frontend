@@ -1,12 +1,11 @@
 <template>
   <div class="price-modal">
     <div class="flex-col higer-modal-section">
-      <span class="type-header">
-        The average nightly price is 100$
-      </span>
+      <span class="type-header"> The average nightly price is 100$ </span>
       <div class="flex-row range space-between">
-        <span> 30 </span>
         <HistogramSlider
+          v-model="filterByPrice"
+          @change="setFilterPrice"
           :width="250"
           :bar-height="72"
           :data="pricesToShow"
@@ -23,35 +22,22 @@
     margin-right: 1px !important;
     background: rgb(176, 176, 176) -->
 
-        <span>2000 </span>
       </div>
       <div class="flex-row prices space-between">
         <div class="input-price">
           <span> min-price </span>
-          <input
-            
-            type="number"
-            v-model="filterByPrice.minPrice"
-          />
+          <input type="number" v-model="filterByPrice.minPrice" />
         </div>
         -
         <div class="input-price">
           <span> max-price </span>
-          <input
-            
-            type="number"
-            v-model="filterByPrice.maxPrice"
-          />
+          <input type="number" v-model="filterByPrice.maxPrice" />
         </div>
       </div>
     </div>
     <div class="lower-modal-section flex space-between">
-      <button class="clear-btn" @click="setSort('clear')">
-        Clear
-      </button>
-      <button class="save-btn" @click="setSort('save')">
-        Save
-      </button>
+      <button class="clear-btn" @click="setSort('clear')">Clear</button>
+      <button class="save-btn" @click="setSort('save')">Save</button>
     </div>
   </div>
 </template>
@@ -72,6 +58,12 @@ export default {
     };
   },
   methods: {
+    setFilterPrice(ev) {
+      console.log(ev);
+      this.filterByPrice.minPrice = ev.from;
+      this.filterByPrice.maxPrice = ev.to;
+      console.log(this.filterByPrice);
+    },
     setSort(type) {
       if (type === "clear") {
         this.filterByPrice = {
@@ -88,9 +80,7 @@ export default {
   computed: {
     pricesToShow() {
       var prices = [];
-      prices = this.stays.map(stay =>
-        prices.push(stay.price)
-      );
+      prices = this.stays.map((stay) => prices.push(stay.price));
       return prices;
     },
     minPrice() {
