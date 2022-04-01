@@ -4,7 +4,7 @@
     class="checkout"
     :class="checkoutPos"
   >
-    <section :style="getFlexRow">
+    <section :style="getFlexRow" class="checkout-section">
       <div
         class="checkout-title flex space-between"
         :style="getFlexColumn"
