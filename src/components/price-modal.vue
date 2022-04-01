@@ -1,39 +1,78 @@
 <template>
   <div class="price-modal">
     <div class="flex-col higer-modal-section">
-      <span class="type-header"> The average nightly price is 100$ </span>
-      <div class="flex-row range space-between">
-        <HistogramSlider
-          v-model="filterByPrice"
-          @change="setFilterPrice"
-          :width="250"
-          :bar-height="72"
-          :data="pricesToShow"
-          :drag-interval="true"
-          :force-edges="false"
-          :min="25"
-          :max="250"
-          primaryColor="#b0b0b0"
-          barRadius="6"
-        />
-
-        <span>2000 </span>
+      <span class="type-header">
+        The average nightly price is 100$
+      </span>
+      <div class="flex-col range space-between">
+        <div class="price-container">
+          <HistogramSlider
+            v-model="filterByPrice"
+            @change="setFilterPrice"
+            :width="400"
+            :bar-height="72"
+            :data="pricesToShow"
+            :drag-interval="true"
+            :force-edges="false"
+            :min="30"
+            :max="2000"
+            primaryColor="#b0b0b0"
+            barRadius="6"
+          />
+        </div>
+        <div class="flex-row prices space-between">
+          <div class="input-price">
+            <div class="label">min price</div>
+            <div class="price-change">
+              <div class="dollar">$</div>
+              <input
+                type="text"
+                v-model="filterByPrice.minPrice"
+              />
+            </div>
+          </div>
+          <h3 class="sep-min-max">–</h3>
+          <div class="input-price">
+            <div class="label">max price</div>
+            <div class="price-change">
+              <div class="dollar">$</div>
+              <input
+                type="text"
+                v-model="filterByPrice.maxPrice"
+              />
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- <span>2000 </span> -->
+      <!-- </div>
       <div class="flex-row prices space-between">
         <div class="input-price">
           <span> min-price </span>
-          <input type="number" v-model="filterByPrice.minPrice" />
+          <input
+            placeholder="min-price"
+            type="number"
+            v-model="filterByPrice.minPrice"
+          />
         </div>
         -
         <div class="input-price">
           <span> max-price </span>
-          <input type="number" v-model="filterByPrice.maxPrice" />
+          <input
+            placeholder="max-price"
+            type="number"
+            v-model="filterByPrice.maxPrice"
+          />
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="lower-modal-section flex space-between">
-      <button class="clear-btn" @click="setSort('clear')">Clear</button>
-      <button class="save-btn" @click="setSort('save')">Save</button>
+      <button class="clear-btn" @click="setSort('clear')">
+        Clear
+      </button>
+      <button class="save-btn" @click="setSort('save')">
+        Save
+      </button>
     </div>
   </div>
 </template>
@@ -78,7 +117,7 @@ export default {
   computed: {
     pricesToShow() {
       var prices = [];
-      prices = this.stays.map((stay) => prices.push(stay.price));
+      prices = this.stays.map((stay) => stay.price);
       return prices;
     },
     minPrice() {

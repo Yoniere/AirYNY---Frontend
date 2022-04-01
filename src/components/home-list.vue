@@ -13,11 +13,13 @@
         >
           <img
             class="home-img"
-            :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/${stay}1.jpg`"
+            :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/${stay.city}1.jpg`"
             alt="img rated stay"
           />
           <div class="txt-container">
-            <h3 class="country-name popular">{{ stay }}</h3>
+            <h3 class="country-name popular">
+              {{ stay.city }}
+            </h3>
           </div>
         </li>
       </ul>
@@ -56,10 +58,10 @@ export default {
   data() {
     return {
       ratedStays: [
-        "United States",
-        "Spain",
-        "Portugal",
-        "Australia",
+        "New York",
+        "Barcelona",
+        "Porto",
+        "Sydney",
       ],
       uniqueStays: [
         {
