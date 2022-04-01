@@ -1,6 +1,6 @@
 <template>
 
-  <section class="upper-section-header-details">
+  <section class="upper-section-header-explore">
   <app-header class="header-details main-layout2"
     @openModalLogin="openModalLogin"
   />
@@ -173,7 +173,7 @@ export default {
     },
     setSortAmenities(amenity){
       if (this.filterBy.amenities.includes(amenity)) return
-      
+
       this.filterBy.amenities.push(amenity)
             this.$store.dispatch({
         type: "setFilter",

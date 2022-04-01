@@ -108,7 +108,7 @@
           </li>
         </ul>
       </div>
-
+      <div>
       <button
         ref="myRef"
         class="reserve-btn"
@@ -118,6 +118,7 @@
       >
         Reserve
       </button>
+      </div>
     </section>
     <div class="nav-bar-section">
       <nav class="checkout-nav">
@@ -250,7 +251,7 @@ export default {
       );
     },
     handleScroll(event) {
-      if (window.top.scrollY < 662) {
+      if (window.top.scrollY < 555) {
         this.pos = "a";
         // this.stickyNav = true;
         // this.openfilter = false;
@@ -263,6 +264,7 @@ export default {
       } else {
         this.pos = "d";
       }
+      console.log(window.top.scrollY)
     },
 
     scrollMeTo(id) {
