@@ -27,7 +27,7 @@
     &.small-btn {
         width: 77px;
     }
-    &:active {
+    &:focus {
         border: 2px solid black
     }
 }
@@ -39,6 +39,7 @@
 .price-modal {
     position: absolute;
     margin-top: rem(50px);
+    top: 120px;
     z-index: 20;
     background: rgb(255, 255, 255);
     border: 0.5px solid rgba(118, 118, 118, 0.28);
@@ -165,6 +166,7 @@
     position: absolute;
     margin-top: rem(50px);
     left: rem(172px);
+    top: 120px;
     // width: rem(360px);
     // height: rem(405px);
     z-index: 20;
@@ -265,7 +267,7 @@
 }
 
 .explore-buttons {
-    margin-top: 24px;
+    margin-top: 86px;
     @include for-wide-layout {
         align-items: center;
         button {

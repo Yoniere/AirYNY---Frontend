@@ -1,6 +1,6 @@
 <template>
 
-  <section class="upper-section-header-details">
+  <section class="upper-section-header-explore">
   <app-header class="header-details main-layout2"
     @openModalLogin="openModalLogin"
   />
@@ -83,6 +83,7 @@
     </div>
 
     <h1>{{ title }}</h1>
+    <div v-if="!stays.length"><img src="../assets/loader.gif" /> </div>
     <stay-list
       :stays="stays"
       v-if="stays"
@@ -173,7 +174,7 @@ export default {
     },
     setSortAmenities(amenity){
       if (this.filterBy.amenities.includes(amenity)) return
-      
+
       this.filterBy.amenities.push(amenity)
             this.$store.dispatch({
         type: "setFilter",

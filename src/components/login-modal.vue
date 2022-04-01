@@ -6,7 +6,7 @@
         X
       </button>
     </h1>
-    <div class="log-container flex-col">
+    <form class="log-container flex-col" @submit.prevent="setLogin">
       <div class="username-container">
         <span class="username"> Username :</span>
         <input
@@ -26,14 +26,13 @@
       <button
         ref="myRefs"
         class="btn-login"
-        @click="setLogin"
         @mousemove="calcMouse"
         :style="mousePos"
       >
         Log in
       </button>
       <p>{{ msg }}</p>
-    </div>
+    </form>
   </section>
 </template>
 

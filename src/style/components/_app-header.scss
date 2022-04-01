@@ -11,65 +11,74 @@
   .world-svg {
     fill: white;
   }
+}
+@include for-normal-layout {
+  .mini-filter-container {
+    display: block !important;
+    width: 100vh;
+  }
+}
+.main-header {
+  /* grid-column: 2; */
+  margin: 0px;
+}
+@include for-mobile-layout {
+  .mini-filter {
+    display: block !important;
+    width: 100vh;
+  }
+}
+.mini-filter {
+  display: flex;
+}
+&.header-explore {
+  .world-svg {
+    fill: #222222;
+  }
+  .filter {
+    display: none;
+  }
+}
+.world-img {
+  display: none;
+}
+.header-details {
+  .world-img {
+    // display: none;
+    display: block !important;
+  }
+}
+.header-features {
+  color: $clr2;
+  align-items: center;
+  height: 80px;
   .mini-filter {
     display: flex;
   }
-  &.header-explore {
-    .world-svg {
-      fill: #222222;
-    }
-    .filter {
-      display: none;
-    }
+}
+@include for-narrow-layout {
+  visibility: hidden;
+  top: 0px;
+  grid-template-columns: 1fr;
+  /* display: flex; */
+  /* justify-content: start; */
+  /* align-items: center; */
+  /* align-content: center; */
+  /* justify-items: stretch; */
+  /* position: absolute; */
+  margin-left: -104px;
+  .mini-filter-container {
+    display: block;
   }
-  .world-img {
-    display: none;
+}
+@include for-normal-layout {
+  .mini-filter-container {
+    display: none !important;
   }
-  .header-details {
-    .world-img {
-      // display: none;
-      display: block !important;
-    }
-  }
-  .header-features {
-    color: $clr2;
-    align-items: center;
-    height: 80px;
-    .mini-filter {
-      display: flex;
-    }
-  }
-  @include for-narrow-layout {
-    visibility: hidden;
-    top: 0px;
-    grid-template-columns: 1fr;
-    /* display: flex; */
-    /* justify-content: start; */
-    /* align-items: center; */
-    /* align-content: center; */
-    /* justify-items: stretch; */
-    /* position: absolute; */
-    margin-left: -104px;
-    .mini-filter-container {
-      display: block;
-    }
-  }
-  @include for-normal-layout {
-    .mini-filter-container {
-      display: block !important;
-      width: 100vh;
-    }
-  }
-  .main-header {
-    /* grid-column: 2; */
-    margin: 0px;
-  }
-  @include for-mobile-layout {
-    .mini-filter {
-      display: block !important;
-      width: 100vh;
-    }
-  }
+}
+.main-header {
+  /* grid-column: 2; */
+  margin: 0px;
 }
 
 .main-header.fix {
@@ -292,6 +301,69 @@
   }
 }
 
+.upper-section-header-explore {
+  background-color: transparent;
+  box-shadow: 0 1px 12px rgb(0 0 0 / 8%);
+  color: #ddd;
+  .header-details {
+    display: block;
+    // grid-template-rows: 1fr;
+    // box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
+    top: 0;
+    position: fixed !important;
+    color: $clr3;
+    height: 80px !important;
+    transition: 0s;
+    .main-filter {
+      color: $clr5;
+    }
+    .filter {
+      display: none;
+    }
+    .filter.hide {
+      visibility: unset;
+      position: static;
+      display: flex;
+      transform: unset;
+    }
+    //  .filter.hide
+    .mini-filter {
+      // margin-top: rem(10px);
+      visibility: visible;
+      top: 40px;
+      z-index: 40;
+      position: absolute;
+    }
+    a {
+      color: $clr5 !important;
+      text-shadow: none;
+      font-weight: 600;
+      font-size: rem(14px);
+    }
+    .logo {
+      content: url("https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648055648/airyny/logo2.png");
+      height: rem(70px);
+      width: rem(140px);
+    }
+    .world-btn {
+      height: 2.61875rem;
+      width: 2.8125rem;
+      border: 0px;
+      display: block !important;
+      .world-svg {
+        fill: unset;
+        color: #222222;
+      }
+    }
+    .explore-details-header {
+      display: none;
+    }
+  }
+  @include for-narrow-layout {
+    display: none;
+  }
+}
+
 .main-header.fix.header-details {
   .filter.hide {
     display: none !important;
@@ -373,42 +445,5 @@
   }
   .mini-filter {
     visibility: hidden;
-  }
-}
-.el-range-input {
-  width: 140px !important;
-  border-left: 0.1px solid #f00808 !important;
-}
-.container-check {
-  align-content: flex-end;
-  // justify-content: space-evenly;
-  // padding: 0px 0px 0px 0px;
-  // border-right: 1px solid black;
-  border-left: 0.1px solid #e1e1e1;
-
-  .btn-check-in {
-    padding: 0px 77px 0px 13px;
-    border-right: 0.1px solid #e1e1e1;
-  }
-  .btn-check-out {
-    padding: 2px 14px 0px 74px;
-    // border-left: 2px solid violet;
-  }
-  .el-date-editor .el-range-input {
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    outline: 0;
-    display: inline-block;
-    height: 100%;
-    margin: 0px 22px -22px -15px;
-    /* padding: 0; */
-    /* width: 39%; */
-    text-align: center;
-    font-size: var(--el-font-size-base);
-    color: var(--el-text-color-regular);
-  }
-  .main-time-picker .input-container .date-list {
-    border-right: 1px solid black;
   }
 }
