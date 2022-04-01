@@ -11,75 +11,72 @@
   .world-svg {
     fill: white;
   }
-}
-@include for-normal-layout {
-  .mini-filter-container {
-    display: block !important;
-    width: 100vh;
+
+  @include for-normal-layout {
+    .mini-filter-container {
+      display: block !important;
+      width: 100vh;
+    }
   }
-}
-.main-header {
-  /* grid-column: 2; */
-  margin: 0px;
-}
-@include for-mobile-layout {
-  .mini-filter {
-    display: block !important;
-    width: 100vh;
+  .main-header {
+    /* grid-column: 2; */
+    margin: 0px;
   }
-}
-.mini-filter {
-  display: flex;
-}
-&.header-explore {
-  .world-svg {
-    fill: #222222;
+  @include for-mobile-layout {
+    .mini-filter {
+      display: block !important;
+      min-width: 100vw;
+    }
   }
-  .filter {
-    display: none;
-  }
-}
-.world-img {
-  display: none;
-}
-.header-details {
-  .world-img {
-    // display: none;
-    display: block !important;
-  }
-}
-.header-features {
-  color: $clr2;
-  align-items: center;
-  height: 80px;
   .mini-filter {
     display: flex;
   }
-}
-@include for-narrow-layout {
-  visibility: hidden;
-  top: 0px;
-  grid-template-columns: 1fr;
-  /* display: flex; */
-  /* justify-content: start; */
-  /* align-items: center; */
-  /* align-content: center; */
-  /* justify-items: stretch; */
-  /* position: absolute; */
-  margin-left: -104px;
-  .mini-filter-container {
-    display: block;
+  &.header-explore {
+    .world-svg {
+      fill: #222222;
+    }
+    .filter {
+      display: none;
+    }
+  }
+  .world-img {
+    display: none;
+  }
+  .header-details {
+    .world-img {
+      // display: none;
+      display: block !important;
+    }
+  }
+  .header-features {
+    color: $clr2;
+    align-items: center;
+    height: 80px;
+    .mini-filter {
+      display: flex;
+    }
+  }
+
+  @include for-normal-layout {
+    .mini-filter-container {
+      display: none !important;
+    }
+  }
+  @include for-narrow-layout {
+    display: none;
+    top: 0px;
+    .mini-filter-container {
+      z-index: 2544;
+      display: block !important;
+      min-width: 100vw;
+    }
   }
 }
-@include for-normal-layout {
-  .mini-filter-container {
-    display: none !important;
-  }
-}
-.main-header {
-  /* grid-column: 2; */
-  margin: 0px;
-}
+
+// .main-header {
+//   /* grid-column: 2; */
+//   margin: 0px;
+// }
 
 .main-header.fix {
   position: fixed;
@@ -130,7 +127,7 @@
     display: none;
   }
   @include for-narrow-layout {
-    z-index: 25;
+    // z-index: 25;
     // background-color: $clr2;
     display: block;
     width: 100vw;
