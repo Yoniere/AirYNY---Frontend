@@ -41,11 +41,8 @@
 }
 
 .main-layout3 {
-    margin: 0 auto;
+    margin: 24px auto 0 auto;
     display: grid;
-    padding-left: rem(80px);
-    padding-right: rem(80px);
-    max-width: 1600px;
     @include for-wide-layout {
         max-width: 1120px;
         padding-left: rem(80px);

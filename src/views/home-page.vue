@@ -1,7 +1,7 @@
 <template>
   <app-header @openModalLogin="openModalLogin" />
   <main class="home-page">
-    <section class="main-hero">
+    <section class="main-hero main-layout3">
       <h1>Let your curiosity do the booking</h1>
       <button @click="flexibleClick" class="flexible">
         <h3>I'm flexible</h3>
