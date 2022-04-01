@@ -38,7 +38,7 @@ import reviews from "../components/stay-details.cmp/reviews.vue";
 import detailsMap from "../components/stay-details.cmp/details-map.vue";
 import host from "../components/stay-details.cmp/host.vue";
 import loginModal from "../components/login-modal.vue";
-
+import { socketService } from "../services/socket.service.js";
 export default {
   data() {
     return {
@@ -51,9 +51,12 @@ export default {
 
   async created() {
     const id = this.$route.params.id;
-    console.log(id)
     const stay = await stayService.getById(id);
     this.stay = stay;
+  
+    // socketService.emit("host topic", stay.host.id);
+    // 
+    // socketService.on("typing", this.typing);
   },
   components: {
     appHeader,
@@ -96,6 +99,7 @@ export default {
         }, 5000);
         return
       } 
+        
 
       try {
         const newOrder = await this.$store.dispatch({
@@ -105,10 +109,17 @@ export default {
         setTimeout(()=>{
            this.userOrder= false
         }, 5000);
+        
+         socketService.emit('addOrder', orderToSave );
+     
       } catch {
         console.error;
       }
     },
+  },
+
+  unmounted(){
+        // socketService.off("add order", this.setOrder)
   },
 };
 </script>

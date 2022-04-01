@@ -77,6 +77,7 @@
 import appHeader from '../components/app-header.vue'
 import {utilService} from '../services/util-service.js'
 import {orderService} from '../services/order-service.js'
+import {socketService} from '../services/socket.service.js'
 export default {
     data(){
         return{
@@ -89,6 +90,7 @@ async created(){
     this.$store.dispatch({ type: "loadStaysUser" });
     const user = await this.$store.getters.user
     this.user = user;
+    socketService.on("order recived", this.addOrder);
 },
 methods:{
     toggle(val){
@@ -96,9 +98,6 @@ methods:{
 
     },
       formattedTime(time){
-        // const formattedTime = time.split('')
-        // formattedTime.join()
-        // console.log(formattedTime);
          return time.slice(0,10)
 
     },
@@ -110,11 +109,21 @@ methods:{
         if(order.status === 'Approve')  order.status= 'Decline'
         else order.status = 'Approve'
         orderService.add(order)
+    },
+    addOrder(order){
+        console.log('from socket',order);
+        console.log(this.user);
+        this.user.orders.push(order)
+
     }
 
 
 },
 computed:{  
+},
+unmounted(){
+    socketService.off("order recived", this.addMsg);
+
 },
 components:{
     appHeader

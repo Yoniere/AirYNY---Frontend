@@ -2,7 +2,6 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import homePage from '../views/home-page.vue'
 import explorePage from '../views/explore-app.vue'
 import stayDetails from '../views/stay-details.vue'
-import userDetails from '../views/user-details.vue'
 import userDashboard from '../views/user-dashboard.vue'
 import userWishList from '../views/user-wish-list.vue'
 
@@ -24,11 +23,6 @@ const router = createRouter({
             path: '/stay/:id',
             name: 'stay-details',
             component: stayDetails
-        },
-        {
-            path: '/user/:id',
-            name: 'user-details',
-            component: userDetails,
         },
         {
             path: '/dashboard',

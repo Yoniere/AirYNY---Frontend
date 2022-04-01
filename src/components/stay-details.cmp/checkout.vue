@@ -263,7 +263,6 @@ export default {
       } else {
         this.pos = "d";
       }
-      console.log(window.top.scrollY);
     },
 
     scrollMeTo(id) {
