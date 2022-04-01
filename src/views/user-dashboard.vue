@@ -32,7 +32,7 @@
            <td class="stay-name-details"> {{order.name}}</td>
            <td> {{formattedTime(order.stayTime[0])}} - {{formattedTime(order.stayTime[1])}}</td> 
            <td> {{order.status}}</td>
-           <td>  $ {{order.pricePerNight}} </td>
+           <td>  $ {{order.pricePerNight}} </td>        
            <td v-if="order.status !== 'Pending'"> 
                <button class="btn clikable" @click="changeOrderStatusBack(order)"
                :style="{color: (order.status ==='Decline' ) ? 'red': 'green'}"> {{order.status}} </button> </td>
