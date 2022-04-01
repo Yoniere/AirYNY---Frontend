@@ -81,3 +81,13 @@
   color: $clr8 !important;
   
 }
+
+
+
+
+.alert-fixed{
+position: fixed;
+z-index: 200;
+top: 100px;
+width: 300px;
+}
