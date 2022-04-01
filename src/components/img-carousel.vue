@@ -2,7 +2,7 @@
   <el-carousel
     indicator-position="inside"
     :autoplay="false"
-    height="262.5px"
+    height="230px"
   
   >
     <el-carousel-item v-for="img in imgs" :key="img">

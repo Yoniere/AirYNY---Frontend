@@ -3,7 +3,7 @@
   img {
     border-radius: 12px;
     width: 100%;
-    max-height: 262.5px;
+    max-height: 230px;
     object-fit: cover;
   }
 }
@@ -78,6 +78,7 @@
 .stay-name {
   font-size: rem(16px);
   padding-top: rem(5px);
+  text-overflow: ellipsis;
 }
 
 .stay-price {

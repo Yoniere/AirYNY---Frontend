@@ -21,18 +21,18 @@
          <th>Actions </th>
     </tr>
         <tr  v-for="order in user.orders" :key="order._id">
-         <td> 
+         <td class="stay-name-details flex align-center"> 
              <div class="review-img q-pa-md q-gutter-sm">
               <q-avatar>
                 <img class="img" :src="order.ImgUrl" />
               </q-avatar>
            </div>
         </td>
-           <td> {{order.guestName}}</td>
+           <td class="stay-name-details"> {{order.guestName}}</td>
            <td class="stay-name-details"> {{order.name}}</td>
            <td> {{formattedTime(order.stayTime[0])}} - {{formattedTime(order.stayTime[1])}}</td> 
            <td> {{order.status}}</td>
-           <td> {{order.pricePerNight}} $ </td>
+           <td>  $ {{order.pricePerNight}} </td>
            <td v-if="order.status !== 'Pending'"> 
                <button class="btn clikable" @click="changeOrderStatusBack(order)"
                :style="{color: (order.status ==='Decline' ) ? 'red': 'green'}"> {{order.status}} </button> </td>
