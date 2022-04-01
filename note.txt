@@ -1,3 +1,6 @@
+price modal work input
+
+
 <template>
   <div class="price-modal">
     <div class="flex-col higer-modal-section">
@@ -7,13 +10,15 @@
       <div class="flex-row range space-between">
         <span> 30 </span>
         <HistogramSlider
+          v-model="filterBy.Price"
+          @change="setFilterPrice"
           :width="250"
           :bar-height="72"
-          :data="pricesToShow"
+          :data="prices"
           :drag-interval="true"
           :force-edges="false"
-          :min="25"
-          :max="250"
+          :min="filterByPrice.minPrice"
+          :max="filterByPrice.maxPrice"
           primaryColor="#b0b0b0"
           barRadius="6"
         />
@@ -96,6 +101,7 @@ export default {
       return Math.max(this.pricesToShow);
     },
   },
+  created: {},
 };
 </script>
 <!-- border-top-left-radius: 1px !important;
