@@ -1,5 +1,7 @@
 <template>
-  <app-header class="header-details"   @openModalLogin="openModalLogin"/>
+<section class="upper-section-header-details">
+  <app-header class="header-details details-layout"   @openModalLogin="openModalLogin"/>
+  </section>
   <section v-if="stay" class="details-layout">
     <imgs-comp :stay="stay"></imgs-comp>
     <main class="flex main-details-comp space-between">

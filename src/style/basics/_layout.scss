@@ -20,7 +20,7 @@
 }
 
 .main-layout2 {
-    margin-top: 175px;
+    margin: 24px auto 0 auto;
     display: grid;
     padding-left: rem(80px);
     padding-right: rem(80px);
@@ -38,5 +38,25 @@
         padding-left: rem(20px);
         padding-right: rem(20px);
     }
+}
 
+.main-layout3 {
+    margin: 0 auto;
+    display: grid;
+    padding-left: rem(80px);
+    padding-right: rem(80px);
+    max-width: 1600px;
+    @include for-wide-layout {
+        max-width: 1120px;
+        padding-left: rem(80px);
+        padding-right: rem(80px);
+    }
+    @include for-narrow-layout {
+        padding-left: rem(40px);
+        padding-right: rem(20px);
+    }
+    @include for-mobile-layout {
+        padding-left: rem(20px);
+        padding-right: rem(20px);
+    }
 }

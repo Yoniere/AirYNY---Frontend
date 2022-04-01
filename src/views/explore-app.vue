@@ -1,8 +1,10 @@
 <template>
-  <app-header
-    class="header-explore"
+
+  <section class="upper-section-header-details">
+  <app-header class="header-details main-layout3"
     @openModalLogin="openModalLogin"
   />
+  </section>
   <section class="main-layout2">
     <div class="explore-buttons flex">
       <button

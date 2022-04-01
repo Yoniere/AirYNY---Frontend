@@ -8,6 +8,20 @@
     z-index: 20;
     background-color: transparent;
     position: absolute;
+    .world-svg {
+        fill: white;
+    }
+    .mini-filter {
+        display: flex;
+    }
+    &.header-explore {
+        .world-svg {
+            fill: #222222;
+        }
+        .filter {
+            display: none;
+        }
+    }
     .world-img {
         display: none;
     }
@@ -20,6 +34,10 @@
     .header-features {
         color: $clr2;
         align-items: center;
+        height: 80px;
+        .mini-filter {
+            display: flex;
+        }
     }
     @include for-narrow-layout {
         visibility: hidden;
@@ -60,6 +78,39 @@
     box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08) !important;
     align-items: center;
     .world-btn.world-svg {
+        display: none;
+    }
+    .mini-filter {
+        visibility: visible;
+    }
+    .main-filter {
+        visibility: hidden
+    }
+    .logo {
+        visibility: visible;
+    }
+    a {
+        color: $clr5 !important;
+        text-shadow: none;
+        font-weight: 600;
+        font-size: rem(14px);
+    }
+    .logo {
+        content: url("https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648055648/airyny/logo2.png");
+        height: rem(70px);
+        width: rem(140px);
+    }
+    .world-btn {
+        height: 2.61875rem;
+        width: 2.8125rem;
+        border: 0px;
+        display: block !important;
+        .world-svg {
+            fill: unset;
+            color: #222222;
+        }
+    }
+    .explore-details-header {
         display: none;
     }
     @include for-narrow-layout {
@@ -110,6 +161,13 @@
     width: rem(45px);
     border: 0px;
     background-color: inherit;
+    text-align: -webkit-center;
+    margin-left: 6px;
+    margin-right: 6px;
+    padding: 0px;
+    .world-svg {
+        fill: #222222;
+    }
     .world-img {
         width: rem(19px);
         // height: rem(19px);
@@ -122,7 +180,7 @@
         font-family: Cereal-Regular;
         color: $clr2;
         text-shadow: 1px 1px 2px #000;
-        padding: 0 15px;
+        padding-left: 15px;
         font-size: 16px;
     }
 }
@@ -164,49 +222,63 @@
     }
 }
 
-.header-details {
-    grid-template-rows: 1fr;
-    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08) !important;
-    top: 0;
-    position: static !important;
-    color: $clr3;
-    height: 80px !important;
-    transition: 0s;
-    .main-filter {
-        color: $clr5;
-    }
-    .filter {
-        display: none;
-    }
-    .filter.hide {
-        visibility: unset;
-        position: static;
-        display: flex;
-        transform: unset;
-    }
-    //  .filter.hide
-    .mini-filter {
-        margin-top: rem(10px);
-        visibility: visible;
-        top: 40px;
-        z-index: 40;
-        position: absolute;
-    }
-    a {
-        color: $clr5 !important;
-        text-shadow: none;
-        font-weight: 600;
-    }
-    .logo {
-        content: url("https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648055648/airyny/logo2.png");
-        height: rem(70px);
-        width: rem(140px);
-    }
-    .world-btn {
-        height: 2.61875rem;
-        width: 2.8125rem;
-        border: 0px;
-        display: block !important;
+.upper-section-header-details {
+    background-color: transparent;
+    box-shadow: 0 1px 12px rgb(0 0 0 / 8%);
+    color: #ddd;
+    .header-details {
+        display: block;
+        // grid-template-rows: 1fr;
+        // box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
+        top: 0;
+        position: static !important;
+        color: $clr3;
+        height: 80px !important;
+        transition: 0s;
+        .main-filter {
+            color: $clr5;
+        }
+        .filter {
+            display: none;
+        }
+        .filter.hide {
+            visibility: unset;
+            position: static;
+            display: flex;
+            transform: unset;
+        }
+        //  .filter.hide
+        .mini-filter {
+            // margin-top: rem(10px);
+            visibility: visible;
+            top: 40px;
+            z-index: 40;
+            position: absolute;
+        }
+        a {
+            color: $clr5 !important;
+            text-shadow: none;
+            font-weight: 600;
+            font-size: rem(14px);
+        }
+        .logo {
+            content: url("https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648055648/airyny/logo2.png");
+            height: rem(70px);
+            width: rem(140px);
+        }
+        .world-btn {
+            height: 2.61875rem;
+            width: 2.8125rem;
+            border: 0px;
+            display: block !important;
+            .world-svg {
+                fill: unset;
+                color: #222222;
+            }
+        }
+        .explore-details-header {
+            display: none;
+        }
     }
 }
 
@@ -246,13 +318,13 @@
         height: rem(70px);
         width: rem(140px);
     }
-    .world-svg {
+    .layout {
         color: black !important;
         height: rem(19px);
     }
     .header-fix {
         .world-svg {
-            display: none !important;
+            display: block !important;
         }
     }
 }
