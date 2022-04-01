@@ -30,17 +30,23 @@
       <div
         class="main-time-picker input-container flex-col date-list"
       >
-        <span class="demonstration"></span>
-        <el-date-picker
-          v-model="filterBy.stayTime"
-          type="daterange"
-          range-separator=""
-          start-placeholder="Check in"
-          end-placeholder="Check out"
-        >
-        </el-date-picker>
-      </div>
+        <div class="container-check">
+          <div class="container-check flex">
+            <span class="btn-check-in">Check in</span
+            ><span class="btn-check-out">Check out</span>
+          </div>
 
+          <span class="demonstration"></span>
+          <el-date-picker
+            v-model="filterBy.stayTime"
+            type="daterange"
+            range-separator=""
+            start-placeholder="Add dates"
+            end-placeholder="Add dates"
+          >
+          </el-date-picker>
+        </div>
+      </div>
       <div
         class="input-container flex-col"
         @click="openModal"
