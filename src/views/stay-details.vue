@@ -3,6 +3,7 @@
   <app-header class="header-details details-layout"   @openModalLogin="openModalLogin"/>
   </section>
   <section v-if="stay" class="details-layout">
+    <el-alert  title="order Aprrove" v-if="orderStatus" type="success" class="alert-fixed" />
     <imgs-comp :stay="stay"></imgs-comp>
     <main class="flex main-details-comp space-between">
       <section class="flex-col">
@@ -22,6 +23,9 @@
     <details-map :stay="stay"></details-map>
     <host :stay="stay"></host>
     <login-modal v-if="modalLoginIsOpen" @login="setLogin" @closeLoginModal="closeLoginModal" />
+  
+  
+    
   </section>
 </template>
 
@@ -48,6 +52,8 @@ export default {
       modalLoginIsOpen:false,
       userOrder: false,
       fullDetailsOrder:false,
+      orderStatus:false,
+      msg:'',
     };
   },
 
@@ -56,9 +62,8 @@ export default {
     const stay = await stayService.getById(id);
     this.stay = stay;
   
-    // socketService.emit("host topic", stay.host.id);
-    // 
-    // socketService.on("typing", this.typing);
+    socketService.emit("host topic", stay.host.id);
+    socketService.on("order-status-change", this.changeOrderStatus);
   },
   components: {
     appHeader,
@@ -85,11 +90,21 @@ export default {
       userService.login(user)
       this.modalLoginIsOpen= false    
       },
+    changeOrderStatus(msg){
+      this.msg=msg
+        this.orderStatus= true
+        setTimeout(()=>{
+           this.orderStatus= false
+        }, 10000);
+
+
+      },
     async setOrder(filterBy) {
       const order = orderService.getEmptyOrder();
       order.name = this.stay.name;
       order.country = this.stay.address.country;
       order.stay_id = this.stay.id;
+      order.hostId = this.stay.host.id;
       order.pricePerNight = this.stay.price;
       order.guests = filterBy.guests;
       order.stayTime = filterBy.stayTime;

@@ -38,13 +38,24 @@ async function getUserLikedStays(likedStays) {
     })
   );
 }
-async function getUserOrder() {
+async function getUserOrder(entityId) {
+  let userOrders =[]
+  const orders = await orderService.query();
   try {
-    const orders = await orderService.query();
-    return orders;
+    userOrders =  orders.filter(order => order.hostId === entityId )
+    return userOrders;
   } catch {
     console.error("cannot get user order");
   }
+// async function getUserOrder() {
+//   const orders = await orderService.query();
+//   try {
+//     orders =  stays.filter(stay => stay.host.id === entityId )
+//     const orders = await orderService.getById();
+//     return orders;
+//   } catch {
+//     console.error("cannot get user order");
+//   }
 }
 // async function getUserOrdar(entityId){
 //     const orders =[]

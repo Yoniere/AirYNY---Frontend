@@ -6,6 +6,7 @@
 <script>
 
 import appFooter from "./components/app-footer.vue";
+
 export default {
   name: "app",
   components: {
@@ -13,6 +14,7 @@ export default {
   },
   created() {
         this.$store.dispatch({ type: 'loadStays' })
+
   },
 };
 </script>
