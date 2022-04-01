@@ -21,10 +21,19 @@
     );
   }
   @include for-mobile-layout {
-    grid-template-rows: repeat(
-      auto-fit,
-      minmax(200px, 1fr)
-    );
+    .main-layout {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    display: flex;
+    padding: 9px -22px;
+
+    grid-column: 200px;
+
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: center;
   }
 }
 .popular-dest-list {
@@ -39,6 +48,9 @@
     line-height: 47px;
     margin-top: -1px;
     margin-bottom: rem(48px);
+
+    @include for-mobile-layout {
+    }
   }
 }
 .home-card {
@@ -54,9 +66,10 @@
     // height: 50vh;
     object-fit: cover;
     border-bottom: 0px;
-    max-height: 450px;
+    max-height: 300px;
     @include for-narrow-layout {
-      max-height: 200px;
+      min-height: 200px;
+      min-width: 214px;
     }
   }
 
@@ -79,7 +92,7 @@
 }
 .txt-container {
   position: absolute;
-  bottom: 0px;
+  bottom: 2px;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
   background-color: #05050566;
@@ -98,7 +111,18 @@
     margin-left: rem(18px);
   }
   @include for-narrow-layout {
-    bottom: 11px;
+    // bottom: 11px;
+  }
+  @include for-mobile-layout {
+    bottom: 6px;
+    height: 30px;
+    line-height: 6px;
+    /* font-weight: 200; */
+    /* font-size: 4px; */
+    padding-bottom: 52px;
+    .home-card .popular {
+      padding-top: 0px;
+    }
   }
 }
 .unique-dest-list {
