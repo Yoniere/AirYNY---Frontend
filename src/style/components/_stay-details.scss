@@ -1017,6 +1017,12 @@
     width: rem(108.219px);
     height: rem(48px);
     min-width: unset;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+  .pricing{
+    display: none;
   }
   .checkout-nav {
     display: block;
@@ -1040,9 +1046,22 @@
         }
       }
     }
+    
   }
 }
-
+.pricing {
+  p:first-child {
+    text-align: center;
+    font-size: 13px;
+  margin-top: 16px;
+  }
+  p:last-child {
+    font-weight: 600;
+    padding-top: 16px;
+    margin-top: 8px;
+    border-top: 1px solid $clr3!important;
+}
+}
 // .checkout {}
 .checkout .date-input-checkout {
   .date-input-checkout:nth-child(1) {

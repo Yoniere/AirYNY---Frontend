@@ -27,7 +27,7 @@
     &.small-btn {
         width: 77px;
     }
-    &:active {
+    &:focus {
         border: 2px solid black
     }
 }

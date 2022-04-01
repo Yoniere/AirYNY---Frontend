@@ -83,6 +83,7 @@
     </div>
 
     <h1>{{ title }}</h1>
+    <div v-if="!stays.length"><img src="../assets/loader.gif" /> </div>
     <stay-list
       :stays="stays"
       v-if="stays"

@@ -116,8 +116,14 @@
         @mousemove="calcMouse"
         :style="mousePos"
       >
-        Reserve
+      {{getReserveButton}}
+      
       </button>
+      <div class="pricing" v-if="fullDetailsOrder"><p>You won't be charged yet</p>
+      <p class="flex space-between"><span>Price</span><span> $ {{getPrice}} </span></p>
+      <p class="flex space-between"><span>Service fee</span> <span>$25</span>
+      </p><p class="flex space-between"><span>Total</span><span> ${{(getPrice+ 25)}}</span></p>
+      </div>
     </section>
     <div class="nav-bar-section">
       <nav class="checkout-nav">
@@ -158,6 +164,7 @@ export default {
       x: 0,
       y: 0,
       filterBy: null,
+      fullDetailsOrder: false,
     };
   },
   created() {
@@ -187,6 +194,15 @@ export default {
   computed: {
     getRating() {
       return this.stay.reviewScores.rating / 10;
+    },
+    getPrice(){
+      const days = Math.abs(this.filterBy.stayTime[1] - this.filterBy.stayTime[0])
+      const diffDays = Math.ceil(days / (1000 * 60 * 60 * 24))
+      return (diffDays * this.stay.price)
+    },
+    getReserveButton(){
+      return this.fullDetailsOrder ? 'Reserve' : '  Check availability'
+
     },
     mousePos() {
       return {
@@ -234,6 +250,7 @@ export default {
           this.filterBy.guests.adults +
           this.filterBy.guests.kids +
           this.filterBy.guests.Infants;
+         this.fullDetailsOrder= true
         return `${count} guests`;
       }
     },
