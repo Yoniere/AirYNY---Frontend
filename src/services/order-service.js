@@ -44,6 +44,7 @@ async function add(orderDetails) {
         } 
            else{
             const addedOrder = await httpService.post(ENDPOINT, orderDetails)
+            console.log(addedOrder);
             return addedOrder
            } 
 
@@ -60,6 +61,7 @@ function getEmptyOrder() {
     if(!userName)  userName = {fullname:'guset'}
     return {
         name: '',
+        hostId:'',
         country: '',
         guestName:userName.fullname,
         stay_id: '',

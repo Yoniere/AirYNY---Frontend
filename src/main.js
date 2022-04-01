@@ -5,7 +5,7 @@ import store from './store'
 import VueGoogleMaps from '@fawmi/vue-google-maps'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-import { Quasar } from 'quasar'
+import { Quasar , Dialog } from 'quasar'
 import VCalendar from 'v-calendar';
 import { SetupCalendar, Calendar, DatePicker } from 'v-calendar';
 // import { closeDirevtive, focusDirective } from './directives'
@@ -16,6 +16,7 @@ import "vue3-histogram-slider/dist/histogram-slider.css";
 
 //style
 import './style/styles.scss'
+
 
 
 
@@ -35,7 +36,12 @@ app.use(VueGoogleMaps, {
 // app.directive('click-outside', clickOutside)
 // app.directive('close-modal', closeDirevtive)
 app.use(store)
-app.use(Quasar)
+app.use(Quasar, {
+    plugins: {
+      Dialog
+    }
+  })
+  
 app.use(router)
 app.use(ElementPlus)
 app.component(HistogramSlider.name, HistogramSlider);

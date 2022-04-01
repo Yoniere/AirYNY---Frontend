@@ -2,7 +2,7 @@
   <section>
     <section v-if="userLogged" class="user-modal flex-col">
       <router-link to="/"> Messages</router-link>
-      <router-link to="/"> Trips</router-link>
+     <router-link to="/"> Trips</router-link>
       <router-link to="/wishList"> Wish List</router-link>
       <router-link to="/dashboard"> Dashboard</router-link>
       <router-link to="/"> Account</router-link>
@@ -42,6 +42,7 @@ export default {
       this.$emit("closeModalDetails");
       this.$store.dispatch({ type: "logout" });
       this.$router.push("/");
+      window.scrollTo( 0,  0);
     },
   },
   components: {},

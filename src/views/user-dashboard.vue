@@ -21,18 +21,18 @@
          <th>Actions </th>
     </tr>
         <tr  v-for="order in user.orders" :key="order._id">
-         <td> 
+         <td class="stay-name-details flex align-center"> 
              <div class="review-img q-pa-md q-gutter-sm">
               <q-avatar>
                 <img class="img" :src="order.ImgUrl" />
               </q-avatar>
            </div>
         </td>
-           <td> {{order.guestName}}</td>
+           <td class="stay-name-details"> {{order.guestName}}</td>
            <td class="stay-name-details"> {{order.name}}</td>
            <td> {{formattedTime(order.stayTime[0])}} - {{formattedTime(order.stayTime[1])}}</td> 
            <td> {{order.status}}</td>
-           <td> {{order.pricePerNight}} $ </td>
+           <td>  $ {{order.pricePerNight}} </td>
            <td v-if="order.status !== 'Pending'"> 
                <button class="btn clikable" @click="changeOrderStatusBack(order)"
                :style="{color: (order.status ==='Decline' ) ? 'red': 'green'}"> {{order.status}} </button> </td>
@@ -90,7 +90,8 @@ async created(){
     this.$store.dispatch({ type: "loadStaysUser" });
     const user = await this.$store.getters.user
     this.user = user;
-    socketService.on("order recived", this.addOrder);
+    socketService.on('host topic', user.id);
+    socketService.on("order recived", this.addOrder)
 },
 methods:{
     toggle(val){
@@ -104,6 +105,8 @@ methods:{
     changeOrderStatus(order,val){
         order.status = val
         orderService.add(order)
+        const msg = val
+        socketService.emit('order-status-change', msg);
     },
     changeOrderStatusBack(order){
         if(order.status === 'Approve')  order.status= 'Decline'
@@ -111,9 +114,7 @@ methods:{
         orderService.add(order)
     },
     addOrder(order){
-        console.log('from socket',order);
-        console.log(this.user);
-        this.user.orders.push(order)
+        this.user.orders.unshift(order)
 
     }
 
@@ -123,6 +124,7 @@ computed:{
 },
 unmounted(){
     socketService.off("order recived", this.addMsg);
+       socketService.off('host topic', user.id);
 
 },
 components:{

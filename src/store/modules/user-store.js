@@ -41,6 +41,11 @@ export default {
       state.loggedinUser.orders = orders;
       userService.saveUser(state.loggedinUser);
     },
+    addOrderUser(state, { newOrder }) {
+      state.loggedinUser.orders.unshift(newOrder);
+      console.log(newOrder);
+      userService.saveUser(state.loggedinUser);
+    },
     setLikedStay(state, { stayId }) {
       if(!state.loggedinUser) return
       if (!state.loggedinUser.likedStays){
@@ -90,7 +95,7 @@ export default {
       try {
         const stays = await userService.getUserStays(state.loggedinUser.id);
         commit({ type: "setStaysUser", stays });
-        const orders = await userService.getUserOrder();
+        const orders = await userService.getUserOrder(state.loggedinUser.id);
         commit({ type: "setOrderUser", orders });
       } catch (err) {
         console.error("Cannot Load stays", err);
