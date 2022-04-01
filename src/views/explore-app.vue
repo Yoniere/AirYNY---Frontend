@@ -136,8 +136,8 @@ export default {
     openModalLogin() {
       this.modalLoginIsOpen = true;
     },
-        closeLoginModal(){
-      this.modalLoginIsOpen = false
+    closeLoginModal() {
+      this.modalLoginIsOpen = false;
     },
     async setLogin(user) {
       try {

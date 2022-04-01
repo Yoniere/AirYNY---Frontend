@@ -77,6 +77,7 @@
 import appHeader from '../components/app-header.vue'
 import {utilService} from '../services/util-service.js'
 import {orderService} from '../services/order-service.js'
+import {socketService} from '../services/socket.service.js'
 export default {
     data(){
         return{
@@ -97,9 +98,6 @@ methods:{
 
     },
       formattedTime(time){
-        // const formattedTime = time.split('')
-        // formattedTime.join()
-        // console.log(formattedTime);
          return time.slice(0,10)
 
     },
@@ -114,6 +112,7 @@ methods:{
     },
     addOrder(order){
         console.log('from socket',order);
+        console.log(this.user);
         this.user.orders.push(order)
 
     }
@@ -121,6 +120,10 @@ methods:{
 
 },
 computed:{  
+},
+unmounted(){
+    socketService.off("order recived", this.addMsg);
+
 },
 components:{
     appHeader

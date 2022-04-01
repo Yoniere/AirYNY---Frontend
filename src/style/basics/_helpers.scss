@@ -35,7 +35,7 @@
   padding: 0;
   margin: 0;
 }
-.align-center{
+.align-center {
   align-items: center;
 }
 
@@ -48,16 +48,18 @@
 .tag-text {
   text-transform: uppercase;
 }
-.bold{
+.bold {
   font-weight: bold;
 }
 
-.clickable{
+.clickable {
   cursor: pointer;
 }
 .hide {
   visibility: hidden;
 }
-.relative{
+.relative {
   position: relative;
+  opacity: 1;
+  pointer-events: auto;
 }
