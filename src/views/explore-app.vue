@@ -1,7 +1,7 @@
 <template>
 
   <section class="upper-section-header-details">
-  <app-header class="header-details main-layout3"
+  <app-header class="header-details main-layout2"
     @openModalLogin="openModalLogin"
   />
   </section>
