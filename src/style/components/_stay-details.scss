@@ -815,125 +815,127 @@
     @include for-narrow-layout {
         margin: 0px;
     }
-    .fixed {
-        margin-bottom: 48px;
-        position: sticky;
-        top: rem(50px);
-        .reserve-btn {
-            height: rem(48px);
-        }
-        @include for-narrow-layout {
-            margin-bottom: 0px;
-            top: unset;
-            margin-top: 0rem;
-            position: fixed;
-            bottom: 0px;
-            z-index: 100;
-            height: 5rem;
-            justify-content: space-between;
-            padding-left: rem(24px);
-            padding-right: rem(24px);
-            padding-top: rem(16px);
-            padding-bottom: rem(16px);
-            background-color: #fff;
-            display: flex;
-            flex-direction: row;
-            width: -webkit-fill-available;
-            left: 0px;
-            align-items: center;
-            .checkout-section {
-                display: flex;
-                align-items: center;
-                width: 100%;
-                justify-content: space-between;
-            }
-            .reserve-btn {
-                min-width: unset;
-                align-items: center;
-                width: rem(176px);
-                height: rem(48px);
-                display: block;
-            }
-            .checkout-title-right {
-                margin-bottom: 0px !important;
-            }
-            .checkout-title {
-                flex-direction: column;
-                margin-right: rem(15px);
-            }
-            .checkout-title-right .card-rate {
-                margin-left: 0px !important;
-            }
-            .el-date-editor {
-                display: none;
-            }
-            .date-input {
-                display: none;
-            }
-            .guests-input {
-                display: none;
-            }
-            .pricing {
-                display: none;
-            }
-        }
+}
+
+.fixed {
+    margin-bottom: 48px;
+    position: sticky;
+    top: rem(50px);
+    .reserve-btn {
+        height: rem(48px);
     }
-    .static {
-        margin-top: rem(50px);
+    @include for-narrow-layout {
+        margin-bottom: 0px;
+        top: unset;
+        margin-top: 0rem;
+        position: fixed;
+        bottom: 0px;
+        z-index: 100;
+        height: 5rem;
+        justify-content: space-between;
+        padding-left: rem(24px);
+        padding-right: rem(24px);
+        padding-top: rem(16px);
+        padding-bottom: rem(16px);
+        background-color: #fff;
+        display: flex;
+        flex-direction: row;
+        width: -webkit-fill-available;
+        left: 0px;
+        align-items: center;
+        .checkout-section {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+        }
         .reserve-btn {
             min-width: unset;
-            // align-items: center;
-            // width: rem(176px);
-            height: rem(48px);
-            // display: block;
-        }
-        @include for-narrow-layout {
-            margin-top: 0rem;
-            position: fixed;
-            bottom: 0px;
-            z-index: 100;
-            height: 5rem;
-            justify-content: space-between;
-            padding-left: rem(24px);
-            padding-right: rem(24px);
-            padding-top: rem(16px);
-            padding-bottom: rem(16px);
-            background-color: #fff;
-            width: -webkit-fill-available;
-            left: 0px;
             align-items: center;
-            .checkout-section {
-                display: flex;
-                align-items: center;
-                width: 100%;
-                justify-content: space-between;
-            }
-            .reserve-btn {
-                min-width: unset;
-                align-items: center;
-                width: rem(176px);
-                height: rem(48px);
-                display: block;
-            }
-            .checkout-title-right {
-                margin-bottom: 0px !important;
-            }
-            .checkout-title {
-                flex-direction: column;
-                margin-right: rem(15px);
-            }
-            .checkout-title-right .card-rate {
-                margin-left: 0px !important;
-            }
-            .el-date-editor {
-                display: none;
-            }
-            .date-input {
-                display: none;
-            }
-            .guests-input {
-                display: none;
-            }
+            width: rem(176px);
+            height: rem(48px);
+            display: block;
+        }
+        .checkout-title-right {
+            margin-bottom: 0px !important;
+        }
+        .checkout-title {
+            flex-direction: column;
+            margin-right: rem(15px);
+        }
+        .checkout-title-right .card-rate {
+            margin-left: 0px !important;
+        }
+        .el-date-editor {
+            display: none;
+        }
+        .date-input {
+            display: none;
+        }
+        .guests-input {
+            display: none;
+        }
+        .pricing {
+            display: none;
+        }
+    }
+}
+
+.static {
+    margin-top: rem(50px);
+    .reserve-btn {
+        min-width: unset;
+        // align-items: center;
+        // width: rem(176px);
+        height: rem(48px);
+        // display: block;
+    }
+    @include for-narrow-layout {
+        margin-top: 0rem;
+        position: fixed;
+        bottom: 0px;
+        z-index: 100;
+        height: 5rem;
+        justify-content: space-between;
+        padding-left: rem(24px);
+        padding-right: rem(24px);
+        padding-top: rem(16px);
+        padding-bottom: rem(16px);
+        background-color: #fff;
+        width: -webkit-fill-available;
+        left: 0px;
+        align-items: center;
+        .checkout-section {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .reserve-btn {
+            min-width: unset;
+            align-items: center;
+            width: rem(176px);
+            height: rem(48px);
+            display: block;
+        }
+        .checkout-title-right {
+            margin-bottom: 0px !important;
+        }
+        .checkout-title {
+            flex-direction: column;
+            margin-right: rem(15px);
+        }
+        .checkout-title-right .card-rate {
+            margin-left: 0px !important;
+        }
+        .el-date-editor {
+            display: none;
+        }
+        .date-input {
+            display: none;
+        }
+        .guests-input {
+            display: none;
         }
     }
 }
@@ -1017,39 +1019,38 @@
     max-width: rem(1120px);
 }
 
-.static-second {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    margin-bottom: 50px;
-    @include for-narrow-layout {
-        margin-top: 0rem;
-        position: fixed;
-        bottom: 0px;
-        z-index: 100;
-        height: 5rem;
-        justify-content: space-between;
-        padding-left: rem(24px);
-        padding-right: rem(24px);
-        padding-top: rem(16px);
-        padding-bottom: rem(16px);
-        background-color: #fff;
-        display: flex;
-        flex-direction: row;
-        width: -webkit-fill-available;
-        left: 0px;
-        .el-date-editor {
-            display: none;
-        }
-        .date-input {
-            display: none;
-        }
-        .guests-input {
-            display: none;
-        }
-    }
-}
-
+// .static-second {
+//     position: absolute;
+//     bottom: 0px;
+//     right: 0px;
+//     margin-bottom: 50px;
+//     @include for-narrow-layout {
+//         margin-top: 0rem;
+//         position: fixed;
+//         bottom: 0px;
+//         z-index: 100;
+//         height: 5rem;
+//         justify-content: space-between;
+//         padding-left: rem(24px);
+//         padding-right: rem(24px);
+//         padding-top: rem(16px);
+//         padding-bottom: rem(16px);
+//         background-color: #fff;
+//         display: flex;
+//         flex-direction: row;
+//         width: -webkit-fill-available;
+//         left: 0px;
+//         .el-date-editor {
+//             display: none;
+//         }
+//         .date-input {
+//             display: none;
+//         }
+//         .guests-input {
+//             display: none;
+//         }
+//     }
+// }
 .fixed-top {
     margin-top: 0px;
     top: 0px;
