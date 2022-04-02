@@ -447,36 +447,53 @@
 }
 
 .container-check {
-  color: #222222;
-  font-family: Cereal-Regular;
+  font-weight: 400;
 
-  font-size: 12px !important;
-  line-height: 16px;
+  // background-color: transparent;
+  font-family: Cereal-Regular;
+  word-spacing: 0px;
+  // text-align: left;
+  margin: 0px;
+  color: #717171;
+
+  font-size: 14px !important;
+  line-height: 42px;
   // padding-bottom: 2px;
   letter-spacing: 0.48px;
+  width: 268px;
+  letter-spacing: 0.48px;
   .btn-check-in {
-    font-weight: 200;
-    margin-left: 23px;
-    margin-bottom: -7px;
+    margin-left: -18px;
+    margin-bottom: 28px;
+    height: 20px;
+    margin-right: 15px;
+    width: 140px;
   }
 
   .btn-check-out {
-    font-weight: 200;
-    margin-left: 158px;
+    margin-left: 54px;
+    width: 112px;
+    height: 20px;
   }
-
-  .el-date-picker {
-    color: #717171 !important;
-  }
-  // .el-date-editor .el-range-input {
-  //   color: #717171;
-  // }
 }
 
-// font-family: Cereal-Regular;
-// font-size: 14px;
-// line-height: 18px;
-// word-spacing: 0px;
-// text-align: left;
-// margin: 0px;
-// color: #717171;
+.el-date-editor .el-range-input {
+  font-family: Cereal-Regular;
+  -webkit-appearance: none;
+  /* appearance: none; */
+  border: none;
+  outline: 0;
+  display: inline-block;
+  height: 100%;
+  margin: 0;
+  /* color: coral; */
+  padding: 0;
+  margin-top: 24px;
+  width: 39%;
+  margin-left: -20px;
+  /* left: -30px; */
+  font-weight: bold;
+  /* font-weight: 400; */
+  text-align: center;
+  font-size: 12px !important;
+}
