@@ -464,9 +464,13 @@
     font-weight: 200;
     margin-left: 158px;
   }
-  .el-date-editor .el-range-input {
-    color: #717171;
+
+  .el-date-picker {
+    color: #717171 !important;
   }
+  // .el-date-editor .el-range-input {
+  //   color: #717171;
+  // }
 }
 
 // font-family: Cereal-Regular;

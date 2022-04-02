@@ -40,11 +40,10 @@
           <el-date-picker
             v-model="filterBy.stayTime"
             type="daterange"
-            range-separator=""
+            range-separator="|"
             start-placeholder="Add dates"
             end-placeholder="Add dates"
             size="small"
-            @visible-change="true"
           >
           </el-date-picker>
         </div>
