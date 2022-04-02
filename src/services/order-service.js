@@ -12,7 +12,8 @@ export const orderService = {
     add,
     query,
     getById,
-    getEmptyOrder
+    getEmptyOrder,
+    getTotalPrice,
 }
 
 
@@ -25,8 +26,12 @@ async function query() {
     }
 }
 
+function getTotalPrice(order){
+    const days = Math.abs(order.stayTime[1] - order.stayTime[0])
+    const diffDays = Math.ceil(days / (1000 * 60 * 60 * 24))
+    return (diffDays * order.pricePerNight)
 
-
+}
 async function getById(entityId) {
     try {
         return await httpService.get(`${ENDPOINT}/${entityId}`)
