@@ -172,11 +172,20 @@
         </div>
       </label>
     </div>
+     <form class="filterInMobile" @submit.prevent="setFilter">
+           <input
+            type="text"
+            placeholder="Where are you going?"
+            v-model="filterBy.country"
+          />
+          <button> search</button>
+      </form>
   </section>
 </template>
 
 <script>
 import { utilService } from "../services/util-service.js";
+
 
 export default {
   name: "stay-filter",

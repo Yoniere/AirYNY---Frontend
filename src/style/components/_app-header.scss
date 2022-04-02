@@ -38,6 +38,7 @@
     .filter {
       display: none;
     }
+  
   }
   .world-img {
     display: none;
@@ -327,6 +328,7 @@
     transition: 0s;
     .main-filter {
       color: $clr5;
+      display: none;
     }
     .filter {
       // display: none;
@@ -336,7 +338,13 @@
       position: static;
       display: flex;
       transform: unset;
+      .main-filter {
+      display: flex;
     }
+  }
+ 
+
+  
     //  .filter.hide
     .mini-filter {
       // margin-top: rem(10px);
@@ -377,7 +385,7 @@
 
 .main-header.fix.header-details {
   .filter.hide {
-    display: none !important;
+    display: none ;
   }
 }
 
@@ -420,6 +428,9 @@
       display: block !important;
     }
   }
+  .mini-filter{
+    visibility: unset;
+  }
 }
 
 .user-details {
@@ -455,7 +466,7 @@
     visibility: hidden;
   }
   .mini-filter {
-    visibility: hidden;
+    // visibility: hidden;
   }
 }
 
