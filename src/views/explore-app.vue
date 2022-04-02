@@ -75,15 +75,21 @@
       </button>
       <typePlaceModal v-if="modalType" @sort="setSort" />
       <button class="sort-btn small-btn" @click="setSortAmenities('Wifi')">Wifi</button>
-      <button class="sort-btn small-btn" @click="setSortAmenities('TV')">Elevator</button>
-      <button class="sort-btn" @click="setSortAmenities('Kitchen')">Gym</button>
+      <button class="sort-btn small-btn" @click="setSortAmenities('TV')">TV</button>
+      <button class="sort-btn" @click="setSortAmenities('Kitchen')">Kitchen</button>
       <button class="sort-btn small-btn" @click="setSortAmenities('AC')">AC</button>
       <button class="sort-btn" @click="setSortAmenities('Smoking Allowed')">Smoking Allowed</button>
       <button class="sort-btn" @click="setSortAmenities('Pet Allowed')">Pet Allowed</button>
+      <button class="sort-btn" @click="setSortAmenities('Pet Allowed')">Gym</button>
+      <button class="sort-btn" @click="setSortAmenities('Pet Allowed')">Elevator</button>
+      <button class="sort-btn" @click="setSortAmenities('Pet Allowed')">Breakfast</button>
+      <button class="sort-btn" @click="setSortAmenities('Pet Allowed')">Pool</button>
+      <button class="sort-btn" @click="setSortAmenities('Pet Allowed')">Washer</button>
+      <button class="sort-btn" @click="setSortAmenities('Pet Allowed')">Iron</button>
     </div>
 
     <h1>{{ title }}</h1>
-    <div v-if="!stays.length"><img src="../assets/loader.gif" /> </div>
+    <div v-if="!stays.length"><img class="loading-img" src="../assets/loader.gif" /> </div>
     <stay-list
       :stays="stays"
       v-if="stays"

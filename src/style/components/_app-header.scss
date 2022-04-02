@@ -98,7 +98,7 @@
     visibility: visible;
   }
   .main-filter {
-    visibility: hidden;
+    // visibility: hidden;
   }
   .logo {
     visibility: visible;
@@ -316,7 +316,7 @@
       color: $clr5;
     }
     .filter {
-      display: none;
+      // display: none;
     }
     .filter.hide {
       visibility: unset;
@@ -445,3 +445,34 @@
     visibility: hidden;
   }
 }
+
+.container-check {
+  color: #222222;
+  font-family: Cereal-Regular;
+
+  font-size: 12px !important;
+  line-height: 16px;
+  // padding-bottom: 2px;
+  letter-spacing: 0.48px;
+  .btn-check-in {
+    font-weight: 200;
+    margin-left: 23px;
+    margin-bottom: -7px;
+  }
+
+  .btn-check-out {
+    font-weight: 200;
+    margin-left: 158px;
+  }
+  .el-date-editor .el-range-input {
+    color: #717171;
+  }
+}
+
+// font-family: Cereal-Regular;
+// font-size: 14px;
+// line-height: 18px;
+// word-spacing: 0px;
+// text-align: left;
+// margin: 0px;
+// color: #717171;
