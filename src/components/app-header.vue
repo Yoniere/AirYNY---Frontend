@@ -142,6 +142,7 @@ export default {
     },
     toggle() {
       this.openfilter = !this.openfilter;
+      console.log(this.openfilter)
     },
     setMiniFilter(filterBy) {
       this.filter = filterBy;
