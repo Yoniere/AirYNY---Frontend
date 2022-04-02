@@ -460,24 +460,20 @@
 }
 
 .container-check {
-  font-weight: 400;
+  font-weight: bold;
 
   // background-color: transparent;
   font-family: Cereal-Regular;
-  word-spacing: 0px;
-  // text-align: left;
-  margin: 0px;
-  color: #717171;
 
-  font-size: 14px !important;
-  line-height: 42px;
-  // padding-bottom: 2px;
-  letter-spacing: 0.48px;
+  // text-align: left;
+  margin-top: -1px;
+  color: #222222;
+  font-size: 12px !important;
+
   width: 268px;
-  letter-spacing: 0.48px;
   .btn-check-in {
     margin-left: -18px;
-    margin-bottom: 28px;
+    margin-bottom: -3px;
     height: 20px;
     margin-right: 15px;
     width: 140px;
@@ -487,26 +483,30 @@
     margin-left: 54px;
     width: 112px;
     height: 20px;
+    margin-top: 0px;
   }
 }
 
-.el-date-editor .el-range-input {
-  font-family: Cereal-Regular;
-  -webkit-appearance: none;
-  /* appearance: none; */
-  border: none;
-  outline: 0;
-  display: inline-block;
-  height: 100%;
-  margin: 0;
-  /* color: coral; */
-  padding: 0;
-  margin-top: 24px;
-  width: 39%;
-  margin-left: -20px;
-  /* left: -30px; */
-  font-weight: bold;
-  /* font-weight: 400; */
-  text-align: center;
-  font-size: 12px !important;
+.main-time-picker {
+  .el-date-editor .el-range-input {
+    font-family: Cereal-Regular;
+    -webkit-appearance: none;
+
+    padding: -1px;
+    margin-top: 36px;
+    margin-right: 73px;
+    margin-bottom: 41px;
+    /* width: 39%; */
+    margin-left: -91px;
+    /* font-weight: 400; */
+    font-family: Cereal-Regular;
+    /* word-spacing: 0px; */
+    /* margin: 0px; */
+    color: #222222;
+    font-size: 14px !important;
+    line-height: 42px;
+  }
+  .el-date-editor .el-range-input::placeholder {
+    color: #717171;
+  }
 }

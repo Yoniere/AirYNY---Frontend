@@ -50,22 +50,22 @@
       <div
         class="main-time-picker input-container flex-col date-list"
       >
+        <div class="container-check">
+          <div class="container-check flex">
+            <span class="btn-check-in"> Check in</span
+            ><span class="btn-check-out"> Check out </span>
+          </div>
+        </div>
         <span class="demonstration"></span>
         <el-date-picker
           v-model="filterBy.stayTime"
           type="daterange"
           range-separator=""
-          start-placeholder="Check in "
-          end-placeholder="Check out"
+          start-placeholder="Add dates "
+          end-placeholder="Add dates"
           size="small"
         >
         </el-date-picker>
-        <div class="container-check">
-          <div class="container-check flex">
-            <span class="btn-check-in">Add dates</span
-            ><span class="btn-check-out"> Add dates</span>
-          </div>
-        </div>
       </div>
       <svg
         class="line-container-2"

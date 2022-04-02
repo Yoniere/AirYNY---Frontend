@@ -49,18 +49,20 @@
         </div>
       </div>
 
-      <el-date-picker
-        class="date-input-checkout"
-        v-model="this.filterBy.stayTime"
-        type="daterange"
-        range-separator=""
-        start-placeholder="Check in"
-        placeholder="add date"
-        end-placeholder="Check out"
-        text="12"
-      >
-      </el-date-picker>
-
+      <div class="date-input-container">
+        <span class="check-in">Check in</span>
+        <span class="check-out">Check out</span>
+        <el-date-picker
+          class="date-input-checkout"
+          v-model="this.filterBy.stayTime"
+          type="daterange"
+          range-separator=""
+          start-placeholder="add date"
+          end-placeholder="add date"
+          text="12"
+        >
+        </el-date-picker>
+      </div>
       <div class="guests-input flex-col" @click="openModal">
         <label class="guests-label"> Guests </label>
         <span class="guests"> {{ getGuests }}</span>
@@ -115,13 +117,20 @@
         @mousemove="calcMouse"
         :style="mousePos"
       >
-      {{getReserveButton}}
-      
+        {{ getReserveButton }}
       </button>
-      <div class="pricing" v-if="fullDetailsOrder"><p>You won't be charged yet</p>
-      <p class="flex space-between"><span>Price</span><span> $ {{getPrice}} </span></p>
-      <p class="flex space-between"><span>Service fee</span> <span>$25</span>
-      </p><p class="flex space-between"><span>Total</span><span> ${{(getPrice+ 25)}}</span></p>
+      <div class="pricing" v-if="fullDetailsOrder">
+        <p>You won't be charged yet</p>
+        <p class="flex space-between">
+          <span>Price</span><span> $ {{ getPrice }} </span>
+        </p>
+        <p class="flex space-between">
+          <span>Service fee</span> <span>$25</span>
+        </p>
+        <p class="flex space-between">
+          <span>Total</span
+          ><span> ${{ getPrice + 25 }}</span>
+        </p>
       </div>
     </section>
     <div class="nav-bar-section">
@@ -194,14 +203,20 @@ export default {
     getRating() {
       return this.stay.reviewScores.rating / 10;
     },
-    getPrice(){
-      const days = Math.abs(this.filterBy.stayTime[1] - this.filterBy.stayTime[0])
-      const diffDays = Math.ceil(days / (1000 * 60 * 60 * 24))
-      return (diffDays * this.stay.price)
+    getPrice() {
+      const days = Math.abs(
+        this.filterBy.stayTime[1] -
+          this.filterBy.stayTime[0]
+      );
+      const diffDays = Math.ceil(
+        days / (1000 * 60 * 60 * 24)
+      );
+      return diffDays * this.stay.price;
     },
-    getReserveButton(){
-      return this.fullDetailsOrder ? 'Reserve' : '  Check availability'
-
+    getReserveButton() {
+      return this.fullDetailsOrder
+        ? "Reserve"
+        : "  Check availability";
     },
     mousePos() {
       return {
@@ -249,7 +264,7 @@ export default {
           this.filterBy.guests.adults +
           this.filterBy.guests.kids +
           this.filterBy.guests.Infants;
-         this.fullDetailsOrder= true
+        this.fullDetailsOrder = true;
         return `${count} guests`;
       }
     },
@@ -279,7 +294,7 @@ export default {
       } else {
         this.pos = "d";
       }
-      console.log(window.top.scrollY)
+      console.log(window.top.scrollY);
     },
 
     scrollMeTo(id) {
