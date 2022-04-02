@@ -232,14 +232,12 @@
   top: rem(15px);
   margin-left: rem(-7px);
 }
-
 .places {
   font-weight: 400;
   color: $clr2;
   background-color: $clr1;
   cursor: pointer;
 }
-
 .world-btn {
   height: rem(41.9px);
   width: rem(45px);
@@ -257,7 +255,6 @@
     // height: rem(19px);
   }
 }
-
 .menu-btns {
   justify-content: center;
   a {
@@ -268,7 +265,6 @@
     font-size: 16px;
   }
 }
-
 .profile-btn {
   width: rem(77px);
   height: rem(42px);
@@ -297,7 +293,6 @@
     display: none;
   }
 }
-
 .menu-btns.header-fix {
   a {
     color: $clr5 !important;
@@ -305,7 +300,6 @@
     font-weight: 600;
   }
 }
-
 .upper-section-header-details {
   background-color: transparent;
   box-shadow: 0 1px 12px rgb(0 0 0 / 8%);
@@ -368,7 +362,6 @@
     display: none;
   }
 }
-
 .upper-section-header-explore {
   background-color: transparent;
   box-shadow: 0 1px 12px rgb(0 0 0 / 8%);
