@@ -69,7 +69,7 @@
           {{ stay.propertyType }} <span> &#183;</span>
           {{ stay.address.city }}
         </div>
-        <div class="stay-name">{{ stay.name }}</div>
+        <div class="stay-name">{{getStayName }}</div>
         <div class="stay-price">
           <span class="bold">${{ stay.price }}</span> /
           night
@@ -111,6 +111,9 @@ export default {
   computed: {
     getRating() {
       return this.stay.reviewScores.rating / 10;
+    },
+    getStayName() {
+      return this.stay.name.slice(0,38)
     },
     isLiked() {
       return this.liked ? "isLiked" : "";
