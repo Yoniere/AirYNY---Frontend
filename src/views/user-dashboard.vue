@@ -1,20 +1,20 @@
 <template>
 <app-header  class="user-details"/>
-<section class="main-layout2">
+<section class="main-layout2 my-details-section">
 <div class="my-details flex-col">
     <button class="flex align-center" @click="toggle(false)"> 
     <img src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648118112/airyny/home48-icon.svg"/>
-     My Stays</button>
+     My Assets</button>
     <button @click="toggle(true)" class="flex align-center"><img src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648118112/airyny/freecancellation26-icon.png"/> 
-    My Order
+    Received Orders
     </button>
     </div>
     <div class="user-order" v-if="renderOrder">
        <table  style="overflow-x: auto;">
      <tr>
          <th></th>
-         <th>Guest name</th>
-         <th>stay name</th>
+         <th>Guest</th>
+         <th>Asset</th>
          <th>check in - check out </th>
          <th>Status </th>
          <th>Revenue </th>
