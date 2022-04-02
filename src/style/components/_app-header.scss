@@ -1,63 +1,62 @@
 .main-header.fullHeader {
-  grid-template-rows: 1fr 1fr;
-  height: 160px;
-  top: 0px;
-  display: grid;
-  grid-template-columns: 80px 1fr 80px;
-  width: 100%;
-  z-index: 20;
-  background-color: transparent;
-  position: absolute;
-  .world-svg {
-    fill: white;
-  }
-  @include for-normal-layout {
-    .mini-filter-container {
-      display: block !important;
-      width: 100vh;
-    }
-  }
-  @include for-mobile-layout {
-    .mini-filter {
-      // display: block !important;
-      min-width: 100vw;
-    }
-  }
-
-  .main-header {
-    /* grid-column: 2; */
-    margin: 0px;
-  }
-
-  .mini-filter {
-    display: flex;
-  }
-  &.header-explore {
+    grid-template-rows: 1fr 1fr;
+    height: 160px;
+    top: 0px;
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
+    width: 100%;
+    z-index: 20;
+    background-color: transparent;
+    position: absolute;
     .world-svg {
-      fill: #222222;
+        fill: white;
     }
-    .filter {
-      display: none;
+    @include for-normal-layout {
+        .mini-filter-container {
+            display: block !important;
+            width: 100vh;
+        }
     }
-  }
-  .world-img {
-    display: none;
-  }
-  .header-details {
-    .world-img {
-      // display: none;
-      display: block !important;
+    @include for-mobile-layout {
+        .mini-filter {
+            // display: block !important;
+            min-width: 100vw;
+        }
     }
-  }
-  .header-features {
-    color: $clr2;
-    align-items: center;
-    height: 80px;
+    .main-header {
+        /* grid-column: 2; */
+        margin: 0px;
+    }
     .mini-filter {
-      display: flex;
+        display: flex;
     }
-  }
+    &.header-explore {
+        .world-svg {
+            fill: #222222;
+        }
+        .filter {
+            display: none;
+        }
+    }
+    .world-img {
+        display: none;
+    }
+    .header-details {
+        .world-img {
+            // display: none;
+            display: block !important;
+        }
+    }
+    .header-features {
+        color: $clr2;
+        align-items: center;
+        height: 80px;
+        .mini-filter {
+            display: flex;
+        }
+    }
 }
+
 // @include for-narrow-layout {
 //   // margin: auto;
 //   visibility: hidden;
@@ -71,7 +70,6 @@
 //   .world-svg {
 //     fill: white;
 //   }}
-
 // @include for-mobile-layout {
 //   .mini-filter {
 //     // display: block !important;
@@ -437,73 +435,54 @@
     grid-template-rows: 1fr;
     grid-template-columns: 80px 1fr 80px;
     box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08) !important;
-    padding: rem(15px);
     align-items: center;
-  }
-  a {
-    color: $clr5 !important;
-    text-shadow: none;
-    font-weight: bold;
-  }
-  .logo-container {
-    width: 130px;
-  }
-  .logo {
-    content: url("https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648055648/airyny/logo2.png");
-    height: rem(70px);
-    width: rem(140px);
-  }
-  .layout {
-    color: black !important;
-    height: rem(19px);
-  }
-  .header-fix {
-    .world-svg {
-      display: block !important;
+    .world-btn.world-svg {
+        display: none;
     }
     
   }
   // .mini-filter {
   //   visibility: unset;
   // }
-}
+  }
 
 .user-details {
-  position: fixed;
-  .main-header {
     position: fixed;
-    z-index: 20;
-    background-color: $clr2;
-    top: 0;
-    width: 100%;
-    height: rem(80px);
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 80px 1fr 80px;
-    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08) !important;
-    padding: rem(15px);
-    align-items: center;
-  }
-  a {
-    color: $clr5 !important;
-    text-shadow: none;
-    font-weight: bold;
-  }
-  .logo-container {
-    width: 130px;
-  }
-  .logo {
-    content: url("https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648055648/airyny/logo2.png");
-    height: rem(70px);
-    width: rem(140px);
-  }
-  .filter {
-    visibility: hidden;
-  }
-  .mini-filter {
-    visibility: hidden;
-  }
+    .main-header {
+        position: fixed;
+        z-index: 20;
+        background-color: $clr2;
+        top: 0;
+        width: 100%;
+        height: rem(80px);
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 80px 1fr 80px;
+        box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08) !important;
+        padding: rem(15px);
+        align-items: center;
+    }
+    a {
+        color: $clr5 !important;
+        text-shadow: none;
+        font-weight: bold;
+    }
+    .logo-container {
+        width: 130px;
+    }
+    .logo {
+        content: url("https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648055648/airyny/logo2.png");
+        height: rem(70px);
+        width: rem(140px);
+    }
+    .filter {
+        visibility: hidden;
+    }
+    .mini-filter {
+        visibility: hidden;
+    }
 }
+
 // .user-details {
 //   position: fixed;
 //   z-index: 20;
@@ -537,55 +516,49 @@
 //     visibility: hidden;
 //   }
 // }
-
 .container-check {
-  font-weight: bold;
-
-  // background-color: transparent;
-  font-family: Cereal-Regular;
-
-  // text-align: left;
-  margin-top: -1px;
-  color: #222222;
-  font-size: 12px !important;
-
-  width: 268px;
-  .btn-check-in {
-    margin-left: -1px;
-    margin-bottom: -3px;
-    height: 20px;
-    margin-right: 15px;
-    width: 118px;
-  }
-
-  .btn-check-out {
-    margin-left: 54px;
-    width: 112px;
-    height: 20px;
-    margin-top: 0px;
-  }
+    font-weight: bold;
+    // background-color: transparent;
+    font-family: Cereal-Regular;
+    // text-align: left;
+    margin-top: -1px;
+    color: #222222;
+    font-size: 12px !important;
+    width: 268px;
+    .btn-check-in {
+        margin-left: -1px;
+        margin-bottom: -3px;
+        height: 20px;
+        margin-right: 15px;
+        width: 118px;
+    }
+    .btn-check-out {
+        margin-left: 54px;
+        width: 112px;
+        height: 20px;
+        margin-top: 0px;
+    }
 }
 
 .main-time-picker {
-  .el-date-editor .el-range-input {
-    font-family: Cereal-Regular;
-    -webkit-appearance: none;
-
-    padding: -1px;
-    margin-top: 36px;
-    margin-right: 53px;
-    margin-bottom: 41px;
-    /* width: 39%; */
-    margin-left: -91px;
-    /* font-weight: 400; */
-    font-family: Cereal-Regular;
-    /* word-spacing: 0px; */
-    /* margin: 0px; */
-    color: #222222;
-    font-size: 14px !important;
-    line-height: 42px;
-  }
-  .el-date-editor .el-range-input::placeholder {
-    color: #717171;
-  }
+    .el-date-editor .el-range-input {
+        font-family: Cereal-Regular;
+        -webkit-appearance: none;
+        padding: -1px;
+        margin-top: 36px;
+        margin-right: 53px;
+        margin-bottom: 41px;
+        /* width: 39%; */
+        margin-left: -91px;
+        /* font-weight: 400; */
+        font-family: Cereal-Regular;
+        /* word-spacing: 0px; */
+        /* margin: 0px; */
+        color: #222222;
+        font-size: 14px !important;
+        line-height: 42px;
+    }
+    .el-date-editor .el-range-input::placeholder {
+        color: #717171;
+    }
 }
