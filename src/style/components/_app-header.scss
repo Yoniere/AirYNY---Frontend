@@ -59,7 +59,7 @@
 
   @include for-normal-layout {
     .mini-filter-container {
-      display: none !important;
+      display: block !important;
     }
   }
   @include for-narrow-layout {
