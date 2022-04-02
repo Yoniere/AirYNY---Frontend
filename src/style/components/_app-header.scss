@@ -362,15 +362,20 @@
     transition: 0s;
     .main-filter {
       color: $clr5;
+      display: none;
     }
     @include for-narrow-layout {
       display: none;
     }
+    
     .filter.hide {
       visibility: unset;
       position: static;
       display: flex;
       transform: unset;
+      .main-filter {
+      display: flex;
+    }
     }
     //  .filter.hide
     .mini-filter {
@@ -411,8 +416,12 @@
 }
 .main-header.fix.header-details {
   .filter.hide {
-    display: none !important;
+    display: none ;
+   
+
   }
+
+      
 }
 .header-explore {
   position: fixed;
@@ -452,6 +461,7 @@
     .world-svg {
       display: block !important;
     }
+    
   }
   // .mini-filter {
   //   visibility: unset;
