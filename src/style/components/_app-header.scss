@@ -52,6 +52,7 @@
     color: $clr2;
     align-items: center;
     height: 80px;
+
     .mini-filter {
       display: flex;
     }
@@ -62,14 +63,26 @@
       display: none !important;
     }
   }
+
   @include for-narrow-layout {
-    margin: auto;
+    // margin: auto;
     visibility: hidden;
     top: 0px;
     .mini-filter-container {
       // z-index: 2544;
       display: block !important;
       min-width: 100vw;
+    }
+    .header-features {
+      color: $clr2;
+      align-items: center;
+      height: 80px;
+
+      width: 400px;
+      display: inline-block;
+      .mini-filter {
+        display: flex;
+      }
     }
   }
 }
