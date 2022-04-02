@@ -24,6 +24,7 @@ async function getUserStays(entityId) {
   const stays = await stayService.query();
   try {
     userStays = stays.filter(stay => stay.host.id === entityId)
+    console.log('userStays');
     return userStays
   } catch {
     console.log('baiaaa');

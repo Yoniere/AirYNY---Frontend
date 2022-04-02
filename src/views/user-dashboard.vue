@@ -188,6 +188,7 @@ export default {
     this.$store.dispatch({ type: "loadStaysUser" });
     const user = await this.$store.getters.user;
     this.user = user;
+    console.log('this.user',this.user);
     socketService.on("host topic", user.id);
     socketService.on("order recived", this.addOrder);
   },
