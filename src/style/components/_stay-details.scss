@@ -1,10 +1,15 @@
 .upper-img-section {
-    padding-top: 1.79rem;
-    max-width: rem(1120px);
-    @include for-narrow-layout {
-      height: rem(64px);
-      padding-top: 0rem;
-    }
+  padding-top: 1.79rem;
+  max-width: rem(1120px);
+  @include for-narrow-layout {
+    height: rem(64px);
+    padding-top: 0rem;
+  }
+  // .stay-name {
+  //   @include for-narrow-layout {
+  //     height: rem(64px);
+  //     padding-top: 0rem;
+  //   }
     .stay-name {
       @include for-narrow-layout {
         display: none;
@@ -180,6 +185,9 @@
     //     display: block;
     // }
   }
+  
+  
+
   
   .left-side-btns {
     align-items: baseline;
@@ -1001,6 +1009,7 @@
     flex-direction: row;
     width: -webkit-fill-available;
     left: 0px;
+    align-items: center;
     .checkout-section {
       width: 100%;
       justify-content: space-between;
@@ -1095,12 +1104,18 @@
     margin-top: 0px;
     top: 0px;
     position: fixed;
-    height: rem(80px);
+    bottom: 0px;
+    z-index: 100;
+    height: 5rem;
+    justify-content: space-between;
+    padding-left: rem(24px);
+    padding-right: rem(24px);
+    padding-top: rem(16px);
+    padding-bottom: rem(16px);
+    background-color: #fff;
     display: flex;
     flex-direction: row;
     width: -webkit-fill-available;
-    max-width: none;
-    border-radius: 0px;
     left: 0px;
     background-color: #fff;
     z-index: 100;
