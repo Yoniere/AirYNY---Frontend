@@ -64,9 +64,43 @@
     }
   }
 }
+ .filterInMobile{
+   display: none;
+}
+.hide{
+  @include for-narrow-layout {
+      .filterInMobile{
+        visibility:visible;
+        height: 80vh;
+       position: absolute;
+       right: 40px;
+       width: rem(390px);
+        background-color: white;
+        display: block;
+        left: rem(-80px);
+        visibility: visible;
+        z-index: 1000;
+        top: 30px;
+      
+        input{
+          outline: none;
+          height: 100px;
+          width: 100%;
+          border-bottom: 2px solid $clr5;
+        }
+      }
+    }
+}
 
 .filter {
   justify-content: center;
+ 
+    // display: none;
+    display: flex ;
+    width: 100vw;
+    height: 20vh;
+    border-bottom: 1px solid $clr5;
+  }
   // width: 80vw;
   label {
     // font-size: 0.0625rem;
@@ -79,7 +113,9 @@
     background-color: transparent;
     outline: none;
   }
-}
+ 
+   
+
 
 .main-filter {
   //1190

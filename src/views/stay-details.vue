@@ -1,9 +1,17 @@
 <template>
-<section class="upper-section-header-details">
-  <app-header class="header-details details-layout"   @openModalLogin="openModalLogin"/>
+  <section class="upper-section-header-details">
+    <app-header
+      class="header-details details-layout"
+      @openModalLogin="openModalLogin"
+    />
   </section>
   <section v-if="stay" class="details-layout">
-    <el-alert  title="order approved" v-if="orderStatus" type="success" class="alert-fixed" />
+    <el-alert
+      title="order approved"
+      v-if="orderStatus"
+      type="success"
+      class="alert-fixed"
+    />
     <imgs-comp :stay="stay"></imgs-comp>
     <main class="flex main-details-comp space-between">
       <section class="flex-col">
@@ -14,18 +22,29 @@
       </section>
       <section class="checkout-area">
         <checkout :stay="stay" @setOrder="setOrder"></checkout>
-       
-           <el-alert  title="order succeed" type="success" v-if="userOrder" class="alert-order"/> 
-           <el-alert title="please enter your full details order" type="error" v-if="fullDetailsOrder" class="alert-order"/>
+
+        <el-alert
+          title="order succeed"
+          type="success"
+          v-if="userOrder"
+          class="alert-order"
+        />
+        <el-alert
+          title="please enter your full details order"
+          type="error"
+          v-if="fullDetailsOrder"
+          class="alert-order"
+        />
       </section>
     </main>
     <reviews :stay="stay"></reviews>
     <details-map :stay="stay"></details-map>
     <host :stay="stay"></host>
-    <login-modal v-if="modalLoginIsOpen" @login="setLogin" @closeLoginModal="closeLoginModal" />
-  
-  
-    
+    <login-modal
+      v-if="modalLoginIsOpen"
+      @login="setLogin"
+      @closeLoginModal="closeLoginModal"
+    />
   </section>
 </template>
 
@@ -61,7 +80,7 @@ export default {
     const id = this.$route.params.id;
     const stay = await stayService.getById(id);
     this.stay = stay;
-  
+
     socketService.emit("host topic", stay.host.id);
     socketService.on("order-status-change", this.changeOrderStatus);
   },
@@ -88,7 +107,7 @@ export default {
     },
     setLogin(user){
       userService.login(user)
-      this.modalLoginIsOpen= false    
+      this.modalLoginIsOpen= false
       },
     changeOrderStatus(msg){
       this.msg=msg
@@ -117,7 +136,7 @@ export default {
            this.fullDetailsOrder= false
         }, 5000);
         return
-      } 
+      }
 
       try {
         const newOrder = await this.$store.dispatch({
@@ -127,8 +146,7 @@ export default {
         setTimeout(()=>{
            this.userOrder= false
         }, 5000);
-            socketService.emit('addOrder', orderToSave );
-
+            socketService.emit('addOrder', orderToSave )
       } catch {
         console.error;
       }
