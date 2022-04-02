@@ -720,29 +720,62 @@
 }
 
 .fixed {
-  margin-bottom: 48px;
-  position: sticky;
-  top: rem(50px);
-  @include for-narrow-layout {
-    margin-bottom: 0px;
-    top: unset;
-    margin-top: 0rem;
-    position: fixed;
-    bottom: 0px;
-    z-index: 100;
-    height: 5rem;
-    justify-content: space-between;
-    padding-left: rem(24px);
-    padding-right: rem(24px);
-    padding-top: rem(16px);
-    padding-bottom: rem(16px);
-    background-color: #fff;
-    display: flex;
-    flex-direction: row;
-    width: -webkit-fill-available;
-    left: 0px;
-    .checkout-title-right {
-      display: none;
+    margin-bottom: 48px;
+    position: sticky;
+    top: rem(50px);
+    @include for-narrow-layout {
+        margin-bottom: 0px;
+        top: unset;
+        margin-top: 0rem;
+        position: fixed;
+        bottom: 0px;
+        z-index: 100;
+        height: 5rem;
+        justify-content: space-between;
+        padding-left: rem(24px);
+        padding-right: rem(24px);
+        padding-top: rem(16px);
+        padding-bottom: rem(16px);
+        background-color: #fff;
+        display: flex;
+        flex-direction: row;
+        width: -webkit-fill-available;
+        left: 0px;
+        align-items: center;
+        .checkout-section{
+          display: flex;
+          align-items: center;
+        }
+         .reserve-btn{
+          width: rem(120px) ;
+          height: rem(48px);
+          min-width: unset;
+          display: flex;
+          align-items: center;
+        }
+        .checkout-title-right {
+          margin-bottom: 0px !important;
+        }
+        .checkout-title {
+          flex-direction: column;
+           margin-right: rem(15px);
+          }
+          .checkout-title-right .card-rate{
+            margin-left: 0px !important;
+          }
+        
+        .el-date-editor {
+            display: none;
+        }
+        .date-input {
+            display: none;
+        }
+        .guests-input {
+            display: none;
+        }
+        .pricing{
+          display: none;
+        }
     }
     .el-date-editor {
       display: none;
@@ -754,26 +787,55 @@
       display: none;
     }
   }
-}
+
 
 .static {
-  margin-top: rem(50px);
-  @include for-narrow-layout {
-    margin-top: 0rem;
-    position: fixed;
-    bottom: 0px;
-    z-index: 100;
-    height: 5rem;
-    justify-content: space-between;
-    padding-left: rem(24px);
-    padding-right: rem(24px);
-    padding-top: rem(16px);
-    padding-bottom: rem(16px);
-    background-color: #fff;
-    width: -webkit-fill-available;
-    left: 0px;
-    .checkout-title-right {
-      display: none;
+    margin-top: rem(50px);
+    @include for-narrow-layout {
+        margin-top: 0rem;
+        position: fixed;
+        bottom: 0px;
+        z-index: 100;
+        height: 5rem;
+        justify-content: space-between;
+        padding-left: rem(24px);
+        padding-right: rem(24px);
+        padding-top: rem(16px);
+        padding-bottom: rem(16px);
+        background-color: #fff;
+        width: -webkit-fill-available;
+        left: 0px;
+        .checkout-section{
+          display: flex;
+          align-items: center;
+        }
+         .reserve-btn{
+          width: rem(120px) ;
+          height: rem(48px);
+          min-width: unset;
+          display: flex;
+          align-items: center;
+        }
+        .checkout-title-right {
+          margin-bottom: 0px !important;
+        }
+        .checkout-title {
+          flex-direction: column;
+           margin-right: rem(15px);
+          }
+          .checkout-title-right .card-rate{
+            margin-left: 0px !important;
+          }
+        
+        .el-date-editor {
+            display: none;
+        }
+        .date-input {
+            display: none;
+        }
+        .guests-input {
+            display: none;
+        }
     }
     .el-date-editor {
       display: none;
@@ -785,7 +847,7 @@
       display: none;
     }
   }
-}
+
 
 .main-details-comp {
   max-width: rem(1120px);
@@ -883,39 +945,15 @@
     .guests-input {
       display: none;
     }
-  }
-}
-
-.fixed-top {
-  margin-top: 0px;
-  top: 0px;
-  position: fixed;
-  height: rem(80px);
-  display: flex;
-  flex-direction: row;
-  width: -webkit-fill-available;
-  max-width: none;
-  border-radius: 0px;
-  left: 0px;
-  background-color: #fff;
-  z-index: 100;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  padding-left: rem(80px);
-  padding-right: rem(80px);
-  @include for-wide-layout {
-    max-width: 1120px;
-    padding-left: rem(40px);
-    padding-right: rem(40px);
-  }
-  @include for-narrow-layout {
-    padding-left: rem(24px);
-    padding-right: rem(24px);
-  }
-  .checkout-title {
-    .checkout-title-right {
-      margin-bottom: 0px;
+    .reserve-btn {
+        width: rem(108.219px);
+        height: rem(48px);
+        min-width: unset;
+        align-items: center;
+        display: flex;
+    }
+    .pricing{
+      display: none;
     }
   }
   @include for-narrow-layout {
@@ -962,6 +1000,19 @@
       }
     }
   }
+}
+.pricing {
+  p:first-child {
+    text-align: center;
+    font-size: 13px;
+  margin-top: 16px;
+  }
+  p:last-child {
+    font-weight: 600;
+    padding-top: 16px;
+    margin-top: 8px;
+    border-top: 1px solid $clr3!important;
+}
 }
 
 // .checkout {}
