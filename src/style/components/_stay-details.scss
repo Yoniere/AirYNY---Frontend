@@ -732,15 +732,6 @@
         .pricing {
             display: none;
         }
-        .el-date-editor {
-            display: none;
-        }
-        .date-input {
-            display: none;
-        }
-        .guests-input {
-            display: none;
-        }
     }
 }
 
@@ -790,6 +781,59 @@
         .guests-input {
             display: none;
         }
+    }
+}
+
+.main-details-comp {
+    max-width: rem(1120px);
+}
+
+.fixed-top {
+    margin-top: 0px;
+    top: 0px;
+    position: fixed;
+    bottom: 0px;
+    z-index: 100;
+    height: 5rem;
+    justify-content: space-between;
+    padding-left: rem(24px);
+    padding-right: rem(24px);
+    padding-top: rem(16px);
+    padding-bottom: rem(16px);
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    width: -webkit-fill-available;
+    left: 0px;
+    .el-date-editor {
+        display: none;
+    }
+    .date-input {
+        display: none;
+    }
+    .guests-input {
+        display: none;
+    }
+}
+
+.static {
+    margin-top: rem(50px);
+    @include for-narrow-layout {
+        margin-top: 0rem;
+        position: fixed;
+        bottom: 0px;
+        z-index: 100;
+        height: 5rem;
+        justify-content: space-between;
+        padding-left: rem(24px);
+        padding-right: rem(24px);
+        padding-top: rem(16px);
+        padding-bottom: rem(16px);
+        background-color: #fff;
+        display: flex;
+        flex-direction: row;
+        width: -webkit-fill-available;
+        left: 0px;
         .el-date-editor {
             display: none;
         }
@@ -806,67 +850,7 @@
     max-width: rem(1120px);
 }
 
-// .fixed-top {
-//     margin-top: 0px;
-//     top: 0px;
-//     position: fixed;
-//     bottom: 0px;
-//     z-index: 100;
-//     height: 5rem;
-//     justify-content: space-between;
-//     padding-left: rem(24px);
-//     padding-right: rem(24px);
-//     padding-top: rem(16px);
-//     padding-bottom: rem(16px);
-//     background-color: #fff;
-//     display: flex;
-//     flex-direction: row;
-//     width: -webkit-fill-available;
-//     left: 0px;
-//     .el-date-editor {
-//         display: none;
-//     }
-//     .date-input {
-//         display: none;
-//     }
-//     .guests-input {
-//         display: none;
-//     }
-// }
-// .static {
-//   margin-top: rem(50px);
-//   @include for-narrow-layout {
-//     margin-top: 0rem;
-//     position: fixed;
-//     bottom: 0px;
-//     z-index: 100;
-//     height: 5rem;
-//     justify-content: space-between;
-//     padding-left: rem(24px);
-//     padding-right: rem(24px);
-//     padding-top: rem(16px);
-//     padding-bottom: rem(16px);
-//     background-color: #fff;
-//     display: flex;
-//     flex-direction: row;
-//     width: -webkit-fill-available;
-//     left: 0px;
-//     .el-date-editor {
-//       display: none;
-//     }
-//     .date-input {
-//       display: none;
-//     }
-//     .guests-input {
-//       display: none;
-//     }
-//   }
-// }
-.main-details-comp {
-    max-width: rem(1120px);
-}
-
-.fixed-top {
+.static-second {
     position: absolute;
     bottom: 0px;
     right: 0px;
@@ -896,15 +880,39 @@
         .guests-input {
             display: none;
         }
-        .reserve-btn {
-            width: rem(108.219px);
-            height: rem(48px);
-            min-width: unset;
-            align-items: center;
-            display: flex;
-        }
-        .pricing {
-            display: none;
+    }
+}
+
+.fixed-top {
+    margin-top: 0px;
+    top: 0px;
+    position: fixed;
+    height: rem(80px);
+    display: flex;
+    flex-direction: row;
+    width: -webkit-fill-available;
+    max-width: none;
+    border-radius: 0px;
+    left: 0px;
+    background-color: #fff;
+    z-index: 100;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding-left: rem(80px);
+    padding-right: rem(80px);
+    @include for-wide-layout {
+        max-width: 1120px;
+        padding-left: rem(40px);
+        padding-right: rem(40px);
+    }
+    @include for-narrow-layout {
+        padding-left: rem(24px);
+        padding-right: rem(24px);
+    }
+    .checkout-title {
+        .checkout-title-right {
+            margin-bottom: 0px;
         }
     }
     @include for-narrow-layout {
@@ -927,6 +935,11 @@
         width: rem(108.219px);
         height: rem(48px);
         min-width: unset;
+        align-items: center;
+        display: flex;
+    }
+    .pricing {
+        display: none;
     }
     .checkout-nav {
         display: block;
@@ -967,6 +980,7 @@
     }
 }
 
+// .checkout {}
 .checkout .date-input-checkout {
     .date-input-checkout:nth-child(1) {
         border-top-left-radius: 0.5px solid #e1e1e1;
