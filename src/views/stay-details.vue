@@ -3,7 +3,7 @@
   <app-header class="header-details details-layout"   @openModalLogin="openModalLogin"/>
   </section>
   <section v-if="stay" class="details-layout">
-    <el-alert  title="order Aprrove" v-if="orderStatus" type="success" class="alert-fixed" />
+    <el-alert  title="order approved" v-if="orderStatus" type="success" class="alert-fixed" />
     <imgs-comp :stay="stay"></imgs-comp>
     <main class="flex main-details-comp space-between">
       <section class="flex-col">
