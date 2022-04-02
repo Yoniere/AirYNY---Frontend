@@ -12,19 +12,12 @@ const STAYS_KEY = 'staysDB'
 
 
 export const stayService = {
-    // add,
     query,
-    // remove,
     getById
 }
 
 
-// async function query(filterBy) {
-//     const stays = await storageService.query(STAYS_KEY)
-//     if (!filterBy) return Promise.resolve(stays)
-//     const filteredStays = _filterStays(stays, JSON.parse(JSON.stringify(filterBy)))
-//     return Promise.resolve(filteredStays)
-// }
+
 
 async function query(filterBy) {
     try {
@@ -33,6 +26,18 @@ async function query(filterBy) {
         console.error('cannot load stays')
     }
 }
+
+
+
+async function getById(entityId) {
+    try {
+        return await httpService.get(`${ENDPOINT}/${entityId}`)
+    } catch {
+        console.error('cannot load stay')
+    }
+}
+
+
 
 
 function _filterStays(stays, filterBy) {
@@ -57,18 +62,4 @@ function _filterStays(stays, filterBy) {
     }
 
     return filteredStays
-}
-
-// function getById(entityId) {
-//     return query().then((entities) =>
-//         entities.find((entity) => entity.id === entityId)
-//     )
-// }
-
-async function getById(entityId) {
-    try {
-        return await httpService.get(`${ENDPOINT}/${entityId}`)
-    } catch {
-        console.error('cannot load stay')
-    }
 }
