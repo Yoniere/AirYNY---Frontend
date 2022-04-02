@@ -1087,19 +1087,19 @@
 }
 
 .read-more-paragraph {
-    margin: 0px;
-    margin-top: rem(8px);
-    font-family: Cereal-Regular;
-    .read-more {
-        font-size: 15px;
-        font-weight: 600;
-        text-decoration: underline;
-        cursor: pointer;
-        .arrow {
-            font-size: rem(16px);
-            font-weight: 600;
-            text-decoration: unset;
-            cursor: pointer;
-        }
-    }
+  margin: 0px;
+  margin-top: rem(8px);
+  font-family: Cereal-Regular;
+  .read-more {
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: underline;
+      cursor: pointer;
+      .arrow {
+          font-size: rem(16px);
+          font-weight: 600;
+          text-decoration: unset;
+          cursor: pointer;
+      }
+  }
 }
