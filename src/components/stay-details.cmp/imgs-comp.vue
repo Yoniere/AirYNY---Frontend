@@ -36,13 +36,12 @@
         </button>
       </div>
       <div class="right-side-btns flex">
-        <div>
-          <button class="share-btn flex">
-            <!-- <img
-              class="share-img"
-              src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/share24-icon.png"
-            /> -->
-            <svg
+        <div class="back-to-homepage flex">
+      <router-link to="/"> <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-label="Back" role="img" focusable="false" style="color: #222222; height: 11px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><g fill="none"><path d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"></path></g></svg> <span class="back-to-home-span">Homes • Airyny </span></router-link>
+        </div>
+        <div class="flex">
+        <div class="share-btn flex">
+                      <svg
               class="share-img"
               viewBox="14 -6 32 32"
               xmlns="http://www.w3.org/2000/svg"
@@ -50,13 +49,13 @@
               role="presentation"
               focusable="false"
               style="
-                display: block;
                 fill: none;
                 height: 16px;
                 width: 16px;
                 stroke: currentcolor;
                 stroke-width: 2;
                 overflow: visible;
+                margin-left:15px
               "
             >
               <g fill="none">
@@ -69,17 +68,18 @@
                 ></path>
               </g>
             </svg>
+          <button class="share">
+            <!-- <img
+              class="share-img"
+              src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/share24-icon.png"
+            /> -->
+
             Share
           </button>
         </div>
 
-        <div>
-          <button class="save-btn-details flex">
-            <!-- <img
-              class="save-img"
-              src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648730273/airyny/icon-heart.jpg"
-            /> -->
-            <svg
+        <div class=" save-btn-details flex">
+                      <svg
               class="save-img"
               viewBox="0 0 32 32"
               xmlns="http://www.w3.org/2000/svg"
@@ -87,21 +87,28 @@
               role="presentation"
               focusable="false"
               style="
-                display: block;
                 fill: none;
                 height: 16px;
                 width: 16px;
                 stroke: currentcolor;
                 stroke-width: 2;
                 overflow: visible;
+                margin-left:16px
               "
             >
               <path
                 d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
               ></path>
             </svg>
+          <button class="save">
+            <!-- <img
+              class="save-img"
+              src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648730273/airyny/icon-heart.jpg"
+            /> -->
+
             Save
           </button>
+        </div>
         </div>
       </div>
     </div>

@@ -27,27 +27,67 @@
         </label>
       </div>
 
+      <svg
+        height="60"
+        width="1"
+        style="
+          margin-left: 5px;
+          margin-right: 40px;
+          padding-top: 10px;
+        "
+      >
+        <line
+          x1="2"
+          y1="0"
+          x2="1"
+          y2="35"
+          style="
+            stroke: rgb(225, 225, 225, 1);
+            stroke-width: 3;
+          "
+        ></line>
+      </svg>
       <div
         class="main-time-picker input-container flex-col date-list"
       >
+        <span class="demonstration"></span>
+        <el-date-picker
+          v-model="filterBy.stayTime"
+          type="daterange"
+          range-separator=""
+          start-placeholder="Check in "
+          end-placeholder="Check out"
+          size="small"
+        >
+        </el-date-picker>
         <div class="container-check">
           <div class="container-check flex">
-            <span class="btn-check-in">Check in</span
-            ><span class="btn-check-out">Check out</span>
+            <span class="btn-check-in">Add dates</span
+            ><span class="btn-check-out"> Add dates</span>
           </div>
-
-          <span class="demonstration"></span>
-          <el-date-picker
-            v-model="filterBy.stayTime"
-            type="daterange"
-            range-separator="|"
-            start-placeholder="Add dates"
-            end-placeholder="Add dates"
-            size="small"
-          >
-          </el-date-picker>
         </div>
       </div>
+      <svg
+        class="line-container-2"
+        height="60"
+        width="1"
+        style="
+          margin-left: 93px;
+          margin-right: -9px;
+          padding-top: 10px;
+        "
+      >
+        <line
+          x1="2"
+          y1="0"
+          x2="1"
+          y2="35"
+          style="
+            stroke: rgb(225, 225, 225, 1);
+            stroke-width: 3;
+          "
+        ></line>
+      </svg>
       <div
         class="input-container flex-col"
         @click="openModal"

@@ -210,6 +210,7 @@
       // color: #71717100;
     }
     .location-filter {
+      display: contents;
       //   border-right: 0.1px solid #e1e1e1;
       line-height: 11.5px;
     }
@@ -368,9 +369,9 @@
 }
 
 .border-guests {
-  border-left: 0.1px solid #e1e1e1;
+  // border-left: 0.1px solid #e1e1e1;
   margin-right: 0px;
-  padding-left: 25px;
+  padding-left: 34px;
   padding-bottom: 4px;
 }
 
@@ -395,6 +396,7 @@
   transition: var(--el-transition-box-shadow);
   width: 100%;
   border: none;
+  left: -20px;
   box-shadow: none;
 }
 
