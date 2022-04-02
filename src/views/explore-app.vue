@@ -1,6 +1,6 @@
 <template>
 
-  <section class="upper-section-header-explore">
+   <section class="upper-section-header-explore">
   <app-header class="header-details main-layout2"
     @openModalLogin="openModalLogin"
   />
