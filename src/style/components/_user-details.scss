@@ -99,3 +99,69 @@
 .my-details-section {
     margin-top: 120px
 }
+
+.user-rate{
+    border-radius: 12px;
+    border: 1px solid $clr5;
+    width: 180px;
+    box-shadow: 1px 0.4px $clr5;
+    margin-top: 50px;
+    padding: 10px;
+    span:first-child{
+       font-size: 18px;
+      font-weight: 600;
+    }
+}
+
+.user-prof{
+    gap: 20px;
+}
+
+.user-profit{
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid $clr5;
+    width: rem(220px);
+    box-shadow: 1px 0.4px $clr5;
+    margin-top: 50px;
+    padding: 2px;
+    span:first-child{
+        font-size: 18px;
+       font-weight: 600;
+     }
+    .profit{
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        gap: 10px;
+    }
+    
+ 
+}
+.orders-div{
+    border-radius: 12px;
+    border: 1.5px solid $clr5;
+    // width: rem(220px);
+    box-shadow: 1px 0.4px $clr5;
+    margin-top: 50px;
+    padding: 2px;
+    span:first-child{
+        font-size: 18px;
+       font-weight: 600;
+     }
+
+     td{
+         text-align: center;
+         font-size: 1rem;
+     }
+    .nums-td{
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    padding-top: 10px;
+    text-align: center;
+
+    }
+
+}

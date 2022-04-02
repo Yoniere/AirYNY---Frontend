@@ -49,17 +49,21 @@
         </div>
       </div>
 
-      <el-date-picker
-        class="date-input-checkout"
-        v-model="this.filterBy.stayTime"
-        type="daterange"
-        range-separator=""
-        start-placeholder="Check in"
-        placeholder="add date"
-        end-placeholder="Check out"
-        text="12"
-      >
-      </el-date-picker>
+      <div class="date-input-container">
+        <span class="check-in">Check in</span>
+        <span class="check-out">Check out</span>
+        <el-date-picker
+          class="date-input-checkout"
+          v-model="this.filterBy.stayTime"
+          type="daterange"
+          range-separator=""
+          start-placeholder="add date"
+          end-placeholder="add date"
+          text="12"
+        >
+        </el-date-picker>
+      </div>
+
 
       <div class="guests-input flex-col" @click="openModal">
         <label class="guests-label"> Guests </label>
