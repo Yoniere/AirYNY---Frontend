@@ -1,6 +1,6 @@
 <template>
-<app-header class="header-explore" />
-<section class="main-layout2">
+<app-header class="header-details" />
+<section class="main-layout2 wish-list">
     <h1>Wish list </h1>
     <stay-list :stays="stays" v-if="stays" @stayLiked="setLiked" > </stay-list>
         
