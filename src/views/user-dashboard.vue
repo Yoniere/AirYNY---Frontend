@@ -70,7 +70,7 @@
             </div>
     </div>
      	
-		
+
     <div class="my-details flex-col">
       <button class="flex align-center" @click="toggle(false)">
         <img
@@ -168,6 +168,7 @@
         </tr>
       </table>
     </div>
+
   </section>
 </template>
 
@@ -179,7 +180,7 @@ import { socketService } from "../services/socket.service.js";
 export default {
   data() {
     return {
-      user: {},
+      user: null,
       renderOrder: false,
     };
   },
