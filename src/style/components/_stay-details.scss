@@ -1191,3 +1191,9 @@
         }
     }
 }
+
+.checkout {
+    .el-range-input:first-child {
+        border-top-left-radius: 4px;
+    }
+}
