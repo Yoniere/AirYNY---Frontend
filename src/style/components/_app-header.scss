@@ -164,9 +164,7 @@
   .mini-filter {
     visibility: visible;
   }
-  .main-filter {
-    // visibility: hidden;
-  }
+
   .logo {
     visibility: visible;
   }
@@ -315,10 +313,14 @@
     transition: 0s;
     .main-filter {
       color: $clr5;
-    }
-    .filter {
       display: none;
     }
+    // .filter {
+    //   display: none;
+    //   .hide {
+    //     display: block;
+    //   }
+    // }
     .filter.hide {
       visibility: unset;
       position: static;
