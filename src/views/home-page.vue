@@ -21,6 +21,7 @@
       </button>
     </section>
     <login-modal
+     v-close="closeLoginModal" 
       v-if="modalLoginIsOpen"
       @login="setLogin"
       @closeLoginModal="closeLoginModal"

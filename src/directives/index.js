@@ -1,36 +1,25 @@
 
 
+export const clickOutside = {
+  mounted(el, { value}, x) {
+    el.ClickOutSide = ({ clientX, clientY }) => {
+      var { left, top, width, height } = el.getBoundingClientRect()
+      if (!(clientX > left && clientX < left + width && clientY > top && clientY < top + height)) {
+         value()
 
+      }else{
 
+      }
+    }
+    setTimeout(() => {
+      document.addEventListener('click', el.ClickOutSide)
+    }, 0)
+  },
 
-
-// export const focusDirective = {
-//   mounted: (el) => {
-//     el.focus()
-//   },
-// }
-
-// export const closeDirevtive = {
-//   mounted: function (el, expression, context) {
-//     console.log({ expression }, { context });
-//     el.ClickOutSide = ({ clientX, clientY }) => {
-//       var { left, top, width, height } = el.getBoundingClientRect()
-//       if (!(clientX > left && clientX < left + width && clientY > top && clientY < top + height)) {
-//         console.log('hi');
-//         console.log(expression);
-//         console.log(context);
-//         context.expression()
-//       }
-//     }
-//     setTimeout(() => {
-//       document.addEventListener('click', el.ClickOutSide)
-//     }, 0)
-//   },
-
-//   unmounted: (el) => {
-//     document.removeEventListener('click', el.ClickOutSide)
-//   }
-// }
+  unmounted: (el) => {
+    document.removeEventListener('click', el.ClickOutSide)
+  }
+}
 
 
 
@@ -51,6 +40,3 @@
 //   },
 // };
 
-// createApp(App)
-//   .directive("click-outside", clickOutside)
-//   .mount("#app");

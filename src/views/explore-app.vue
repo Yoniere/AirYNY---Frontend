@@ -39,6 +39,7 @@
         </span>
       </button>
       <priceModal
+      v-close="ChangeModalPrice"
         :stays="stays"
         v-if="modalPrice"
         @filterByPrice="setFilterByPrice"
@@ -75,7 +76,7 @@
           </svg>
         </span>
       </button>
-      <typePlaceModal v-if="modalType" @sort="setSort" />
+      <typePlaceModal v-if="modalType" @sort="setSort"  v-close="ChangeModalType" />
       <button
         class="sort-btn small-btn"
         @click="setSortAmenities('Wifi')"
@@ -224,10 +225,6 @@ export default {
         this.msg = "Failed to login";
       }
       this.modalLoginIsOpen = false;
-    },
-    ChangeModalPrice() {
-      this.modalPrice = !this.modalPrice;
-
     },
     ChangeModalPrice() {
       this.modalPrice = !this.modalPrice;
