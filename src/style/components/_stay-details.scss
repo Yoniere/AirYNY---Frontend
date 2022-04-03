@@ -819,9 +819,6 @@
         margin-bottom: 48px;
         position: sticky;
         top: rem(50px);
-        .date-input-container {
-            display: none;
-        }
         .reserve-btn {
             height: rem(48px);
         }
@@ -844,6 +841,9 @@
             width: -webkit-fill-available;
             left: 0px;
             align-items: center;
+            .date-input-container {
+                display: none;
+            }
             .checkout-section {
                 display: flex;
                 align-items: center;
@@ -978,8 +978,11 @@
     }
     .checkout-section {
         width: 100%;
-        justify-content: space-between;
         align-items: center;
+        justify-content: end;
+        @include for-narrow-layout {
+            justify-content: space-between;
+        }
     }
     @include for-wide-layout {
         max-width: 1120px;
