@@ -13,7 +13,7 @@
       >
         Price
         <span>
-          <svg
+          <svg :class="modalPrice ? 'rotate':''"
             viewBox="0 0 32 32"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
@@ -27,6 +27,7 @@
               stroke: currentcolor;
               stroke-width: 5.33333;
               overflow: visible;
+              margin-left:9.5px
             "
           >
             <g fill="none">
@@ -49,7 +50,7 @@
       >
         Type of place
         <span>
-          <svg
+          <svg :class="modalType ? 'rotate':''"
             viewBox="0 0 32 32"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
@@ -63,6 +64,7 @@
               stroke: currentcolor;
               stroke-width: 5.33333;
               overflow: visible;
+              margin-left:9.5px
             "
           >
             <g fill="none">
@@ -163,6 +165,7 @@ export default {
     },
     ChangeModalPrice() {
       this.modalPrice = !this.modalPrice;
+
     },
     ChangeModalPrice() {
       this.modalPrice = !this.modalPrice;
