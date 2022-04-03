@@ -8,13 +8,7 @@
   }
 }
 .stay-preview-container{
-  max-width: 70vw;
-@include for-narrow-layout {
-  max-width: 80vw;
-}
-@include for-mobile-layout {
   max-width: 300px;
-}
 }
 .icon-heart {
   position: absolute;
