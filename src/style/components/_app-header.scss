@@ -164,9 +164,7 @@
   .mini-filter {
     visibility: visible;
   }
-  .main-filter {
-    // visibility: hidden;
-  }
+
   .logo {
     visibility: visible;
   }
@@ -315,10 +313,14 @@
     transition: 0s;
     .main-filter {
       color: $clr5;
-    }
-    .filter {
       display: none;
     }
+    // .filter {
+    //   display: none;
+    //   .hide {
+    //     display: block;
+    //   }
+    // }
     .filter.hide {
       visibility: unset;
       position: static;
@@ -377,9 +379,13 @@
     transition: 0s;
     .main-filter {
       color: $clr5;
+      display: none;
     }
     @include for-narrow-layout {
       display: none;
+    }
+    .filter {
+      visibility: hidden;
     }
     .filter.hide {
       visibility: unset;
@@ -555,14 +561,14 @@
   font-size: 12px !important;
   width: 268px;
   .btn-check-in {
-    margin-left: -1px;
+    margin-left: -15px;
     margin-bottom: -3px;
     height: 20px;
     margin-right: 15px;
     width: 118px;
   }
   .btn-check-out {
-    margin-left: 54px;
+    margin-left: 41px;
     width: 112px;
     height: 20px;
     margin-top: 0px;
