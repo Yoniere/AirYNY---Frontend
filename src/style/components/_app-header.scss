@@ -379,9 +379,13 @@
     transition: 0s;
     .main-filter {
       color: $clr5;
+      display: none;
     }
     @include for-narrow-layout {
       display: none;
+    }
+    .filter {
+      visibility: hidden;
     }
     .filter.hide {
       visibility: unset;
