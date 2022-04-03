@@ -637,6 +637,20 @@
             &:hover {
                 opacity: 1;
             }
+            .check-container {
+                   display: flex;
+                   gap: rem(90px);
+        @include for-wide-layout {
+            gap: rem(75px);
+        }
+        @include for-normal-layout {
+            gap: rem(16px);
+        }
+        @include for-narrow-layout {
+            gap: rem(8px);
+        }
+                  
+}
             .date-input-container {
                 display: flex;
                 flex-direction: row;
@@ -646,7 +660,6 @@
                 align-content: space-between;
                 border-top-left-radius: 12px;
                 border-top-right-radius: 12px;
-                justify-content: space-evenly;
                 flex-wrap: wrap;
                 align-items: baseline;
                 cursor: pointer;
@@ -658,10 +671,7 @@
                 padding-bottom: 0.125rem;
                 letter-spacing: 0.48px;
                 .check-in {
-                    margin-top: 10px;
-                    margin-left: -71px;
-                    margin-bottom: -3px;
-                    margin-right: 98px;
+                    padding: 5px;
                     font-size: 0.875rem;
                     line-height: 1.125rem;
                     font-weight: 200;
@@ -672,9 +682,7 @@
                     letter-spacing: 0.48px;
                 }
                 .check-out {
-                    margin-top: 10px;
-                    margin-right: 4px;
-                    margin-left: -71px;
+                    padding: 5px;
                     cursor: pointer;
                     font-family: Cereal-Regular;
                     font-weight: 600;

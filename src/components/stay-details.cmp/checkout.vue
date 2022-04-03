@@ -71,8 +71,8 @@
       </div>
       
 
-      <div class="guests-input flex" @click="openModal" v-close="openModal">
-        <div class="flex-col">
+      <div class="guests-input flex" @click="openModal">
+       <div class="flex-col">
         <label class="guests-label"> Guests </label>
         <span class="guests"> {{ getGuests }}</span>
         </div>
@@ -101,7 +101,7 @@
             </g>
           </svg>
         </div>
-</div>
+        </div>
 
       <div
         v-if="guestModal"
@@ -375,8 +375,5 @@ export default {
 };
 </script>
 <style>
-.check-container {
-  display: flex;
-  margin: 0px;
-}
+
 </style>
