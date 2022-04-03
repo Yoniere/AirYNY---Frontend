@@ -41,7 +41,10 @@
               ></path>
             </svg>
           </div>
-          <span class="rating">{{ getRating.toFixed(1) }}</span> ·
+          <span class="rating">{{
+            getRating.toFixed(1)
+          }}</span>
+          ·
           <button class="review-btn">
             <span> {{ stay.numOfReviews }}</span>
             reviews
@@ -50,8 +53,11 @@
       </div>
 
       <div class="date-input-container">
-        <span class="check-in">Check in</span>
-        <span class="check-out">Check out</span>
+        <div class="check-container">
+          <span class="check-in">Check in</span>
+          <span class="check-out">Check out</span>
+        </div>
+
         <el-date-picker
           class="date-input-checkout"
           v-model="this.filterBy.stayTime"
@@ -65,7 +71,7 @@
       </div>
 
       <div class="guests-input flex-col" @click="openModal">
-         <label class="guests-label"> Guests </label>
+        <label class="guests-label"> Guests </label>
         <span class="guests"> {{ getGuests }}</span>
       </div>
 
@@ -202,7 +208,7 @@ export default {
 
   computed: {
     getRating() {
-      return this.stay.reviewScores.rating / 10/2;
+      return this.stay.reviewScores.rating / 10 / 2;
     },
     getPrice() {
       const days = Math.abs(
@@ -295,7 +301,6 @@ export default {
       } else {
         this.pos = "d";
       }
-      console.log(window.top.scrollY);
     },
 
     scrollMeTo(id) {
@@ -338,4 +343,9 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+.check-container {
+  display: flex;
+  margin: 0px;
+}
+</style>

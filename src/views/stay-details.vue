@@ -7,12 +7,13 @@
   </section>
   <section v-if="stay" class="details-layout">
     <!-- host aprove order -->
-    <el-alert
+    <!-- <el-alert
       title="order approved"
       v-if="orderStatus"
       type="success"
       class="alert-fixed"
-    />
+    /> -->
+
     <!-- host aprove order -->
 
     <imgs-comp :stay="stay"></imgs-comp>
@@ -31,19 +32,28 @@
         ></checkout>
 
         <!-- secsed order or not working becaus details -->
-        <el-alert
+        <!-- <el-button
+          duration:100000
+          class="try"
+          plain
+          @click="setOrder"
+        >
+          order succeedsss
+        </el-button> -->
+
+        <!-- <el-alert
           title="order succeed"
           type="success"
           v-if="userOrder"
           class="alert-order"
-        />
+        /> -->
 
-        <el-alert
+        <!-- <el-alert
           title="please enter your full details order"
           type="error"
           v-if="fullDetailsOrder"
           class="alert-order"
-        />
+        /> -->
         <!-- secsed order or not working becaus details -->
       </section>
     </main>
@@ -74,6 +84,8 @@ import detailsMap from "../components/stay-details.cmp/details-map.vue";
 import host from "../components/stay-details.cmp/host.vue";
 import loginModal from "../components/login-modal.vue";
 import { socketService } from "../services/socket.service.js";
+import { ElNotification } from "element-plus";
+
 export default {
   data() {
     return {
@@ -92,6 +104,7 @@ export default {
     this.stay = stay;
 
     socketService.emit("host topic", stay.host.id);
+
     socketService.on(
       "order-status-change",
       this.changeOrderStatus
@@ -124,10 +137,18 @@ export default {
     },
     changeOrderStatus(msg) {
       this.msg = msg;
-      this.orderStatus = true;
-      setTimeout(() => {
-        this.orderStatus = false;
-      }, 10000);
+
+      ElNotification({
+        title: " We wish you an enjoyable experience",
+        message:
+          "Your booking has been confirmed by your host",
+        position: "top-left",
+      });
+
+      // this.orderStatus = true;
+      // setTimeout(() => {
+      //   this.orderStatus = false;
+      // }, 10000);
     },
     async setOrder(filterBy) {
       const order = orderService.getEmptyOrder();
@@ -142,12 +163,20 @@ export default {
         order
       );
       order.total = totalPrice;
+      console.log("order", order.created);
       const orderToSave = JSON.parse(JSON.stringify(order));
       if (!order.stayTime) {
-        this.fullDetailsOrder = true;
-        setTimeout(() => {
-          this.fullDetailsOrder = false;
-        }, 5000);
+        // this.fullDetailsOrder = true;
+        // setTimeout(() => {
+        //   this.fullDetailsOrder = false;
+        // }, 5000);
+        // return;
+
+        ElNotification({
+          title: "Missing information",
+          message: "Please fill in the required details",
+          type: "warning",
+        });
         return;
       }
 
@@ -156,10 +185,14 @@ export default {
           type: "addNewOrder",
           orderToSave,
         });
-        this.userOrder = true;
-        setTimeout(() => {
-          this.userOrder = false;
-        }, 5000);
+
+        ElNotification({
+          title: "Success",
+          message:
+            "Your booking request has been sent to the host",
+          type: "success",
+        });
+
         socketService.emit("addOrder", orderToSave);
       } catch {
         console.error;
@@ -173,4 +206,22 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+/* 
+      try {
+        const newOrder = await this.$store.dispatch({
+          type: "addNewOrder",
+          orderToSave,
+        });
+        
+        this.userOrder = true;
+        setTimeout(() => {
+          this.userOrder = false;
+        }, 5000);
+        socketService.emit("addOrder", orderToSave);
+      } catch {
+        console.error;
+      }
+    },
+  }, */
+</style>
