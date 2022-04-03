@@ -74,7 +74,8 @@ function getEmptyOrder() {
         guests: '',
         stayTime: '',
         status: 'Pending',
-        ImgUrl: `https://i.pravatar.cc/150?img=${key}`
+        ImgUrl: `https://i.pravatar.cc/150?img=${key}`,
+        created : new Intl.DateTimeFormat(['ban', 'id']).format(new Date())
     };
 
 
