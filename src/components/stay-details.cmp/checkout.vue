@@ -53,20 +53,17 @@
       </div>
 
       <div class="date-input-container">
-        <!-- <div class="check-container"> -->
-          <!-- <span class="check-in">Check in</span> -->
-          <!-- <span class="check-out">Check out</span> -->
-        <!-- </div> -->
-        <!-- <div class="check-container"> -->
-          <!-- <span class="check-in">Check in</span> -->
-          <!-- <span class="check-out">Check out</span>
-        </div> -->
+        <div class="check-container">
+          <span class="check-in">Check in</span>
+          <span class="check-out">Check out</span>
+        </div>
+
         <el-date-picker
           class="date-input-checkout"
           v-model="this.filterBy.stayTime"
           type="daterange"
           range-separator=""
-          :start-placeholder="checkin"
+          start-placeholder="Add date"
           end-placeholder="Add date"
           text="12"
         >
