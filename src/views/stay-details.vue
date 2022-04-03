@@ -6,12 +6,15 @@
     />
   </section>
   <section v-if="stay" class="details-layout">
+    <!-- host aprove order -->
     <el-alert
       title="order approved"
       v-if="orderStatus"
       type="success"
       class="alert-fixed"
     />
+    <!-- host aprove order -->
+
     <imgs-comp :stay="stay"></imgs-comp>
     <main class="flex main-details-comp space-between">
       <section class="flex-col">
@@ -20,21 +23,28 @@
         <stay-description :stay="stay"></stay-description>
         <amenities :stay="stay"></amenities>
       </section>
-      <section class="checkout-area">
-        <checkout :stay="stay" @setOrder="setOrder"></checkout>
 
+      <section class="checkout-area">
+        <checkout
+          :stay="stay"
+          @setOrder="setOrder"
+        ></checkout>
+
+        <!-- secsed order or not working becaus details -->
         <el-alert
           title="order succeed"
           type="success"
           v-if="userOrder"
           class="alert-order"
         />
+
         <el-alert
           title="please enter your full details order"
           type="error"
           v-if="fullDetailsOrder"
           class="alert-order"
         />
+        <!-- secsed order or not working becaus details -->
       </section>
     </main>
     <reviews :stay="stay"></reviews>
@@ -68,11 +78,11 @@ export default {
   data() {
     return {
       stay: null,
-      modalLoginIsOpen:false,
+      modalLoginIsOpen: false,
       userOrder: false,
-      fullDetailsOrder:false,
-      orderStatus:false,
-      msg:'',
+      fullDetailsOrder: false,
+      orderStatus: false,
+      msg: "",
     };
   },
 
@@ -82,7 +92,10 @@ export default {
     this.stay = stay;
 
     socketService.emit("host topic", stay.host.id);
-    socketService.on("order-status-change", this.changeOrderStatus);
+    socketService.on(
+      "order-status-change",
+      this.changeOrderStatus
+    );
   },
   components: {
     appHeader,
@@ -95,29 +108,27 @@ export default {
     host,
     checkout,
     detailsMap,
-    loginModal
+    loginModal,
   },
   computed: {},
   methods: {
-    openModalLogin(){
-      this.modalLoginIsOpen = true
+    openModalLogin() {
+      this.modalLoginIsOpen = true;
     },
-     closeLoginModal(){
-      this.modalLoginIsOpen = false
+    closeLoginModal() {
+      this.modalLoginIsOpen = false;
     },
-    setLogin(user){
-      userService.login(user)
-      this.modalLoginIsOpen= false
-      },
-    changeOrderStatus(msg){
-      this.msg=msg
-        this.orderStatus= true
-        setTimeout(()=>{
-           this.orderStatus= false
-        }, 10000);
-
-
-      },
+    setLogin(user) {
+      userService.login(user);
+      this.modalLoginIsOpen = false;
+    },
+    changeOrderStatus(msg) {
+      this.msg = msg;
+      this.orderStatus = true;
+      setTimeout(() => {
+        this.orderStatus = false;
+      }, 10000);
+    },
     async setOrder(filterBy) {
       const order = orderService.getEmptyOrder();
       order.name = this.stay.name;
@@ -127,34 +138,37 @@ export default {
       order.pricePerNight = this.stay.price;
       order.guests = filterBy.guests;
       order.stayTime = filterBy.stayTime;
-      const totalPrice= await orderService.getTotalPrice(order);
-      order.total = totalPrice
+      const totalPrice = await orderService.getTotalPrice(
+        order
+      );
+      order.total = totalPrice;
       const orderToSave = JSON.parse(JSON.stringify(order));
-      if(!order.stayTime){
-          this.fullDetailsOrder= true
-        setTimeout(()=>{
-           this.fullDetailsOrder= false
+      if (!order.stayTime) {
+        this.fullDetailsOrder = true;
+        setTimeout(() => {
+          this.fullDetailsOrder = false;
         }, 5000);
-        return
+        return;
       }
 
       try {
         const newOrder = await this.$store.dispatch({
-          type: "addNewOrder",orderToSave
+          type: "addNewOrder",
+          orderToSave,
         });
-        this.userOrder= true
-        setTimeout(()=>{
-           this.userOrder= false
+        this.userOrder = true;
+        setTimeout(() => {
+          this.userOrder = false;
         }, 5000);
-            socketService.emit('addOrder', orderToSave )
+        socketService.emit("addOrder", orderToSave);
       } catch {
         console.error;
       }
     },
   },
 
-  unmounted(){
-        // socketService.off("add order", this.setOrder)
+  unmounted() {
+    // socketService.off("add order", this.setOrder)
   },
 };
 </script>
