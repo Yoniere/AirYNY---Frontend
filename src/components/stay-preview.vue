@@ -61,7 +61,7 @@
               ></path>
             </svg>
           </div>
-          <span class="total-rate"> {{ getRating }} </span>
+          <span class="total-rate"> {{ getRating.toFixed(1) }} </span>
           <span> ({{ stay.numOfReviews }} reviews ) </span>
         </div>
 
@@ -110,7 +110,7 @@ export default {
   },
   computed: {
     getRating() {
-      return this.stay.reviewScores.rating / 10;
+      return this.stay.reviewScores.rating / 10/2;
     },
     getStayName() {
       return this.stay.name.slice(0,38)
