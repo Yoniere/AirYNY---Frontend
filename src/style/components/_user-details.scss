@@ -31,7 +31,22 @@
 
 .user-order {
   display: contents;
+
+  .table-header {
+    background-color: rgb(255, 56, 92, 1) !important;
+    height: 80px;
+    color: white;
+    overflow: hidden;
+    padding-bottom: 10px;
+    .user-order-th:nth-child(8) {
+      border-top-right-radius: 12px !important;
+    }
+    .user-order-th:first-child {
+      border-top-left-radius: 12px !important;
+    }
+  }
   table {
+    border-collapse: collapse;
     margin-top: 50px;
   }
   th,
