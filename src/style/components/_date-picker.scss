@@ -2,13 +2,16 @@ input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
-  display: none;
+    display: none;
 }
 
 datalist {
-  display: none;
+    display: none;
 }
+
+
 /* specifically hide the arrow on focus */
+
 input::-webkit-calendar-picker-indicator {
-  display: none !important;
+    display: none !important;
 }

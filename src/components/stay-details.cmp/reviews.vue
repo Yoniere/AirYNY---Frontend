@@ -7,7 +7,7 @@
             aria-hidden="true"
             role="presentation"
             focusable="false"
-            style="display: block; height: 14px; width: 14px; fill: #ff385c"
+            style="display: block; height: 16px; width: 16px; fill: #ff385c; align-self: baseline;"
           >
             <path
               d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965

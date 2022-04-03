@@ -109,12 +109,6 @@ export default {
       "order-status-change",
       this.changeOrderStatus
     );
-
-    ElNotification({
-      title: "Success",
-      message: "This is a success message",
-      type: "success",
-    });
   },
   components: {
     appHeader,
@@ -143,10 +137,18 @@ export default {
     },
     changeOrderStatus(msg) {
       this.msg = msg;
-      this.orderStatus = true;
-      setTimeout(() => {
-        this.orderStatus = false;
-      }, 10000);
+
+      ElNotification({
+        title: " We wish you an enjoyable experience",
+        message:
+          "Your booking has been confirmed by your host",
+        position: "top-left",
+      });
+
+      // this.orderStatus = true;
+      // setTimeout(() => {
+      //   this.orderStatus = false;
+      // }, 10000);
     },
     async setOrder(filterBy) {
       const order = orderService.getEmptyOrder();
@@ -189,7 +191,6 @@ export default {
           message:
             "Your booking request has been sent to the host",
           type: "success",
-          duration: 100000,
         });
 
         socketService.emit("addOrder", orderToSave);
