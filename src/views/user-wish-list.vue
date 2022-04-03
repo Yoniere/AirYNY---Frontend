@@ -5,6 +5,7 @@
     <stay-list :stays="stays" v-if="stays" @stayLiked="setLiked" > </stay-list>
         
 </section>
+
 </template>
 <script>
 import stayList from "../components/stay-list.vue";
