@@ -151,7 +151,7 @@ export default {
       this.modalUser = !this.modalUser;
     },
     closeModalUser() {
-      this.modalUser = false;
+      this.modalUser = !this.modalUser;
     },
     openModalLogin() {
       this.modalUser = false;

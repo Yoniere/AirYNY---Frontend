@@ -1,9 +1,24 @@
 <template>
   <app-header class="user-details" />
-  <section class="main-layout2 my-details-section">
+  <section class="main-layout2 my-details-section" v-if="user">
+     <div class="my-details flex-col">
+      <button class="flex align-center" @click="toggle(false)">
+        <img
+          src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648118112/airyny/home48-icon.svg"
+        />
+        My Assets
+      </button>
+      <button @click="toggle(true)" class="flex align-center">
+        <img
+          src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648118112/airyny/freecancellation26-icon.png"
+        />
+        Received Orders
+      </button>
+    </div>
     <div class="flex-row user-prof">
+      <div class="flex-col align-center">
     <div class="user-rate"> 
-      <span> total Rate </span>
+      <span> Total Rate </span>
       <div
             class="flex card-rate"
             :style="getZeroMargin"
@@ -37,7 +52,7 @@
         <div class="profit">
             <div class="flex-col">
             <span>Month </span>
-             <span>$1500 </span>
+             <span>$1,500 </span>
            </div>
           <div class="flex-col">
            <span>Year </span>
@@ -49,49 +64,25 @@
           </div>
          </div>
       </div>
+      </div>
+
+
       <div class="orders-div">
       <span>Orders</span>
-      <div class="flex-col">
-        <table>
-          <tr>
-            <td>Total</td>
-            <td>Pending</td>
-            <td>Approved</td>
-            <td>Declined</td>
-            </tr>
-            <tr>
-            <td class="nums-td">27</td>
-            <td class="nums-td">7</td>
-            <td class="nums-td">9</td>
-            <td class="nums-td">11</td>
-            </tr>
-            </table>
-            </div>
+        <chart />
             </div>
     </div>
      	
 
-    <div class="my-details flex-col">
-      <button class="flex align-center" @click="toggle(false)">
-        <img
-          src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648118112/airyny/home48-icon.svg"
-        />
-        My Assets
-      </button>
-      <button @click="toggle(true)" class="flex align-center">
-        <img
-          src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648118112/airyny/freecancellation26-icon.png"
-        />
-        Received Orders
-      </button>
-    </div>
+   
     <div class="user-order" v-if="renderOrder">
       <table style="overflow-x: auto">
         <tr>
           <th></th>
           <th class="stay-name-details">Guest</th>
           <th class="stay-name-details">Asset</th>
-          <th>check in - check out</th>
+          <th class="stay-name-details">Order Date</th>
+          <th>Check in - Check out</th>
           <th>Status</th>
           <th>Revenue</th>
           <th>Actions</th>
@@ -106,12 +97,13 @@
           </td>
           <td class="stay-name-details">{{ order.guestName }}</td>
           <td class="stay-name-details">{{ order.name }}</td>
+          <td class="stay-name-details">{{ order.created }}</td>
           <td>
             {{ formattedTime(order.stayTime[0]) }} -
             {{ formattedTime(order.stayTime[1]) }}
           </td>
           <td>{{ order.status }}</td>
-          <td>$ {{  order.total }}</td>
+          <td>$ {{  formatedPrice(order.total) }}</td>
           <td v-if="order.status !== 'Pending'">
             <button
               class="btn clikable"
@@ -177,6 +169,7 @@ import appHeader from "../components/app-header.vue";
 import { utilService } from "../services/util-service.js";
 import { orderService } from "../services/order-service.js";
 import { socketService } from "../services/socket.service.js";
+import chart from '../components/chart.vue'
 export default {
   data() {
     return {
@@ -213,9 +206,14 @@ export default {
     addOrder(order) {
       this.user.orders.unshift(order);
     },
+       formatedPrice(price){
+         return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(price)
+
+    }
 
   },
   computed: {
+ 
      
   },
   unmounted() {
@@ -224,6 +222,7 @@ export default {
   },
   components: {
     appHeader,
+    chart
   },
 };
 </script>

@@ -275,6 +275,7 @@
     margin-top: 86px;
     @include for-wide-layout {
         align-items: center;
+        overflow: auto;
         button {
             height: rem(50px);
         }

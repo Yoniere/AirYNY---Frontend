@@ -157,10 +157,9 @@ export default {
       order.pricePerNight = this.stay.price;
       order.guests = filterBy.guests;
       order.stayTime = filterBy.stayTime;
-      const totalPrice = await orderService.getTotalPrice(
-        order
-      );
-      order.total = totalPrice;
+      const totalPrice= await orderService.getTotalPrice(order);
+      order.total = totalPrice
+      console.log('order',order.created);
       const orderToSave = JSON.parse(JSON.stringify(order));
       if (!order.stayTime) {
         // this.fullDetailsOrder = true;
