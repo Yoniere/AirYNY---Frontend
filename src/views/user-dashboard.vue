@@ -97,7 +97,7 @@
           </td>
           <td class="stay-name-details">{{ order.guestName }}</td>
           <td class="stay-name-details">{{ order.name }}</td>
-          <td class="stay-name-details">{{ order.created }}</td>
+          <td>{{ order.created }}</td>
           <td>
             {{ formattedTime(order.stayTime[0]) }} -
             {{ formattedTime(order.stayTime[1]) }}
@@ -181,6 +181,7 @@ export default {
     this.$store.dispatch({ type: "loadStaysUser" });
     const user = await this.$store.getters.user;
     this.user = user;
+    console.log(user);
     console.log('this.user',this.user);
     socketService.on("host topic", user.id);
     socketService.on("order recived", this.addOrder);
@@ -189,7 +190,7 @@ export default {
     toggle(val) {
       this.renderOrder = val;
     },
-    formattedTime(time) {
+    formattedTime(time) {   
       return time.slice(0, 10);
     },
     changeOrderStatus(order, val) {
