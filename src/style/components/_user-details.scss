@@ -5,15 +5,30 @@
         width: rem(100px);
         background-color: transparent;
         border: none;
+        display: flex;
+        align-items: end;
+        gap: rem(4px);
         img {
-            height: rem(25px);
+            height: rem(20px);
             width: rem(20px);
-            margin-inline-end: rem(4px);
         }
     }
+    button:nth-child(2)  {
+        width: rem(150px);
+        img {
+            height: rem(18px);
+            width: rem(20px);
+        }
+
+    }
+
     button:hover {
         color: $clr8;
     }
+ 
+}
+.dash-header{
+    text-align: center;
 }
 
 .user-order {
@@ -107,9 +122,11 @@
 .user-rate{
     border-radius: 12px;
     border: 1px solid $clr5;
-    width: 180px;
+    width: rem(220px);
+    height: 45%;
     box-shadow: 1px 0.4px $clr5;
     padding: 10px;
+
     span:first-child{
         font-size: 20px;
         font-weight: 600;
@@ -136,6 +153,7 @@
     width: rem(220px);
     box-shadow: 1px 0.4px $clr5;
     padding: 10px;
+    height: 45%;
     span:first-child{
         font-size: 20px;
        font-weight: 600;

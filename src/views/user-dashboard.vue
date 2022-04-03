@@ -1,20 +1,21 @@
 <template>
   <app-header class="user-details" />
   <section class="main-layout2 my-details-section" v-if="user">
-     <div class="my-details flex-col">
+     <div class="my-details flex-row">
       <button class="flex align-center" @click="toggle(false)">
         <img
           src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648118112/airyny/home48-icon.svg"
         />
-        My Assets
+        My assets
       </button>
       <button @click="toggle(true)" class="flex align-center">
         <img
           src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648118112/airyny/freecancellation26-icon.png"
         />
-        Received Orders
+        Received orders
       </button>
     </div>
+    <h2 class="dash-header"> Dashboard </h2>
     <div class="flex-row user-prof">
       <div class="flex-col align-center">
     <div class="user-rate"> 
@@ -76,12 +77,13 @@
 
    
     <div class="user-order" v-if="renderOrder">
+      <h3> My orders </h3>
       <table style="overflow-x: auto">
         <tr>
           <th></th>
           <th class="stay-name-details">Guest</th>
           <th class="stay-name-details">Asset</th>
-          <th class="stay-name-details">Order Date</th>
+          <th>Order Date</th>
           <th>Check in - Check out</th>
           <th>Status</th>
           <th>Revenue</th>
@@ -131,6 +133,7 @@
       </table>
     </div>
     <div class="user-stays" v-if="!renderOrder">
+       <h3> My stays </h3>
       <table>
         <tr>
           <th></th>
