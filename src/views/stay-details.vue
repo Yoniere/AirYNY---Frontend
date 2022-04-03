@@ -7,12 +7,13 @@
   </section>
   <section v-if="stay" class="details-layout">
     <!-- host aprove order -->
-    <el-alert
+    <!-- <el-alert
       title="order approved"
       v-if="orderStatus"
       type="success"
       class="alert-fixed"
-    />
+    /> -->
+
     <!-- host aprove order -->
 
     <imgs-comp :stay="stay"></imgs-comp>
@@ -47,12 +48,12 @@
           class="alert-order"
         /> -->
 
-        <el-alert
+        <!-- <el-alert
           title="please enter your full details order"
           type="error"
           v-if="fullDetailsOrder"
           class="alert-order"
-        />
+        /> -->
         <!-- secsed order or not working becaus details -->
       </section>
     </main>
@@ -103,10 +104,17 @@ export default {
     this.stay = stay;
 
     socketService.emit("host topic", stay.host.id);
+
     socketService.on(
       "order-status-change",
       this.changeOrderStatus
     );
+
+    ElNotification({
+      title: "Success",
+      message: "This is a success message",
+      type: "success",
+    });
   },
   components: {
     appHeader,
@@ -149,15 +157,24 @@ export default {
       order.pricePerNight = this.stay.price;
       order.guests = filterBy.guests;
       order.stayTime = filterBy.stayTime;
-      const totalPrice= await orderService.getTotalPrice(order);
-      order.total = totalPrice
-      console.log('order',order.created);
+      const totalPrice = await orderService.getTotalPrice(
+        order
+      );
+      order.total = totalPrice;
+      console.log("order", order.created);
       const orderToSave = JSON.parse(JSON.stringify(order));
       if (!order.stayTime) {
-        this.fullDetailsOrder = true;
-        setTimeout(() => {
-          this.fullDetailsOrder = false;
-        }, 5000);
+        // this.fullDetailsOrder = true;
+        // setTimeout(() => {
+        //   this.fullDetailsOrder = false;
+        // }, 5000);
+        // return;
+
+        ElNotification({
+          title: "Missing information",
+          message: "Please fill in the required details",
+          type: "warning",
+        });
         return;
       }
 
@@ -169,7 +186,8 @@ export default {
 
         ElNotification({
           title: "Success",
-          message: "This is a success message",
+          message:
+            "Your booking request has been sent to the host",
           type: "success",
           duration: 100000,
         });
@@ -188,16 +206,6 @@ export default {
 </script>
 
 <style>
-.try {
-  background-color: aquamarine;
-}
-
-#notification_10 {
-  background-color: aquamarine;
-}
-.el-notification.right {
-  background-color: aquamarine;
-}
 /* 
       try {
         const newOrder = await this.$store.dispatch({
