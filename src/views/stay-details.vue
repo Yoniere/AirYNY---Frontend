@@ -31,12 +31,21 @@
         ></checkout>
 
         <!-- secsed order or not working becaus details -->
-        <el-alert
+        <!-- <el-button
+          duration:100000
+          class="try"
+          plain
+          @click="setOrder"
+        >
+          order succeedsss
+        </el-button> -->
+
+        <!-- <el-alert
           title="order succeed"
           type="success"
           v-if="userOrder"
           class="alert-order"
-        />
+        /> -->
 
         <el-alert
           title="please enter your full details order"
@@ -74,6 +83,8 @@ import detailsMap from "../components/stay-details.cmp/details-map.vue";
 import host from "../components/stay-details.cmp/host.vue";
 import loginModal from "../components/login-modal.vue";
 import { socketService } from "../services/socket.service.js";
+import { ElNotification } from "element-plus";
+
 export default {
   data() {
     return {
@@ -156,10 +167,14 @@ export default {
           type: "addNewOrder",
           orderToSave,
         });
-        this.userOrder = true;
-        setTimeout(() => {
-          this.userOrder = false;
-        }, 5000);
+
+        ElNotification({
+          title: "Success",
+          message: "This is a success message",
+          type: "success",
+          duration: 100000,
+        });
+
         socketService.emit("addOrder", orderToSave);
       } catch {
         console.error;
@@ -173,4 +188,32 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.try {
+  background-color: aquamarine;
+}
+
+#notification_10 {
+  background-color: aquamarine;
+}
+.el-notification.right {
+  background-color: aquamarine;
+}
+/* 
+      try {
+        const newOrder = await this.$store.dispatch({
+          type: "addNewOrder",
+          orderToSave,
+        });
+        
+        this.userOrder = true;
+        setTimeout(() => {
+          this.userOrder = false;
+        }, 5000);
+        socketService.emit("addOrder", orderToSave);
+      } catch {
+        console.error;
+      }
+    },
+  }, */
+</style>

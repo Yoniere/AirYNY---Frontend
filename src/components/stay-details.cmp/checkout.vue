@@ -65,7 +65,7 @@
       </div>
 
       <div class="guests-input flex-col" @click="openModal">
-         <label class="guests-label"> Guests </label>
+        <label class="guests-label"> Guests </label>
         <span class="guests"> {{ getGuests }}</span>
       </div>
 
@@ -295,7 +295,6 @@ export default {
       } else {
         this.pos = "d";
       }
-      console.log(window.top.scrollY);
     },
 
     scrollMeTo(id) {
