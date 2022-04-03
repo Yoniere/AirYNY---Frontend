@@ -44,7 +44,7 @@
           <span class="rating">{{
             getRating.toFixed(1)
           }}</span>
-          ·
+          <span class="period">·</span>
           <button class="review-btn">
             <span> {{ stay.numOfReviews }}</span>
             reviews
@@ -69,6 +69,7 @@
         >
         </el-date-picker>
       </div>
+      
 
       <div class="guests-input flex" @click="openModal">
        <div class="flex-col">

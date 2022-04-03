@@ -1234,3 +1234,9 @@
                 }
             }
         }
+        
+        .period {
+            @include for-narrow-layout {
+                display: none;
+            }
+        }

@@ -83,7 +83,7 @@
     </div>
 
     <div class="user-order" v-if="renderOrder">
-      <h3>My orders</h3>
+      <h2>My orders</h2>
       <table style="overflow-x: auto">
         <tr class="table-header">
           <th class="user-order-th"></th>

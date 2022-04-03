@@ -12,12 +12,17 @@ export default {
   components: { PieChart },
   data() {
     return {
-      testData:{
-            labels: ["Total", "Pending", "Approved ", "Declined "],
-            datasets: [
-            {
-              data: [27, 7, 9, 3],
-           
+      testData: {
+        labels: [
+          "Total",
+          "Pending",
+          "Approved ",
+          "Declined ",
+        ],
+        datasets: [
+          {
+            data: [27, 7, 9, 3],
+
             backgroundColor: [
               // "#FFF6E6",
               "#79CCCD",
@@ -27,20 +32,15 @@ export default {
             ],
           },
         ],
-      }
-    
+      },
     };
-  }
-
-  
+  },
 };
 </script>
 
 <style>
-#pie-chart{
-  height: 200px;
+#pie-chart {
+  height: 300px;
+  width: 250px;
 }
-
 </style>
-
-
