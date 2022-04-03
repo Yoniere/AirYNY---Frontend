@@ -539,12 +539,7 @@
   align-items: baseline;
   display: flex;
   flex-direction: column;
-  @include for-narrow-layout {
-    flex-direction: row;
-    max-width: 100%;
-    max-height: unset;
-    border-radius: 0px;
-  }
+
   .checkout-nav {
     display: none;
   }
@@ -693,6 +688,7 @@
     flex-direction: row;
     color: #222222;
     border: 0.075px solid #b0b0b0;
+    border-bottom: none;
     align-content: space-between;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
@@ -708,6 +704,7 @@
     padding-bottom: 0.125rem;
     letter-spacing: 0.48px;
     .check-in {
+      //   padding-left: 0.75rem;
       margin-top: 10px;
       margin-left: -71px;
       margin-bottom: -3px;
@@ -732,34 +729,94 @@
       font-family: Cereal-Regular;
       font-weight: 600;
     }
+    @include for-narrow-layout {
+      flex-direction: row;
+      max-width: 100%;
+      max-height: unset;
+      border-radius: 0px;
+      margin: 0px;
+      margin-top: 0px;
+      margin-right: 112px;
+
+      .check-out {
+        margin-block-start: auto;
+        margin-block-end: auto;
+        margin-inline-end: unset;
+        margin-inline-end: unset;
+      }
+    }
+    @include for-normal-layout {
+      flex-direction: row;
+      // max-width: 100%;
+      //   margin-left: -43px;
+      //   max-height: unset;
+      //   border-radius: 0px;
+      //   flex-shrink: 1;
+      .check-out {
+        // margin-block-start: auto;
+        // margin-block-end: auto;
+        // margin-inline-end: unset;
+        // margin-inline-end: unset;
+        margin-left: -141px;
+      }
+      .check-in {
+        margin-inline-start: unset;
+        margin-left: -3px;
+        /* margin-bottom: -3px; */
+        margin-right: 172px;
+      }
+      .el-range-input {
+        width: 50% !important;
+        margin-right: 0px !important;
+      }
+    }
+  }
+  .el-date-editor .el-range-input {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    /* height: 100%; */
+    /* margin: 0; */
+    padding: 0;
+    width: 29%;
+    /* left: 32px; */
+    text-align: left;
+    margin-right: 50px;
+    font-size: var(--el-font-size-base);
+    color: var(--el-text-color-regular);
+  }
+  .el-date-editor .el-range-separator {
+    font-family: Cereal-Regular;
+    flex: 1;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 61px;
+    margin-bottom: 25px;
+    border-left: 0.075px solid #b0b0b0;
+    font-size: 14px;
+    word-break: keep-all;
+    color: var(--el-text-color-primary);
+    /* border-block-start-color: red; */
   }
 }
+// .date-input-checkout {
 
-.date-input-checkout {
-  //   cursor: pointer;
-  //   height: rem(56px);
-  //   max-width: rem(322.33px);
-  //   font-size: 10px;
-  //   line-height: 12px;
-  //   color: rgb(176, 176, 176, 1);
-  //   text-transform: uppercase;
-  //   font-weight: 800;
-  //   padding: 0px;
-  //   border: none !important;
-  cursor: pointer;
-  //   height: 3.5rem;
-  font-size: 10px;
-  line-height: 12px;
-  border: #0a6abe00;
-  color: #b0b0b0;
-  text-transform: uppercase;
-  font-weight: 800;
-  padding: 0px;
-  padding-bottom: 0px;
-  padding-top: 0px;
-  border: none !important;
-}
-
+//     cursor: pointer;
+//     //   height: 3.5rem;
+//     font-size: 10px;
+//     line-height: 12px;
+//     border: #0a6abe00;
+//     color: #b0b0b0;
+//     text-transform: uppercase;
+//     font-weight: 800;
+//     padding: 0px;
+//     padding-bottom: 0px;
+//     padding-top: 0px;
+//     border: none !important;
+//   }
 .el-range-editor {
   .el-icon:first {
     border-left: 1px black solid;
@@ -778,23 +835,6 @@
 }
 
 .el-range-input {
-  // line-height: -6.25rem;
-  // font-weight: 600;
-  // padding-left: 0.65rem;
-  // cursor: pointer;
-  // width: 50%;
-  // // border: 1px solid #b0b0b0;
-  // top: 12px !important;
-  // margin: 0px !important;
-  // pointer-events: none !important;
-  // font-size: 10px !important;
-  // line-height: 12px !important;
-  // color: rgb(34, 34, 34) !important;
-  // text-transform: uppercase !important;
-  // max-width: 100% !important;
-  // overflow: hidden !important;
-  // text-overflow: ellipsis !important;
-  // white-space: nowrap !important;
   font-size: 0.875rem;
   line-height: 1.125rem;
   padding-left: 12px;
@@ -870,6 +910,7 @@
       height: rem(48px);
     }
     @include for-narrow-layout {
+      max-width: unset;
       margin-bottom: 0px;
       top: unset;
       margin-top: 0rem;
@@ -941,6 +982,7 @@
     min-width: unset;
   }
   @include for-narrow-layout {
+    max-width: unset;
     margin-top: 0rem;
     position: fixed;
     bottom: 0px;
