@@ -85,15 +85,17 @@
     <div class="user-order" v-if="renderOrder">
       <h3>My orders</h3>
       <table style="overflow-x: auto">
-        <tr>
-          <th></th>
+        <tr class="table-header">
+          <th class="user-order-th"></th>
           <th class="stay-name-details">Guest</th>
           <th class="stay-name-details">Asset</th>
-          <th>Order Date</th>
-          <th>Check in - Check out</th>
-          <th>Status</th>
-          <th>Revenue</th>
-          <th>Actions</th>
+          <th class="user-order-th">Order Date</th>
+          <th class="user-order-th">
+            Check in - Check out
+          </th>
+          <th class="user-order-th">Status</th>
+          <th class="user-order-th">Revenue</th>
+          <th class="user-order-th">Actions</th>
         </tr>
         <tr v-for="order in user.orders" :key="order._id">
           <td class="stay-name-details flex align-center">

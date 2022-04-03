@@ -63,8 +63,8 @@
           v-model="this.filterBy.stayTime"
           type="daterange"
           range-separator=""
-          start-placeholder="add date"
-          end-placeholder="add date"
+          start-placeholder="Add date"
+          end-placeholder="Add date"
           text="12"
         >
         </el-date-picker>
@@ -73,7 +73,32 @@
       <div class="guests-input flex-col" @click="openModal" v-close="openModal">
         <label class="guests-label"> Guests </label>
         <span class="guests"> {{ getGuests }}</span>
-      </div>
+        </div>
+        <div class="guest-arrow">
+                    <svg :class="guestModal ? 'rotate':''"
+            viewBox="0 0 32 32"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            role="presentation"
+            focusable="false"
+            style="
+              display: block;
+              fill: none;
+              height: 12px;
+              width: 12px;
+              stroke: currentcolor;
+              stroke-width: 5.33333;
+              overflow: visible;
+              margin-left:9.5px
+            "
+          >
+            <g fill="none">
+              <path
+                d="m28 12-11.2928932 11.2928932c-.3905243.3905243-1.0236893.3905243-1.4142136 0l-11.2928932-11.2928932"
+              ></path>
+            </g>
+          </svg>
+        </div>
 
       <div
         v-if="guestModal"
@@ -207,6 +232,9 @@ export default {
   },
 
   computed: {
+    checkin(){
+      return `checkout hello`
+    },
     getRating() {
       return this.stay.reviewScores.rating / 10 / 2;
     },
