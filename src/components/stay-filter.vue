@@ -98,7 +98,7 @@
           <span class="guests"> {{ getGuests }}</span>
         </span>
       </div>
-      <div v-if="guestModal" class="guests-Modal">
+      <div v-if="guestModal" class="guests-Modal" v-close="openModal">
         <!-- @blur="closeDropdown -->
         <ul>
           <li

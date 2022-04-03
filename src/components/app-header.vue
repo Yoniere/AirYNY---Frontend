@@ -75,7 +75,7 @@
             ></path>
           </svg>
         </button>
-        <label @click="openModalUser" class="relative">
+        <label @click="openModalUser" class="relative" v-close="closeModalUser">
           <button class="profile-btn flex">
             <!-- <img
               class="menu-img"
@@ -90,6 +90,7 @@
           </button>
         </label>
         <user-details-modal
+         v-close="openModalUser" 
           v-if="modalUser"
           @openModalLogin="openModalLogin"
           @closeLoginModal="closeLoginModal"
@@ -148,10 +149,10 @@ export default {
       this.filter = filterBy;
     },
     openModalUser() {
-      this.modalUser = !this.modalUser;
+      this.modalUser = true;
     },
     closeModalUser() {
-      this.modalUser = !this.modalUser;
+      this.modalUser = false;
     },
     openModalLogin() {
       this.modalUser = false;
