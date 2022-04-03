@@ -70,7 +70,8 @@
         </el-date-picker>
       </div>
 
-      <div class="guests-input flex-col" @click="openModal" v-close="openModal">
+      <div class="guests-input flex" @click="openModal">
+       <div class="flex-col">
         <label class="guests-label"> Guests </label>
         <span class="guests"> {{ getGuests }}</span>
         </div>
@@ -98,6 +99,7 @@
               ></path>
             </g>
           </svg>
+        </div>
         </div>
 
       <div
@@ -372,8 +374,5 @@ export default {
 };
 </script>
 <style>
-.check-container {
-  display: flex;
-  margin: 0px;
-}
+
 </style>
