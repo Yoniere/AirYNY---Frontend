@@ -9,13 +9,13 @@
           <HistogramSlider
             v-model="filterByPrice"
             @change="setFilterPrice"
-            :width="400"
-            :bar-height="72"
+            :width="356"
+            :bar-height="64"
             :data="pricesToShow"
             :drag-interval="true"
             :force-edges="false"
             :min="30"
-            :max="2000"
+            :max="200"
             primaryColor="#b0b0b0"
             barRadius="6"
           />
@@ -89,7 +89,7 @@ export default {
       filterBy: null,
 
       filterByPrice: {
-        maxPrice: 2000,
+        maxPrice: 350,
         minPrice: 30,
       },
     };
@@ -102,7 +102,7 @@ export default {
     setSort(type) {
       if (type === "clear") {
         this.filterByPrice = {
-          maxPrice: 2000,
+          maxPrice: 350,
           minPrice: 30,
         };
       }

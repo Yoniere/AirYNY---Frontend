@@ -47,6 +47,9 @@
     // box-shadow: $clr5 0px 10px 37px;
     overflow: hidden;
     justify-content: flex-start;
+    .price-container {
+        align-self: center;
+    }
     .input-price {
         cursor: text;
         min-height: rem(56px);
@@ -80,6 +83,8 @@
         width: rem(440px);
         height: rem(264px);
         padding: rem(20px);
+        justify-content: center;
+        align-items: center;
     }
     .lower-modal-section {
         padding: 12px 14px;

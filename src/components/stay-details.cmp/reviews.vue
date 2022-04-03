@@ -16,7 +16,7 @@
               fill-rule="evenodd"
             ></path>
           </svg>
-        <div class="rating">{{ getRating }}</div> ·
+        <div class="rating">{{ getRating.toFixed(1) }}</div> ·
         <button class="review-btn">
           <span> {{ stay.numOfReviews }}</span>
           reviews
@@ -59,7 +59,7 @@ export default {
 
   computed: {
     getRating() {
-      return this.stay.reviewScores.rating / 10;
+      return this.stay.reviewScores.rating / 10/2;
     },
 
   },
