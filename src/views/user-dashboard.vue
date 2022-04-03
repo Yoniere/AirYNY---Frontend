@@ -1,26 +1,35 @@
 <template>
   <app-header class="user-details" />
-  <section class="main-layout2 my-details-section" v-if="user">
-     <div class="my-details flex-row">
-      <button class="flex align-center" @click="toggle(false)">
+  <section
+    class="main-layout2 my-details-section"
+    v-if="user"
+  >
+    <div class="my-details flex-row">
+      <button
+        class="flex align-center"
+        @click="toggle(false)"
+      >
         <img
           src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648118112/airyny/home48-icon.svg"
         />
         My assets
       </button>
-      <button @click="toggle(true)" class="flex align-center">
+      <button
+        @click="toggle(true)"
+        class="flex align-center"
+      >
         <img
           src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648118112/airyny/freecancellation26-icon.png"
         />
         Received orders
       </button>
     </div>
-    <h2 class="dash-header"> Dashboard </h2>
+    <h2 class="dash-header">Dashboard</h2>
     <div class="flex-row user-prof">
       <div class="flex-col align-center">
-    <div class="user-rate"> 
-      <span> Total Rate </span>
-      <div
+        <div class="user-rate">
+          <span> Total Rate </span>
+          <div
             class="flex card-rate"
             :style="getZeroMargin"
           >
@@ -47,37 +56,34 @@
             <span> 4.7 avg </span>
             <span> 420 reviews </span>
           </div>
-    </div>
-    <div class="user-profit">
-       <span>Total revenues </span>
-        <div class="profit">
+        </div>
+        <div class="user-profit">
+          <span>Total revenues </span>
+          <div class="profit">
             <div class="flex-col">
-            <span>Month </span>
-             <span>$1,500 </span>
-           </div>
-          <div class="flex-col">
-           <span>Year </span>
-          <span>$30,330 </span>
-         </div>
-           <div class="flex-col">
-           <span>Total </span>
-           <span>$67,242</span>
+              <span>Month </span>
+              <span>$1,500 </span>
+            </div>
+            <div class="flex-col">
+              <span>Year </span>
+              <span>$30,330 </span>
+            </div>
+            <div class="flex-col">
+              <span>Total </span>
+              <span>$67,242</span>
+            </div>
           </div>
-         </div>
+        </div>
       </div>
-      </div>
-
 
       <div class="orders-div">
-      <span>Orders</span>
+        <span>Orders</span>
         <chart />
-            </div>
+      </div>
     </div>
-     	
 
-   
     <div class="user-order" v-if="renderOrder">
-      <h3> My orders </h3>
+      <h3>My orders</h3>
       <table style="overflow-x: auto">
         <tr>
           <th></th>
@@ -97,22 +103,35 @@
               </q-avatar>
             </div>
           </td>
-          <td class="stay-name-details">{{ order.guestName }}</td>
-          <td class="stay-name-details">{{ order.name }}</td>
+          <td class="stay-name-details">
+            {{ order.guestName }}
+          </td>
+          <td class="stay-name-details">
+            {{ order.name }}
+          </td>
           <td>{{ order.created }}</td>
           <td>
             {{ formattedTime(order.stayTime[0]) }} -
             {{ formattedTime(order.stayTime[1]) }}
           </td>
           <td>{{ order.status }}</td>
-          <td>$ {{  formatedPrice(order.total) }}</td>
+          <td>$ {{ formatedPrice(order.total) }}</td>
           <td v-if="order.status !== 'Pending'">
             <button
               class="btn clikable"
               @click="changeOrderStatusBack(order)"
-              :style="{ color: order.status === 'Decline' ? 'green' : 'red' }"
+              :style="{
+                color:
+                  order.status === 'Decline'
+                    ? 'green'
+                    : 'red',
+              }"
             >
-              {{ order.status === "Decline" ? "Approve" : "Decline" }}
+              {{
+                order.status === "Decline"
+                  ? "Approve"
+                  : "Decline"
+              }}
             </button>
           </td>
           <td v-else class="flex-row">
@@ -133,7 +152,7 @@
       </table>
     </div>
     <div class="user-stays" v-if="!renderOrder">
-       <h3> My stays </h3>
+      <h3>My stays</h3>
       <table>
         <tr>
           <th></th>
@@ -163,7 +182,6 @@
         </tr>
       </table>
     </div>
-
   </section>
 </template>
 
@@ -172,7 +190,7 @@ import appHeader from "../components/app-header.vue";
 import { utilService } from "../services/util-service.js";
 import { orderService } from "../services/order-service.js";
 import { socketService } from "../services/socket.service.js";
-import chart from '../components/chart.vue'
+import chart from "../components/chart.vue";
 export default {
   data() {
     return {
@@ -185,7 +203,7 @@ export default {
     const user = await this.$store.getters.user;
     this.user = user;
     console.log(user);
-    console.log('this.user',this.user);
+    console.log("this.user", this.user);
     socketService.on("host topic", user.id);
     socketService.on("order recived", this.addOrder);
   },
@@ -193,7 +211,7 @@ export default {
     toggle(val) {
       this.renderOrder = val;
     },
-    formattedTime(time) {   
+    formattedTime(time) {
       return time.slice(0, 10);
     },
     changeOrderStatus(order, val) {
@@ -203,30 +221,28 @@ export default {
       socketService.emit("order-status-change", msg);
     },
     changeOrderStatusBack(order) {
-      if (order.status === "Approve") order.status = "Decline";
+      if (order.status === "Approve")
+        order.status = "Decline";
       else order.status = "Approve";
       orderService.add(order);
     },
     addOrder(order) {
       this.user.orders.unshift(order);
     },
-       formatedPrice(price){
-         return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(price)
-
-    }
-
+    formatedPrice(price) {
+      return new Intl.NumberFormat("en-IN", {
+        maximumSignificantDigits: 3,
+      }).format(price);
+    },
   },
-  computed: {
- 
-     
-  },
+  computed: {},
   unmounted() {
     socketService.off("order recived", this.addMsg);
     socketService.off("host topic", user.id);
   },
   components: {
     appHeader,
-    chart
+    chart,
   },
 };
 </script>
