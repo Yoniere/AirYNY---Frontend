@@ -1,9 +1,9 @@
 <template>
-
-   <section class="upper-section-header-explore">
-  <app-header class="header-details main-layout2"
-    @openModalLogin="openModalLogin"
-  />
+  <section class="upper-section-header-explore">
+    <app-header
+      class="header-details main-layout2"
+      @openModalLogin="openModalLogin"
+    />
   </section>
   <section class="main-layout2">
     <div class="explore-buttons flex">
@@ -74,22 +74,84 @@
         </span>
       </button>
       <typePlaceModal v-if="modalType" @sort="setSort" />
-      <button class="sort-btn small-btn" @click="setSortAmenities('Wifi')">Wifi</button>
-      <button class="sort-btn small-btn" @click="setSortAmenities('TV')">TV</button>
-      <button class="sort-btn" @click="setSortAmenities('Kitchen')">Kitchen</button>
-      <button class="sort-btn small-btn" @click="setSortAmenities('AC')">AC</button>
-      <button class="sort-btn" @click="setSortAmenities('Smoking Allowed')">Smoking Allowed</button>
-      <button class="sort-btn" @click="setSortAmenities('Pet Allowed')">Pet Allowed</button>
-      <button class="sort-btn" @click="setSortAmenities('Pet Allowed')">Gym</button>
-      <button class="sort-btn" @click="setSortAmenities('Pet Allowed')">Elevator</button>
-      <button class="sort-btn" @click="setSortAmenities('Pet Allowed')">Breakfast</button>
-      <button class="sort-btn" @click="setSortAmenities('Pet Allowed')">Pool</button>
-      <button class="sort-btn" @click="setSortAmenities('Pet Allowed')">Washer</button>
-      <button class="sort-btn" @click="setSortAmenities('Pet Allowed')">Iron</button>
+      <button
+        class="sort-btn small-btn"
+        @click="setSortAmenities('Wifi')"
+      >
+        Wifi
+      </button>
+      <button
+        class="sort-btn small-btn"
+        @click="setSortAmenities('TV')"
+      >
+        TV
+      </button>
+      <button
+        class="sort-btn"
+        @click="setSortAmenities('Kitchen')"
+      >
+        Kitchen
+      </button>
+      <button
+        class="sort-btn small-btn"
+        @click="setSortAmenities('AC')"
+      >
+        AC
+      </button>
+      <button
+        class="sort-btn"
+        @click="setSortAmenities('Smoking Allowed')"
+      >
+        Smoking Allowed
+      </button>
+      <button
+        class="sort-btn"
+        @click="setSortAmenities('Pet Allowed')"
+      >
+        Pet Allowed
+      </button>
+      <button
+        class="sort-btn"
+        @click="setSortAmenities('Pet Allowed')"
+      >
+        Gym
+      </button>
+      <button
+        class="sort-btn"
+        @click="setSortAmenities('Pet Allowed')"
+      >
+        Elevator
+      </button>
+      <button
+        class="sort-btn"
+        @click="setSortAmenities('Pet Allowed')"
+      >
+        Breakfast
+      </button>
+      <button
+        class="sort-btn"
+        @click="setSortAmenities('Pet Allowed')"
+      >
+        Pool
+      </button>
+      <button
+        class="sort-btn"
+        @click="setSortAmenities('Pet Allowed')"
+      >
+        Washer
+      </button>
+      <button
+        class="sort-btn"
+        @click="setSortAmenities('Pet Allowed')"
+      >
+        Iron
+      </button>
     </div>
 
     <h1>{{ title }}</h1>
-    <div v-if="!stays.length"><img class="loading-img" src="../assets/loader.gif" /> </div>
+    <div v-if="!stays.length">
+      <img class="loading-img" src="../assets/loader.gif" />
+    </div>
     <stay-list
       :stays="stays"
       v-if="stays"
@@ -122,7 +184,7 @@ export default {
           maxPrice: 2000,
         },
         type: [],
-        amenities:[],
+        amenities: [],
       },
       modalPrice: false,
       modalType: false,
@@ -178,11 +240,11 @@ export default {
       });
       this.modalType = false;
     },
-    setSortAmenities(amenity){
-      if (this.filterBy.amenities.includes(amenity)) return
+    setSortAmenities(amenity) {
+      if (this.filterBy.amenities.includes(amenity)) return;
 
-      this.filterBy.amenities.push(amenity)
-            this.$store.dispatch({
+      this.filterBy.amenities.push(amenity);
+      this.$store.dispatch({
         type: "setFilter",
         filterBy: JSON.parse(JSON.stringify(this.filterBy)),
       });

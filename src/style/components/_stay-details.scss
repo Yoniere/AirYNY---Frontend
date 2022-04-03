@@ -748,10 +748,12 @@
       flex-direction: row;
 
       .check-out {
-        margin-left: -141px;
+        // margin-left: -141px;
+        padding-left: 50px;
       }
       .check-in {
-        margin-right: 172px;
+        // margin-right: 172px;
+        margin-left: -59px;
       }
       .el-range-input {
         width: 50% !important;
