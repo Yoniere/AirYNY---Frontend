@@ -345,6 +345,7 @@ export default {
 </script>
 <style>
 .check-container {
+  display: flex;
   margin: 0px;
 }
 </style>

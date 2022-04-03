@@ -706,19 +706,18 @@
     .check-in {
       //   padding-left: 0.75rem;
       margin-top: 10px;
-      margin-left: -71px;
+      //   margin-left: -71px;
       margin-bottom: -3px;
-      margin-right: 98px;
+      //   margin-right: 98px;
       font-size: 0.875rem;
       line-height: 1.125rem;
-      /* padding-left: 0.75rem; */
+
       font-weight: 200;
       cursor: pointer;
       font-family: Cereal-Regular;
       font-weight: 600;
       font-size: 0.75rem;
-      /* line-height: 1rem; */
-      /* padding-bottom: 0.125rem; */
+
       letter-spacing: 0.48px;
     }
     .check-out {
@@ -747,22 +746,11 @@
     }
     @include for-normal-layout {
       flex-direction: row;
-      // max-width: 100%;
-      //   margin-left: -43px;
-      //   max-height: unset;
-      //   border-radius: 0px;
-      //   flex-shrink: 1;
+
       .check-out {
-        // margin-block-start: auto;
-        // margin-block-end: auto;
-        // margin-inline-end: unset;
-        // margin-inline-end: unset;
         margin-left: -141px;
       }
       .check-in {
-        margin-inline-start: unset;
-        margin-left: -3px;
-        /* margin-bottom: -3px; */
         margin-right: 172px;
       }
       .el-range-input {
