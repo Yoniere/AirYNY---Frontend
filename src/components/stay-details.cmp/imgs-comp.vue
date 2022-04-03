@@ -25,7 +25,7 @@
             ></path>
           </svg>
         </div>
-        <span class="rating">{{ getRating }}</span> ·
+        <span class="rating">{{ getRating.toFixed(1) }}</span> ·
         <button class="review-btn">
           <span> {{ stay.numOfReviews }}</span>
           reviews
@@ -170,7 +170,7 @@ export default {
   },
   computed: {
     getRating() {
-      return this.stay.reviewScores.rating / 10;
+      return this.stay.reviewScores.rating / 10/2;
     },
 
     getHostImage() {

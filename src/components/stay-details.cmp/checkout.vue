@@ -41,7 +41,7 @@
               ></path>
             </svg>
           </div>
-          <span class="rating">{{ getRating }}</span> ·
+          <span class="rating">{{ getRating.toFixed(1) }}</span> ·
           <button class="review-btn">
             <span> {{ stay.numOfReviews }}</span>
             reviews
@@ -126,11 +126,11 @@
           <span>Price</span><span> $ {{ getPrice }} </span>
         </p>
         <p class="flex space-between">
-          <span>Service fee</span> <span>$25</span>
+          <span>Service fee</span> <span>$ 25</span>
         </p>
         <p class="flex space-between">
           <span>Total</span
-          ><span> ${{ getPrice + 25 }}</span>
+          ><span> $ {{ getPrice + 25 }}</span>
         </p>
       </div>
     </section>
@@ -202,7 +202,7 @@ export default {
 
   computed: {
     getRating() {
-      return this.stay.reviewScores.rating / 10;
+      return this.stay.reviewScores.rating / 10/2;
     },
     getPrice() {
       const days = Math.abs(
