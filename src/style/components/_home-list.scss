@@ -92,7 +92,7 @@
 }
 .txt-container {
   position: absolute;
-  bottom: 0rem;
+  bottom: 0px;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
   background-color: #05050566;
@@ -103,6 +103,7 @@
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   .dist-country {
+    // bottom: -1rem;
     font-family: Cereal-Regular;
     color: white;
     line-height: 20px;
