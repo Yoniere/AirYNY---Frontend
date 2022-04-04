@@ -66,6 +66,9 @@
       @closeLoginModal="closeLoginModal"
     />
   </section>
+      <section v-else>
+      <img class="loading-img" src="../assets/loader.gif" />
+    </section>
 </template>
 
 <script>
