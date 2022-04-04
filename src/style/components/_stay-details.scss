@@ -182,6 +182,10 @@
                 height: rem(56px);
                 object-fit: cover;
                 border-radius: 50%;
+                @include for-narrow-layout {
+                    margin-bottom: rem(16px);
+                    margin-left: rem(16px);
+                }
             }
             .initial-info {
                 color: #222222;
@@ -638,19 +642,18 @@
                 opacity: 1;
             }
             .check-container {
-                   display: flex;
-                   gap: rem(90px);
-        @include for-wide-layout {
-            gap: rem(75px);
-        }
-        @include for-normal-layout {
-            gap: rem(16px);
-        }
-        @include for-narrow-layout {
-            gap: rem(8px);
-        }
-                  
-}
+                display: flex;
+                gap: rem(90px);
+                @include for-wide-layout {
+                    gap: rem(75px);
+                }
+                @include for-normal-layout {
+                    gap: rem(16px);
+                }
+                @include for-narrow-layout {
+                    gap: rem(8px);
+                }
+            }
             .date-input-container {
                 display: flex;
                 flex-direction: row;
@@ -890,6 +893,14 @@
                         align-items: center;
                         width: 100%;
                         justify-content: space-between;
+                        .lower-checkout-section {
+                            @include for-narrow-layout {
+                                width: 100%;
+                                justify-content: space-between;
+                                flex-direction: row;
+                                align-items: center;
+                            }
+                        }
                     }
                     .reserve-btn {
                         min-width: unset;
@@ -960,6 +971,14 @@
                     align-items: center;
                     width: 100%;
                     justify-content: space-between;
+                    .lower-checkout-section {
+                        @include for-narrow-layout {
+                            width: 100%;
+                            justify-content: space-between;
+                            flex-direction: row;
+                            align-items: center;
+                        }
+                    }
                 }
                 .el-date-editor {
                     display: none;
@@ -1010,7 +1029,7 @@
             left: 0px;
             background-color: #fff;
             z-index: 100;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             margin: 0 auto;
             padding-left: rem(80px);
@@ -1021,9 +1040,18 @@
             .checkout-section {
                 width: 100%;
                 align-items: center;
-                justify-content: end;
+                justify-content: space-between;
+                max-width: 1120px;
                 @include for-narrow-layout {
                     justify-content: space-between;
+                }
+                .lower-checkout-section {
+                    flex-direction: row;
+                    align-items: center;
+                    @include for-narrow-layout {
+                        width: 100%;
+                        justify-content: space-between;
+                    }
                 }
             }
             @include for-wide-layout {

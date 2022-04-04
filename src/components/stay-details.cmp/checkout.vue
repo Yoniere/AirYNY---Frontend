@@ -5,6 +5,7 @@
     :class="checkoutPos"
   >
     <section :style="getFlexRow" class="checkout-section">
+      <div class="flex-col lower-checkout-section">
       <div
         class="checkout-title flex space-between"
         :style="getFlexColumn"
@@ -166,9 +167,9 @@
           <span>Total</span
           ><span> $ {{ getPrice + 25 }}</span>
         </p>
+        </div>
       </div>
-    </section>
-    <div class="nav-bar-section">
+          <div class="nav-bar-section">
       <nav class="checkout-nav">
         <ul class="nav-list">
           <a class="link" @click="scrollMeTo('gallery')"
@@ -188,6 +189,8 @@
         </ul>
       </nav>
     </div>
+    </section>
+
   </section>
 </template>
 <script>
