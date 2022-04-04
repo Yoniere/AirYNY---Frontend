@@ -24,7 +24,7 @@
         Received orders
       </button>
     </div>
-    <h2 class="dash-header">Dashboard</h2>
+    <h2 class="dash-header">Revenues info</h2>
     <div class="flex-row user-prof">
       <div class="flex-col align-center">
         <div class="user-rate">
@@ -103,7 +103,7 @@
                 <img class="img" :src="order.ImgUrl" />
               </q-avatar>
             </div>
-               {{ order.guestName }}
+            {{ order.guestName }}
           </td>
           <!-- <td class="stay-name-details">
          
