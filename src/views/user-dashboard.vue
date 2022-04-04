@@ -4,11 +4,6 @@
     class="main-layout2 my-details-section"
     v-if="user"
   >
-    <img
-      class="dashboard-img"
-      :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1649087047/airyny/filip-zrnzevic-QsWG0kjPQRY-unsplash_kgyhhl.jpg`"
-      alt="img rated stay"
-    />
     <div class="my-details flex-row">
       <button
         class="flex align-center"
