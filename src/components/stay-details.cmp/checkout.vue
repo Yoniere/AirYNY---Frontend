@@ -147,13 +147,13 @@
         <div class="pricing" v-if="fullDetailsOrder">
           <p>You won't be charged yet</p>
           <p class="flex space-between">
-            <span>Price</span><span> $ {{ getPrice }} </span>
+            <span>Price</span><span>${{ getPrice }} </span>
           </p>
           <p class="flex space-between">
-            <span>Service fee</span> <span>$ 25</span>
+            <span>Service fee</span> <span>$25</span>
           </p>
           <p class="flex space-between">
-            <span>Total</span><span> $ {{ getPrice + 25 }}</span>
+            <span>Total</span><span>${{ getPrice + 25 }}</span>
           </p>
         </div>
       </div>

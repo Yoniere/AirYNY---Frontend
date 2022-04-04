@@ -40,7 +40,7 @@ export default {
 
 <style>
 #pie-chart {
-  height: 300px;
+  height: 250px;
   width: 250px;
 }
 </style>

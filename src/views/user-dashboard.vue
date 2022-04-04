@@ -9,22 +9,50 @@
         class="flex align-center"
         @click="toggle(false)"
       >
-        <img
-          src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648118112/airyny/home48-icon.svg"
-        />
+        <svg
+          viewBox="0 0 32 32"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          role="presentation"
+          focusable="false"
+          style="
+            display: block;
+            height: 24px;
+            width: 24px;
+            fill: currentcolor;
+          "
+        >
+          <path
+            d="m17.9772237 1.90551573.1439807.13496509 13.2525 13.25240998-1.4142088 1.4142184-.9603513-.9603098.0008557 12.5832006c0 1.0543618-.8158778 1.9181651-1.8507377 1.9945143l-.1492623.0054857h-22c-1.0543618 0-1.91816512-.8158778-1.99451426-1.8507377l-.00548574-.1492623-.00085571-12.5822006-.95878858.9593098-1.41421142-1.414217 13.25247161-13.25243161c1.1247615-1.1246896 2.9202989-1.16967718 4.0986078-.13494486zm-2.5902053 1.46599297-.0942127.08318915-10.29366141 10.29310155.00085571 14.5822006h5.9991443l.0008557-9.9966c0-1.0543764.8158639-1.9181664 1.8507358-1.9945144l.1492642-.0054856h6c1.0543764 0 1.9181664.8158639 1.9945144 1.8507358l.0054856.1492642-.0008557 9.9966h6.0008557l-.0008557-14.5832006-10.2921737-10.29212525c-.3604413-.36046438-.9276436-.38819241-1.3199522-.08316545zm3.6129816 14.9618913h-6l-.0008557 9.9963994h6z"
+          ></path>
+        </svg>
         My assets
       </button>
       <button
         @click="toggle(true)"
         class="flex align-center"
       >
-        <img
-          src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648118112/airyny/freecancellation26-icon.png"
-        />
+        <svg
+          viewBox="0 0 32 32"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          role="presentation"
+          focusable="false"
+          style="
+            display: block;
+            height: 24px;
+            width: 24px;
+            fill: currentcolor;
+          "
+        >
+          <path
+            d="m26 6h-4v-2a2.00229 2.00229 0 0 0 -2-2h-8a2.002 2.002 0 0 0 -2 2v2h-4a5.00588 5.00588 0 0 0 -5 5v14a5.00588 5.00588 0 0 0 5 5h20a5.00588 5.00588 0 0 0 5-5v-14a5.00588 5.00588 0 0 0 -5-5zm-14.00146-2h8.00146v2h-8.00134zm-5.99854 24a3.00328 3.00328 0 0 1 -3-3v-14a3.00328 3.00328 0 0 1 3-3h4v20zm6 0-.00122-20h8.00122v20zm17-3a3.00328 3.00328 0 0 1 -3 3h-4v-20h4a3.00328 3.00328 0 0 1 3 3z"
+          ></path>
+        </svg>
         Received orders
       </button>
     </div>
-    <h2 class="dash-header">Dashboard</h2>
+    <h2 class="dash-header">Revenues info</h2>
     <div class="flex-row user-prof">
       <div class="flex-col align-center">
         <div class="user-rate">
@@ -86,7 +114,6 @@
       <h2>My orders</h2>
       <table style="overflow-x: auto">
         <tr class="table-header">
-          <th class="user-order-th"></th>
           <th class="stay-name-details">Guest</th>
           <th class="stay-name-details">Asset</th>
           <th class="user-order-th">Order Date</th>
@@ -98,16 +125,17 @@
           <th class="user-order-th">Actions</th>
         </tr>
         <tr v-for="order in user.orders" :key="order._id">
-          <td class="stay-name-details flex align-center">
+          <td class="flex align-center stay-name-details">
             <div class="review-img q-pa-md q-gutter-sm">
               <q-avatar>
                 <img class="img" :src="order.ImgUrl" />
               </q-avatar>
             </div>
-          </td>
-          <td class="stay-name-details">
             {{ order.guestName }}
           </td>
+          <!-- <td class="stay-name-details">
+         
+          </td> -->
           <td class="stay-name-details">
             {{ order.name }}
           </td>
@@ -175,7 +203,7 @@
             </div>
           </td>
           <td class="stay-name-details">{{ stay.name }}</td>
-          <td>$ {{ stay.price }}</td>
+          <td>${{ stay.price }}</td>
           <td>
             {{ stay.address.country }},
             {{ stay.address.city }}

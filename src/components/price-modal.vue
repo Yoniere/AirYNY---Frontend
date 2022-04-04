@@ -15,7 +15,7 @@
             :drag-interval="true"
             :force-edges="false"
             :min="30"
-            :max="200"
+            :max="150"
             primaryColor="#b0b0b0"
             barRadius="6"
           />
@@ -89,7 +89,7 @@ export default {
       filterBy: null,
 
       filterByPrice: {
-        maxPrice: 350,
+        maxPrice: 150,
         minPrice: 30,
       },
     };

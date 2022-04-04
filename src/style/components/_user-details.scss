@@ -1,8 +1,9 @@
 .my-details {
+  font-family: Cereal-Regular !important;
   margin-top: 100px;
   button {
     font-size: rem(14px);
-    width: rem(100px);
+    width: 7.25rem;
     background-color: transparent;
     border: none;
     display: flex;
@@ -38,16 +39,13 @@
   }
   .table-header {
     background-color: rgb(255, 56, 92, 1) !important;
-    height: 60px;
+    height: 15vh !important;
     font-size: 17px;
     color: white;
     overflow: hidden;
     padding-bottom: 10px;
-    .user-order-th:nth-child(8) {
+    .user-order-th:nth-child(7) {
       border-top-right-radius: 12px !important;
-    }
-    .user-order-th:first-child {
-      border-top-left-radius: 12px !important;
     }
   }
   table {
@@ -56,14 +54,22 @@
     border-collapse: collapse;
     margin-top: 50px;
   }
+  th:first-child {
+    border-top-left-radius: 12px !important;
+    padding-left: 10px;
+  }
   th,
   td {
-    height: rem(100px);
+    margin-right: -33px;
+    height: 5.25rem;
     box-shadow: inset 0 -0.5px 0 0 $clr3;
     text-align: center;
+    margin-left: 9px;
     margin-top: 7px;
     padding-bottom: 7px;
-    justify-content: center;
+    .review-img {
+      margin-right: 6px;
+    }
   }
   .img {
     object-fit: cover;
@@ -104,6 +110,7 @@
     padding-bottom: 7px;
     justify-content: center;
   }
+
   .img {
     object-fit: cover;
     border-radius: 50%;
@@ -141,20 +148,32 @@
 }
 
 .user-rate {
+  font-family: Cereal-Regular !important;
+  border: 0.075px solid #b0b0b0;
+
   border-radius: 12px;
-  border: 1px solid $clr5;
+  // border: 1px solid $clr5;
   width: rem(220px);
   height: 45%;
-  box-shadow: 1px 0.4px $clr5;
+  // box-shadow: 1px 0.4px $clr5;
   padding: 10px;
 
   span:first-child {
     font-size: 20px;
     font-weight: 600;
   }
+  span:nth-child(2){
+    font-size: 16px;
+    font-weight: 600;
+  }
+  span:nth-child(3){
+    font-size: 14px;
+    font-weight: 800;
+  }
 }
 
 .user-prof {
+  font-family: Cereal-Regular !important;
   box-shadow: -1px 1px 21px 8px rgb(0 0 0 / 12%);
   gap: 20px;
   margin: 0 auto;
@@ -162,23 +181,33 @@
   // box-shadow: 1px 0.4px $clr5;
   border-radius: 12px;
   padding: 30px;
+
+  border: 0.075px solid #b0b0b0;
+
   .flex-col {
     justify-content: space-evenly;
   }
 }
 
 .user-profit {
+  border: 0.075px solid #b0b0b0;
+
+  font-family: Cereal-Regular !important;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  border: 1.5px solid $clr5;
+  // border: 1.5px solid $clr5;
   width: rem(220px);
-  box-shadow: 1px 0.4px $clr5;
+  // box-shadow: 1px 0.4px $clr5;
   padding: 10px;
   height: 45%;
   span:first-child {
     font-size: 20px;
     font-weight: 600;
+  }
+  span{
+    font-size: 14px;
+    font-weight: 800;
   }
   .profit {
     flex-direction: row;
@@ -189,10 +218,15 @@
   }
 }
 .orders-div {
+  font-family: Cereal-Regular !important;
+
   border-radius: 12px;
-  border: 1.5px solid $clr5;
+  // border: 1.5px solid $clr5;
   // width: rem(220px);
-  box-shadow: 1px 0.4px $clr5;
+  // box-shadow: 1px 0.4px $clr5;
+
+  border: 0.075px solid #b0b0b0;
+
   padding: 10px;
   span:first-child {
     font-size: 20px;
@@ -200,10 +234,14 @@
   }
 
   td {
+    font-family: Cereal-Regular !important;
+
     text-align: center;
     font-size: 1rem;
   }
   .nums-td {
+    font-family: Cereal-Regular !important;
+
     font-size: 1.5rem;
     line-height: 1.5rem;
     padding-top: 10px;
@@ -212,10 +250,14 @@
 }
 
 .wish-list {
+  font-family: Cereal-Regular !important;
+
   margin-top: 100px;
 }
 
 .my-details {
+  font-family: Cereal-Regular !important;
+
   margin-top: 90px;
   z-index: 100;
   margin-bottom: 15px;
