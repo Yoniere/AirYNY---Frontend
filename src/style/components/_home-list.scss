@@ -92,7 +92,7 @@
 }
 .txt-container {
   position: absolute;
-  bottom: 2px;
+  bottom: 0rem;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
   background-color: #05050566;
@@ -110,18 +110,29 @@
     font-weight: 400;
     margin-left: rem(18px);
   }
+  @include for-wide-layout {
+    bottom: 0.25rem;
+  }
+  @include for-normal-layout {
+    bottom: 0rem;
+  }
+
   @include for-narrow-layout {
-    // bottom: 11px;
+    bottom: 0rem;
+
+    .country-name .popular {
+      width: 100%;
+    }
   }
   @include for-mobile-layout {
-    bottom: 6px;
-    height: 30px;
+    bottom: 5px;
+    height: 28px;
     line-height: 6px;
     /* font-weight: 200; */
     /* font-size: 4px; */
-    padding-bottom: 52px;
+    padding-bottom: 68px;
     .home-card .popular {
-      padding-top: 0px;
+      padding-top: 0px !important;
     }
   }
 }
