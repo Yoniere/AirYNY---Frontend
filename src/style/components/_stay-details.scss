@@ -567,12 +567,12 @@
         }
     }
     .checkout-guests-modal {
-        max-width: 320.325px;
+        max-width: 322.325px;
         border-radius: 4px;
         box-shadow: rgb(0 0 0 / 15%) 0px 2px 6px, rgb(0 0 0 / 7%) 0px 0px 0px 1px;
-        z-index: 100;
+        // z-index: 100;
         display: flex;
-        z-index: 100;
+        z-index: 5000;
         justify-content: start;
         background-color: $clr2;
         // border-radius: 32px;
@@ -580,7 +580,7 @@
         height: 282px;
         width: 100%;
         padding: 16px;
-        position: fixed;
+        position: absolute;
         // right: 0;
         line-height: rem(20px);
         font-size: 16px;
@@ -589,7 +589,7 @@
         flex-direction: column;
         align-content: stretch;
         // justify-content: center;
-        bottom: rem(438px);
+        bottom: 25.375rem;
         .guests-btn {
             margin: 0px;
         }
@@ -862,6 +862,7 @@
 }
 
 .guests-input {
+    position: relative;
     height: rem(56px);
     max-width: rem(322.33px);
     border-radius: rem(8px) rem(8px) 0 0;

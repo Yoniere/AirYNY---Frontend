@@ -132,7 +132,7 @@
           </div>
 
           <div class="flex close-btn-div">
-            <button class="close-btn">Close</button>
+            <button @click="openModal" class="close-btn">Close</button>
           </div>
         </div>
         <button
