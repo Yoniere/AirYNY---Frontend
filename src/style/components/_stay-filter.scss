@@ -233,6 +233,17 @@
   }
   .input-container:hover {
     background-color: #ebebeb;
+
+    .container-check {
+      width: 291px !important;
+      background-color: #ebebeb;
+      border-radius: 40px;
+      padding: 12.5px 3.5px 7.5px 11px !important;
+      height: 70px;
+      .el-range-input {
+        margin-right: -22px;
+      }
+    }
   }
   button {
     background-color: transparent;
