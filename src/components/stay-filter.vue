@@ -31,8 +31,8 @@
         height="60"
         width="1"
         style="
-          margin-left: 5px;
-          margin-right: 40px;
+          margin-left: 50px;
+          margin-right: 34px;
           padding-top: 10px;
         "
       >
@@ -72,8 +72,8 @@
         height="60"
         width="1"
         style="
-          margin-left: 60px;
-          margin-right: -10px;
+          margin-left: 102px;
+          margin-right: -2px;
           padding-top: 10px;
         "
       >
