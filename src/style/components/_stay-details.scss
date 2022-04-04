@@ -509,6 +509,9 @@
     align-items: baseline;
     display: flex;
     flex-direction: column;
+    @include for-narrow-layout {
+        border-radius: unset
+    }
     .checkout-nav {
         display: none;
     }
@@ -564,25 +567,32 @@
         }
     }
     .checkout-guests-modal {
+        max-width: 320.325px;
+        border-radius: 4px;
+        box-shadow: rgb(0 0 0 / 15%) 0px 2px 6px, rgb(0 0 0 / 7%) 0px 0px 0px 1px;
         z-index: 100;
         display: flex;
         z-index: 100;
+        justify-content: start;
         background-color: $clr2;
-        border-radius: 32px;
-        box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
-        height: 370px;
+        // border-radius: 32px;
+        // box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+        height: 282px;
         width: 100%;
-        padding: 16px 32px;
-        position: absolute;
-        right: 0;
+        padding: 16px;
+        position: fixed;
+        // right: 0;
         line-height: rem(20px);
         font-size: 16px;
         font-weight: 600;
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
         flex-direction: column;
         align-content: stretch;
-        justify-content: center;
-        bottom: 200px;
+        // justify-content: center;
+        bottom: rem(438px);
+        .guests-btn {
+            margin: 0px;
+        }
         .guide-age {
             font-size: 14px;
             font-weight: 400;
@@ -598,18 +608,45 @@
             background-color: $clr2;
             text-align: center;
             font-size: 16px;
-            margin: 5px;
+            // margin: 5px;
             align-items: center;
             justify-content: center;
         }
+        .close-btn-div {
+            justify-content: end;
+            .close-btn {
+                width: 41px;
+                margin: 0px;
+                padding: 0px;
+                border: 0px;
+                text-decoration: underline;
+                font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+                font-size: rem(16px);
+                line-height: rem(20px);
+                font-weight: 600;
+                border-radius: rem(8px);
+                color: rgb(0, 0, 0);
+                &:hover {
+                    background: rgb(247, 247, 247);
+                    background-size: auto;
+                }
+            }
+        }
         li {
-            padding: 36px 0px;
+            margin-bottom: 24px;
+            margin-top: 8px;
+            .category {
+                padding-bottom: 4px;
+                font-size: 16px;
+                line-height: 20px;
+                font-weight: 600;
+            }
         }
         li:nth-child(1) {
-            border-bottom: 0.5px solid #e1e1e1;
+            // border-bottom: 0.5px solid #e1e1e1;
         }
         li:nth-child(2) {
-            border-bottom: 0.5px solid #e1e1e1;
+            // border-bottom: 0.5px solid #e1e1e1;
         }
     }
     .guests-input:hover,
@@ -890,6 +927,7 @@
             height: rem(48px);
         }
         @include for-narrow-layout {
+            align-items: end;
             max-width: unset;
             margin-bottom: 0px;
             top: unset;
@@ -908,7 +946,9 @@
             flex-direction: row;
             width: -webkit-fill-available;
             left: 0px;
-            align-items: center;
+            .pricing {
+                display: none;
+            }
             .date-input-container {
                 display: none;
             }
@@ -986,7 +1026,10 @@
         flex-direction: row;
         width: -webkit-fill-available;
         left: 0px;
-        align-items: center;
+        align-items: end;
+        .pricing {
+            display: none;
+        }
         .date-input-container {
             display: none;
         }
@@ -1058,6 +1101,9 @@
     margin: 0 auto;
     padding-left: rem(80px);
     padding-right: rem(80px);
+    .pricing {
+        display: none;
+    }
     .date-input-container {
         display: none;
     }
@@ -1086,6 +1132,9 @@
     @include for-narrow-layout {
         padding-left: rem(24px);
         padding-right: rem(24px);
+        .pricing {
+            display: none;
+        }
     }
     .checkout-title {
         .checkout-title-right {
@@ -1093,6 +1142,7 @@
         }
     }
     @include for-narrow-layout {
+        align-items: end;
         top: unset;
         bottom: 0px;
         .nav-bar-section {
@@ -1125,6 +1175,9 @@
     }
     .pricing {
         display: none;
+        @include for-narrow-layout {
+            display: none;
+        }
     }
     .checkout-nav {
         display: block;
