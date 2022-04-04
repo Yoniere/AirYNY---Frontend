@@ -27,7 +27,7 @@
         </label>
       </div>
 
-     <svg
+      <svg
         height="60"
         width="1"
         style="
@@ -51,21 +51,21 @@
         class="main-time-picker input-container flex-col date-list"
       >
         <div class="container-check">
-          <div class="container-check flex">
+          <div class="container-check-in-out flex">
             <span class="btn-check-in"> Check in</span
             ><span class="btn-check-out"> Check out </span>
           </div>
+          <span class="demonstration"></span>
+          <el-date-picker
+            v-model="filterBy.stayTime"
+            type="daterange"
+            range-separator=""
+            start-placeholder="Add dates "
+            end-placeholder="Add dates"
+            size="small"
+          >
+          </el-date-picker>
         </div>
-        <span class="demonstration"></span>
-        <el-date-picker
-          v-model="filterBy.stayTime"
-          type="daterange"
-          range-separator=""
-          start-placeholder="Add dates "
-          end-placeholder="Add dates"
-          size="small"
-        >
-        </el-date-picker>
       </div>
       <svg
         class="line-container-2"
@@ -98,7 +98,11 @@
           <span class="guests"> {{ getGuests }}</span>
         </span>
       </div>
-      <div v-if="guestModal" class="guests-Modal" v-close="openModal">
+      <div
+        v-if="guestModal"
+        class="guests-Modal"
+        v-close="openModal"
+      >
         <!-- @blur="closeDropdown -->
         <ul>
           <li
@@ -177,7 +181,6 @@
 
 <script>
 import { utilService } from "../services/util-service.js";
-
 
 export default {
   name: "stay-filter",
