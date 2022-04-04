@@ -96,7 +96,7 @@
         <!-- </el-badge> -->
 
         <label
-          @click="openModalUser"
+          @click="toggleModalUser"
           class="relative"
           v-close="closeModalUser"
         >
@@ -152,7 +152,7 @@
           </button>
         </label>
         <user-details-modal
-          v-close="openModalUser"
+          v-close="closeModalUser"
           v-if="modalUser"
           @openModalLogin="openModalLogin"
           @closeLoginModal="closeLoginModal"
@@ -225,6 +225,9 @@ export default {
     },
     closeModalUser() {
       this.modalUser = false;
+    },
+    toggleModalUser() {
+      this.modalUser = !this.modalUser;
     },
     openModalLogin() {
       this.modalUser = false;
