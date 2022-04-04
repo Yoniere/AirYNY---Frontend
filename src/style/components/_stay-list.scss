@@ -43,7 +43,7 @@
 }
 
 .rotate {
-    transform: rotate(180deg)
+    transform: rotate(180deg);
 }
 
 .price-modal {
@@ -302,7 +302,8 @@
 
 .loading-img {
     margin-inline-start: 30%;
-    margin-block-start: -10%;
+    margin-block-start: 2%;
     width: rem(400px);
     height: rem(150px);
+    margin-bottom: 450px;
 }
