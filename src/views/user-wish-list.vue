@@ -1,7 +1,7 @@
 <template>
   <app-header class="header-details" />
   <section class="main-layout2 wish-list">
-    <h1 is-dot>Wish list</h1>
+    <h1>Wish list</h1>
 
     <stay-list
       :stays="stays"

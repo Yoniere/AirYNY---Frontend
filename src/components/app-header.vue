@@ -77,7 +77,7 @@
             ></path>
           </svg>
         </button>
-
+        <!-- 
         <el-badge
           is-dot
           class="dot-msg item"
@@ -87,13 +87,13 @@
               ? 'el-badge__content is-fixed is-dot'
               : 'none'
           "
-        >
-          <!-- v-if="showNotification" -->
-          <!-- <el-button -->
-          <!-- class="share-button"
+        > -->
+        <!-- v-if="showNotification" -->
+        <!-- <el-button -->
+        <!-- class="share-button"
         type="primary" -->
-          <!-- /> -->
-        </el-badge>
+        <!-- /> -->
+        <!-- </el-badge> -->
 
         <label
           @click="openModalUser"
