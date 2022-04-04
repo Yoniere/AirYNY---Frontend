@@ -93,7 +93,7 @@
 }
 .txt-container {
   position: absolute;
-  bottom: 1px;
+  bottom: 4px;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
   background-color: #05050566;
@@ -140,9 +140,6 @@
       padding-top: 0px !important;
     }
   }
-  .unique-txt {
-    bottom: 5px;
-  }
 }
 .unique-dest-list {
   margin-top: rem(92px);
@@ -152,5 +149,31 @@
     .country-name {
       margin-bottom: -5px;
     }
+  }
+}
+
+.unique-txt {
+  .country-name {
+    margin-bottom: 14px !important;
+  }
+  position: absolute;
+  bottom: 1px;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #05050566;
+  // border-radius: 12px !important;
+  font-family: Cereal-Regular;
+  padding-bottom: 5px;
+  // border-radius: 12px !important;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  .dist-country {
+    // bottom: -1rem;
+    font-family: Cereal-Regular;
+    color: white;
+    line-height: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: rem(18px);
   }
 }
