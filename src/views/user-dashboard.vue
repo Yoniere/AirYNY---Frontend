@@ -86,7 +86,6 @@
       <h2>My orders</h2>
       <table style="overflow-x: auto">
         <tr class="table-header">
-          <th class="user-order-th"></th>
           <th class="stay-name-details">Guest</th>
           <th class="stay-name-details">Asset</th>
           <th class="user-order-th">Order Date</th>
@@ -98,16 +97,17 @@
           <th class="user-order-th">Actions</th>
         </tr>
         <tr v-for="order in user.orders" :key="order._id">
-          <td class="stay-name-details flex align-center">
+          <td class="flex align-center stay-name-details">
             <div class="review-img q-pa-md q-gutter-sm">
               <q-avatar>
                 <img class="img" :src="order.ImgUrl" />
               </q-avatar>
             </div>
+               {{ order.guestName }}
           </td>
-          <td class="stay-name-details">
-            {{ order.guestName }}
-          </td>
+          <!-- <td class="stay-name-details">
+         
+          </td> -->
           <td class="stay-name-details">
             {{ order.name }}
           </td>
@@ -175,7 +175,7 @@
             </div>
           </td>
           <td class="stay-name-details">{{ stay.name }}</td>
-          <td>$ {{ stay.price }}</td>
+          <td>${{ stay.price }}</td>
           <td>
             {{ stay.address.country }},
             {{ stay.address.city }}
