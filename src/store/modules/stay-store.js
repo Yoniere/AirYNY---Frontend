@@ -14,7 +14,7 @@ export default {
             type: [],
             price: {
                 minPrice: 30,
-                maxPrice: 500
+                maxPrice: 150
             },
             amenities: [],
         },
