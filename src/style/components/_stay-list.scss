@@ -5,17 +5,12 @@
     row-gap: rem(40px);
     padding-top: 16px;
     padding-bottom: 250px;
-
     @include for-wide-layout {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
     @include for-normal-layout {
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     }
-
-  
 }
 
 .sort-btn {
@@ -307,7 +302,7 @@
 
 .loading-img {
     margin-inline-start: 30%;
-    margin-block-start: 2%;
+    margin-block-start: -10%;
     width: rem(400px);
     height: rem(150px);
 }
