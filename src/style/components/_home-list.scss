@@ -79,10 +79,11 @@
     white-space: pre-line;
     font-size: 27px;
     letter-spacing: -0.27px;
-    line-height: 30px;
-    margin-top: 17px;
+    line-height: 27px;
+    margin-bottom: 7px;
+    margin-top: 14px;
     color: white;
-    margin-left: rem(18px);
+    margin-left: 1.1rem;
   }
   .popular {
     padding-top: 5px;
@@ -92,7 +93,7 @@
 }
 .txt-container {
   position: absolute;
-  bottom: 0px;
+  bottom: 2px !important;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
   background-color: #05050566;
@@ -102,6 +103,9 @@
   // border-radius: 12px !important;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
+  // .country-name.popular {
+  //   bottom: 4px;
+  // }
   .dist-country {
     // bottom: -1rem;
     font-family: Cereal-Regular;
@@ -135,6 +139,9 @@
     .home-card .popular {
       padding-top: 0px !important;
     }
+  }
+  .unique-txt {
+    bottom: 2px;
   }
 }
 .unique-dest-list {

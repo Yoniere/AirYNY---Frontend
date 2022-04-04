@@ -42,7 +42,7 @@
             alt="img unique stay"
           />
           <div class="txt-container">
-            <h3 class="country-name">
+            <h3 class="country-name unique-txt">
               {{ stay.country }}
             </h3>
             <span class="dist-country">{{ stay.km }}</span>
