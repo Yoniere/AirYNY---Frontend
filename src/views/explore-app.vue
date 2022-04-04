@@ -152,15 +152,17 @@
     </div>
 
     <h1>{{ title }}</h1>
-    <div v-if="!stays.length">
-      <img class="loading-img" src="../assets/loader.gif" />
-    </div>
+
+
     <stay-list
       :stays="stays"
       v-if="stays"
       @stayLiked="setLiked"
     >
     </stay-list>
+    <div v-if="!stays?.length">
+      <img class="loading-img" src="../assets/loader.gif" />
+    </div>
     <login-modal
       v-if="modalLoginIsOpen"
       @login="setLogin"
