@@ -41,7 +41,7 @@
             :src="`https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648051428/airyny/${stay.country}`"
             alt="img unique stay"
           />
-          <div class="txt-container">
+          <div class="unique-txt">
             <h3 class="country-name">
               {{ stay.country }}
             </h3>

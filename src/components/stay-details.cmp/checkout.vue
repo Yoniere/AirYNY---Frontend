@@ -1,5 +1,10 @@
 <template>
-  <section v-if="filterBy" class="checkout" :class="checkoutPos"  v-close="closeModal">
+  <section
+    v-if="filterBy"
+    class="checkout"
+    :class="checkoutPos"
+    v-close="closeModal"
+  >
     <section :style="getFlexRow" class="checkout-section">
       <div class="flex-col lower-checkout-section">
         <div class="checkout-title flex space-between" :style="getFlexColumn">
@@ -53,7 +58,7 @@
           >
           </el-date-picker>
         </div>
-        
+
         <div class="guests-input flex" @click="openModal">
           <div class="flex-col">
             <label class="guests-label"> Guests </label>
@@ -87,42 +92,48 @@
           </div>
         </div>
 
-        <div v-if="guestModal" class="checkout-guests-modal modal">
-          <ul>
-            <li class="flex space-between align-center">
-              <span class="flex-col"
-                >Adults
-                <span class="guide-age">Ages 13 or above </span>
-              </span>
-              <span>
-                <button @click="incAdults(-1)">-</button>
-                {{ filterBy.guests.adults }}
-                <button @click="incAdults(1)">+</button>
-              </span>
-            </li>
-            <li class="flex space-between align-center">
-              <span class="flex-col">
-                Children
-                <span class="guide-age"> Ages 2-12 </span>
-              </span>
-              <span>
-                <button @click="incKids(-1)">-</button>
-                {{ filterBy.guests.kids }}
-                <button @click="incKids(1)">+</button>
-              </span>
-            </li>
-            <li class="flex space-between align-center">
-              <span class="flex-col">
-                Infants
-                <span class="guide-age">Under 2 </span>
-              </span>
-              <span>
-                <button @click="incInfants(-1)">-</button>
-                {{ filterBy.guests.Infants }}
-                <button @click="incInfants(1)">+</button>
-              </span>
-            </li>
-          </ul>
+        <div v-if="guestModal" class="checkout-guests-modal modal flex-col">
+          <div>
+            <ul>
+              <li class="flex space-between align-center">
+                <span class="flex-col"
+                  >Adults
+                  <span class="guide-age">Ages 13 or above </span>
+                </span>
+                <span>
+                  <button class="guests-btn" @click="incAdults(-1)">-</button>
+                  {{ filterBy.guests.adults }}
+                  <button class="guests-btn" @click="incAdults(1)">+</button>
+                </span>
+              </li>
+              <li class="flex space-between align-center">
+                <span class="flex-col category">
+                  Children
+                  <span class="guide-age"> Ages 2-12 </span>
+                </span>
+                <span>
+                  <button class="guests-btn" guests-btn @click="incKids(-1)">-</button>
+                  {{ filterBy.guests.kids }}
+                  <button class="guests-btn" guests-btn @click="incKids(1)">+</button>
+                </span>
+              </li>
+              <li class="flex space-between align-center">
+                <span class="flex-col">
+                  Infants
+                  <span class="guide-age">Under 2 </span>
+                </span>
+                <span>
+                  <button class="guests-btn" @click="incInfants(-1)">-</button>
+                  {{ filterBy.guests.Infants }}
+                  <button class="guests-btn" @click="incInfants(1)">+</button>
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex close-btn-div">
+            <button @click="openModal" class="close-btn">Close</button>
+          </div>
         </div>
         <button
           ref="myRef"
