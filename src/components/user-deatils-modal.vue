@@ -1,5 +1,4 @@
 <template>
-  <section>
     <section v-if="userLogged" class="user-modal flex-col">
       <router-link to="/"> Messages</router-link>
       <router-link to="/"> Trips</router-link>
@@ -16,7 +15,6 @@
       <span @click="openModalLogin"> Login</span>
       <span> Logout</span>
     </section>
-  </section>
 </template>
 
 <script>
