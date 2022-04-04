@@ -250,18 +250,18 @@ export default {
 </script>
 
 <style>
-.el-badge__content.is-fixed.is-dot {
+/* .el-badge__content.is-fixed.is-dot {
   right: -104px;
   border: 2px solid white;
   position: absolute !important;
-  /* z-index: 100; */
+  /* z-index: 100; 
   top: -15px;
   width: 16px;
   height: 16px;
-  background-color: #ff385c;
-}
+  background-color: #ff385c; */
+/* }
 
 .none {
   display: none;
-}
+} */
 </style>
