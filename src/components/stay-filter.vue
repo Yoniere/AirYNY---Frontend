@@ -50,7 +50,7 @@
       <div
         class="main-time-picker input-container flex-col date-list"
       >
-        <div class="container-check">
+        <div class="container-check flex-col">
           <div class="container-check-in-out flex">
             <span class="btn-check-in"> Check in</span
             ><span class="btn-check-out"> Check out </span>
@@ -72,8 +72,8 @@
         height="60"
         width="1"
         style="
-          margin-left: 93px;
-          margin-right: -9px;
+          margin-left: 60px;
+          margin-right: -10px;
           padding-top: 10px;
         "
       >
