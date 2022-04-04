@@ -140,7 +140,9 @@
   margin-top: rem(92px);
   margin-bottom: rem(106px);
 
-  .country-name {
-    margin-bottom: 10px;
+  @include for-mobile-layout {
+    .country-name {
+      margin-bottom: -5px;
+    }
   }
 }
