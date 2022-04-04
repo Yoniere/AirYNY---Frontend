@@ -184,10 +184,11 @@
     flex-grow: 1.5;
     // margin: -1px;
     .title-destination {
+      padding-left: 16px;
       font-size: 12px;
       line-height: 16px;
       padding-bottom: 2px;
-      padding-left: 2px;
+      padding-left: 15px;
       letter-spacing: 0.48px;
     }
     .dropdown {
@@ -199,6 +200,7 @@
       text-align: left;
       padding-bottom: 29px;
       // margin: 0px;
+      margin-left: 13px;
       margin-right: -17px;
       // margin-bottom: 16.34px;
       // max-width: 245px;
@@ -383,8 +385,13 @@
 .border-guests {
   // border-left: 0.1px solid #e1e1e1;
   margin-right: 0px;
-  padding-left: 34px;
+  padding-left: 0px;
   padding-bottom: 4px;
+}
+
+.el-date-range-picker .el-picker-panel__content {
+  margin: 0px;
+  margin-top: -62px !important;
 }
 
 .caret-hide {
@@ -674,6 +681,25 @@
   box-sizing: border-box;
 }
 
+.el-date-table
+  td
+  .el-date-table-cell
+  .el-date-table-cell__text {
+  z-index: 2;
+  font-family: Cereal-Regular;
+  width: 42px;
+  height: 42px;
+  display: block;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 40px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  font-weight: 600;
+  text-align: center;
+}
 .el-date-table td.in-range .el-date-table-cell {
   background-color: #f7f7f7;
 }
