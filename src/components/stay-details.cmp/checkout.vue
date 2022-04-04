@@ -38,8 +38,8 @@
 
         <div class="date-input-container">
           <div class="check-container">
-            <span class="check-in">Check in</span>
-            <span class="check-out">Check out</span>
+            <span class="check-in">CHECK-IN</span>
+            <span class="check-out">CHECKOUT</span>
           </div>
 
           <el-date-picker

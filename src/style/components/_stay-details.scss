@@ -1109,12 +1109,14 @@
         display: none;
     }
     .reserve-btn {
-        width: rem(108.219px);
         height: rem(48px);
         min-width: unset;
         align-items: center;
         display: flex;
         padding: unset;
+        width: rem(179.402px);
+        padding: 14px 24px;
+        justify-content: center;
         @include for-narrow-layout {
             width: rem(176px);
             height: rem(48px);
