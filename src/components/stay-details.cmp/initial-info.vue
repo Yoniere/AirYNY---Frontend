@@ -35,7 +35,7 @@ export default {
       // return this.stay.host.thumbnailUrl;
       let key = utilService.getRandomInt(0, 50);
       this.stay.host.thumbnailUrl = key;
-
+      if(this.stay.host.id === '35858044') key = 22
       return `https://i.pravatar.cc/150?img=${key}`;
     },
   },
