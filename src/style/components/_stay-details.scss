@@ -198,6 +198,10 @@
     height: rem(56px);
     object-fit: cover;
     border-radius: 50%;
+    @include for-narrow-layout {
+      margin-bottom: rem(16px);
+      margin-left: rem(16px);
+    }
   }
   .initial-info {
     color: #222222;
@@ -959,6 +963,14 @@
         align-items: center;
         width: 100%;
         justify-content: space-between;
+        .lower-checkout-section {
+          @include for-narrow-layout {
+            width: 100%;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+          }
+        }
       }
       .reserve-btn {
         min-width: unset;
@@ -1029,6 +1041,14 @@
       align-items: center;
       width: 100%;
       justify-content: space-between;
+      .lower-checkout-section {
+        @include for-narrow-layout {
+          width: 100%;
+          justify-content: space-between;
+          flex-direction: row;
+          align-items: center;
+        }
+      }
     }
     .el-date-editor {
       display: none;
@@ -1079,7 +1099,7 @@
   left: 0px;
   background-color: #fff;
   z-index: 100;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 0 auto;
   padding-left: rem(80px);
@@ -1090,9 +1110,18 @@
   .checkout-section {
     width: 100%;
     align-items: center;
-    justify-content: end;
+    justify-content: space-between;
+    max-width: 1120px;
     @include for-narrow-layout {
       justify-content: space-between;
+    }
+    .lower-checkout-section {
+      @include for-narrow-layout {
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+      }
     }
   }
   @include for-wide-layout {

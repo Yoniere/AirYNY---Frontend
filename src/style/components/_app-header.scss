@@ -398,6 +398,9 @@
             position: static;
             display: flex;
             transform: unset;
+            .main-filter {
+                display: flex;
+            }
         }
         //  .filter.hide
         .mini-filter {
