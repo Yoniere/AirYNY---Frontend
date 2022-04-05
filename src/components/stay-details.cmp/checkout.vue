@@ -137,7 +137,7 @@
         </div>
         <button
           ref="myRef"
-          class="reserve-btn"
+          :class="guestModal? 'hide':'reserve-btn'"
           @click="setOrder"
           @mousemove="calcMouse"
           :style="mousePos"
