@@ -16,6 +16,22 @@
     visibility: hidden;
     top: 0px;
     justify-content: end;
+
+    .profile-btn {
+      /* display: block !important; */
+      visibility: initial;
+      /* display: block; */
+      /* display: flex; */
+      margin-inline-start: 10px;
+      margin-inline-end: -59px;
+      /* display: block; */
+      display: flex;
+      align-items: center;
+      margin-block-start: -27px;
+      /* justify-content: space-around; */
+      /* align-content: center; */
+      fill: #717171;
+    }
     .mini-filter-container {
       // z-index: 2544;
       display: block !important;
