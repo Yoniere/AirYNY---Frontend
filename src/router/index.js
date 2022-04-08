@@ -10,30 +10,30 @@ const router = createRouter({
     linkActiveClass: 'active',
 
     routes: [{
-            path: '/',
-            name: 'home',
-            component: homePage
-        },
-        {
-            path: '/stay',
-            name: 'explore-page',
-            component: explorePage
-        },
-        {
-            path: '/stay/:id',
-            name: 'stay-details',
-            component: stayDetails
-        },
-        {
-            path: '/dashboard',
-            name: 'user-dashboard',
-            component: userDashboard,
-        },
-        {
-            path: '/wishList',
-            name: 'user-wish-list',
-            component: userWishList,
-        },
+        path: '/',
+        name: 'home',
+        component: homePage
+    },
+    {
+        path: '/stay',
+        name: 'explore-page',
+        component: explorePage
+    },
+    {
+        path: '/stay/:id',
+        name: 'stay-details',
+        component: stayDetails
+    },
+    {
+        path: '/dashboard',
+        name: 'user-dashboard',
+        component: userDashboard,
+    },
+    {
+        path: '/wishList',
+        name: 'user-wish-list',
+        component: userWishList,
+    },
 
 
 

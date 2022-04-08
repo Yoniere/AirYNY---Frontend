@@ -1,11 +1,15 @@
 <template>
   <section class="reviews flex">
-    <div class="review" v-for="review in stay.reviews" :key="review">
+    <div
+      class="review"
+      v-for="review in stay.reviews"
+      :key="review"
+    >
       <review-preview :review="review"></review-preview>
     </div>
   </section>
 </template>
- 
+
 <script>
 import reviewPreview from "./review-preview.vue";
 export default {

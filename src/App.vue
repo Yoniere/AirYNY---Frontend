@@ -1,10 +1,9 @@
 <template>
-  <router-view /> 
+  <router-view />
   <app-footer />
 </template>
 
 <script>
-
 import appFooter from "./components/app-footer.vue";
 
 export default {
@@ -13,8 +12,7 @@ export default {
     appFooter,
   },
   created() {
-        this.$store.dispatch({ type: 'loadStays' })
-
+    this.$store.dispatch({ type: "loadStays" });
   },
 };
 </script>

@@ -377,12 +377,13 @@
         color: #222222;
       }
     }
-    .explore-details-header {
-      display: block;
-    }
   }
   @include for-narrow-layout {
-    display: none;
+    .explore-details-header {
+      display: block !important;
+    }
+
+    // display: block;
   }
 }
 
@@ -404,7 +405,10 @@
       display: none;
     }
     @include for-narrow-layout {
-      display: none;
+      display: block !important;
+      .profile-btn {
+        display: none !important;
+      }
     }
     .filter {
       visibility: hidden;
@@ -452,7 +456,7 @@
     }
   }
   @include for-narrow-layout {
-    display: none;
+    display: block !important;
   }
 }
 
