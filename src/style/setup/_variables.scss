@@ -26,14 +26,21 @@ $layoutPaddingWide: 80px;
 $layoutPaddingNormal: 40px;
 $layoutPaddingNarrow: 24px;
 $layoutPaddingMobile: 24px;
+$layoutPaddingLgMobile: 30px;
 
 // LAYOUT BREAKPOINTS
 $break-mobile: 376px;
+$break-lg-mobile: 400px;
 $break-narrow: 743px;
 $break-normal: 949px;
 $break-wide: 1128px;
+
 $padded-break-mobile: $break-mobile + $layoutPaddingMobile *
   2;
+
+$padded-break-mobile: $break-lg-mobile +
+  $layoutPaddingLgMobile * 2;
+
 $padded-break-narrow: $break-narrow + $layoutPaddingNarrow *
   2;
 $padded-break-normal: $break-normal + $layoutPaddingNormal *

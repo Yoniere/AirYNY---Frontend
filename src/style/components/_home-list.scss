@@ -20,20 +20,28 @@
       minmax(200px, 1fr)
     );
   }
+  @include for-lg-mobile-layout {
+    display: flex;
+    // padding: 9px -22px;
+
+    // grid-column: 200px;
+    overflow: scroll;
+  }
   @include for-mobile-layout {
     .main-layout {
       padding-left: 1rem;
       padding-right: 1rem;
     }
     display: flex;
-    padding: 9px -22px;
+    // padding: 9px -22px;
 
-    grid-column: 200px;
+    // grid-column: 200px;
+    overflow: scroll;
 
-    flex-direction: column;
-    align-content: flex-start;
-    justify-content: center;
-    align-items: center;
+    // flex-direction: column;
+    // align-content: flex-start;
+    // justify-content: center;
+    // align-items: center;
   }
 }
 .popular-dest-list {
@@ -48,9 +56,6 @@
     line-height: 47px;
     margin-top: -1px;
     margin-bottom: rem(48px);
-
-    @include for-mobile-layout {
-    }
   }
 }
 .home-card {
@@ -88,8 +93,6 @@
   .popular {
     padding-top: 5px;
   }
-  @include for-wide-layout {
-  }
 }
 .txt-container {
   position: absolute;
@@ -116,10 +119,10 @@
     margin-left: rem(18px);
   }
   @include for-wide-layout {
-    bottom: 0.25rem;
+    bottom: 0rem;
   }
   @include for-normal-layout {
-    bottom: 0rem;
+    bottom: 0.25rem;
   }
 
   @include for-narrow-layout {
@@ -130,7 +133,7 @@
     }
   }
   @include for-mobile-layout {
-    bottom: 5px;
+    bottom: 0px;
     height: 28px;
     line-height: 6px;
     /* font-weight: 200; */
@@ -153,6 +156,16 @@
 }
 
 .unique-txt {
+  @include for-wide-layout {
+    bottom: 0.25rem;
+  }
+  @include for-normal-layout {
+    bottom: 0rem;
+  }
+
+  @include for-narrow-layout {
+    bottom: 0rem;
+  }
   .country-name {
     margin-bottom: 14px !important;
   }
