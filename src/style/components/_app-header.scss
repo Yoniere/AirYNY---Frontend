@@ -339,14 +339,34 @@
 
 .upper-section-header-details.main-header.fix {
   background-color: transparent;
-  box-shadow: 0 1px 12px rgb(0 0 0 / 8%);
+  box-shadow: unset;
   color: #ddd;
+  height: 5rem;
   position: unset;
+  .main-header.fix {
+    position: unset;
+    z-index: unset;
+    background-color: unset;
+    top: unset;
+    width: unset;
+    height: unset;
+    display: unset;
+    grid-template-rows: unset;
+    grid-template-columns: unset;
+    box-shadow: unset;
+    align-items: unset;
+    .mini-filter-container .mini-filter {
+      top: 4%;
+    }
+  }
   .filter {
     display: none;
   }
+  .mini-filter-container .mini-filter {
+    top: unset;
+    // margin-top: 20px;
+  }
   .main-header.fullHeader {
-    position: unset;
     @include for-narrow-layout {
       display: none;
     }
