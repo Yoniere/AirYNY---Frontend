@@ -1,5 +1,5 @@
 <template>
-  <section class="upper-section-header-details">
+  <section class="upper-section-header-details main-header fix">
     <app-header
       class="header-details details-layout"
       @openModalLogin="openModalLogin"
