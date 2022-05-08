@@ -165,7 +165,17 @@
       :class="openfilter ? '' : 'hide'"
       @filterd="setMiniFilter"
     />
+
   </section>
+          <section  :class="openfilter ? 'hide' : 'filter-mobile'">
+            <form @submit.prevent="setFilter">  
+     <input
+            type="search"
+            placeholder="Where are you going?"
+            v-model="filter.country"
+          />
+            </form>
+    </section>
 </template>
 
 <script>
@@ -233,6 +243,13 @@ export default {
       this.modalUser = false;
       this.$emit("openModalLogin");
     },
+     setFilter() {
+      this.$store.dispatch({
+        type: "setFilter",
+        filterBy: JSON.parse(JSON.stringify(this.filter)),
+      });
+      this.$router.push(`/stay`);
+     }
   },
   computed: {
     getLogo() {

@@ -295,15 +295,6 @@
   top: 55px;
   display: none;
   position: fixed;
-  .filter-mobile{
-    @include for-mobile-layout {
-      visibility: visible;
-      background-color: red;
-      margin-left: 100px;
-      width: 150px;
-      display: flex;
-    } 
-  }
 }
 
 .date-list {
@@ -730,14 +721,4 @@
 }
 
 
-// .filter.hide{
-// .filter-mobile{
-//   @include for-mobile-layout {
-//     visibility: visible;
-//     background-color: red;
-//     margin-left: 100px;
-//     width: 150px;
-//   } 
-// }
-// }
 
