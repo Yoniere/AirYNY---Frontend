@@ -176,6 +176,16 @@
         </div>
       </label>
     </div>
+          <section class="filter-mobile">
+     <input
+            type="search"
+            placeholder="Where are you going?"
+            v-model="filterBy.country"
+            autocomplete="off"
+            spellcheck="off"
+            v-text="message"
+          />
+    </section>
   </section>
 </template>
 
