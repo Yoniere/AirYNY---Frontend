@@ -57,7 +57,7 @@
           class="explore-details-header"
           >Explore
         </router-link>
-        <router-link to="/">Become </router-link>
+        <router-link to="/">Become a host</router-link>
         <button class="world-btn">
           <svg
             class="world-svg"
