@@ -523,7 +523,12 @@
     display: block !important;
   }
 }
+.header-mobile-filter{
+  @include for-narrow-layout {
+    display: none ;
+  }
 
+}
 .main-header.fix.header-details {
   .filter.hide {
     display: none !important;
@@ -613,6 +618,7 @@
 }
 
 .filter-mobile {
+  display: none;
   @include for-mobile-layout {
     // margin-left: 100px;
     // width: 150px;

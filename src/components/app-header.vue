@@ -4,7 +4,7 @@
     class="main-header"
     :class="[
       this.stickyNav ? 'fix' : 'fullHeader',
-      this.mobileFilter ? '' : 'none',
+      this.mobileFilter ? '' : 'header-mobile-filter',
     ]"
   >
     <div class="flex space-between header-features">
@@ -171,7 +171,7 @@
     />
   </section>
 
-  <section :class="[this.mobileFilter ? 'none' : 'filter-mobile',
+  <section :class="[this.mobileFilter ? 'filter-mobile' : 'none',
   this.stickyNav ? 'fix' : '',
   ]">
     <form @submit.prevent="setFilter">
@@ -225,7 +225,7 @@ export default {
       openfilter: true,
       filter: null,
       modalUser: false,
-      mobileFilter: true,
+      mobileFilter: false,
     };
   },
 
@@ -245,7 +245,6 @@ export default {
     toggle() {
       this.openfilter = !this.openfilter;
       this.mobileFilter = !this.mobileFilter;
-      console.log(this.openfilter);
     },
     setMiniFilter(filterBy) {
       this.filter = filterBy;
@@ -272,7 +271,7 @@ export default {
     },
 
     closeMobileModal() {
-      this.mobileFilter = !this.mobileFilter;
+      this.mobileFilter = false;
     },
   },
 
