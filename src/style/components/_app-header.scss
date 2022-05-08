@@ -444,6 +444,10 @@
   background-color: transparent;
   box-shadow: 0 1px 12px rgb(0 0 0 / 8%);
   color: #ddd;
+  .main-header.fullHeader{
+    position:inherit;
+  }
+  
   @include for-narrow-layout {
     .profile-btn {
       display: none !important;
