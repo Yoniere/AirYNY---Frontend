@@ -1,6 +1,6 @@
 .main-header.fullHeader {
   grid-template-rows: 1fr 1fr;
-  height: 160px;
+  height: 120px;
   top: 0px;
   display: grid;
   grid-template-columns: 80px 1fr 80px;
@@ -18,7 +18,7 @@
     justify-content: end;
 
     .profile-btn {
-      /* display: block !important; */
+//  display: none;
       visibility: initial;
       /* display: block; */
       /* display: flex; */
@@ -31,6 +31,9 @@
       /* justify-content: space-around; */
       /* align-content: center; */
       fill: #717171;
+      @include for-narrow-layout {
+        display: none;
+      }
     }
     .mini-filter-container {
       // z-index: 2544;
