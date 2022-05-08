@@ -59,10 +59,10 @@
   }
 }
 .home-card {
-  // grid-template-columns: repeat(2, 1fr);
-  // background-color: #ff385c;
-  // border-radius: 12px !important;
-  // font-family: Cereal-Regular;
+  display: flex;
+  align-items: flex-end;
+  align-content: flex-end;
+  justify-content: flex-start;
   cursor: pointer;
   position: relative;
 
@@ -96,19 +96,19 @@
 }
 .txt-container {
   position: absolute;
-  bottom: 4px;
+  bottom: 0px;
   width: 100%;
-  grid-template-columns: repeat(4, 1fr);
+  // grid-template-columns: repeat(4, 1fr);
   background-color: #05050566;
   // border-radius: 12px !important;
   font-family: Cereal-Regular;
-  padding-bottom: 5px;
-  // border-radius: 12px !important;
+
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
-  // .country-name.popular {
-  //   bottom: 4px;
-  // }
+  display: flex;
+  align-items: flex-end;
+  align-content: flex-end;
+  justify-content: flex-start;
   .dist-country {
     // bottom: -1rem;
     font-family: Cereal-Regular;
@@ -118,20 +118,7 @@
     font-weight: 400;
     margin-left: rem(18px);
   }
-  @include for-wide-layout {
-    bottom: 0rem;
-  }
-  @include for-normal-layout {
-    bottom: 0.25rem;
-  }
 
-  @include for-narrow-layout {
-    bottom: 0rem;
-
-    .country-name .popular {
-      width: 100%;
-    }
-  }
   @include for-mobile-layout {
     bottom: 0px;
     height: 28px;
