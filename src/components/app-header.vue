@@ -1,8 +1,11 @@
 <template>
+  <!-- v-if="openfilter" -->
   <section
-    v-if="openfilter"
     class="main-header"
-    :class="this.stickyNav ? 'fix' : 'fullHeader'"
+    :class="[
+      this.stickyNav ? 'fix' : 'fullHeader',
+      this.mobileFilter ? '' : 'none',
+    ]"
   >
     <div class="flex space-between header-features">
       <div class="logo-container">
@@ -168,8 +171,7 @@
     />
   </section>
 
-  <section class="filter-mobile" v-else>
-    <button @click="closeMobileModal">X</button>
+  <section :class="mobileFilter ? 'none' : 'filter-mobile'">
     <form @submit.prevent="setFilter">
       <input
         type="search"
@@ -177,6 +179,7 @@
         v-model="filter.country"
       />
     </form>
+    <button @click="closeMobileModal">{{ "<" }}</button>
   </section>
 
   <!--   
@@ -220,6 +223,7 @@ export default {
       openfilter: true,
       filter: null,
       modalUser: false,
+      mobileFilter: true,
     };
   },
 
@@ -238,6 +242,7 @@ export default {
     },
     toggle() {
       this.openfilter = !this.openfilter;
+      this.mobileFilter = !this.mobileFilter;
       console.log(this.openfilter);
     },
     setMiniFilter(filterBy) {
@@ -265,7 +270,7 @@ export default {
     },
 
     closeMobileModal() {
-      this.$router.push("/");
+      this.mobileFilter = !this.mobileFilter;
     },
   },
 

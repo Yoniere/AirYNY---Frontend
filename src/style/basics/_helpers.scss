@@ -59,7 +59,7 @@
   visibility: hidden;
 }
 .none {
-  display: none;
+  display: none !important;
 }
 .relative {
   position: relative;

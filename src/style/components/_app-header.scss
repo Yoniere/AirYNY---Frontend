@@ -568,11 +568,11 @@
 }
 
 .filter-mobile {
+  position: relative;
   margin-top: rem(82px);
   display: flex;
-  /* margin-left: 100px; */
   max-width: 100%;
-  /* display: block; */
+
   height: 100vh;
   align-items: flex-start;
   @include for-mobile-layout {
@@ -593,10 +593,21 @@
   input {
     width: 100%;
     height: rem(40px);
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(176, 176, 176, 1);
     border-top: none;
     border-left: none;
     border-right: none;
+  }
+  button {
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    font-weight: bold;
+  }
+  input:focus-visible {
+    // border: 1px solid black;
+    outline: rgba(255, 255, 255, 0);
+    outline-offset: 3px;
   }
 }
 
