@@ -1,5 +1,6 @@
 <template>
   <section
+    v-if="openfilter"
     class="main-header"
     :class="this.stickyNav ? 'fix' : 'fullHeader'"
   >
@@ -165,17 +166,29 @@
       :class="openfilter ? '' : 'hide'"
       @filterd="setMiniFilter"
     />
-
   </section>
-          <section  :class="openfilter ? 'hide' : 'filter-mobile'">
-            <form @submit.prevent="setFilter">  
-     <input
-            type="search"
-            placeholder="Where are you going?"
-            v-model="filter.country"
-          />
-            </form>
-    </section>
+
+  <section class="filter-mobile" v-else>
+    <button @click="closeMobileModal">X</button>
+    <form @submit.prevent="setFilter">
+      <input
+        type="search"
+        placeholder="Where are you going?"
+        v-model="filter.country"
+      />
+    </form>
+  </section>
+
+  <!--   
+  <section :class="openfilter ? 'none' : 'filter-mobile'">
+    <form @submit.prevent="setFilter">
+      <input
+        type="search"
+        placeholder="Where are you going?"
+        v-model="filter.country"
+      />
+    </form>
+  </section> -->
 </template>
 
 <script>
@@ -243,14 +256,19 @@ export default {
       this.modalUser = false;
       this.$emit("openModalLogin");
     },
-     setFilter() {
+    setFilter() {
       this.$store.dispatch({
         type: "setFilter",
         filterBy: JSON.parse(JSON.stringify(this.filter)),
       });
       this.$router.push(`/stay`);
-     }
+    },
+
+    closeMobileModal() {
+      this.$router.push("/");
+    },
   },
+
   computed: {
     getLogo() {
       return this.stickyNav
@@ -269,6 +287,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>
