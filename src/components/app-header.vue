@@ -171,7 +171,9 @@
     />
   </section>
 
-  <section :class="mobileFilter ? 'none' : 'filter-mobile'">
+  <section :class="[this.mobileFilter ? 'none' : 'filter-mobile',
+  this.stickyNav ? 'fix' : '',
+  ]">
     <form @submit.prevent="setFilter">
       <input
         type="search"
