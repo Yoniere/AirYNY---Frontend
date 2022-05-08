@@ -38,8 +38,6 @@ async function getById(entityId) {
 }
 
 
-
-
 function _filterStays(stays, filterBy) {
     let filteredStays = stays
     if (filterBy.country) {
