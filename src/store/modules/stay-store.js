@@ -25,7 +25,7 @@ export default {
 
         },
         filterBy(state) {
-            return JSON.parse(JSON.stringify(state.filterBy))
+            return ({...state.filterBy})
         }
 
 
@@ -69,6 +69,7 @@ export default {
             }
         },
         async setFilter({ commit, dispatch }, { filterBy }) {
+            console.log(filterBy)
             try {
                 commit({ type: 'setFilter', filterBy })
                 dispatch({ type: 'loadStays' })

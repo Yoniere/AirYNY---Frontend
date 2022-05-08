@@ -210,13 +210,13 @@ export default {
       this.setFilter,
       500
     );
-    this.filterBy = this.$store.getters.filterBy;
+    this.filterBy = JSON.parse(JSON.stringify(this.$store.getters.filterBy));
   },
   methods: {
     setFilter() {
       this.$store.dispatch({
         type: "setFilter",
-        filterBy: JSON.parse(JSON.stringify(this.filterBy)),
+        filterBy: ({...this.filterBy}),
       });
       this.$router.push(`/stay`);
       this.guestModal = false;

@@ -102,6 +102,7 @@ export default {
   },
 
   async created() {
+    console.log(this.$store.getters.filterBy)
     const id = this.$route.params.id;
     const stay = await stayService.getById(id);
     this.stay = stay;
