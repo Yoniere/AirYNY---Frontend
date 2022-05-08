@@ -1,7 +1,11 @@
 <template>
+  <!-- v-if="openfilter" -->
   <section
     class="main-header"
-    :class="this.stickyNav ? 'fix' : 'fullHeader'"
+    :class="[
+      this.stickyNav ? 'fix' : 'fullHeader',
+      this.mobileFilter ? '' : 'none',
+    ]"
   >
     <div class="flex space-between header-features">
       <div class="logo-container">
@@ -57,7 +61,7 @@
           class="explore-details-header"
           >Explore
         </router-link>
-        <router-link to="/">Become </router-link>
+        <router-link to="/">Become a host</router-link>
         <button class="world-btn">
           <svg
             class="world-svg"
@@ -166,6 +170,28 @@
       @filterd="setMiniFilter"
     />
   </section>
+
+  <section :class="mobileFilter ? 'none' : 'filter-mobile'">
+    <form @submit.prevent="setFilter">
+      <input
+        type="search"
+        placeholder="Where are you going?"
+        v-model="filter.country"
+      />
+    </form>
+    <button @click="closeMobileModal">{{ "<" }}</button>
+  </section>
+
+  <!--   
+  <section :class="openfilter ? 'none' : 'filter-mobile'">
+    <form @submit.prevent="setFilter">
+      <input
+        type="search"
+        placeholder="Where are you going?"
+        v-model="filter.country"
+      />
+    </form>
+  </section> -->
 </template>
 
 <script>
@@ -197,6 +223,7 @@ export default {
       openfilter: true,
       filter: null,
       modalUser: false,
+      mobileFilter: true,
     };
   },
 
@@ -215,6 +242,7 @@ export default {
     },
     toggle() {
       this.openfilter = !this.openfilter;
+      this.mobileFilter = !this.mobileFilter;
       console.log(this.openfilter);
     },
     setMiniFilter(filterBy) {
@@ -233,7 +261,19 @@ export default {
       this.modalUser = false;
       this.$emit("openModalLogin");
     },
+    setFilter() {
+      this.$store.dispatch({
+        type: "setFilter",
+        filterBy: JSON.parse(JSON.stringify(this.filter)),
+      });
+      this.$router.push(`/stay`);
+    },
+
+    closeMobileModal() {
+      this.mobileFilter = !this.mobileFilter;
+    },
   },
+
   computed: {
     getLogo() {
       return this.stickyNav
@@ -252,19 +292,4 @@ export default {
 };
 </script>
 
-<style>
-/* .el-badge__content.is-fixed.is-dot {
-  right: -104px;
-  border: 2px solid white;
-  position: absolute !important;
-  /* z-index: 100; 
-  top: -15px;
-  width: 16px;
-  height: 16px;
-  background-color: #ff385c; */
-/* }
-
-.none {
-  display: none;
-} */
-</style>
+<style></style>
