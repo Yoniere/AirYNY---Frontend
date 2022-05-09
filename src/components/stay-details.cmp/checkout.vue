@@ -181,8 +181,6 @@ export default {
   data() {
     return {
       guestModal: false,
-      // stayTime: "",
-      // stickyNav: false,
       pos: "",
       x: 0,
       y: 0,
@@ -193,7 +191,6 @@ export default {
   created() {
     window.addEventListener("scroll", this.handleScroll);
     this.filterBy = this.$store.getters.filterBy;
-    // console.log(this.filterBy);
     this.getElInputClass();
     window.addEventListener(
       "click",
@@ -242,8 +239,6 @@ export default {
         return "static";
       } else if (this.pos === "b") {
         return "fixed";
-        // } else if (this.pos === "c") {
-        //   return "static-second";
       } else if (this.pos === "d") {
         return "fixed-top";
       }
@@ -291,14 +286,8 @@ export default {
     handleScroll(event) {
       if (window.top.scrollY < 555) {
         this.pos = "a";
-        // this.stickyNav = true;
-        // this.openfilter = false;
       } else if (window.top.scrollY < 1380) {
         this.pos = "b";
-        // this.stickyNav = false;
-        // this.openfilter = true;
-        // } else if (window.top.scrollY < 1500) {
-        //   this.pos = "c";
       } else {
         this.pos = "d";
       }

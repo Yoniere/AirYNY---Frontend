@@ -1,6 +1,5 @@
 <template>
   <hr class="hr-border" />
-  <!-- <main class="map-details"> -->
   <section id="map" class="map-container main-layout">
     <h2>Where you’ll be</h2>
     <p>
@@ -23,12 +22,10 @@
         />
       </GMapCluster>
     </GMapMap>
-    <!-- </main> -->
   </section>
 </template>
 
 <script>
-// import GmapCustomMarker from 'vue3-gmap-custom-marker';
 export default {
   name: "mapDetails",
   props: {
@@ -49,7 +46,7 @@ export default {
             lng: this.stay.address.location.lat,
           },
           icon: {},
-        }, // Along list of clusters
+        },
       ],
     };
   },

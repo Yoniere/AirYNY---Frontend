@@ -97,11 +97,6 @@
               </g>
             </svg>
             <button class="share">
-              <!-- <img
-              class="share-img"
-              src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648031221/airyny/share24-icon.png"
-            /> -->
-
               Share
             </button>
           </div>
@@ -129,11 +124,6 @@
               ></path>
             </svg>
             <button class="save">
-              <!-- <img
-              class="save-img"
-              src="https://res.cloudinary.com/yonatan-cajan22/image/upload/v1648730273/airyny/icon-heart.jpg"
-            /> -->
-
               Save
             </button>
           </div>
@@ -165,24 +155,6 @@
       />
     </section>
   </section>
-  <!-- <section class="main-layout">
-    <div class="lower-img-section flex space-between">
-      <div class="initial-info">
-        <h1>
-          Entire rental unit hosted by <span>{{ stay.host.fullname }}</span>
-        </h1>
-        <div>
-          <span>{{ stay.capacity }} guests</span> ·
-          <span>{{ stay.bedrooms }} bedroom</span> ·
-          <span>{{ stay.beds }} bed</span> ·
-          <span>{{ stay.bathrooms }} baths</span>
-        </div>
-      </div>
-      <div>
-        <img class="host-img" :src="getHostImage">
-      </div>
-    </div>
-  </section> -->
 </template>
 
 <script>
