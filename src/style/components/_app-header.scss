@@ -346,6 +346,16 @@
   color: #ddd;
   height: 5rem;
   position: unset;
+  .main-header.fullHeader{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 5rem;
+    display: block;
+    position: static;
+    @include for-normal-layout {
+      position: fixed;
+    }
+  }
   .main-header.fix {
     position: unset;
     z-index: unset;
